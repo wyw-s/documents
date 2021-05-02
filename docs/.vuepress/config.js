@@ -1,16 +1,16 @@
 
 module.exports = {
-  title: '霓虹灯',
+  title: '流星飞过小熊座',
   description: '文档，笔记',
   head: [
-    ['link', { rel: 'icon', href: '/logo.jpg' }]
+    ['link', { rel: 'icon', href: '/logo.jpeg' }]
   ],
   markdown: {
     extractHeaders: ['h2', 'h3', 'h4','h5','h6' ],
     lineNumbers: true,
   },
   themeConfig: {
-    lastUpdated: 'Last Updated',
+    lastUpdated: '上次更新',
     nav: [
       {text: '首页', link: '/'},
       { text: '介绍', link: '/guide/' },
@@ -53,7 +53,7 @@ module.exports = {
     "vuepress-plugin-auto-sidebar": {},
     '@vuepress/back-to-top': true,
     '@vuepress/plugin-active-header-links': true,
-    '@vuepress/last-updated': true,
+    '@vuepress/last-updated': {},
     '@vuepress/plugin-medium-zoom': true,
   }
 }

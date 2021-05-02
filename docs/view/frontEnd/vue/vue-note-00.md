@@ -71,14 +71,16 @@ new Vue({
 
 ```html
 <!--语法-->
-<p v-text="msg"></p>
-```
-
-- `{{msg1}}` 插值表达式；
+<p v-text="msg">
+  - `{{msg1}}` 插值表达式；
   - 可以进行简单的逻辑运算；
-    - `{{ user.gender === 0 ? '男' : '女' }}`;
+  - `{{ user.gender === 0 ? '男' : '女' }}`;
   - **有闪烁问题**；
   - 可以通过`v-cloak`解决闪烁问题；并结合`[v-cloak]{display: none;}`来使用；
+</p>
+```
+
+
 
 ```html
 [v-cloak]{
