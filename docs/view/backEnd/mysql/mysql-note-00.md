@@ -18,15 +18,11 @@ title: MYSQL使用
   service mysqld start;
   ```
 
-  ![1594485624023](assets/1594485624023.png)
-
 - 关闭mysql
 
   ```bash
   service mysqld stop 
   ```
-
-  ![1594485694723](assets/1594485694723.png)
 
 - 查看Mysql的运行状态；
 
@@ -34,8 +30,53 @@ title: MYSQL使用
 service mysqld status;
   ```
   
-  <img src="assets/1594485553438.png" alt="1594485553438" style="zoom:50%;" />
-  
   
 
+## 基础命令
+
+1. 启动mysql
+
+   ```bash
+   service mysqld start;
+   # or
+   systemctl start mysqld;
+   ```
+
+   ![1594485624023](assets/1594485624023.png)
+
+2. 关闭mysql
+
+   ```bash
+   service mysqld stop;
+   # or
+   systemctl stop mysqld;
+   ```
+
+   ![1594485694723](assets/1594485694723.png)
+
+3. 查看Mysql的运行状态；
+
+   ```bash
+   service mysqld status;
+   # or
+   systemctl status mysqld;
+   # or 
+   systemctl -l status mysqld;
+   ```
+
+   <img src="assets/1594485553438.png" alt="1594485553438" style="zoom:50%;" />
+
+4.  查看错误日志位置 
+
+   ```bash
+   cat /etc/my.cnf | grep log-error
+   ```
+
+5.  查看错误日志 
+
+   ```bash
+   more /var/log/mysqld.log
+   ```
+
+   
 
