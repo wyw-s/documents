@@ -15,7 +15,8 @@
     "@vuepress/plugin-active-header-links": "^1.8.2",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "@vuepress/plugin-medium-zoom": "^1.8.2",
-    "vuepress": "^1.8.2"
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-copy-images": "^1.1.0"
   },
   "dependencies": {
     "vuepress-plugin-auto-sidebar": "^2.2.2"
