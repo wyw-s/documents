@@ -46,3 +46,22 @@ title: githup钩子触发jenkins构建
 
 3. 后面步骤与**自由风格的软件项目**介绍相同；
 
+## 使用脚本式语法
+
+> 使用：properties 配置属性；并添加 githubPush()
+
+```javascript
+node {
+  // 重点：
+  properties([
+    pipelineTriggers([githubPush()])
+  ])
+  
+	stage('git clone') {
+		git credentialsId: '16fc630b-8061-40f8-9dda-0723a2d7xxxx2', url: 'https://github.com/xxxw-s/documents.git';
+		sh 'pwd';
+		sh 'ls'
+	}
+}
+```
+
