@@ -48,13 +48,13 @@ title: githup钩子触发jenkins构建
 
 ## 使用脚本式语法
 
-> 使用：properties 配置属性；并添加 githubPush()
+> 使用：properties 配置属性；并添加 githubPush()。pollSCM 用于设置轮询的可有可无；
 
 ```javascript
 node {
   // 重点：
   properties([
-    pipelineTriggers([githubPush()])
+    pipelineTriggers([githubPush(), pollSCM('')])
   ])
   
 	stage('git clone') {
