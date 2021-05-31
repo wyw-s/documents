@@ -1,28 +1,89 @@
 ---
-title: node基础
+title: nodejs基础
 ---
 
-> Node.js 不是一种独立的语言，与 PHP、 Python、 Perl、 Ruby 的“既是语言也是平台”不同。 Node.js 也不是一个 JavaScript 框架，不同于 CakePHP、 Django、 Rails。 Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。Node.js 是一个划时代的技术，它在原有的 Web 前端和后端技术的基础上总结并提炼出了许多新的概念和方法，堪称是十多年来 Web 开发经验的集大成者。 Node.js 可以作为服务器向用户提供服务，与 PHP、 Python、 Ruby on Rails 相比，它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。 Node.js 的许多设计理念与经典架构（如 LAMP）有着很大的不同，可提供强大的伸缩能力，以适应21世纪10年代以后规模越来越庞大的互联网环境。  
+> Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。
 
+## 快速上手；
 
+1. 打印`hello world`;
 
+   - 打开你常用的文本编辑器，在其中输入：console.log('Hello World'); 
 
+     ```javascript
+     // helloWorld.js
+     console.log('hello world');
+     ```
 
-## NodeJS 的核心组成；
+   - 保存后修改文件名为 helloworld.js ；
 
-1. JS引擎：基于v8引擎开发的；
-2. node模块：封装好的js代码；
-3. 第三方模块；
+   - 打开终端，进入 helloworld.js 所在的目录，
 
-## javascript与node.js的区别；
+   - 执行以下命令：node helloworld.js  
 
-+ javascript(浏览器端) ：
-  + ECMAScript ：
-  + DOM：
-  + BOM：
-+ node.js:
-  + ECMAScript(ES5 , ES6) ：
-  + 只支持 JS语法，不支持 dom 和 bom 语法；
+     ```shell
+     C:\Users\ASUS\Desktop\test  (test@1.0.0)
+     $ node helloWorld.js
+     hello world
+     ```
+
+     
+
+## Node.js 命令行工具  
+
+> 在前面的 Hello World 示例中，我们用到了命令行中的 node 命令，输入 node --help可以看到详细的帮助信息：  
+
+```shell
+C:\Users\ASUS\Desktop\test  (test@1.0.0)                                           
+$ node -h                                                                          
+Usage: node [options] [ script.js ] [arguments]                                    
+       node inspect [options] [ script.js | host:port ] [arguments]                
+                                                                                   
+Options:                                                                           
+  -                                          script read from stdin (default if no 
+                                             interactive mode if a tty)            
+  --                                         indicate the end of node options      
+  --abort-on-uncaught-exception              aborting instead of exiting causes a c
+                                             for analysis                          
+  -c, --check                                syntax check script without executing 
+  --completion-bash                          print source-able bash completion scri
+  --cpu-prof                                 Start the V8 CPU profiler on start up,
+                                             profile to disk before exit. If --cpu-
+                                             specified, write the profile to the cu
+  --cpu-prof-dir=...                         Directory where the V8 profiles genera
+                                             be placed. Does not affect --prof.    
+  --cpu-prof-interval=...                    specified sampling interval in microse
+                                             profile generated with --cpu-prof. (de
+  --cpu-prof-name=...                        specified file name of the V8 CPU prof
+                                             --cpu-prof                            
+  --disable-proto=...                        disable Object.prototype.__proto__    
+  --disallow-code-generation-from-strings    disallow eval and friends             
+  --enable-source-maps                       experimental Source Map V3 support    
+  ....
+```
+
+> 其中显示了 node 的用法，运行 Node.js 程序的基本方法就是执行 node script.js，其中 script.js是脚本的文件名。  
+
+## REPL 模式 
+
+> REPL （Read-eval-print loop），即输入—求值—输出循环。使用 cmd 打开的 shell，可以进入一个即时求值的运行环境。运行无参数的 node 将会启动一个 JavaScript的交互式 shell：  
+
+```shell
+C:\Users\ASUS\Desktop\test  (test@1.0.0)
+$ node
+Welcome to Node.js v12.18.0.
+Type ".help" for more information.
+> console.log('Hello World');
+Hello World
+undefined
+> consol.log('Hello World');
+Uncaught ReferenceError: consol is not defined
+>
+```
+
+> 进入 REPL 模式以后，会出现一个“>”提示符提示你输入命令，输入后按回车， Node.js将会解析并执行命令。如果你执行了一个函数，那么 REPL 还会在下面显示这个函数的返回值，上面例子中的 undefined 就是 console.log 的返回值。如果你输入了一个错误的指令， REPL 则会立即显示错误并输出调用栈。在任何时候，连续按两次 Ctrl + C 即可推出Node.js 的 REPL 模式。node 提出的 REPL 在应用开发时会给人带来很大的便利，例如我们可以测试一个包能否正常使用，单独调用应用的某一个模块，执行简单的计算等 ;
+
+## 建立 HTTP 服务器  
 
 ## ES6；
 
