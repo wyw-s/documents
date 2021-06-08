@@ -1,6 +1,5 @@
 ---
 title: 类型检测
-autoGroup-1: 基础
 ---
 
 ## `typeof`操作符

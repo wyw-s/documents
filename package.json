@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
-    "docs:nav": "vuepress nav docs"
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "nav": "vuepress nav docs"
   },
   "keywords": [],
   "author": "",

@@ -37,6 +37,7 @@ module.exports = {
           { text: 'jenkins', link: '/views/backEnd/jenkins/' },
           { text: 'nginx', link: '/views/backEnd/nginx/' },
           { text: 'tomcat', link: '/views/backEnd/tomcat/' },
+          { text: 'docker', link: '/views/backEnd/docker/' },
           { text: 'java基础', link: '/views/backEnd/java/basic/' },
         ]
       },

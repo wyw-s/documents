@@ -1,6 +1,5 @@
 ---
 title: js数据类型
-autoGroup-1: 基础
 ---
 
 > javascript一共有8种数据类型;

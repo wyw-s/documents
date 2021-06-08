@@ -3,6 +3,8 @@ title: 基础命令
 ---
 
 ```bash
+# 查看磁盘空间
+
 # 查看应用进程
 ps -ef | grep node
 

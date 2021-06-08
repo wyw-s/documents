@@ -1,0 +1,45 @@
+---
+title: 变量声明
+autoGroup-2: es6
+---
+
+## `const`声明
+
+> 使用const声明的原始类型是常量，之后不能更改，不然会报类型错误。使用const声明的对象类型的变量，变量本身无法赋值为其他类型，但是它的属性可以修改。
+
+```javascript
+const x = 1;
+x = 2;
+// Uncaught TypeError: Assignment to constant variable.
+
+// 对象的属性的值可以正常修改
+const x = {};
+x.age = 23;
+```
+
+## `let`声明
+
+> 和const正好相反，使用let声明的变量可以进行修改；
+
+```javascript
+let x = 1;
+x = 2;
+console.log(x); // 2
+```
+
+## 禁止重复声明；
+
+> 如果变量在语句块中已经有定义，则无法再使用let或者const进行声明，会报语法错误；
+
+```javascript
+var x = 1;
+let x = 2;
+// Uncaught SyntaxError: Identifier 'x' has already been declared
+
+// 把let放在{}中就可以了
+var x = 1;
+if (x) {
+   let x = 2;
+}
+```
+
