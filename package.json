@@ -5,18 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "nav": "vuepress nav docs"
+    "build": "vuepress build docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^1.8.2",
-    "@vuepress/plugin-back-to-top": "^1.8.2",
-    "@vuepress/plugin-medium-zoom": "^1.8.2",
     "vuepress": "^1.8.2",
-    "vuepress-plugin-copy-images": "^1.1.0"
+    "vuepress-theme-hope": "^1.18.1"
   },
   "dependencies": {
     "vuepress-plugin-auto-sidebar": "^2.2.2"

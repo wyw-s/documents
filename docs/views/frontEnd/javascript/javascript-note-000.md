@@ -1,5 +1,9 @@
 ---
 title: javascript基础
+category: 前端
+tags:
+  - js基础
+star: true
 ---
 
 ### 输入和输出：

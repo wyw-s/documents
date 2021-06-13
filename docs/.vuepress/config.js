@@ -1,61 +1,99 @@
+const {config} = require('vuepress-theme-hope')
 
-module.exports = {
-  title: '流星飞过小熊座',
-  description: '文档，笔记',
-  head: [
-    ['link', { rel: 'icon', href: '/logo.jpeg' }]
-  ],
-  markdown: {
-    extractHeaders: ['h2', 'h3', 'h4','h5','h6' ],
-    lineNumbers: true,
+module.exports = config({
+  title: '棉花糖',
+  description: '不要活得太累，不要忙的太疲惫；想吃了不要嫌贵，想穿了不要说浪费',
+  dest: './dist',
+  locales: {
+    "/": { lang: "zh-CN" },
   },
   themeConfig: {
-    lastUpdated: '上次更新',
+    logo: '/logo.jpeg',
+    hostname: 'http://47.114.139.71:8095',
+    author: '棉花糖',
+    repo: false,
+    breadcrumb: false,
+    darkmode: 'auto-switch',
+    mdEnhance: {
+      align: true,
+      demo: true,
+      flowchart: true,
+      footnote: true,
+      presentation: true,
+      sub: true,
+      sup: true,
+      tex: true,
+    },
+
     nav: [
-      {text: '首页', link: '/'},
-      { text: '介绍', link: '/guide/' },
+      {text: '介绍', link: '/guide/'},
       {
         text: '前端',
         items: [
-          { text: 'HTML', link: '/views/frontEnd/html/' },
-          { text: 'CSS', link: '/views/frontEnd/css/' },
-          { text: 'javaScript', link: '/views/frontEnd/javascript/' },
-          { text: 'AJAX', link: '/views/frontEnd/ajax/' },
-          { text: 'jquery', link: '/views/frontEnd/jquery/' },
-          { text: 'VUE', link: '/views/frontEnd/vue/' },
-          { text: 'react', link: '/views/frontEnd/react/' },
-          { text: 'webpack', link: '/views/frontEnd/webpack/' },
-          { text: 'npm', link: '/views/frontEnd/npm/' },
+          {text: 'HTML', link: '/views/frontEnd/html/'},
+          {text: 'CSS', link: '/views/frontEnd/css/'},
+          {text: 'javaScript', link: '/views/frontEnd/javascript/'},
+          {text: 'AJAX', link: '/views/frontEnd/ajax/'},
+          {text: 'jquery', link: '/views/frontEnd/jquery/'},
+          {text: 'VUE', link: '/views/frontEnd/vue/'},
+          {text: 'react', link: '/views/frontEnd/react/'},
+          {text: 'webpack', link: '/views/frontEnd/webpack/'},
+          {text: 'npm', link: '/views/frontEnd/npm/'}
         ]
       },
       {
         text: '后端',
         items: [
-          { text: 'nodejs', link: '/views/backEnd/nodejs/' },
-          { text: 'linux', link: '/views/backEnd/linux/' },
-          { text: 'mysql', link: '/views/backEnd/mysql/' },
-          { text: 'jenkins', link: '/views/backEnd/jenkins/' },
-          { text: 'nginx', link: '/views/backEnd/nginx/' },
-          { text: 'tomcat', link: '/views/backEnd/tomcat/' },
-          { text: 'docker', link: '/views/backEnd/docker/' },
-          { text: 'java基础', link: '/views/backEnd/java/basic/' },
+          {text: 'nodejs', link: '/views/backEnd/nodejs/'},
+          {text: 'linux', link: '/views/backEnd/linux/'},
+          {text: 'mysql', link: '/views/backEnd/mysql/'},
+          {text: 'jenkins', link: '/views/backEnd/jenkins/'},
+          {text: 'nginx', link: '/views/backEnd/nginx/'},
+          {text: 'tomcat', link: '/views/backEnd/tomcat/'},
+          {text: 'docker', link: '/views/backEnd/docker/'},
+          {text: 'java基础', link: '/views/backEnd/java/basic/'}
         ]
       },
-      { text: '问题', link: '/views/issues/' },
-      { text: '工具',
+      {
+        text: '工具',
         items: [
-          { text: 'GIT', link: '/views/tools/git/' },
-        ],
+          {text: 'GIT', link: '/views/tools/git/'}
+        ]
       },
-      { text: '其它', link: '/views/other/' },
+      {text: '问题', link: '/views/issues/'},
+      {text: '其它', link: '/views/other/'}
     ],
+
+    footer: {
+      display: true,
+      content: ''
+    },
+    copyright: true,
+    git: {
+      timezone: 'Asia/Shanghai'
+    },
+    mdEnhance: {
+      enableAll: true,
+      presentation: {
+        plugins: [
+          'highlight',
+          'math',
+          'search',
+          'notes',
+          'zoom',
+          'anything',
+          'audio',
+          'chalkboard'
+        ]
+      }
+    },
+
+    pwa: {
+      favicon: '/favicon.ico',
+      cachePic: true,
+    }
   },
   plugins: [
-    "vuepress-plugin-copy-images",
-    "vuepress-plugin-auto-sidebar",
-    '@vuepress/back-to-top',
-    '@vuepress/plugin-active-header-links',
-    '@vuepress/last-updated',
-    '@vuepress/plugin-medium-zoom',
-  ],
-}
+    'vuepress-plugin-auto-sidebar',
+  ]
+})
