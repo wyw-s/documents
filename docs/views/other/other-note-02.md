@@ -15,8 +15,7 @@ title: win10 使用hyper-v
 > Hyper-V 可用于 64 位 Windows 10 专业版、企业版和教育版。 **它无法用于家庭版。**
 
 本人电脑信息；
-
-<img src="assets/image-20210605195931476.png" alt="image-20210605195931476" style="zoom:50%;" />
+![image-20210605195931476.png](assets/image-20210605195931476.png)
 
 ## 安装 Hyper-V
 
@@ -36,8 +35,7 @@ Hyper-V 作为可选功能内置于 Windows -- 无需下载 Hyper-V。
 2. 选择相关设置下右侧的“程序和功能”。
 3. 选择“**打开或关闭 Windows 功能**”。
 4. 选择“**Hyper-V**”，然后单击“**确定**”。
-
-<img src="assets/image-20210605192832984.png" alt="image-20210605192832984" style="zoom:67%;" />
+![image-20210605192832984](assets/image-20210605192832984.png)
 
 安装完成后，系统会提示你重启计算机。
 
@@ -48,24 +46,18 @@ Hyper-V 作为可选功能内置于 Windows -- 无需下载 Hyper-V。
 1. 
 
 2. 
-
-   <img src="assets/image-20210605193207701.png" alt="image-20210605193207701" style="zoom:67%;" />
+   ![image-20210605193207701](assets/image-20210605193207701.png)
 
 3. 选择一个操作系统或者或使用本地安装源选择你自己的操作系统。
-
-   <img src="assets/image-20210605193404834.png" alt="image-20210605193404834" style="zoom:67%;" />
+   ![image-20210605193404834](assets/image-20210605193404834.png)
 
 4. 点击创建虚拟机；
-
-   <img src="assets/image-20210605193726004.png" alt="image-20210605193726004" style="zoom:50%;" />
-
-   <img src="assets/image-20210605194332608.png" alt="image-20210605194332608" style="zoom:50%;" />
-
-   <img src="assets/image-20210605194423030.png" alt="image-20210605194423030" style="zoom:50%;" />
+   ![image-20210605193726004](assets/image-20210605193726004.png)
+   ![image-20210605194332608](assets/image-20210605194332608.png)
+   ![image-20210605194423030](assets/image-20210605194423030.png)
 
    点击启动然后，跟着提示，一直往下走，
-
-   <img src="assets/image-20210605195045957.png" alt="image-20210605195045957" style="zoom:50%;" />
+   ![image-20210605195045957](assets/image-20210605195045957.png)
 
    恭喜你，ubantu系统虚拟机创建成功；
 

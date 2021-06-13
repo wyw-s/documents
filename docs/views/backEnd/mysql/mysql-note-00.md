@@ -64,7 +64,7 @@ service mysqld status;
    systemctl -l status mysqld;
    ```
 
-   <img src="assets/1594485553438.png" alt="1594485553438" style="zoom:50%;" />
+   ![1594485553438](assets/1594485553438.png)
 
 4.  查看错误日志位置 
 

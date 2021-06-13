@@ -84,7 +84,7 @@ const jsx = <div className="app"><h1>Hello React! 动态变化数据：{count}</
 1. 初始化项目：`npx create-react-app my-app`;
 2. 启动项目：`npm start`，需切换到项目根目录；
 
-<img src="assets/1577501389161.png" alt="1577501389161" style="zoom:67%;" />
+![1577501389161](assets/1577501389161.png)
 
 >  `npx`命令介绍
 >
@@ -699,7 +699,7 @@ export default Index
 
    > 注意：使用类组件时，如果写了构造函数，应该将 props 传递给 super()，否则，无法在构造函数中获取到 props！
 
-<img src="assets/1577609982259.png" alt="1577609982259" style="zoom:50%;" />
+![1577609982259](assets/1577609982259.png)
 
 ### 3、`props`效验；
 
@@ -1008,7 +1008,7 @@ export default Index;
 >
 > 使用场景：如果两个组件嵌套多层可以使用`Context`实现组件通讯 。
 
-<img src="assets/1577707671143.png" alt="1577707671143" style="zoom: 67%;" />
+![1577707671143](assets/1577707671143.png)
 
 ### 1、使用步骤；
 
@@ -1078,7 +1078,7 @@ export default Index;
 1. 执行时机:组件创建时(页面加载时)。
 - 执行顺序。
 
-<img src="assets/1577714241030.png" alt="1577714241030" style="zoom:67%;" />
+![1577714241030](assets/1577714241030.png)
 
 #### 2.2、更新时(更新阶段)
 
@@ -1086,13 +1086,13 @@ export default Index;
 - 说明：以上三者任意一种变化，组件就会重新渲染 
 - 执行顺序： 
 
-<img src="assets/1577714379334.png" alt="1577714379334" style="zoom:67%;" />
+![1577714379334](assets/1577714379334.png)
 
 #### 2.3、卸载时；
 
 - 执行时机：组件从页面中消失 。(组件切换)  可以清除定时器，解绑事件
 
-<img src="assets/1577714501410.png" alt="1577714501410" style="zoom:67%;" />
+![1577714501410](assets/1577714501410.png)
 
 ## `React`路由;
 

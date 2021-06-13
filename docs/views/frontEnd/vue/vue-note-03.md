@@ -20,7 +20,7 @@ title: vue跨域解决方案
   // response.header('Access-Control-Allow-Origin', "*")
   ```
 
-  <img src="assets/1594785832204.png" alt="1594785832204" style="zoom:67%;" />
+  ![1594785832204](assets/1594785832204.png)
 
 ### 2-2、方法二、
 

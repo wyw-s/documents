@@ -16,7 +16,7 @@ title: 变量的复制
    console.log(num2);// 5
    ```
 
-<img src="assets/image-20210517235513076.png" alt="image-20210517235513076" style="zoom:67%;" />
+![image-20210517235513076](assets/image-20210517235513076.png)
 
 ## 复制对象类型的值
 
@@ -28,7 +28,7 @@ var o2 = o1;
 console.log(o1 === o2);// true
 ```
 
-<img src="assets/image-20210517235139583.png" alt="image-20210517235139583" style="zoom:67%;" />
+![image-20210517235139583](assets/image-20210517235139583.png)
 
 > 如果想复制对象的副本，则必须显示地复制对象的每个属性(如果对象是数组，就复制数组的每个元素)
 

@@ -6,7 +6,7 @@ title: tomcat安装
 
 [安装包]( https://tomcat.apache.org/download-80.cgi )
 
-<img src="assets/1594550355325.png" alt="1594550355325" style="zoom:50%;" />
+![1594550355325](assets/1594550355325.png)
 
 - 把下载的安装包，传到服务器；
 
@@ -68,7 +68,7 @@ title: tomcat安装
   命令：./version.sh
   ```
 
-  <img src="assets/1594550699344.png" alt="1594550699344" style="zoom:50%;" />
+  ![1594550699344](assets/1594550699344.png)
 
 - 关闭服务；
 

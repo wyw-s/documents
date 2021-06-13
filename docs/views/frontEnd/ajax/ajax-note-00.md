@@ -291,7 +291,7 @@ title: ajax基础
 >
 > 5. **验证用户名案例；**
 >
-> ```js
+> ```javascript
 > <script>
 > //注册文本框change事件；
 > document.querySelector('input').onchange = function() {
@@ -676,8 +676,8 @@ title: ajax基础
 >       - 一个返回值：是数据和模板标签组合好的结果。
 >
 >    5. 将 “拼接” 好的结果放到准备好的盒子中（不是必须的，console出来也可以看结果）；
->
->    <img src="./assets/1566443384929.png" style="zoom:50%;" />
+>     
+>    ![1566443384929](./assets/1566443384929.png)
 >
 >   ```js
 >    <!-- 使用模板引擎-1.加载js文件 -->

@@ -109,8 +109,7 @@ FLUSH PRIVILEGES;
   ```
   netstat -an | grep 3306
   ```
-
-  <img src="assets/1594531323023.png" alt="1594531323023" style="zoom:67%;" />
+  ![1594531323023](assets/1594531323023.png)
   
 - 单独开放3306端口；
 
@@ -120,7 +119,7 @@ FLUSH PRIVILEGES;
   firewall-cmd --zone=public --query-port=3306/tcp // 查看
   ```
 
-  <img src="assets/1594531485719.png" alt="1594531485719" style="zoom:67%;" />
+  ![1594531485719](assets/1594531485719.png)
 
 ## 7、远程连接服务器测试；
 

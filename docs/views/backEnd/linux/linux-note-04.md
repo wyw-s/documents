@@ -22,7 +22,7 @@ title: nodejs的安装
   命令：wget https://nodejs.org/dist/v12.18.2/node-v12.18.2-linux-x64.tar.xz
   ```
 
-  <img src="assets/1594553652045.png" alt="1594553652045" style="zoom:67%;" />
+  ![1594553652045](assets/1594553652045.png)
 
 ## 2、解压；
 

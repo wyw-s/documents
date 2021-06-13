@@ -273,7 +273,7 @@ class S extends F {
 - 类里面的this指向问题.；
 - **constructor 里面的this指向实例对象, 方法里面的this 指向这个方法的调用者**；
 
-```js
+```javascript
 class Button {
 	constructor () {
 		var btn = document.querySelector('input');
@@ -1436,7 +1436,7 @@ console.log(fb(3));
 - 如果用户名输入合法, 则后面提示信息为:  用户名合法,并且颜色为绿色；
 - 如果用户名输入不合法, 则后面提示信息为:  用户名不符合规范, 并且颜色为红色；
 
-> ```js
+> ```javascript
 > var input = document.querySelector('input');
 > 		var span = document.querySelector('span');
 > 
