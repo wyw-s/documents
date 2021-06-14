@@ -25,7 +25,7 @@ conn.on('ready', () => {
           if (err1) throw err1;
           spinner.succeed('\n上传完成');
           console.info("解压中...")
-          conn.exec('cd /home/local/webview/documents; unzip dist.zip; ls -al; rm -f dist.zip;', (err2, stream2) => {
+          conn.exec('cd /home/local/webview/documents; unzip dist.zip; rm -f dist.zip;', (err2, stream2) => {
             if (err2) throw err2;
             stream2.on('close', () => {
               console.info('解压完成')
