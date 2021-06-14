@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs && npm run pushZip && npm run deploy",
+    "deploy": "node ./bin/deploy.js",
+    "pushZip": "node ./utils/zip.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jszip": "^3.6.0",
+    "ora": "^5.4.1",
+    "ssh2": "^1.1.0",
     "vuepress": "^1.8.2",
     "vuepress-theme-hope": "^1.18.1"
   },
