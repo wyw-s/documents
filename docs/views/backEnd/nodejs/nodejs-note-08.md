@@ -1,7 +1,10 @@
 ---
 title: ora的使用
 time: 2021-06-14
-tag: nodejs
+category: nodejs
+tags: 
+  - nodejs
+  - ora框架
 ---
 
 > 使用Node做开发已经是必备的一项技能，然后有时终端中的一些耗时操作的输出对我们不太友好，希望可以提供一个进度loading使用；

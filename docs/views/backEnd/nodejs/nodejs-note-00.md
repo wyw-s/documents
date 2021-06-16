@@ -1,6 +1,9 @@
 ---
-title: 简介
+title: nodejs简介
+category: nodejs
 autoGroup-1: 基础
+tags:
+  - nodejs
 ---
 
 > Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。
@@ -526,6 +529,65 @@ debug>
 ### 远程调试：
 
 > V8 提供的调试功能是基于 TCP 协议的，因此 Node.js 可以轻松地实现远程调试。在命令行下使用以下两个语句之一可以打开调试服务器：  
+
+```javascript
+// node --inspect[=port] script.js
+// node --inspect-brk[=port] script.js
+
+// module.js
+const a = 1;
+const b = 2;
+debugger;
+function fn(x) {
+  console.log(x, a + b);
+};
+fn('计算和值')
+
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node --inspect ./module.js
+Debugger listening on ws://127.0.0.1:9229/9d655deb-9123-4054-8515-a7c63abbc09f
+For help, see: https://nodejs.org/en/docs/inspector
+计算和值 3
+```
+
+node --inspect命令选项可以启动调试服务器，默认情况下调试端口是 9229，也可以使用 --inspect=1234 指定调试端口为 1234。使用 --inspect选项运行脚本时，**脚本会正常执行，但不会暂停**，在执行过程中调试客户端可以连接到调试服务器。如果要求脚本暂停执行等待客户端连接，则应该使用 --inspect-brk 选项。这时调试服务器在启动后会立刻暂停执行脚本，等待调试客户端连接。  
+
+```shell
+# 使用 --inspect-brk 浏览器打开 127.0.0.1:9229/dab0653a-b13f-48fa-a178-d3ed2939f04b
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node --inspect-brk ./module.js
+Debugger listening on ws://127.0.0.1:9229/dab0653a-b13f-48fa-a178-d3ed2939f04b
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+```
+
+当调试服务器启动以后，可以用命令行调试工具作为调试客户端连接，例如：  
+
+```shell
+# 在一个终端中
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node --inspect-brk ./module.js
+Debugger listening on ws://127.0.0.1:9229/dab0653a-b13f-48fa-a178-d3ed2939f04b
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+
+# 在另一个终端中
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node debug 127.0.0.1:9229
+(node:12756) [DEP0068] DeprecationWarning: `node debug` is deprecated. Please use `node inspect` instead.
+break in module.js:7
+  5   console.log(x, a + b);
+  6 };
+> 7 fn('计算和值')
+debug> n
+break in module.js:7
+  5   console.log(x, a + b);
+  6 };
+> 7 fn('计算和值')
+debug> n
+```
+
+
 
 ## ES6；
 

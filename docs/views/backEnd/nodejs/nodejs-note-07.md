@@ -1,5 +1,9 @@
 ---
 title: json-serve
+category: nodejs
+tags: 
+  - nodejs
+  - nodejs应用
 ---
 
 ## `JSON Server`;
