@@ -55,7 +55,142 @@ $ node ./argv.js 1991 name=bycoid --v "Carbo Kuo"
 
 process.stdout是标准输出流，通常我们使用的 console.log() 向标准输出打印字符，而 process.stdout.write() 函数提供了更底层的接口  
 
+```javascript
+process.stdout.write('我执行了') // 我执行了
+```
+
 ### process.stdin  
 
 process.stdin是标准输入流，初始时它是被暂停的，要想从标准输入读取数据，你必须恢复流，并手动编写流的事件响应函数。  
+
+```javascript
+// module.js
+process.stdin.resume();
+process.stdin.on('data', function(data) {
+  process.stdout.write('read from console: ' + data.toString());
+});
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module.js 
+我执行了
+read from console: 我执行了
+```
+
+**例：**process.stdout和process.stdin实现控制台登录
+
+```javascript
+let users={
+	"admin":"123",
+	"user1":"321",
+	"user2":"213"
+};
+let username="";
+process.stdout.write("请输入用户名:");
+process.stdin.on('data',(input)=>{
+	input=input.toString().trim();
+	if(!username){
+		if(Object.keys(users).indexOf(input)===-1){
+			process.stdout.write('用户名不存在'+'\n');
+			process.stdout.write("请输入用户名:");
+			username="";
+		} else {
+			process.stdout.write("请输入密码:");
+			username=input;
+		}
+	} else{
+    // 输入密码
+		if(input===users[username]){
+			console.log("登陆成功");
+		} else{
+			process.stdout.write("请输入密码"+"\n");
+		}
+	}
+});
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module.js
+请输入用户名:er
+用户名不存在
+请输入用户名:admin
+请输入密码:er
+请输入密码
+123
+登陆成功
+```
+
+原文链接：https://blog.csdn.net/weixin_36339245/article/details/81126960
+
+### process.nextTick()  
+
+process.nextTick(callback)的功能是为事件循环设置一项任务， Node.js 会在下次事件循环调响应时调用 callback。  
+
+我们知道，Node.js 适合 I/O 密集型的应用，而不是计算密集型的应用，因为一个 Node.js 进程只有一个线程，因此在任何时刻都只有一个事件在执行。如果这个事件占用大量的 CPU 时间，执行事件循环中的下一个事件就需要等待很久，因此 Node.js 的一个编程原则就是尽量缩短每个事件的执行时间。 process.nextTick() 提供了一个这样的工具，可以把复杂的工作拆散，变成一个个较小的事件。  
+
+```javascript
+function doSomething(args, callback) {
+	somethingComplicated(args);
+	callback();
+}
+
+doSomething(function onEnd() {
+	compute();
+});
+```
+
+> 我们假设 compute() 和 somethingComplicated() 是两个较为耗时的函数，以上的程序在调用 doSomething() 时会先执行 somethingComplicated()，然后立即调用回调函数，在 onEnd() 中又会执行 compute()。下面用 process.nextTick() 改写上面的程序：  
+
+```javascript
+function doSomething(args, callback) {
+	somethingComplicated(args);
+	process.nextTick(callback);
+}
+doSomething(function onEnd() {
+	compute();
+});
+```
+
+> 改写后的程序会把上面耗时的操作拆分为两个事件，减少每个事件的执行时间，提高事件响应速度。  
+
+::: warning
+
+不要使用 setTimeout(fn,0)代替 process.nextTick(callback)，前者比后者效率要低得多  
+
+:::
+
+## console
+
+> console 用于提供控制台标准输出，它是由 Internet Explorer 的 JScript 引擎提供的调试工具，后来逐渐成为浏览器的事实标准。 Node.js 沿用了这个标准，提供与习惯行为一致的console 对象，用于向标准输出流（stdout）或标准错误流（stderr）输出字符  
+
+### console.log() 
+
+> 向标准输出流打印字符并以换行符结束。  
+
+```javascript
+console.log('Hello world');
+// Hello world
+```
+
+### console.error()
+
+> 与 console.log() 用法相同，只是向标准错误流输出。  
+
+### console.trace()
+
+> 向标准错误流输出当前的调用栈  
+
+```javascript
+// console.trace('Hello world');
+Trace: Hello world
+    at Object.<anonymous> (C:\Users\ASUS\Desktop\test\module.js:1:9)
+    at Module._compile (internal/modules/cjs/loader.js:999:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)
+    at internal/main/run_main_module.js:17:47
+```
 

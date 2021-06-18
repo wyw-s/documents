@@ -354,6 +354,28 @@ obj1.sayHello();
 
 :::
 
+::: tip
+
+一个js文件就是一个模块，然而一些变量是有本地和全局之分的：
+
+本地：可以理解为每个js文件所拥有的变量，是当前模块暴露出来的变量，其中本地变量包含：`exports` `module` `require` `this` `__dirname` `__filename` ；**所以你会发现打印global是找不到这些变量的**
+
+全局：全局变量可以理解为浏览器端的`window`，在nodejs中是：`global`  
+
+**想要查看这些变量可以使用远程调试来查看；**
+
+```javascript
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node --inspect-brk module.js
+Debugger listening on ws://127.0.0.1:9229/e96bbb47-3ece-45a2-97e2-2376f23825f4
+For help, see: https://nodejs.org/en/docs/inspector
+Debugger attached.
+```
+
+![image-20210617080445839](assets/image-20210617080445839.png)
+
+:::
+
 ### 创建包；
 
 > 包是在模块基础上更深一步的抽象。它将某个独立的功能封装起来，用于发布、更新、依赖管理和版本控制。 Node.js 根据 CommonJS 规范实现了包机制，开发了 npm来解决包的发布和获取需求。Node.js 的包是一个目录，其中包含一个 JSON 格式的包说明文件 package.json。
