@@ -70,7 +70,8 @@ module.exports = config({
     },
     copyright: true,
     git: {
-      timezone: 'Asia/Shanghai'
+      timezone: 'Asia/Shanghai',
+      contributor: false
     },
     mdEnhance: {
       enableAll: true,
