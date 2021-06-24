@@ -2,7 +2,7 @@
 blog: true
 home: true
 bgImage: '/hero.jpg'
-heroFullScreen: true
+heroFullScreen: false
 project:
 - name: 前端相关
   type: book
@@ -24,3 +24,10 @@ project:
   type: book
   link: /views/other/
 ---
+
+## 待完善
+
+- [ ] co模块源码分析
+- [ ] async函数实现原理
+- [ ] Generator函数的实现原理
+

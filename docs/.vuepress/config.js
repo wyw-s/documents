@@ -14,17 +14,6 @@ module.exports = config({
     repo: false,
     breadcrumb: false,
     darkmode: 'auto-switch',
-    mdEnhance: {
-      align: true,
-      demo: true,
-      flowchart: true,
-      footnote: true,
-      presentation: true,
-      sub: true,
-      sup: true,
-      tex: true,
-    },
-
     nav: [
       {text: '介绍', link: '/guide/'},
       {
@@ -63,7 +52,6 @@ module.exports = config({
       {text: '问题', link: '/views/issues/'},
       {text: '其它', link: '/views/other/'}
     ],
-
     footer: {
       display: true,
       content: ''
@@ -73,22 +61,6 @@ module.exports = config({
       timezone: 'Asia/Shanghai',
       contributor: false
     },
-    mdEnhance: {
-      enableAll: true,
-      presentation: {
-        plugins: [
-          'highlight',
-          'math',
-          'search',
-          'notes',
-          'zoom',
-          'anything',
-          'audio',
-          'chalkboard'
-        ]
-      }
-    },
-
     pwa: {
       favicon: '/favicon.ico',
       cachePic: true,

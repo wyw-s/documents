@@ -78,7 +78,7 @@ $ node module.js
 read from console: 我执行了
 ```
 
-**例：**process.stdout和process.stdin实现控制台登录
+**例：process.stdout和process.stdin实现控制台登录**
 
 ```javascript
 let users={
@@ -122,7 +122,7 @@ $ node module.js
 登陆成功
 ```
 
-原文链接：https://blog.csdn.net/weixin_36339245/article/details/81126960
+原文链接：[传送门](https://blog.csdn.net/weixin_36339245/article/details/81126960)
 
 ### process.nextTick()  
 

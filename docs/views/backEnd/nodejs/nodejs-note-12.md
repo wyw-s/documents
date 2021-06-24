@@ -1,0 +1,260 @@
+---
+title: 文件系统 fs
+time: 2021-06-23 8:13:35
+autoGroup-2: nodejs核心模块
+category: 后端
+tags: 
+  - nodejs
+---
+
+> fs 模块是文件操作的封装，它提供了文件的读取、写入、更名、删除、遍历目录、链接等 POSIX 文件系统操作。与其他模块不同的是， fs 模块中所有的操作都提供了异步的和同步的两个版本，例如读取文件内容的函数有异步的 fs.readFile() 和同步的
+> fs.readFileSync()。  
+
+导入文件系统模块(fs)语法；
+
+```javascript
+const fs = require("fs")
+```
+
+## `fs.readFile  `
+
+> 以异步的方式读取一个文件。
+
+**语法：**
+
+```javascript
+fs.readFile(path[, options], callback)
+```
+
+**参数：**
+
+- path：文件名或文件描述符；
+- options：`object | string`，如果 `options` 是字符串，则它指定编码。
+  - `encoding`：文件的字符编码  ，默认值: `null`
+  - `flag` 默认值:`r`。
+    - `'r'`: 打开文件进行读取。 如果文件不存在，则会发生异常。
+    - `'r+'`: 打开文件进行读写。 如果文件不存在，则会发生异常。
+    - `'rs+'`: 以同步模式打开文件进行读写。 指示操作系统绕过本地文件系统缓存。
+    - 了解更多请查看官方文档，[传送门](http://nodejs.cn/api/fs.html#fs_file_system_flags)
+  - `signal` 允许中止正在进行的读取文件
+- callback：读取成功或失败时的回调函数，有两个参数；
+  - err：错误对象；
+  - data：成功时的文件内容；
+
+::: tip
+
+- callback 是回调函数，用于接收文件的内容。如果不指定 encoding，则 callback 就是第二个参数 。
+
+- 如果指定了 encoding， data 是一个解析后的字符串，否则 data 将会是以 Buffer 形式表示的二进制数据。  
+
+:::
+
+### **读取文件内容，但不指定编码**
+
+```javascript
+// helloWorld.js
+const str = 'Hello world'
+```
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('./helloWorld.js', (err, data) => {
+  if (err) {
+    console.error(err);
+    } else {
+    console.log(data);
+    }
+})
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module.js 
+<Buffer 63 6f 6e 73 74 20 73 74 72 20 3d 20 27 48 65 6c 6c 6f 20 77 6f 72 6c 64 27>
+```
+
+> 程序以二进制的模式读取了文件的内容， data 的值是 Buffer 对象 ；
+
+### **读取文件内容，指定编码**
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('./helloWorld.js', 'utf-8', (err, data) => {
+  if (err) {
+    console.error(err);
+    } else {
+    console.log(data);
+    }
+})
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module
+const str = 'Hello world'
+```
+
+### **当读取文件出现错误时**  
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('./helloWorld2.js', 'utf-8', (err, data) => {
+  if (err) {
+    console.error(err);
+    } else {
+    console.log(data);
+    }
+})
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module
+[Error: ENOENT: no such file or directory, open 'C:\Users\ASUS\Desktop\test\helloWorld2.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\ASUS\\Desktop\\test\\helloWorld2.js'
+}
+```
+
+::: tip
+
+Node.js 的异步编程接口习惯是以函数的最后一个参数为回调函数。回调函数的实际参数中第一个是 err，其余的参数是其他返回的内容。如果没有发生错误， err 的值会是 null 或undefined。如果有错误发生， err 通常是 Error 对象的实例。  
+
+:::
+
+## `fs.readFileSync`
+
+> 是 fs.readFile 同步的版本 ，以同步的方式读取一个文件。
+
+**语法：**
+
+```javascript
+fs.readFileSync(filename, [encoding])
+```
+
+**参数：**
+
+- filename：文件名或文件描述符；
+- encoding：文件的字符编码；
+
+**读取文件**
+
+```javascript
+const fs = require('fs');
+const content = fs.readFileSync('./helloWorld.js', 'utf-8')
+
+console.log(content) // const str = 'Hello world'
+```
+
+> 读取到的文件内容会以函数返回值的形式返回。如果有错误发生， fs 将会抛出异常，需要使用 try 和 catch 捕捉并处理异常。  
+
+## `fs.open`
+
+> 该方法用于打开文件，以便fs.read()读取。
+
+**语法**
+
+```javascript
+fs.open(path, flags, [mode], [callback(err, fd)])
+```
+
+**参数**
+
+- path：文件的路径  
+- flags：
+  - r ：以读取模式打开文件。
+  - r+ ：以读写模式打开文件。
+  -  w ：以写入模式打开文件，如果文件不存在则创建。
+  - w+ ：以读写模式打开文件，如果文件不存在则创建。
+  - a ：以追加模式打开文件，如果文件不存在则创建。
+  - a+ ：以读取追加模式打开文件，如果文件不存在则创建。  
+- mode：创建文件时给文件指定权限 默认：0666
+- callback：
+  - err：错误对象；
+  - fd： 文件描述符
+
+::: tip
+
+1. 文件权限指的是 POSIX 操作系统中对文件读取和访问权限的规范，通常用一个八进制数来表示。例如 0754 表
+   示文件所有者的权限是 7 （读、写、执行），同组的用户权限是 5 （读、执行），其他用户的权限是 4 （读），
+   写成字符表示就是 -rwxr-xr--。
+2. 文件描述符是一个非负整数，表示操作系统内核为当前进程所维护的打开文件的记录表索引。  
+
+:::
+
+## **fs.read**
+
+> 该功能类似fs.readFile，但提供**更底层的操作**，实际应用中多用fs.readFile。
+>
+> 该功能是从指定的文件描述符 fd 中读取数据并写入 buffer 指向的缓冲区对象 。
+
+**语法**
+
+```javascript
+fs.read(fd, buffer, offset, length, position, [callback(err, bytesRead,buffer)])
+```
+
+**参数**
+
+- fd 文件描述符，必须接收fs.open()方法中的回调函数返回的第二个参数。
+- buffer 是存放将被写入的数据，buffer尺寸的大小设置最好是8的倍数，效率较高。
+- offset  **buffer写入的偏移量**。
+- length (integer)指定 写入文件中数据的**字节数**。
+- position (integer) 指定 在写入文件内容的**起始位置**。
+- callback 回调函数，参数如下
+  - err 用于抛出异常
+  - bytesWritten从文件中读取内容的**实际字节数**。
+  - buffer 被读取的缓存区对象。
+
+**使用**
+
+```javascript
+const fs = require('fs');
+
+fs.open('./helloWorld.js', 'r', (err, fd) => {
+  console.log('open file success.');
+    var buffer = Buffer.alloc(255);
+    // 读取文件
+    fs.read(fd, buffer, 0, 255, 0, function(err, bytesRead, buffer) {
+        if (err) {
+            throw err;
+        }
+        // 打印出buffer中存入的数据
+        console.log(bytesRead, buffer.slice(0, bytesRead).toString());
+        // 关闭文件
+        fs.close(fd, (data) => {
+          console.log(data);
+        });
+    });
+})
+```
+
+```shell
+ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module
+open file success.
+25 const str = 'Hello world'
+null
+```
+
+::: tip
+
+一般来说，除非必要，否则不要使用这种方式读取文件，因为它要求你手动管理缓冲区和文件指针，尤其是在你不知道文件大小的时候，这将会是一件很麻烦的事情。  
+
+:::
+
+::: warning
+
+`new Buffer(number)`已经被弃用，请使用``Buffer.alloc(255)`代替；
+
+```shell
+DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+```
+
+:::
+

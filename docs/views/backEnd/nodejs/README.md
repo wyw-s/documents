@@ -4,6 +4,14 @@ title: 介绍
 
 > Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。
 
+## 目录
+
+- [事件驱动 events](./nodejs-note-11.md)
+- [文件系统 fs](./nodejs-note-12.md)
+- [HTTP 服务器与客户端](./nodejs-note-13.md)
+
+
+
 ## **javascript与nodejs**;
 
 > Node.js 是一个让 JavaScript 运行在浏览器之外的平台。它实现了诸如文件系统、模块、包、操作系统 API、网络通信等 Core JavaScript 没有或者不完善的功能。 
@@ -58,3 +66,4 @@ title: 介绍
 ## 参考资料  
 
 nodejs 开发指南
+
