@@ -1,5 +1,9 @@
 ---
 title: node版本管理工具-nvm
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 ## node版本管理工具-NVM

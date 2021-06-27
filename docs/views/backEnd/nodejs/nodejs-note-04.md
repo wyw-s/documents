@@ -1,5 +1,9 @@
 ---
 title: pm2的使用
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 # pm2的简单使用

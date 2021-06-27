@@ -1,5 +1,9 @@
 ---
 title: 后台持续运行node
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 #### 1、后台持续运行`nodejs`

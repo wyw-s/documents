@@ -1,5 +1,9 @@
 ---
 title: node实现自动化部署
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 ## node实现自动化部署；

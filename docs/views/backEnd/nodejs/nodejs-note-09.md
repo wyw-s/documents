@@ -1,8 +1,8 @@
 ---
 title: 全局对象
 time: 2021-06-15 07:25:35
-autoGroup-2: nodejs核心模块
-category: 后端
+autoGroup-3: nodejs核心模块
+category: nodejs
 tags: 
   - nodejs
 ---

@@ -1,5 +1,9 @@
 ---
 title: 搭建本地服务
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 ## 快速搭建本地服务

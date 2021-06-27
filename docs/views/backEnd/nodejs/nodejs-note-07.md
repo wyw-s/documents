@@ -1,9 +1,9 @@
 ---
 title: json-serve
 category: nodejs
-tags: 
+autoGroup-7: nodejs扩展
+tags:
   - nodejs
-  - nodejs应用
 ---
 
 ## `JSON Server`;

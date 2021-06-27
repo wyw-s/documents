@@ -1,8 +1,8 @@
 ---
 title: 事件驱动 events
 time: 2021-06-19 00:19:35
-autoGroup-2: nodejs核心模块
-category: 后端
+autoGroup-3: nodejs核心模块
+category: nodejs
 tags: 
   - nodejs
 ---

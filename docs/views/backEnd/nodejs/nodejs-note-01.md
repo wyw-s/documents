@@ -1,5 +1,9 @@
 ---
 title: 命令行输出目录树
+category: nodejs
+autoGroup-7: nodejs扩展
+tags:
+  - nodejs
 ---
 
 ## 如何使用命令行输出目录树

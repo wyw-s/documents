@@ -6,64 +6,37 @@ title: 介绍
 
 ## 目录
 
-- [事件驱动 events](./nodejs-note-11.md)
-- [文件系统 fs](./nodejs-note-12.md)
-- [HTTP 服务器与客户端](./nodejs-note-13.md)
-
-
-
-## **javascript与nodejs**;
-
-> Node.js 是一个让 JavaScript 运行在浏览器之外的平台。它实现了诸如文件系统、模块、包、操作系统 API、网络通信等 Core JavaScript 没有或者不完善的功能。 
-
-1. javascript包括；
-   - ECMAScript  ;
-   - 文档对象模型（DOM）;
-   - 浏览器对象模型（BOM）;
-2. Node.js  包括；(只支持 JS语法)
-   - ECMAScript
-   - 不包含 DOM、 BOM ;
-   - node模块：封装好的js代码；
-   - 第三方模块：例 npm安装的
-3. 优点：
-   - 采用v8引擎，V8 号称是目前世界上最快JavaScript 引擎  
-   - Node.js 不运行在浏览器中，所以也就不存在 JavaScript 的浏览器兼容性问题，JavaScript 语言的所有特性 ；
-   - 遵循了CommonJS规范  ；
-   - 采用异步式 I/O 与事件驱动的架构设计；
-   - 包含libev 和 libeio 库  
-4. 缺点；异步事件模式，因为它不符合开发者的常规线性思路，往往需要把一个完整的逻辑拆分为一个个事件，增加了开发和调试难度  
-
-## CommonJS 规范
-
->  正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，随着各种浏览器外的 JavaScript 实现逐步兴起如今为了统一 JavaScript 在浏览器之外的实现， CommonJS 诞生了。 CommonJS 试图拟定一套完整的 JavaScript 规范，以弥补普通应用程序所需的 API，譬如文件系统访问、命令行、模块管理、函数库集成等功能。 CommonJS 制定者希望众多服务端 JavaScript 实现遵循CommonJS 规范，以便相互兼容和代码复用。 Node.js 的部份实现遵循了CommonJS规范，但由于两者还都处于诞生之初的快速变化期，也会有不一致的地方。  
-
-## nodejs开发场景；
-
-> 正如 JavaScript 为客户端而生， Node.js 为网络而生。 Node.js 能做的远不止开发一个网站那么简单，使用 Node.js，你可以轻松地开发：
-
-1. 
-   具有复杂逻辑的网站；
-2. 基于社交网络的大规模 Web 应用；
-3. Web Socket 服务器；
-4. TCP/UDP 套接字应用程序；
-5. 命令行工具；
-6. 交互式终端程序；
-7. 带有图形用户界面的本地应用程序；
-8. 单元测试工具；
-9. 客户端 JavaScript 编译器。
-10. Node.js 内建了 HTTP 服务器支持，也就是说你可以轻而易举地实现一个网站和服务器的组合。  
-
-> 而当你使用 Node.js 时，不用额外搭建一个 HTTP 服务器，因为 Node.js 本身就内建了一个。这个服务器不仅可以用来调试代码，而且它本身就可以部署到产品环境，它的性能足以满足要求。  
-
-## 异步式 I/O 与事件驱动  
-
-> Node.js 最大的特点就是采用异步式 I/O 与事件驱动的架构设计。对于高并发的解决方案，传统的架构是多线程模型，也就是为每个业务逻辑提供一个系统线程，通过系统线程切换来弥补同步式 I/O 调用时的时间开销。 Node.js 使用的是单线程模型，对于所有 I/O 都采用异步式的请求方式，避免了频繁的上下文切换。 Node.js 在执行的过程中会维护一个事件队列，程序在执行时进入事件循环等待下一个事件到来，每个异步式 I/O 请求完成后会被推送到事件队列，等待程序进程进行处理。  
->
-> Node.js 的异步机制是基于事件的，所有的磁盘 I/O、网络通信、数据库查询都以非阻塞的方式请求，返回的结果由事件循环来处理 ;
->
-> Node.js 进程在同一时刻只会处理一个事件，完成后立即进入事件循环检查并处理后面的事件。这样做的好处是，CPU 和内存在同一时间集中处理一件事，同时尽可能让耗时的 I/O 操作并行执行。对于低速连接攻击， Node.js 只是在事件队列中增加请求，等待操作系统的回应，因而不会有任何多线程开销，很大程度上可以提高 Web 应用的健壮性，防止恶意攻击  
+- nodejs简介
+  - [nodejs简介](./nodejs-note-00.md)
+  - [Node.js 是什么](./nodejs-note-14.md)
+  - [Node.js 能做什么](./nodejs-note-15.md)
+  - [异步式 I/O 与事件驱动](./nodejs-note-16.md)
+  - [Node.js 的性能](./nodejs-note-17.md)
+  - [CommonJS规范](./nodejs-note-18.md)
+- Node.js快速入门
+  - [使用Nodejs ](./nodejs-note-19.md)
+  - [异步式 I/O 与事件式编程](./nodejs-note-20.md)
+  - [ 模块和包](./nodejs-note-21.md)
+  - [调试](./nodejs-note-22.md)
+- nodejs核心模块
+  - [全局对象](./nodejs-note-09.md)
+  - [常用工具util](./nodejs-note-10.md)
+  - [事件驱动 events](./nodejs-note-11.md)
+  - [文件系统 fs](./nodejs-note-12.md)
+  - [HTTP 服务器与客户端](./nodejs-note-13.md)
+- nodejs扩展
+  - [命令行输出目录树](./nodejs-note-01.md)
+  - [node版本管理工具-nvm](./nodejs-note-02.md)
+  - [node实现自动化部署](./nodejs-note-03.md)
+  - [pm2的使用](./nodejs-note-04.md)
+  - [后台持续运行node](./nodejs-note-05.md)
+  - [搭建本地服务](./nodejs-note-06.md)
+  - [json-serve](./nodejs-note-07.md)
+  - [ora的使用](./nodejs-note-08.md)
 
 ## 参考资料  
 
 nodejs 开发指南
+
+
 
