@@ -24,6 +24,11 @@ title: 介绍
   - [事件驱动 events](./nodejs-note-11.md)
   - [文件系统 fs](./nodejs-note-12.md)
   - [HTTP 服务器与客户端](./nodejs-note-13.md)
+- 进阶
+  - [模块加载机制](./nodejs-note-23.md)
+  - [控制流](./nodejs-note-24.md)
+  - Node.js 应用部署
+  - [Node.js 不是银弹](./nodejs-note-25.md)
 - nodejs扩展
   - [命令行输出目录树](./nodejs-note-01.md)
   - [node版本管理工具-nvm](./nodejs-note-02.md)
