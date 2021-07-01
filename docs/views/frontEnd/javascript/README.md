@@ -6,6 +6,8 @@ title: 介绍
 
 ## 目录
 
+- 基础
+  - [创建和访问对象](./javascript-note-53.md)
 - [对象拷贝](./javascript-note-02.md)
 - [函数防抖](./javascript-note-03.md)
 - [Generator函数及其异步应用](./javascript-note-46.md)
@@ -13,6 +15,13 @@ title: 介绍
 - [co模块源码分析](./javascript-note-48.md)
 - [深入理解async/await](./javascript-note-49.md)
 - [async函数实现原理](./javascript-note-50.md)
+- 函数应用
+  - [闭包](./javascript-note-35.md)
+  - 递归
+  - 回调
+  - 柯里化
+- 进阶
+  - [promise A+规范](./javascript-note-51.md)
 
 ## 参考资料
 
