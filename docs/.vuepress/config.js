@@ -52,6 +52,11 @@ module.exports = config({
       {text: '问题', link: '/views/issues/'},
       {text: '其它', link: '/views/other/'}
     ],
+    comment: {
+      type: "waline",
+      visitor: true,
+      serverURL: "https://my-document-e7l8i27lx-wyw-s.vercel.app",
+    },
     footer: {
       display: true,
       content: ''
