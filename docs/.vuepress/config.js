@@ -2,14 +2,14 @@ const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
   title: '棉花糖',
-  description: '不要活得太累，不要忙的太疲惫；想吃了不要嫌贵，想穿了不要说浪费',
+  description: '它在我的机器上可以很好的运行！ - 棉花糖',
   dest: './dist',
   locales: {
     "/": { lang: "zh-CN" },
   },
   themeConfig: {
     logo: '/logo.jpeg',
-    hostname: 'http://47.114.139.71:8095',
+    hostname: 'http://wangyawei.top',
     author: '棉花糖',
     repo: false,
     breadcrumb: false,
@@ -59,9 +59,9 @@ module.exports = config({
     },
     footer: {
       display: true,
-      content: ''
+      copyrightText: 'MIT LICENSE',
+      content: '<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20028697号-2</a>'
     },
-    copyright: true,
     git: {
       timezone: 'Asia/Shanghai',
       contributor: false
