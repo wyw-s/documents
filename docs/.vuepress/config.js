@@ -2,13 +2,13 @@ const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
   title: '棉花糖',
-  description: '它在我的机器上可以很好的运行！ - 棉花糖',
+  description: '它在我的机器上可以很好的运行',
   dest: './dist',
   locales: {
     "/": { lang: "zh-CN" },
   },
   themeConfig: {
-    logo: '/logo.jpeg',
+    logo: '/logo.jpg',
     hostname: 'http://wangyawei.top',
     author: '棉花糖',
     repo: false,
