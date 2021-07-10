@@ -1,5 +1,6 @@
 ---
 title: Symbol
+category: javascript
 autoGroup-2: es6
 ---
 
@@ -118,4 +119,3 @@ consloe.log(object[symbols[0]]); // "123"
    console.log(a.concat(n, 3)); // ['a', 'b', [1, 2], 3]
    ```
 
-   

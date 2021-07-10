@@ -1,5 +1,6 @@
 ---
 title: 立即执行函数(IIFE)
+category: javascript
 autoGroup-3: 函数应用；
 tag: javascript
 ---

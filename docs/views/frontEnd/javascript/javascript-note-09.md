@@ -1,8 +1,8 @@
 ---
-title： Promise介绍
+title: 什么是Promise
+category: javascript
+autoGroup-5: 进阶
 ---
-
-## 什么是`Promise`;
 
 > 概念：Promise 代表一个异步操作；
 

@@ -1,5 +1,5 @@
 ---
-title: 定时器；
+title: 定时器
 category: javascript
 time: 2021-06-16 23:34:00
 autoGroup-4: 进阶

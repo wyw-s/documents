@@ -1,5 +1,9 @@
 ---
-title: ES6学习笔记
+title: ES6
+category: es6
+autoGroup-2: es6
+tags:
+  - javascript
 ---
 > `ES6`代表着 JS 这门语言最新的标准。目前以`Chrome`为首的现代浏览器已经基本实现了ES6的大多数新特性，即使在不支持ES6的浏览器上，开发者也可以通过转译工具如`Babel`将ES6代码转译为ES5代码来实现兼容。
 

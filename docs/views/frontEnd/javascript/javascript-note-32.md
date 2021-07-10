@@ -1,5 +1,6 @@
 ---
 title: this对象
+category: javascript
 ---
 
 > 不管是严格模式还是非严格模式，全局环境中的this指向全局对象；

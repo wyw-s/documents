@@ -1,5 +1,5 @@
 ---
-title: javascript单线程；
+title: javascript单线程
 category: javascript
 time: 2021-06-15 23:34:00
 autoGroup-4: 进阶

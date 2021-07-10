@@ -1,5 +1,7 @@
 ---
 title: 函数继承
+category: javascript
+autoGroup-5: 进阶
 ---
 
 ## 通过原型实现继承

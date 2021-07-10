@@ -1,8 +1,8 @@
 ---
 title: jsonp跨域的实现原理
+category: javascript
+autoGroup-5: 进阶
 ---
-
-## 实现原理；
 
 >  **利用javascript里边的src属性的开放原则实现跨域:** 
 

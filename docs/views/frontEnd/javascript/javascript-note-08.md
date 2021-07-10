@@ -1,8 +1,8 @@
 ---
 title: new的实现原理
+category: javascript
+autoGroup-5: 进阶
 ---
-
-## `new`的实现原理；
 
 ```js
 <script>

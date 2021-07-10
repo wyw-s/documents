@@ -1,5 +1,6 @@
 ---
 title: 声明提升
+category: javascript
 ---
 
 > 简单来说就是，在var声明的变量之前使用这个变量不会导致报错，而是会打印undefined

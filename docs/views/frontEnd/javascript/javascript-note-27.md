@@ -1,5 +1,6 @@
 ---
 title: 变量声明
+category: javascript
 autoGroup-2: es6
 ---
 

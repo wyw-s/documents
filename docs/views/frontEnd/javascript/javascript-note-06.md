@@ -1,8 +1,8 @@
 ---
 title: Async 函数
+category: javascript
+autoGroup-5: 进阶
 ---
-
-
 
 >  ES2017 标准引入了 async 函数，使得异步操作变得更加方便。 
 >
@@ -11,7 +11,6 @@ title: Async 函数
 ## 基本用法；
 
 >   使用 Async-await 来简化获取 Promise 的结果  ;
->
 
 ```js
   <script>

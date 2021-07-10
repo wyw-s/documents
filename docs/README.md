@@ -25,9 +25,4 @@ project:
   link: /views/other/
 ---
 
-## 待完善
-
-- [ ] co模块源码分析
-- [ ] async函数实现原理
-- [ ] Generator函数的实现原理
 

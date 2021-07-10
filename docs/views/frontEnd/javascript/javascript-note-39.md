@@ -1,5 +1,5 @@
 ---
-title: 同步与异步；
+title: 同步与异步
 category: javascript
 time: 2021-06-14 23:34:00
 autoGroup-4: 进阶

@@ -1,5 +1,6 @@
 ---
 title: 类型转换
+category: javascript
 ---
 
 ## 转字符串

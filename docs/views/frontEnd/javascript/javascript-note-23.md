@@ -1,5 +1,6 @@
 ---
 title: 模板字符串
+category: javascript
 autoGroup-2: es6
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: 常用函数
+category: javascript
 ---
 
 ## 缓存函数

@@ -1,5 +1,6 @@
 ---
 title: 高阶函数
+category: javascript
 ---
 
 > 1、高阶函数是对其他函数进行操作的函数，可以将它们作为参数或返回它们；
@@ -120,4 +121,3 @@ console.log(arr1, arr2, arr3);
    foo('hello', callback)
    ```
 
-   

@@ -1,9 +1,9 @@
 ---
 title: javascript基础
-category: 前端
+category: javascript
+autoGroup-1: 基础
 tags:
-  - js基础
-star: true
+  - javascript
 ---
 
 ### 输入和输出：
@@ -483,7 +483,6 @@ switch (expression) {
     - 需要传入实参：window;
     - 定义形参接收window;
     - 形参可以该名字，全局变量window不能改名字；
-  
 ```js
   // 定义之后，立刻调用，输出10
   (function(){  

@@ -1,7 +1,7 @@
 ---
-title: 闭包；
-autoGroup-3: 函数应用
+title: 闭包
 category: javascript
+autoGroup-3: 函数应用
 tags:
   - javascript
 ---

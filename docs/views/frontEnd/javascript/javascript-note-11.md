@@ -1,5 +1,7 @@
 ---
 title: javascript内存管理
+category: javascript
+autoGroup-5: 进阶
 ---
 
 > 内存管理可以简单理解为内存空间，内存空间可以分为：栈内存、堆内存

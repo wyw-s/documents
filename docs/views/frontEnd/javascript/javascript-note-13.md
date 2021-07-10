@@ -1,5 +1,7 @@
 ---
-title: 提高代码可靠性；
+title: 提高代码可靠性
+category: javascript
+autoGroup-5: 进阶
 ---
 
 > 作为一名程序员，我们需要写出可靠的代码，来保障应用程序的安稳运行，所以提高自己的代码可靠性就变得有为重要；
@@ -100,8 +102,8 @@ console.log(product); // [ 5, 10, 15, 20 ]
    arr.splice(1,3); // 非纯函数，返回[2,3,4]，原数组改变
    arr.pop(); // 非纯函数，返回6，原数组改变
    ```
-  ------
-  
+------
+
   ```javascript
   // 例2 
   // 不纯的函数
@@ -124,7 +126,7 @@ console.log(product); // [ 5, 10, 15, 20 ]
   const log = console.log.bind(console);
   foo(d,log,something);
   ```
-  
+
 2. 保护函数无副作用的特性；
 
    - 函数入口使用参数运算，而不修改它；
@@ -169,4 +171,3 @@ console.log(product); // [ 5, 10, 15, 20 ]
    console.log(data.count); // 1
    ```
 
-   

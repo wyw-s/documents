@@ -1,5 +1,6 @@
 ---
 title: 原型
+category: javascript
 ---
 
 > 

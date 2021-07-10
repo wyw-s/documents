@@ -1,5 +1,6 @@
 ---
 title: 作用域链延长
+category: javascript
 ---
 
 ## `try-catch`

@@ -1,5 +1,6 @@
 ---
 title: js数据类型
+category: javascript
 ---
 
 > javascript一共有8种数据类型;

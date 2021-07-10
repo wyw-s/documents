@@ -1,5 +1,6 @@
 ---
 title: 类型检测
+category: javascript
 ---
 
 ## `typeof`操作符

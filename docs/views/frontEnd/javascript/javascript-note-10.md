@@ -1,5 +1,10 @@
 ---
 title: 打包及本地预览
+category: javascript
+autoGroup-6: 其他
+tags:
+  - javascript
+  - 其他
 ---
 
 ## 构建打包

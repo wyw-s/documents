@@ -1,5 +1,7 @@
 ---
 title: 对象拷贝
+category: javascript
+autoGroup-5: 进阶
 ---
 
 ## 浅拷贝；

@@ -1,5 +1,7 @@
 ---
 title: javascript高级
+category: javascript
+autoGroup-5: 进阶
 ---
 
 ## JavaScript 的组成
@@ -475,7 +477,6 @@ function Star (uname, age) {
 ## constructor  构造函数
 
 > 记录是哪个构造函数创建出来的 **指回构造函数本身；**
->
 
 原型（__proto__）和构造函数（prototype）原型对象里面都有一个属性constructor属性，constructor 我们称为构造函数，因为它指回构造函数本身。constructor 主要用于记录该对象引用于哪个构造函数，它可以让原型对象重新指向原来的构造函数。一般情况下，对象的方法都在构造函数的原型对象中设置。如果有多个对象的方法，我们可以给原型对象采取对象形式赋值，但是这样就会覆盖构造函数原型对象原来的内容，这样修改后的原型对象constructor  就不再指向当前构造函数了。此时，我们可以在修改后的原型对象中，添加一个constructor 指向原来的构造函数。
 
@@ -1073,7 +1074,6 @@ JS：两种模式[类似于HTML版本]；
 >  function fn () {"use strict"}
 > </script> 
 > ```
->
 
 ##### 严格模式中的变化；
 
@@ -1163,7 +1163,7 @@ JS：两种模式[类似于HTML版本]；
 >    }
 >    //示例2；
 >    console.log(111)
->    
+>                         
 >    for(var i = 0; i < 3; i++) {
 >      setTimeout(function () {
 >        console.log(i)
@@ -1222,9 +1222,9 @@ JS：两种模式[类似于HTML版本]；
 >    {
 >      var foo = 'bar'
 >    }
->    
+>                         
 >    console.log(foo)
->    
+>                         
 >    if (true) {
 >      var a = 123
 >    }

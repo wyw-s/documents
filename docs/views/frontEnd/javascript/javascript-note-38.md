@@ -1,9 +1,6 @@
 ---
-title: 柯里化；
-autoGroup-3: 函数应用
+title: 柯里化
 category: javascript
-tags:
-  - javascript	
-  - 函数应用
+autoGroup-3: 函数应用
 ---
 

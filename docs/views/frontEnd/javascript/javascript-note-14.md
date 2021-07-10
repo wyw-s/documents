@@ -1,5 +1,6 @@
 ---
 title: compose函数和pipe函数
+category: javascript
 ---
 
 ## compose函数
