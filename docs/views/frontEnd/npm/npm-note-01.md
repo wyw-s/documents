@@ -1,5 +1,6 @@
 ---
 title: npm设置下载源
+category: npm
 ---
 
 ## npm设置下载源
