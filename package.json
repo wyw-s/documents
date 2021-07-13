@@ -18,6 +18,7 @@
     "ora": "^5.4.1",
     "ssh2": "^1.1.0",
     "vuepress": "^1.8.2",
+    "vuepress-plugin-md-enhance": "^1.18.5",
     "vuepress-theme-hope": "^1.18.1"
   },
   "dependencies": {
