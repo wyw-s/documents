@@ -6,8 +6,6 @@ tags:
   - nodejs
 ---
 
-## node版本管理工具-NVM
-
 > 概述： nvm是一个nodejs的版本管理工具。我们可以通过它安装和切换不同版本的node.js。 
 
 ### 1、安装`nvm`；
@@ -86,6 +84,12 @@ tags:
   
   ```
 
-  
 
-  
+### 5、卸载nvm
+
+直接在`程序和功能`中找到`NVM for Windows`点击卸载即可；
+
+### 6、注意
+
+首次安装Nodejs请安装全局的即`nvm install 12.22.3 -g` ，不然的话不可以**全局使用**，全局安装的会在`C:\Program Files`文件夹下生成**nodejs软链接**，指向你nvm安装并当前使用的Nodejs版本。
+

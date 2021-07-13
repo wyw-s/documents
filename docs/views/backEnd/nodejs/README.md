@@ -14,6 +14,7 @@ title: 介绍
   - [Node.js 的性能](./nodejs-note-17.md)
   - [CommonJS规范](./nodejs-note-18.md)
 - Node.js快速入门
+  - [安装nodejs](./nodejs-note-26.md)
   - [使用Nodejs ](./nodejs-note-19.md)
   - [异步式 I/O 与事件式编程](./nodejs-note-20.md)
   - [ 模块和包](./nodejs-note-21.md)
