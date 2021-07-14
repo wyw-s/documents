@@ -4,7 +4,7 @@ category: express
 time: 2021-07-12 8:41:23
 ---
 
-> 这里主要介绍下怎么开始一个express项目；请确认你已经安装了nodejs！
+> 这里主要介绍下怎么开始一个express项目；请确认你已经安装了nodejs！**无特殊说明则以下示例代码及后面的文章使用的是`express@4.16.1`，项目结构由express自动生成的，也就是方法2;**
 
 ## 方法1
 
@@ -90,7 +90,6 @@ time: 2021-07-12 8:41:23
    }
    ```
 
-   
 
 ## 方法2
 
@@ -142,13 +141,13 @@ PS C:\Users\wangy\Desktop\express--example\qwer> npm start
 
 `SET DEBUG=qwer:* & npm start`这一步需要在`package.json`文件中设置，然后再执行`npm start`;
 
-:::
-
 ```javascript
-  "scripts": {
+"scripts": {
     "start": "SET DEBUG=qwer:* && node ./bin/www"
-  },
+},
 ```
+
+:::
 
 
 

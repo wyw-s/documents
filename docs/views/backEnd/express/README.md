@@ -12,6 +12,8 @@ category: express
 - [初始化项目](./express-note-03.md)
 - [工程结构](./express-note-04.md)
 - [路由控制](./express-note-05.md)
+- [模板引擎](./express-note-06.md)
+- [片段视图](./express-note-07.md)
 
 ## 参考资料
 
