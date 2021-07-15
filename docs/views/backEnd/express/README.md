@@ -14,6 +14,7 @@ category: express
 - [路由控制](./express-note-05.md)
 - [模板引擎](./express-note-06.md)
 - [片段视图](./express-note-07.md)
+- [视图助手](./express-note-08.md)
 
 ## 参考资料
 
