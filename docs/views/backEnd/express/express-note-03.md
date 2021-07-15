@@ -90,11 +90,6 @@ time: 2021-07-12 8:41:23
    }
    ```
 
-<<<<<<< HEAD
-=======
-   
->>>>>>> b6bc9780b17f3e8beeb31a61b4ce2b8bf1b34cb0
-
 ## 方法2
 
 > 借助全局安装的express工具，直接生成一个express模板项目；
@@ -143,27 +138,12 @@ PS C:\Users\wangy\Desktop\express--example\qwer> npm start
 
 ::: tip
 
-<<<<<<< HEAD
 `SET DEBUG=qwer:* & npm start`这一步需要在`package.json`文件中设置，然后再执行`npm start`;
 
 ```javascript
 "scripts": {
     "start": "SET DEBUG=qwer:* && node ./bin/www"
 },
-=======
-`SET DEBUG=qwer:* & npm start`这一步需要在package.json文件中设置，然后再执行`npm start`;
-
-```javascript
-  "scripts": {
-    "start": "SET DEBUG=qwer:* && node ./bin/www"
-  },
->>>>>>> b6bc9780b17f3e8beeb31a61b4ce2b8bf1b34cb0
 ```
 
 :::
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b6bc9780b17f3e8beeb31a61b4ce2b8bf1b34cb0
