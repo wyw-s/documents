@@ -28,7 +28,6 @@ title: 介绍
 - 进阶
   - [模块加载机制](./nodejs-note-23.md)
   - [控制流](./nodejs-note-24.md)
-  - Node.js 应用部署
   - [Node.js 不是银弹](./nodejs-note-25.md)
 - nodejs扩展
   - [命令行输出目录树](./nodejs-note-01.md)
