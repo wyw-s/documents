@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs && npm run pushZip && npm run deploy",
+    "build": "vuepress build docs",
     "deploy": "node ./bin/deploy.js",
     "pushZip": "node ./utils/zip.js"
   },

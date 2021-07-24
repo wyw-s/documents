@@ -7,3 +7,5 @@ tags:
   - javascript
 ---
 
+> co模块是generator函数的自动执行函数
+

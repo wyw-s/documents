@@ -1,8 +1,9 @@
 const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
-  title: '棉花糖',
-  description: '它在我的机器上可以很好的运行',
+  base: '/documents/',
+  title: 'Mr. Almost',
+  description: 'Smoking the same cigarettes, tapping the same computers, writing the same code  ',
   dest: './dist',
   locales: {
     "/": { lang: "zh-CN" },
@@ -10,10 +11,11 @@ module.exports = config({
   themeConfig: {
     logo: '/logo.jpg',
     hostname: 'http://wangyawei.top',
-    author: '棉花糖',
+    author: 'Mr. Almost',
     repo: false,
     breadcrumb: false,
     darkmode: 'auto-switch',
+    algoliaType: "full",
     nav: [
       {text: '介绍', link: '/guide/'},
       {
@@ -81,7 +83,11 @@ module.exports = config({
     pwa: {
       favicon: '/favicon.ico',
       cachePic: true,
-    }
+    },
+    algolia: {
+      apiKey: "25626fae796133dc1e734c6bcaaeac3c",
+      indexName: "docsearch",
+    },
   },
   plugins: [
     'vuepress-plugin-auto-sidebar',
