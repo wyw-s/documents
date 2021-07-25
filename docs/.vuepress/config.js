@@ -1,7 +1,7 @@
 const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
-  base: '/documents/',
+  // base: '/documents/',
   title: 'Mr. Almost',
   description: 'Smoking the same cigarettes, tapping the same computers, writing the same code  ',
   dest: './dist',
