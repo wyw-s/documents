@@ -8,10 +8,10 @@ module.exports = config({
   locales: {
     "/": { lang: "zh-CN" },
   },
-  head: [
-    ['link', { rel: 'icon', href: '/logo.jpg' }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-  ],
+  // head: [
+  //   ['link', { rel: 'icon', href: '/logo.jpg' }],
+  //   ['link', { rel: 'manifest', href: '/manifest.json' }],
+  // ],
   themeConfig: {
     logo: '/logo.jpg',
     hostname: 'http://wangyawei.top',
@@ -88,7 +88,6 @@ module.exports = config({
       favicon: '/favicon.ico',
       cachePic: true,
       showInstall: true,
-      manifest: '/manifest.json'
     },
     algolia: {
       apiKey: "25626fae796133dc1e734c6bcaaeac3c",
