@@ -13,5 +13,8 @@ title: 介绍
 5. [微任务执行问题](./question-note-05.md)
 6. [this指向问题](./question-note-06.md)
 7. [promise执行问题](./question-note-07.md)
-8. []()
+8. [promise解决并发请求](./question-note-08.md)
+9. [跨域问题](./question-note-09.md)
+10. [deno相关问题](./question-note-10.md)
+11. [sourceMap相关](./question-note-11.md)
 
