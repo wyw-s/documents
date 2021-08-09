@@ -1,20 +1,15 @@
 const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
-  // base: '/documents/',
   title: 'Mr. Almost',
   description: 'Smoking the same cigarettes, tapping the same computers, writing the same code  ',
   dest: './dist',
   locales: {
     "/": { lang: "zh-CN" },
   },
-  // head: [
-  //   ['link', { rel: 'icon', href: '/logo.jpg' }],
-  //   ['link', { rel: 'manifest', href: '/manifest.json' }],
-  // ],
   themeConfig: {
     logo: '/logo.jpg',
-    hostname: 'http://wangyawei.top',
+    hostname: 'https://wangyawei.top',
     author: 'Mr. Almost',
     repo: false,
     breadcrumb: false,
@@ -59,6 +54,10 @@ module.exports = config({
             ]
           },
         ]
+      },
+      {
+        text: '设计模式',
+        link: '/views/designMode/',
       },
       {
         text: '工具',

@@ -7,7 +7,7 @@ title: 介绍
 ## 目录
 
 - 基础
-  - [创建和访问对象](./javascript-note-53.md)
+  - [创建和访问对象-53](./javascript-note-53.md)
 - [对象拷贝](./javascript-note-02.md)
 - [函数防抖](./javascript-note-03.md)
 - [Generator函数及其异步应用](./javascript-note-46.md)
@@ -21,7 +21,11 @@ title: 介绍
   - 回调
   - 柯里化
 - 进阶
-  - [promise A+规范](./javascript-note-51.md)
+  - [编译原理-54](./javascript-note-54.md)
+  - [chunk函数及其应用-55](./javascript-note-55.md)
+  - [promise A+规范-51](./javascript-note-51.md)
+  - [RXJS-56](./javascript-note-56.md)
+  - [Web Workers-57](./javascript-note-57.md)
 
 ## 参考资料
 
