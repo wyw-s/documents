@@ -1,6 +1,6 @@
 ---
 title: 封装与对象
-category: designMode
+category: 设计模式
 time: 2021-08-09 20:38:22
 ---
 

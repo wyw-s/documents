@@ -1,91 +1,221 @@
 ---
-title: wepy-cli的使用
+title: component
+category: vue
+autoGroup-1: 基础
 ---
 
-##  WePY框架概述
+> 1. 概述：优化页面结构，简化开发过程；
+>
+> 2. 组件特点：
+>
+>    1. 简单、高效、不重复；
+>    2. 组件是一个**特殊的 `Vue`实例**；`Vue`实例有的 组件基本都有；
+>    3. 组件没有`el` ,但是有`template `组件页面结构；
+>
+> 3. 注意：
+>
+>    1. 组件中`data`为一个函数没有`el`选项 ；
+>    2. 组件的`data`是一个带**返回值**的函数;
+>    3. `template`代表其**页面结构** (有且只能有一个根元素)；
+>    4. 每个组件都是**`独立`** 数据 逻辑没有任何关联；
+>
+> 4. 语法；
+>
+>    ```vue
+>    <!--语法-->
+>    <div id="app">  
+>        <!-- 使用组件 直接写组件的名称标签即可   -->  
+>        <!-- 写了一个标签 相当于 一个组件实例 -->  
+>        <eight-eight></eight-eight>  
+>        <eight-eight></eight-eight>
+>    </div> 
+>    <script>
+>    Vue.component("组件名称", {    
+>        // 组件对象    
+>        template: ``,    
+>        data: function () {      
+>             return {name: "字节跳动"};    
+>        },
+>        methods: {},    
+>        computed: {},    
+>        watch: {},    
+>        created() {    },    
+>        mounted() {    }  
+>    });  
+>    var vm = new Vue({    
+>    	el: "#app",    
+>    	data: {},    
+>    	methods: {}  
+>    });
+>    </script>
+>    ```
+>
 
-> **WePY** 是腾讯官方出品的一个小程序快速开发框架，对原生小程序的开发模式进行了再次封装，更贴近于 MVVM 架构模式，并支持ES6/7的一些新特性，同时语法风格更接近于 Vue.js，使用 WePY 框架能够提高小程序的开发效率。
+## 全局组件
 
-**注意：**WePY 只是小程序的快速开发框架之一，市面上还有诸如 mpvue、taro、uniapp 之类的小程序开发框架也比较流行。
+- 注册组件名称推荐小写字母加横向的结构；
+- 全局组件注册应该放在`Vue`实例化之前 ;
+- 全局组件创建后，新创建的`Vue`实例也可以使用；
+- 加减进步器案例；
 
-## 为什么要使用WePY
-
-1. **WePY** 相比于原生小程序开发，拥有众多的**开发特性**和**优化方案**，例如：
-
-   - 开发风格接近于 Vue.js，支持很多vue中的语法特性；
-
-   - 通过 polyfill 让小程序完美支持 Promise；
-
-   - 可以使用ES6等诸多高级语法特性，简化代码，提高开发效率；
-
-   - 对小程序本身的性能做出了进一步的优化；
-
-   - 支持第三方的 npm 资源；
-
-   - 支持多种插件处理和编译器；
-
-   - letc…
-
-## **安装** **WePY** **框架**  
-
-> WePY 的安装或更新都通过 npm 进行，全局安装或更新 WePY 命令行工具，可以在终端运行以下命令：
-
-```bash
-npm install wepy-cli -g
+```html
+<div id="app">  
+    <step-counter></step-counter>  
+    <step-counter></step-counter>
+</div>
+<div id="app1">    
+    新创建的VUE实例也可以直接使用  
+    <step-counter></step-counter>
+</div>
+<script>  
+    Vue.component("step-counter", {    
+        // 页面结构    
+        template: `<div>        
+						<button @click="cut">-</button>       
+						<span>{{count}}</span>        
+						<button @click="add">+</button>        
+   				   </div>`,    
+        data() {      
+            return {        
+                count: 0      
+            };    
+        },    
+        methods: {      
+            cut() {         
+                //简化写法，如果前面的不执行，则后面的也不执行，否则执行；        
+                this.count && this.count--;      
+            }, 
+            add() {        
+                this.count++;      
+            }    
+        }  
+    });
+    var vm = new Vue({    
+        el: "#app",    
+        data: {},    
+        methods: {}  
+    }); 
+    var vm = new Vue({    
+        el: "#app1", 
+    });</script>
 ```
 
-## 初始化 **WePY** **项目**  
+## 局部组件
 
-```bash
-wepy init standard myproject
+> 局部组件只能在当前实例上注册；
+
+```html
+<div id="app">  
+    <abc-d></abc-d>  
+    <abc-d></abc-d>
+</div>
+<script>  
+    // 局部组件需要在当前实例上注册  
+    var vm = new Vue({    
+        el: "#app",    
+        components: { 
+            // key(组件名称):value(组件对象)      
+            "abc-d": {        
+                template: `<p>我最牛</p>`,      
+            }    
+        }  
+    });
+</script>
 ```
 
-> 其中，”wepy init” 是固定写法，代表要初始化 wepy 项目；
->
-> ”standard” 代表模板类型为标准模板，可以运行 ”wepy list” 命令查看所有可用的项目模板；
->
->  ”myproject” 为自定义的项目名称。
->
-> **注意：**创建项目的时候，要勾选 ESLint 选项！
+## 组件嵌套；
 
-## WePY项目与小程序项目的关系
+> 1. 组件嵌套就是在**`组件中`**使用**`其他组件`**;
+> 2. 一旦形成组件嵌套 ,就有了**`父子关系`** ;
+> 3. 组件嵌套最多不要超过三级；
+> 4. 嵌套组件不要跨级访问；
+> 5. 组件名称最好采用小写或驼峰命名法；
 
-> 通过 wepy init 命令初始化的 wepy 项目，准确来说只是一个模板项目，不能直接当作小程序运行。需要运行相关的命令，**把模板项目编译为小程序项目**，才可以运行。
+```html
+<div id="app">  
+    <abc-p></abc-p>   
+    <!--<edf></edf>-->
+</div>
+<script>  
+    //创建全局组件；  
+    Vue.component("edf", {    
+        template: `<p style='color:blue'>我是一个全局组件edf</p>`  
+    });  
+    Vue.component("abc-p", {    
+        template: `<div>我是一个全局组件abc-p<child></child><edf></edf><!--<qwe></qwe> 跨级访问不到 -->        </div>`,    
+        components: {      
+            child: { 
+                template: `<div style='color:red'>我是一个局部组件child<qwe></qwe></div>`,        
+                components: { 
+                    qwe : { 
+                        template: `<div style="color:chartreuse">我式第二个局部组件</div>`          
+                    }        
+                }      
+            }    
+        }  
+    });  
+    var vm = new Vue({    
+        el: "#app",  
+    });
+</script>
+```
 
-![1582021822995](assets/1582021822995.png)
+## 组件通信；
 
-## 实时编译WePY项目
+1. 父组件 =》 子组件   需要将数据传给子组件 
+2. 子组件 =》 父组件  如果父组件需要 子组件也可以传数据给父组件
+3. 兄弟组件1 =》兄弟组件2 ;
 
-> 使用 wepy init 命令初始化项目后，只是得到了一个模板项目，如果想开启实时编译，得到小程序项目，步骤如下：
->
-> ①运行 cd myproject 切换至 WePY 项目根目录
->
-> ②运行 npm install 安装 WePY 项目依赖项
->
-> ③运行 wepy build --watch 开启实时编译
->
-> **注意：**wepy build --watch 命令，会循环监听 WePY 项目中源代码的变化，自动编译生成小程序项目，生成的小程序项目默认被存放于 dist 目录中**。**
+## 父组件传值Props；
 
-![1582021954024](assets/1582021954024.png)
+> - **`注意`**: 父组件传递给子组件的数据是**`只读`**的,即**`只可以用,不可以改`**
+> - 用props完成父组件给子组件传值  传值的属性都是定义在 子组件的标签上,可以采用v-bind的形式传递动态值
+> - 定义props属性 在标签上定义属性  v-bind传递动态值
+> - 在子组件中声明接收的属性
+> - 在子组件中使用 组件 记住 属性只可以用 不可改
 
-## 加载**WePY** **项目到微信开发者工具**  
+```js
+1. props是组件的选项  定义接收属性
+2. props的值可以是 字符串 数组 props:["list"]
+3. props数组里面的元素称之为prop(属性) 属性=?值
+4. prop的值来源于外部的(组件的外部)
+5. prop(我们这里是lists)是组件的属性->自定义标签的属性
+6. prop的赋值位置(在使用组件时,通过标签属性去赋值)
+7. prop的用法和data中的数据用法一样
+```
 
-> 1.7.0 版本之后的 wepy-cli 工具生成的项目根目录下，包含 **project.config.json** 文件，记录了项目的基本配置信息，例如：项目的名称、appId、生成的小程序项目根路径等。
->
-> 如果项目中存在 **project.config.json** 文件，使用 微信开发者工具 --> 导入项目，”项目目录”请选择 wepy 项目根目录，即可根据 project.config.json 文件中的配置，把 wepy 编译生成的小程序项目加载到微信开发者工具中。
+```html
+<div id="app">  
+    <!-- Vue实例 就是food-meat的父 -->  
+    <!-- 1.定义属性 => 给谁传就在谁的标签上写属性 属性名随便写-->  
+    <food-meat :foods="list" a="1" b="2"></food-meat>
+</div>
+<script>  
+    var vm = new Vue({    
+        el: "#app",    
+        data: {      
+            list: ["红烧肉", "回锅肉", "四喜丸子", "刀削面"]    
+        },    
+        components: {      
+            "food-meat": {        
+                //   2 接收属性  props => 字符串/数组        
+                template: `<div>我是饭--{{foods}}{{b}}<button @click="oncl">按钮</button></div>`,
+                props: ["foods", "b"],  
+                // props可以是数组  也可以是对象        
+                methods: {          
+                    oncl() {            
+                        console.log(this.foods,this.b,this.list,this instanceof Vue)            
+                        // this.foods            
+                        // 1、this指向当前组件实例 this.属性 不能直接拿到 data中的数据 ；            
+                        // 2、拿到data中所有的数据,需要传值才能拿得到            
+                        // 3、也可以拿到 props传递过来的所有属性            
+                        // 3、this 也可以拿到 当前methods所有的方法            
+                        // 3、this 也可以拿到所有的计算属性          
+                    },        
+                }      
+            }    
+        }  
+    });
+</script>
+```
 
-### `.wpy`文件的组成部分
-
-> 一个 .wpy 文件可分为三大部分，各自对应于一个标签：
->
-> 1.  **脚本部分**，即 <script></script> 标签中的内容，又可分为两个部分：
->    - **逻辑部分**，除了 config 对象之外的部分，对应于原生的 .js 文件
->    - **配置部分**，即 config 对象，对应于原生的 .json 文件
->
-> 1. **结构部分**，即 <template></template> 模板部分，对应于原生的 .wxml 文件。
->
-> 1. **样式部分**，即<style></style>样式部分，对应于原生的 .wxss 文件。
->
-> 其中，**小程序入口文件** **app.wpy** **不需要** **template**，所以编译时会被忽略。
-
-![1582022260306](assets/1582022260306.png)

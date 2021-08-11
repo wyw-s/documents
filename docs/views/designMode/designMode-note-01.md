@@ -1,6 +1,6 @@
 ---
 title: 设计模式概论
-category: designMode
+category: 设计模式
 time: 2021-08-09 21:31:22
 ---
 

@@ -1,8 +1,40 @@
 ---
 title: 单例模式
-category: designMode
+category: 设计模式
 time: 2021-08-09 20:38:22
 ---
 
 > 单例对象的类只能允许一个实例存在。主要用于为了避免重复新建，避免多个对象存在互相干扰，其目的是需要确保全局只有一个对象。例：window的任务管理器
+
+## 数据储存对象
+
+> 实现一个全局的数据储存者，这个储存者只能有一个，不然会需要进行同步，增加复杂度。
+
+```javascript
+function store(){
+  if(store.install){
+  	return store.install;
+  }
+  this.store = {
+
+  }
+  store.install=this;
+}
+store.install=null;
+```
+
+## 全局唯一的vue路由
+
+> 在我们vue.use()的时候，保证只进行一次注册；
+
+```javascript
+//vue-router
+let _Vue;
+function install (_Vue) {
+  if (install.installed && _Vue === Vue) return
+  install.installed = true
+  
+  _Vue = Vue
+}
+```
 
