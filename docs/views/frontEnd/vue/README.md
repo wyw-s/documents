@@ -1,5 +1,6 @@
 ---
 title: 介绍
+category: vue
 ---
 
 > 这里主要记录一些自己平时学习vue的一些相关的知识；
@@ -13,4 +14,10 @@ title: 介绍
 - [template](./vue-note-05.md)
 - [component](./vue-note-06.md)
 - [vue-router](./vue-note-07.md)
+- [vue-cli使用](./vue-note-08.md)
+- [wepy-cli的使用](./vue-note-09.md)
+- [组件通信](./vue-note-10.md)
+- [插槽](./vue-note-11.md)
+- 进阶
+  - [vue-router源码实现](./vue-note-12.md)
 
