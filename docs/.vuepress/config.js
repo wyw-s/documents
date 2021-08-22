@@ -8,13 +8,19 @@ module.exports = config({
     "/": { lang: "zh-CN" },
   },
   themeConfig: {
-    logo: '/logo.jpg',
+    logo: '/img/logo.jpg',
     hostname: 'https://wangyawei.top',
     author: 'Mr. Almost',
     repo: false,
+    blog: {
+      sidebarDisplay: "mobile",
+      links: {
+        Github: 'https://github.com/wyw-s/documents'
+      },
+    },
     breadcrumb: false,
     darkmode: 'auto-switch',
-    algoliaType: "full",
+    // algoliaType: "full",
     nav: [
       {text: '介绍', link: '/guide/'},
       {
@@ -84,14 +90,15 @@ module.exports = config({
       contributor: false
     },
     pwa: {
-      favicon: '/favicon.ico',
+      favicon: "/favicon.ico",
+      cacheHTML: false,
       cachePic: true,
       showInstall: true,
     },
-    algolia: {
-      apiKey: "25626fae796133dc1e734c6bcaaeac3c",
-      indexName: "docsearch",
-    },
+    // algolia: {
+    //   apiKey: "25626fae796133dc1e734c6bcaaeac3c",
+    //   indexName: "docsearch",
+    // },
   },
   plugins: [
     'vuepress-plugin-auto-sidebar',

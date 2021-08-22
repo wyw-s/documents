@@ -1,7 +1,7 @@
 ---
 blog: true
 home: true
-bgImage: '/hero.jpg'
+bgImage: '/img/hero.jpg'
 heroFullScreen: false
 project:
 - name: 前端相关
