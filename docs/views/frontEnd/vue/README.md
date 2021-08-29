@@ -19,5 +19,8 @@ category: vue
 - [组件通信](./vue-note-10.md)
 - [插槽](./vue-note-11.md)
 - 进阶
-  - [vue-router源码实现](./vue-note-12.md)
+  - [vue-router源码实现1](./vue-note-12.md)
+  - [vue-router源码实现2](./vue-note-13.md)
+  - [响应式原理(对象)](./vue-note-02-01.md)
+  - [响应式原理(数组)]((./vue-note-02-02.md))
 
