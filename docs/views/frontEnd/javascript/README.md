@@ -26,6 +26,7 @@ title: 介绍
   - [promise A+规范-51](./javascript-note-51.md)
   - [RXJS-56](./javascript-note-56.md)
   - [Web Workers-57](./javascript-note-57.md)
+  - [defineProperty-58](./defineProperty-58.md)
 
 ## 参考资料
 
