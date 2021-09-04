@@ -15,6 +15,7 @@ autoGroup-2: 进阶
 >
 
 ```js
+// arrayMethods.js
 const utils = require('./utils/utils.js')
 /**
  * 实现拦截器
@@ -53,12 +54,12 @@ const arrayMethods = Object.create(arrayProto)
   })
 })
 exports.arrayMethods = arrayMethods
-
 ```
 
 ## 2、封装`defineProperty`。
 
 ```js
+// defineReactive.js
 const Dep = require('./Dep.js')
 const utils = require('./utils/utils.js')
 
@@ -90,7 +91,6 @@ function defineReactive(data, key, val) {
 }
 
 exports.defineReactive = defineReactive
-
 ```
 
 ## 2、封装 `Dep`的类；
@@ -99,7 +99,7 @@ exports.defineReactive = defineReactive
 
 ```js
 /**
- * 收集依赖
+ * 收集依赖  Dep.js
  */
  class Dep {
   constructor () {
@@ -151,6 +151,7 @@ exports.Dep = Dep
 > 作用：将一个数据内的所有的属性都转换成getter/setter的形式。然后去追踪他们的变化;
 
 ```js
+// Observer.js
 const defineReactive = require('./defineReactive.js')
 const utils = require('./utils/utils.js')
 const arrayMethods = require('./arrayMethods.js')
@@ -218,6 +219,7 @@ exports.Observer = Observer
 > 因为它知道你要访问的属性；
 
 ```js
+// Watcher.js
 class Watcher {
   constructor(vm, expOrFn, cb) {
     this.vm = vm
@@ -262,7 +264,85 @@ exports.Watcher = Watcher
 
 ```
 
-## 5、使用；
+## 5、工具函数
+
+```javascript
+// utils/utils.js
+const defineReactive = require('../defineReactive.js')
+const Observer = require('../Observer.js')
+/**
+ * 当前浏览器不支持时，执行该方法，
+ * 目的：将 arrayMethods 的方法，设置到被侦测的数组上。
+ * 原因：当访问一个对象的方法时，只有其自身不存在这个方法，才会去它的原型上找这个方法，
+ * */
+function copyAugment(target, src, keys) {
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i]
+    defineReactive.defineReactive(target, key, src[key])
+  }
+}
+
+// 当前浏览器支持 __proto__ 属性时，执行该方法。
+// 目的：覆盖数组的原始__proto__ 。
+function protoAugment(target, src, keys) {
+  target.__proto__ = src.arrayMethods
+}
+
+// 判断是否为对象；
+function isObject(obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+const hasOwnProperty = Object.prototype.hasOwnProperty
+
+function hasOwn(obj, key) {
+  return hasOwnProperty.call(obj, key)
+}
+
+// 工具函数；
+function def(obj, key, val, enumerable) {
+  Object.defineProperty(obj, key, {
+    value: val,
+    enumerable: !!enumerable,
+    writable: true,
+    configurable: true
+  })
+}
+
+function observe(value) {
+  if (!isObject(value)) {
+    return
+  }
+  let ob
+  if (hasOwn(value, '__ob__') && value.__ob__ instanceof Observer.Observer) {
+    ob = value.__ob__
+  } else {
+    ob = new Observer.Observer(value)
+  }
+  return ob
+}
+
+module.exports = {
+  copyAugment,
+  protoAugment,
+  def,
+  observe
+}
+```
+
+```bash
+array
+├── arrayMethods.js
+├── defineReactive.js
+├── Dep.js
+├── index.js
+├── Observer.js
+├── utils
+│   └── utils.js
+├── Watcher.js
+```
+
+## 6、使用；
 
 > 实现：`vm.$watch()`
 

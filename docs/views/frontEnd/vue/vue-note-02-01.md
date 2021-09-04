@@ -12,6 +12,8 @@ autoGroup-2: 进阶
 > 依赖是什么？依赖就是用到数据的地方，那个地方用到了这个属性，那么我们就通知谁，也就是触发依赖；
 
 ```js
+const Dep = require('./Dep.js')
+const Observer = require('./Observer.js')
 /**
  * 存取描述符
  */
@@ -40,6 +42,7 @@ function defineReactive(data, key, val) {
     }
   })
 }
+exports.defineReactive =  defineReactive
 ```
 
 ## 2、封装 `Dep`的类；
@@ -47,32 +50,40 @@ function defineReactive(data, key, val) {
 > 主要目的：用于处理依赖。
 
 ```js
-class Dep {
-  constructor() {
+/**
+ * 收集依赖
+ */
+let uid = 0
+
+/**
+ * 此id 会在每一次new Dep的时候执行，也就是只会在 首次转换为 get 和set 的时候执行；
+ */
+ class Dep {
+  constructor () {
     // 收集依赖的集合
+    this.id = uid++
     this.subs = []
   }
 
   // 添加依赖；
-  addSub(sub) {
+  addSub (sub) {
     this.subs.push(sub)
   }
 
   // 删除依赖；
-  removeSub(sub) {
+  removeSub (sub) {
     remove(this.subs, sub)
   }
 
   // 收集依赖
-  depend() {
-    // 假设我们把依赖存在 `window.target`上；
-    if (window.target) {
-      this.addSub(window.target)
+  depend () {
+    if (global.target) {
+      global.target.addDep(this)
     }
   }
 
   // 通知
-  notify() {
+  notify () {
     const subs = this.subs.slice()
     for (let i = 0; i < subs.length; i++) {
       subs[i].update()
@@ -80,7 +91,7 @@ class Dep {
   }
 }
 
-function remove(arr, item) {
+function remove (arr, item) {
   if (arr.length) {
     const index = arr.indexOf(item)
     if (index > -1) {
@@ -88,6 +99,9 @@ function remove(arr, item) {
     }
   }
 }
+
+exports.Dep = Dep
+
 ```
 
 ## 3、`Observer;`
@@ -95,22 +109,25 @@ function remove(arr, item) {
 > 作用：将一个数据内的所有的属性都转换成getter/setter的形式。然后去追踪他们的变化;
 
 ```js
-class Observer {
-    constructor(value) {
-      this.value = value
-      if (!Array.isArray(value)) {
-        this.walk(value)
-      }
-    }
+const defineReactive = require('./defineReactive.js')
 
-    // 此方法只在数据类型为对象时，调用；
-    walk(obj) {
-      const keys = Object.keys(obj)
-      for (let i = 0; i < keys.length; i++) {
-        defineReactive(obj, keys[i], obj[keys[i]])
-      }
+class Observer {
+  constructor (value) {
+    this.value = value
+    if (!Array.isArray(value)) {
+      this.walk(value)
     }
   }
+
+  walk (obj) {
+    const keys = Object.keys(obj)
+    for (let i = 0; i < keys.length; i++) {
+     defineReactive.defineReactive(obj, keys[i], obj[keys[i]])
+    }
+  }
+}
+exports.Observer = Observer
+
 ```
 
 ## 4、`Watcher`;
@@ -121,48 +138,73 @@ class Observer {
 
 ```js
 class Watcher {
-    constructor(vm, expOrFn, cb) {
-      this.vm = vm
-      // 执行this.getter(),就可以读取data.a.b.c的内容
-      this.getter = parsePath(expOrFn)
-      this.cb = cb
-      this.value = this.get()
-    }
+  constructor(vm, expOrFn, cb) {
+    this.vm = vm
+    this.deps = []
+    this.depIds = new Set()
+    // 执行this.getter(),就可以读取data.a.b.c的内容
+    this.getter = parsePath(expOrFn)
+    this.cb = cb
+    this.value = this.get()
+  }
 
-    get() {
-      // 把依赖存在 window.target 上，
-      window.target = this
-      // 这一步会触发 getter 函数从而把自己添加到依赖表中；value 是读取到的值。
-      let value = this.getter.call(this.vm, this.vm)
-      // 避免重复添加依赖，但是在通知更新的时候依然添加了重复的依赖；
-      window.target = undefined 
-      return value
-    }
+  get() {
+    // 把依赖存在 global.target 上，
+    global.target = this
+    // 这一步会触发 getter 函数从而把自己添加到依赖表中；value 是读取到的值。
+    let value = this.getter.call(this.vm, this.vm)
+    // 避免重复添加依赖，但是在通知更新的时候依然添加了重复的依赖；
+    global.target = undefined
+    return value
+  }
 
-    update() {
-      const oldValue = this.value
-      this.value = this.get()
-      this.cb.call(this.vm, this.value, oldValue)
+  update() {
+    const oldValue = this.value
+    this.value = this.get()
+    this.cb.call(this.vm, this.value, oldValue)
+  }
+
+  addDep(dep) {
+    const id = dep.id
+    /**
+     * 主要目的：避免通知更新的时候重复收集依赖；
+     */
+    if (!this.depIds.has(id)) {
+      this.depIds.add(id)
+      this.deps.push(dep)
+      dep.addSub(this)
     }
   }
+
+  // 取消观察；
+  teardown() {
+    let i = this.deps.length
+    while (i--) {
+      this.deps[i].removeSub(this)
+    }
+  }
+}
 
 // 用于根据路径来读取属性的值；
-  const bailRE = /[^\w.$]/
+const bailRE = /[^\w.$]/
 
-  function parsePath(path) {
-    if (bailRE.test(path)) {
-      return
-    }
-    const segments = path.split('.')
-    return function (obj) {
-      for (let i = 0; i < segments.length; i++) {
-        if (!obj) return
-        // obj[segments[i]] 在读取值时会触发 get 拦截函数；
-        obj = obj[segments[i]]
-      }
-      return obj
-    }
+function parsePath(path) {
+  if (bailRE.test(path)) {
+    return
   }
+  const segments = path.split('.')
+  return function (obj) {
+    for (let i = 0; i < segments.length; i++) {
+      if (!obj) return
+      // obj[segments[i]] 在读取值时会触发 get 拦截函数；
+      obj = obj[segments[i]]
+    }
+    return obj
+  }
+}
+
+exports.Watcher = Watcher
+
 ```
 
 ## 5、使用；
@@ -170,29 +212,46 @@ class Watcher {
 > 实现：`vm.$watch()`
 
 ```js
-// 定义一个对象；
+const Observer = require('./Observer.js')
+const Watcher = require('./Watcher.js')
+
 var data = {
-    name: '小红',
-    age: 18,
-    skill: {
-      dance: '芭蕾舞',
-      exercise: '跑步'
-    }
+  name: '小红',
+  age: 18,
+  skill: {
+    dance: '芭蕾舞',
+    exercise: '跑步'
   }
-  // 观测所有的属性的变化
-  new Observer(data)
+}
+// 观测所有的属性的变化
+new Observer.Observer(data)
 
-  function Vm() {}
+function Vm() {}
 
-  Vm.prototype.$watch = function (obj, path, cb) {
-    new Watcher(obj, path, cb)
+Vm.prototype.$watch = function (obj, path, cb) {
+  const watcher = new Watcher.Watcher(obj, path, cb)
+
+  // 取消观察
+  return function unwatchFn() {
+    watcher.teardown()
   }
-  var vm = new Vm()
+}
+var vm = new Vm()
 
-  vm.$watch(data, 'skill.dance', (newVal, oldVal) => {
-    console.log('我执行了', newVal, oldVal)
-  })
+vm.$watch(data, 'skill.dance', (newVal, oldVal) => {
+  console.log('我执行了', newVal, oldVal)
+})
+data.skill.dance = '哈哈=='
 ```
+
+````bash
+object
+    ├── defineReactive.js
+    ├── Dep.js
+    ├── index.js
+    ├── Observer.js
+    ├── Watcher.js
+````
 
 ## 总结；
 

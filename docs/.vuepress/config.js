@@ -28,12 +28,12 @@ module.exports = config({
         items: [
           {text: 'HTML', link: '/views/frontEnd/html/'},
           {text: 'CSS', link: '/views/frontEnd/css/'},
-          {text: 'javaScript', link: '/views/frontEnd/javascript/'},
+          {text: 'JAVASCRIPT', link: '/views/frontEnd/javascript/'},
           {text: 'AJAX', link: '/views/frontEnd/ajax/'},
-          {text: 'jquery', link: '/views/frontEnd/jquery/'},
+          {text: 'JQUERY', link: '/views/frontEnd/jquery/'},
           {text: 'VUE', link: '/views/frontEnd/vue/'},
-          {text: 'react', link: '/views/frontEnd/react/'},
-          {text: 'webpack', link: '/views/frontEnd/webpack/'}
+          {text: 'REACT', link: '/views/frontEnd/react/'},
+          {text: 'WEBPACK', link: '/views/frontEnd/webpack/'}
         ]
       },
       {
@@ -42,21 +42,21 @@ module.exports = config({
           {
             text: '开发指南',
             items: [
-              {text: 'nodejs', link: '/views/backEnd/nodejs/'},
-              {text: 'linux', link: '/views/backEnd/linux/'},
-              {text: 'mysql', link: '/views/backEnd/mysql/'},
-              {text: 'jenkins', link: '/views/backEnd/jenkins/'},
-              {text: 'nginx', link: '/views/backEnd/nginx/'},
-              {text: 'tomcat', link: '/views/backEnd/tomcat/'},
-              {text: 'docker', link: '/views/backEnd/docker/'},
-              {text: 'java', link: '/views/backEnd/java/basic/'}
+              {text: 'NODEJS', link: '/views/backEnd/nodejs/'},
+              {text: 'LINUX', link: '/views/backEnd/linux/'},
+              {text: 'MYSQL', link: '/views/backEnd/mysql/'},
+              {text: 'JENKINS', link: '/views/backEnd/jenkins/'},
+              {text: 'NGINX', link: '/views/backEnd/nginx/'},
+              {text: 'TOMCAT', link: '/views/backEnd/tomcat/'},
+              {text: 'DOCKER', link: '/views/backEnd/docker/'},
+              {text: 'JAVA', link: '/views/backEnd/java/basic/'}
             ]
           },
           {
             text: '框架',
             items: [
-              {text: 'express', link: '/views/backEnd/express/'},
-              {text: 'koa', link: '/views/backEnd/koa/'}
+              {text: 'EXPRESS', link: '/views/backEnd/express/'},
+              {text: 'KOA', link: '/views/backEnd/koa/'}
             ]
           },
         ]
@@ -69,7 +69,7 @@ module.exports = config({
         text: '工具',
         items: [
           {text: 'GIT', link: '/views/tools/git/'},
-          {text: 'npm', link: '/views/frontEnd/npm/'}
+          {text: 'NPM', link: '/views/frontEnd/npm/'}
         ]
       },
       {text: '问题', link: '/views/issues/'},
