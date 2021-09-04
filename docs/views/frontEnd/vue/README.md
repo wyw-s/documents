@@ -23,6 +23,6 @@ category: vue
   - [vue-router源码实现2](./vue-note-13.md)
   - [vuex源码实现](./vue-note-14.md)
   - [响应式原理(对象)](./vue-note-02-01.md)
-  - [响应式原理(数组)]((./vue-note-02-02.md))
+  - [响应式原理(数组)](./vue-note-02-02.md)
   - [手写vue](./手写vue-16.md)
 
