@@ -1,7 +1,8 @@
 ---
 title: toast组件
 category: vue
-autoGroup-1: 示例
+autoGroup-5: 组件
+date: 2021-08-21 12:04:30
 ---
 
 > 吐司组件在前端中算是最常用的组件了，这里简单实现一下；

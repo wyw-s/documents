@@ -2,6 +2,7 @@
 title: vue-router
 category: vue
 autoGroup-1: 基础
+date: 2021-08-11 23:14:30
 ---
 
 > * Vue-Router 是 [Vue.js](http://cn.vuejs.org/) 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建**单页面**应用变得易如反掌   **它是一个插件**

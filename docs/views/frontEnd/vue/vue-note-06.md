@@ -2,6 +2,7 @@
 title: component
 category: vue
 autoGroup-1: 基础
+date: 2021-05-02 14:14:30
 ---
 
 > 1. 概述：优化页面结构，简化开发过程；

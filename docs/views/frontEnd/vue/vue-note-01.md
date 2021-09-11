@@ -2,6 +2,7 @@
 title: vue指令
 category: vue
 autoGroup-1: 基础
+date: 2021-05-02 16:04:30
 ---
 
 > 在`vue`中，指令是带有`v-`前缀的特殊特性；指令特性的值，预期是单个JavaScript**表达式**(v-for除外)，责任就是当表达式的值改变时，就响应式的作用于DOM，从而做出改变。 

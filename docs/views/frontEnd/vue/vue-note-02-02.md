@@ -1,7 +1,8 @@
 ---
 title: 响应式原理(数组)
 category: vue
-autoGroup-2: 进阶
+autoGroup-10: 进阶
+date: 2021-08-11 23:04:30
 ---
 > 说起`vue`的响应式原理，大家也许只知道它的底层是对`js`的原生方法`defineProperty`的封装，而具体的实现却是一头雾水。下面我们就一探究竟。
 >

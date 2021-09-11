@@ -2,6 +2,7 @@
 title: template
 category: vue
 autoGroup-1: 基础
+date: 2021-08-11 14:14:30
 ---
 
 > 当需要遍历多个元素而又不想增加额外的元素节点的时候，可以结合 `Vue` 中提供的 `template` 遍历渲染；

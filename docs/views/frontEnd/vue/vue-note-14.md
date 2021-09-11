@@ -1,7 +1,7 @@
 ---
 title: vuex源码实现
 category: vue
-autoGroup-2: 进阶
+autoGroup-10: 进阶
 date: 2021-08-30 21:25:23
 ---
 

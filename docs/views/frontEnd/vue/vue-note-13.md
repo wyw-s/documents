@@ -1,7 +1,7 @@
 ---
 title: vue-router源码实现2
 category: vue
-autoGroup-2: 进阶
+autoGroup-10: 进阶
 date: 2021-08-29 18:38:23
 ---
 
