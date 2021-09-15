@@ -1,5 +1,7 @@
 ---
 title: webpack项目初始化
+category: WEBPACK
+date: 2021-05-02
 ---
 
 ## 1、安装`webpack`;

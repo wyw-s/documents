@@ -1,5 +1,7 @@
 ---
 title: nginx部署vue项目
+category: NGINX
+date: 2021-05-02
 ---
 
 ## 1、安装配置nginx(Aliyun linux)

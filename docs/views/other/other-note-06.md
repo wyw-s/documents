@@ -1,5 +1,7 @@
 ---
 title: win终端添加gitBash
+category: other
+date: 2021-05-02
 ---
 
 1. 打开windows terminal;

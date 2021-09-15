@@ -1,5 +1,7 @@
 ---
 title: GET相关命令
+category: GIT
+date: 2021-05-02
 ---
 
 ## 初始化；

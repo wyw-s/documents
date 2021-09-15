@@ -1,5 +1,7 @@
 ---
 title: 脚本式语法部署web项目
+category: JENKINS
+date: 2021-05-02
 ---
 > 以下内容可以作为通用模板使用，但是你需要根据自己的项目灵活修改配置；
 ```javascript

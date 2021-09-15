@@ -1,5 +1,7 @@
 ---
 title: 创建镜像
+category: DOCKER
+date: 2021-06-08
 ---
 
 > 当运行容器时，使用的镜像如果在本地中不存在，docker 就会自动从 docker 镜像仓库中下载，默认是从 Docker Hub 公共镜像源下载。

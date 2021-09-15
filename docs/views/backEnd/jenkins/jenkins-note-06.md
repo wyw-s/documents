@@ -1,5 +1,7 @@
 ---
 title: 脚本式语法使用nodejs
+category: JENKINS
+date: 2021-05-02
 ---
 
 > 部署web应用的话，nodejs则会经常使用，但是在jenkins脚本式流水线中node则需要另外配置；

@@ -1,5 +1,7 @@
 ---
 title: 脚本式流水线拉取代码
+category: JENKINS
+date: 2021-05-02
 ---
 
 > 以下操作默认你已新建节点并打上了 worker1的标签；

@@ -1,10 +1,14 @@
-# HTML 
+---
+title: HTML基础总结
+category: HTML
+date: 2021-05-02
+---
 
-# 开发工具
+## 开发工具
 
 我们主要用的 开发工具有   chrome  、  sublime 、  photoshop
 
-# 常见浏览器内核介绍
+## 常见浏览器内核介绍
 
 ```
 浏览器是网页运行的平台，常用的浏览器有IE、火狐（Firefox）、谷歌（Chrome）、Safari和Opera等。我们平时称为五大浏览器。

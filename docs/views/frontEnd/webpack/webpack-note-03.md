@@ -1,5 +1,7 @@
 ---
 title: webpack打包进度条
+category: WEBPACK
+date: 2021-05-02
 ---
 
 ## 添加`webpack`打包进度条

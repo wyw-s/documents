@@ -1,5 +1,7 @@
 ---
 title: react 基础语法
+category: REACT
+date: 2021-05-02
 ---
 
 ## `React`的特点；

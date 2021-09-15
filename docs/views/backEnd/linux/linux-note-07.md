@@ -1,5 +1,7 @@
 ---
 title: Linux 查看磁盘空间
+category: LINUX
+date: 2021-05-02
 ---
 
 > Linux 查看磁盘空间可以使用 **df** 和 **du** 命令。

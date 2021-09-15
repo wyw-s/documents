@@ -1,5 +1,7 @@
 ---
 title: 更改tomact启动的默认文件夹
+category: TOMCAT
+date: 2021-05-02
 ---
 
 ## 解决方案；

@@ -1,5 +1,7 @@
 ---
 title: failed to run command ‘java’ No such file or directory
+category: issues
+date: 2021-05-02
 ---
 
 > 场景：执行java包的时候；nohup java -jar xxx.jar 2 >&1 &

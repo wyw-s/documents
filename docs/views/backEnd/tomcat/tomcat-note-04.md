@@ -1,5 +1,7 @@
 ---
 title: liunx 上用tomcat部署web项目后访问空白页问题
+category: TOMCAT
+date: 2021-05-02
 ---
 
 ## 问题描述；

@@ -1,5 +1,7 @@
 ---
 title: 基础命令
+category: LINUX
+date: 2021-05-02
 ---
 
 ```bash

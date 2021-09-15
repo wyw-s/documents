@@ -1,5 +1,7 @@
 ---
 title: tomcat部署web应用
+category: TOMCAT
+date: 2021-05-02
 ---
 
 ## `tomcat`部署`web`应用

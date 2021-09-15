@@ -1,5 +1,7 @@
 ---
 title: docker安装
+category: DOCKER
+date: 2021-05-02
 ---
 
 ## win版Docker安装

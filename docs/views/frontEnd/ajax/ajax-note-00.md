@@ -1,5 +1,7 @@
 ---
 title: ajax基础
+category: AJAX
+date: 2021-05-02
 ---
 
 ## 专业术语;

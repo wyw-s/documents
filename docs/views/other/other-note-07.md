@@ -1,5 +1,7 @@
 ---
 title: linux与window分隔符问题
+category: other
+date: 2021-05-02
 ---
 
 > 遇到这个问题还是由于前端使用nodejs压缩打包文件，然后上传到linux服务器上，本想着解压完成就完事了，结果没那么简单。

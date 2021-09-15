@@ -22,7 +22,16 @@ module.exports = config({
     darkmode: 'auto-switch',
     // algoliaType: "full",
     nav: [
+      {text: '首页', link: '/'},
       {text: '介绍', link: '/guide/'},
+      {
+        text: '设计模式',
+        link: '/views/designMode/',
+      },
+      {
+        text: '面试题',
+        link: '/views/interviewQuestion/',
+      },
       {
         text: '前端',
         items: [
@@ -60,10 +69,6 @@ module.exports = config({
             ]
           },
         ]
-      },
-      {
-        text: '设计模式',
-        link: '/views/designMode/',
       },
       {
         text: '工具',

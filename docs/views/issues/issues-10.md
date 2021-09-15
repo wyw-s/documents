@@ -1,5 +1,7 @@
 ---
 title: Failed to start LSB Jenkins Automation Server
+category: issues
+date: 2021-05-02
 ---
 
 ## 场景；

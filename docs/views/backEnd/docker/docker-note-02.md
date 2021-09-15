@@ -1,5 +1,7 @@
 ---
 title: 容器的使用
+category: DOCKER
+date: 2021-06-08
 ---
 
 ## 获取镜像

@@ -1,5 +1,7 @@
 ---
 title: jenkins结合git实现自动化部署
+category: JENKINS
+date: 2021-05-02
 ---
 
 ## jenkins结合git实现自动化部署；

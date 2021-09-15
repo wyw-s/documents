@@ -1,5 +1,7 @@
 ---
 title: wind终端添加右键菜单
+category: other
+date: 2021-05-02
 ---
 
 1. 检查常量;

@@ -1,5 +1,7 @@
 ---
 title: mysql创建用户并授权
+category: MYSQL
+date: 2021-05-02
 ---
 
 ## 1、创建`mysql`用户；

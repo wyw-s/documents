@@ -1,5 +1,7 @@
 ---
 title: gitignore规则简介
+category: GIT
+date: 2021-05-02
 ---
 
 ## 介绍；

@@ -1,5 +1,7 @@
 ---
 title: 查看linux防火墙
+category: LINUX
+date: 2021-05-02
 ---
 
 ## 查看防火墙状态

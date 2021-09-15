@@ -1,5 +1,7 @@
 ---
 title: jquery 基础
+category: JQUERY
+date: 2021-05-02
 ---
 
 ## jQuery简介；

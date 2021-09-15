@@ -1,5 +1,7 @@
 ---
 title: path.join()和path.resolve()
+category: WEBPACK
+date: 2021-05-02
 ---
 
 ## `path.join()`和`path.resolve()`

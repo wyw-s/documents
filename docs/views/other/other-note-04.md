@@ -1,5 +1,7 @@
 ---
 title: wsl与hyper的关系
+category: other
+date: 2021-05-02
 ---
 
 1. HyperV是一个真正的虚拟机，有完整的硬件模拟，能把整个完整的linux塞进去;

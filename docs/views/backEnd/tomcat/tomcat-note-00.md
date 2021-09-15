@@ -1,5 +1,7 @@
 ---
 title: tomcat安装
+category: TOMCAT
+date: 2021-05-02
 ---
 
 ## 1、下载安装包；

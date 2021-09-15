@@ -1,5 +1,7 @@
 ---
 title: redux使用
+category: REACT
+date: 2021-05-02
 ---
 
 ## `Redux概述`

@@ -1,8 +1,8 @@
 ---
 title: jenkins构建项目失败
+category: issues
+date: 2021-05-02
 ---
-
-
 
 > 目的很简单，就是想自己实现一个`web`项目的全自动化部署；
 >

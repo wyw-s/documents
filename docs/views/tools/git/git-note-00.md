@@ -1,8 +1,8 @@
 ---
 title: git基础
+category: GIT
+date: 2021-05-02
 ---
-
-
 
 #### 集中式
 

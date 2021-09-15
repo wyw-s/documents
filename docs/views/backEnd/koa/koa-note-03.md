@@ -1,6 +1,6 @@
 ---
 title: 创建应用程序
-category: koa
+category: KOA
 time: 2021-07-26 17:36:23
 ---
 

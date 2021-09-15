@@ -1,5 +1,7 @@
 ---
 title: permission denied 127.0.0.1:8888
+category: issues
+date: 2021-05-02
 ---
 
 ## `Error: listen EACCES: permission denied 127.0.0.1:8888`

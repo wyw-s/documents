@@ -1,5 +1,7 @@
 ---
 title: winMysql忘记密码
+category: MYSQL
+date: 2021-05-02
 ---
 
 ## winMysql忘记密码

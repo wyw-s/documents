@@ -1,5 +1,7 @@
 ---
 title: 节点
+category: JENKINS
+date: 2021-05-02
 ---
 
 > 在jenkins 2x中，节点是一个基础概念，代表了任何可以执行jenkins任务的系统。节点中包含主节点和代理节点。此外，节点也可以是一个容器，比如docker;

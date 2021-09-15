@@ -1,5 +1,7 @@
 ---
 title: linux软连接的作用
+category: LINUX
+date: 2021-05-02
 ---
 
 ## linux软连接的作用

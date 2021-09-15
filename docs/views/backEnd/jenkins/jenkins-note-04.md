@@ -1,5 +1,7 @@
 ---
 title: 脚本式语法
+category: JENKINS
+date: 2021-05-02
 ---
 
 > 脚本式语法一般以 node开头

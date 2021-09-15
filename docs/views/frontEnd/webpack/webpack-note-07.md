@@ -1,5 +1,7 @@
 ---
 title: css-loader
+category: WEBPACK
+date: 2021-05-02
 ---
 
 ## 使用`css-loader@0.28.4`

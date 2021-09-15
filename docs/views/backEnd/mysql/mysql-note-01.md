@@ -1,5 +1,7 @@
 ---
 title: mysql安装
+category: MYSQL
+date: 2021-05-02
 ---
 
 ## 1；下载官网的安装包;

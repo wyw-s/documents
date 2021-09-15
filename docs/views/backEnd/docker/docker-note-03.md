@@ -1,5 +1,7 @@
 ---
 title: 运行web应用
+category: DOCKER
+date: 2021-06-08
 ---
 
 > 使用 docker 构建一个 web 应用程序。我们将在docker容器中运行一个 Python Flask 应用来运行一个web应用。

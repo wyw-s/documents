@@ -1,5 +1,7 @@
 ---
 title: winMysql使用
+category: MYSQL
+date: 2021-05-02
 ---
 2. 启动；
 

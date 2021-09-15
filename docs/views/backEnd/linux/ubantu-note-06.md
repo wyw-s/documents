@@ -1,5 +1,7 @@
 ---
 title: 普通用户切换到root用户
+category: LINUX
+date: 2021-05-02
 ---
 
 > 在使用ubantu的Linux系统时，终端顶部一直提示：`To run a command as administrator (user "root"), use "sudo <command>".See "man sudo_root" for details.`,而且你会发你进入不了`root`目录，有权限限制的；由于 `Ubuntu` 是基于 `Debian` 的 `linux` 操作系统，在默认的情况下，是没有超级用户(superuser, root)的，但有些系统操作必须有超级用户的权限才能进行，如手动释放内存等。 在其他 linux 操作系统 (如 fedora) 下，可以使用 su 切换到超级用户。 当输入 su 命令后， 系统会要求输入 root 的密码。 可是，在 `Ubuntu` 下我们根本不知道 root 的密码是什么。 这样，在 Ubuntu 下切换到超级用户需要使用其他方法，

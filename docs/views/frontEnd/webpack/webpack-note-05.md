@@ -1,5 +1,7 @@
 ---
 title: dirname和filename
+category: WEBPACK
+date: 2021-05-02
 ---
 
 ## `__dirname`和`__filename`

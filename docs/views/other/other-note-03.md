@@ -1,5 +1,7 @@
 ---
 title: 使用hyper-v管理虚拟机
+category: other
+date: 2021-05-02
 ---
 
 > 当我们创建多个虚拟主机的时候，很显然我们不方便管理，那么win给我们提供了hyper-v管理虚拟机;

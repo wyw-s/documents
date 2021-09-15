@@ -1,5 +1,7 @@
 ---
 title: nodejs的安装
+category: LINUX
+date: 2021-05-02
 ---
 
 ## 1、下载安装包；

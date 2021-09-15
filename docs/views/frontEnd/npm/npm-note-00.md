@@ -1,6 +1,7 @@
 ---
 title: 安装npm
-category: npm
+category: NPM
+date: 2021-05-02
 ---
 
 > npm是Nodejs的官方包管理工具，可以安装、更新、卸载npm包。新版本的nodejs内置了Npm所以不需要我们在另外安装。这里主要说一下，单独安装npm的情况。

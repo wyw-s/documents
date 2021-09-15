@@ -1,5 +1,7 @@
 ---
 title: tomcat部署多个项目
+category: TOMCAT
+date: 2021-05-02
 ---
 
 ## `tomcat`部署多个`web`项目

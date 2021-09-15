@@ -1,5 +1,7 @@
 ---
 title: service与systemctl命令区别
+category: LINUX
+date: 2021-05-02
 ---
 
 ## service与systemctl命令区别

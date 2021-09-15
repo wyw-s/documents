@@ -1,5 +1,7 @@
 ---
 title: jenkins基础命令；
+category: JENKINS
+date: 2021-05-02
 ---
 
 >  简单记录一下==Linux== 中Jenkins启动/重启/停止命令 

@@ -1,5 +1,7 @@
 ---
 title: win10 使用hyper-v
+category: other
+date: 2021-05-02
 ---
 
 > Hyper-V 提供硬件虚拟化，Hyper-V 可以让你在 Windows 上以虚拟机形式**运行多个完全独立的操作系统**，其中包括各种版本的 Linux、FreeBSD 和 Windows。这意味着每个虚拟机都在虚拟硬件上运行。 Hyper-V 允许你创建虚拟硬盘驱动器、虚拟交换机以及许多其他虚拟设备，所有这些都可以添加到虚拟机中。Windows 上的 Hyper-V 支持虚拟机中的许多不同操作系统，

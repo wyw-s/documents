@@ -1,8 +1,8 @@
 ---
 title: linux-nodejs启动报错
+category: issues
+date: 2021-05-02
 ---
-
-
 
 > 在测试上执行`npm run serve`时报错；
 

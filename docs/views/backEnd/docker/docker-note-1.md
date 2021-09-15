@@ -1,5 +1,7 @@
 ---
 title: hello world
+category: DOCKER
+date: 2021-06-08
 ---
 
 > Docker 允许你在容器内运行应用程序， 使用 **docker run** 命令来在容器内运行一个应用程序。

@@ -1,6 +1,6 @@
 ---
 title: 发表微博
-category: express
+category: EXPRESS
 autoGroup-1: 案例一
 time: 2021-07-19 22:12:10
 ---

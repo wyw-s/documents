@@ -1,6 +1,7 @@
 ---
 title: npm设置下载源
-category: npm
+category: NPM
+date: 2021-05-02
 ---
 
 ## npm设置下载源

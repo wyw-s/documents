@@ -1,5 +1,7 @@
 ---
 title: 什么是 wsl
+category: other
+date: 2021-05-02
 ---
 
 > 适用于 Linux 的 Windows 子系统可让开发人员直接在 Windows 上按原样运行 GNU/Linux 环境（包括大多数命令行工具、实用工具和应用程序），且不会产生传统虚拟机或双启动设置开销。
