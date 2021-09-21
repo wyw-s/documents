@@ -44,6 +44,8 @@ date: 2021-05-01
   - [响应式原理(对象)](./vue-note-02-01.md)
   - [响应式原理(数组)](./vue-note-02-02.md)
   - [手写vue](./手写vue-16.md)
+  - [el和$mount的区别](./vue-note-95.md)
+  - [vue在实例化之前初始化了什么？](./vue-note-100.md)
   
 - VUE SSR实战
 
