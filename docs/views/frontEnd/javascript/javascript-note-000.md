@@ -1,9 +1,7 @@
 ---
-title: javascript基础
+title: 基础
 category: javascript
-autoGroup-1: 基础
-tags:
-  - javascript
+date: 2021-05-02 16:07:22
 ---
 
 ### 输入和输出：

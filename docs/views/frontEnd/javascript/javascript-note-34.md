@@ -1,8 +1,8 @@
 ---
 title: 立即执行函数(IIFE)
 category: javascript
-autoGroup-3: 函数应用；
-tag: javascript
+autoGroup-20: 函数应用
+date: 2021-06-08 22:10:45
 ---
 
 > 立即执行函数会创建一个新的作用域，里面的执行的方法和变量不会影响全局作用域；

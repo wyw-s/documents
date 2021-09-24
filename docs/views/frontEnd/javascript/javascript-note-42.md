@@ -1,9 +1,8 @@
 ---
 title: js实现复制粘贴
 category: javascript
-time: 2021-06-15 07:34:00
-tags:
-  - 随笔
+date: 2021-06-15 07:34:00
+autoGroup-50: 其他
 ---
 
 > 浏览器允许 JavaScript 脚本读写剪贴板，自动复制或粘贴内容。

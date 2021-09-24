@@ -1,9 +1,8 @@
 ---
 title: 闭包
 category: javascript
-autoGroup-3: 函数应用
-tags:
-  - javascript
+autoGroup-20: 函数应用
+date: 2021-07-01 22:22:34 
 ---
 
 > 通俗地讲，JavaScript 中每个的函数都是一个闭包，但通常意义上嵌套的函数更能够体现出闭包的特性，  

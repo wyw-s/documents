@@ -1,7 +1,8 @@
 ---
 title: ES6
 category: es6
-autoGroup-2: es6
+autoGroup-10: ES6
+date: 2021-05-02 16:07:22
 tags:
   - javascript
 ---

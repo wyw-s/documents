@@ -1,7 +1,10 @@
 ---
 title: 模板字符串
 category: javascript
-autoGroup-2: es6
+autoGroup-10: ES6
+date: 2021-06-08 22:05:34
+tags:
+  - javascript
 ---
 
 > 模板字符串是允许嵌入表达式的字符串字面量。可以使用多行字符串和字符串插值功能；

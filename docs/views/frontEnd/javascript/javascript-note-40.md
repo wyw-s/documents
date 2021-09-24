@@ -1,11 +1,8 @@
 ---
 title: javascript单线程
 category: javascript
-time: 2021-06-15 23:34:00
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-15 23:34:00
+autoGroup-15: 进阶
 ---
 
 > 如果你使用过js做开发的话，那么你也一定知道，js是一门单线程语言。

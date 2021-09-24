@@ -1,7 +1,8 @@
 ---
 title: 函数防抖
 category: javascript
-autoGroup-5: 进阶
+autoGroup-15: 进阶
+date: 2021-05-02 22:22:34
 ---
 
 > 概述：一个处理函数会在延迟n秒后触发，如果在n秒内再次触发那么回重新计时；

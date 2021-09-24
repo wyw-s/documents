@@ -1,8 +1,8 @@
 ---
 title: defineProperty
 category: javascript
-time: 2021-08-31 08:09:22
-autoGroup-4: 进阶
+date: 2021-08-31 08:09:22
+autoGroup-15: 进阶
 ---
 
 > `Object.defineProperty()` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。

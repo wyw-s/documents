@@ -1,10 +1,8 @@
 ---
 title: promise A+规范
 category: javascript
-time: 2021-06-29 21:34:22
-autoGroup-4: 进阶
-tags:
-  - javascript
+date: 2021-06-29 21:34:22
+autoGroup-15: 进阶
 ---
 
 **什么是`Promise A+`规范**

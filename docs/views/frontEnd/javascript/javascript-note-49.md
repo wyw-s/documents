@@ -1,10 +1,8 @@
 ---
 title: 深入理解async/await
 category: javascript
-time: 2021-06-24 21:05:22
-autoGroup-4: 进阶
-tags:
-  - javascript
+date: 2021-06-24 21:05:22
+autoGroup-15: 进阶
 ---
 
 > 相对于回调函数来说，Promise是一种相对优雅的选择，那么有没有更好的方案呢？答案就是async/await。ES2017新增了两个关键字：async和await，代表异步javascript编程范式的迁移。允许我们编写像网络请求或其他异步事件而阻塞的同步代码一样编写异步代码。async函数是一个语法糖，它使异步操作更简单；

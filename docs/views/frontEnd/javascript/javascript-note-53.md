@@ -1,10 +1,7 @@
 ---
 title: 创建和访问对象
 category: javascript
-time: 2021-07-01 08:25:22
-autoGroup-1: 基础
-tags:
-  - javascript
+date: 2021-07-01 08:25:22
 ---
 
 > js是一个弱类型的语言，同时也是一个面向对象的编程的语言。

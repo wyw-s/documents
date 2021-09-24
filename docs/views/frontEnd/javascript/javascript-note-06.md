@@ -1,7 +1,8 @@
 ---
 title: Async 函数
 category: javascript
-autoGroup-5: 进阶
+autoGroup-10: ES6
+date: 2021-05-02 22:22:34
 ---
 
 >  ES2017 标准引入了 async 函数，使得异步操作变得更加方便。 

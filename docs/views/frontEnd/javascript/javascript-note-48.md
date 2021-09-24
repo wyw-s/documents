@@ -1,10 +1,8 @@
 ---
 title: co模块源码分析
 category: javascript
-time: 2021-08-04 22:36:22
-autoGroup-4: 进阶
-tags:
-  - javascript
+date: 2021-08-04 22:36:22
+autoGroup-15: 进阶
 ---
 
 > co模块是generator函数的自动执行函数，它基于 ES6 的 generator 和 yield ，让我们能用同步的形式编写异步代码。

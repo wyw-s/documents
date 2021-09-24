@@ -1,6 +1,7 @@
 ---
 title: js数据类型
 category: javascript
+date: 2021-05-19 22:05:34
 ---
 
 > javascript一共有8种数据类型;

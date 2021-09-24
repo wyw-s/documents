@@ -1,7 +1,8 @@
 ---
 title: 函数节流
 category: javascript
-autoGroup-5: 进阶
+autoGroup-15: 进阶
+date: 2021-05-02 22:22:34
 ---
 
 > 概述：限制一个函数再一定时间内只能执行一次；

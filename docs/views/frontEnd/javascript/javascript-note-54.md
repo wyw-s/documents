@@ -1,7 +1,8 @@
 ---
 title: 编译原理
 category: javascript
-autoGroup-5: 进阶
+autoGroup-15: 进阶
+date: 2021-06-20 22:18:22
 ---
 
 > 尽管开发者将 JavaScript 归类为“动态”或“解释执行”语言，但事实上它是一门编译语言。

@@ -1,6 +1,7 @@
 ---
 title: 柯里化
 category: javascript
-autoGroup-3: 函数应用
+autoGroup-20: 函数应用
+date: 
 ---
 

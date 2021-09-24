@@ -1,10 +1,8 @@
 ---
 title: chunk函数及其应用
 category: javascript
-time: 2021-06-20 22:18:22
-autoGroup-4: 进阶
-tags:
-  - javascript
+date: 2021-06-20 22:18:22
+autoGroup-15: 进阶
 ---
 
 ## 特点

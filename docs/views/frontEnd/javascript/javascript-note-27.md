@@ -1,7 +1,10 @@
 ---
 title: 变量声明
 category: javascript
-autoGroup-2: es6
+autoGroup-10: ES6
+date: 2021-06-08 22:05:34
+tags:
+  - javascript
 ---
 
 ## `const`声明

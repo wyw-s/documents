@@ -1,11 +1,8 @@
 ---
 title: 发布订阅
 category: javascript
-time: 2021-06-19 16:39:00
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-19 16:39:00
+autoGroup-15: 进阶
 ---
 
 > 在[软件架构](https://baike.baidu.com/item/软件架构)中，**发布订阅**是一种[消息](https://baike.baidu.com/item/消息)[范式](https://baike.baidu.com/item/范式)，消息的发送者（称为发布者）不会将消息直接发送给特定的接收者（称为订阅者）。而是**将发布的消息分为不同的类别**，无需了解哪些订阅者（如果有的话）可能存在。同样的，**订阅者可以表达对一个或多个类别的兴趣，只接收感兴趣的消息**，无需了解哪些发布者（如果有的话）存在。

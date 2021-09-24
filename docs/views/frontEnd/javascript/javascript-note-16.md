@@ -1,6 +1,8 @@
 ---
 title: 常用函数
 category: javascript
+autoGroup-20: 函数应用
+date: 2021-07-01 22:22:34
 ---
 
 ## 缓存函数

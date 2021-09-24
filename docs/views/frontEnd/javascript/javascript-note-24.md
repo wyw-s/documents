@@ -1,7 +1,10 @@
 ---
 title: Symbol
 category: javascript
-autoGroup-2: es6
+autoGroup-10: ES6
+date: 2021-06-08 22:05:34
+tags:
+  - javascript
 ---
 
 > 想给他人创建的对象添加属性，不管该属性取什么名字，理论上都存在冲突的可能性。而使用Symbol作为对象的属性名就没有这个顾虑。因为它的值是唯一的。这也意味着给对象添加私有属性称为了可能。

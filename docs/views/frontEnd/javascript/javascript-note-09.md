@@ -1,7 +1,8 @@
 ---
 title: 什么是Promise
 category: javascript
-autoGroup-5: 进阶
+autoGroup-15: 进阶
+date: 2021-05-02 22:22:34
 ---
 
 > 概念：Promise 代表一个异步操作；

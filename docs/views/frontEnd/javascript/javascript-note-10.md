@@ -1,10 +1,8 @@
 ---
 title: 打包及本地预览
 category: javascript
-autoGroup-6: 其他
-tags:
-  - javascript
-  - 其他
+autoGroup-50: 其他
+date: 2021-05-02 22:22:34
 ---
 
 ## 构建打包

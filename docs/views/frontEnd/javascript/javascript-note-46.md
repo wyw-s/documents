@@ -1,11 +1,8 @@
 ---
 title: Generator函数及其异步应用
 category: javascript
-time: 2021-06-20 22:18:22
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-20 22:18:22
+autoGroup-15: 进阶
 ---
 
 > Generator函数是ES6提供的一种异步编程解决方案，是回调地狱的一种解决方案，它跟`promise`类似，但是却可以以同步的方式来书写代码，而避免了promise的链式调用。语法行为与传统函数完全不同，对于generator函数有多种不同的理解角度，从语法上，首先我们可以把它理解成一个状态机，封装了多个内部状态。由于执行generator函数会返回一个遍历器对象，说明它还是一个遍历器对象生成函数。

@@ -1,7 +1,8 @@
 ---
 title: javascript高级
 category: javascript
-autoGroup-5: 进阶
+autoGroup-5: 高级
+date: 2021-05-02 22:22:34
 ---
 
 ## JavaScript 的组成

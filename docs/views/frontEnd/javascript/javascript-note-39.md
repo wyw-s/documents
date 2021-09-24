@@ -1,11 +1,8 @@
 ---
 title: 同步与异步
 category: javascript
-time: 2021-06-14 23:34:00
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-14 23:34:00
+autoGroup-15: 进阶
 ---
 
 > 如果你经常使用过js做开发的话，那么你也一定知道，js是一门单线程语言，代码执行有同步与异步之分。

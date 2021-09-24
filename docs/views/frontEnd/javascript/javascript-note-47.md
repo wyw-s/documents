@@ -1,11 +1,8 @@
 ---
 title: Generator函数的实现原理
 category: javascript
-time: 2021-06-22 23:30:22
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-22 23:30:22
+autoGroup-15: 进阶
 ---
 
 协程

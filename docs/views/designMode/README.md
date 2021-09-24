@@ -13,4 +13,5 @@ date: 2021-05-02
 3. [工厂模式](./designMode-note-03.md)
 4. [建造者模式](./designMode-note-04.md)
 5. [单例模式](./designMode-note-05.md)
+6. [构造函数模式]
 

@@ -1,6 +1,8 @@
 ---
 title: this对象
 category: javascript
+autoGroup-5: 高级
+date: 2021-06-08 22:05:12
 ---
 
 > 不管是严格模式还是非严格模式，全局环境中的this指向全局对象；

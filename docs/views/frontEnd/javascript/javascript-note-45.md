@@ -1,11 +1,8 @@
 ---
 title: 深入理解Promise
 category: javascript
-time: 2021-06-20 11:45:22
-autoGroup-4: 进阶
-tags:
-  - javascript
-  - 面试题
+date: 2021-06-20 11:45:22
+autoGroup-15: 进阶
 ---
 
 > **Promise** 对象用于表示一个异步操作的最终完成 (或失败)及其结果值
