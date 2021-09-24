@@ -6,8 +6,8 @@
     <link>https://wangyawei.top/</link>
     <description>Smoking the same cigarettes, tapping the same computers, writing the same code  </description>
     <language>zh-CN</language>
-    <pubDate>Tue, 21 Sep 2021 06:06:14 GMT</pubDate>
-    <lastBuildDate>Tue, 21 Sep 2021 06:06:14 GMT</lastBuildDate>
+    <pubDate>Fri, 24 Sep 2021 17:37:12 GMT</pubDate>
+    <lastBuildDate>Fri, 24 Sep 2021 17:37:12 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by Mr. Almost</copyright>
@@ -42,7 +42,7 @@
       <link>https://wangyawei.top/guide/</link>
       <guid>https://wangyawei.top/guide/</guid>
       <source url="https://wangyawei.top/rss.xml">介绍</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>完成这个文档笔记，也刚好把自己以前记的笔记做一次整理，虽然也花了不少时间，不过也算是完成了吧，在写这个文档笔记之前也调研了其它的文档笔记，但是在网上得到了反馈有很多都是我们的尤大大写的这个<code>vuepress</code>专为文档设计而提供的解决方案，又由于看的说明文档可以自己以vue的方式开发自定义主题，所以最后就选择了，vuepress。</p>
 </blockquote>
@@ -53,7 +53,7 @@
       <link>https://wangyawei.top/</link>
       <guid>https://wangyawei.top/</guid>
       <source url="https://wangyawei.top/rss.xml">Home</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>介绍</title>
@@ -2777,14 +2777,226 @@ router<span>.</span><span>get</span><span>(</span><span>'/'</span><span>,</span>
 ]]></content:encoded>
     </item>
     <item>
-      <title>介绍</title>
-      <link>https://wangyawei.top/views/backEnd/java/basic/</link>
-      <guid>https://wangyawei.top/views/backEnd/java/basic/</guid>
-      <source url="https://wangyawei.top/rss.xml">介绍</source>
-      <category>JAVA</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <title>应用部署</title>
+      <link>https://wangyawei.top/views/backEnd/express/express-note-12/</link>
+      <guid>https://wangyawei.top/views/backEnd/express/express-note-12/</guid>
+      <source url="https://wangyawei.top/rss.xml">应用部署</source>
+      <category>EXPRESS</category>
+      <pubDate>Mon, 19 Jul 2021 10:54:10 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>由于本人java知识基本为零，所以这里主要记录一些java基础，供自己学习；</p>
+<p>在开发的过程中，通过node app.js命令运行服务器即可。但它不适合在产品环境下使用，因为到目前为止这个服务器还有几个重大缺陷。</p>
+</blockquote>
+<ol>
+<li>
+<p>不支持故障恢复</p>
+<p>当程序有错误发生时，整个进程就会结束，需要重新在终端中启动服务器。这一点在开发中无可厚非，但在产品环境下就是严重的问题了，因为一旦用户访问时触发了程序中某个隐含的bug， 整个服务器就崩溃了，将无法继续为所有用户提供服务。所以部署应用时一定要考虑到故障恢复，提高系统的可靠性。</p>
+</li>
+<li>
+<p>没有日志</p>
+<p>对于开发者来说，日志，尤其是错误日志是及其重要的，经常查看它可以发现测试时没有注意到的程序错误。然而这个服务器运行时没有产生错误日志，只有访问日志，所以有必要实现它的日志功能。</p>
+</li>
+<li>
+<p>无法利用多核提高性能</p>
+<p>由于Node.js是单线程的，一个进程只能利用一个CPU 核心。当请求大量到来时，单线程就成为了提高吞吐量的瓶颈。随着多核乃至众核时代的到来，只能利用一个核心所带来的浪费是十分严重的，我们需要使用多进程来提高系统的性能。</p>
+</li>
+<li>
+<p>独占端口</p>
+<p>我们一般会在同一个服务器上建立多个网站，而且这些网站不能每个进程都独占80端口，所以我们有必要通过反向代理来实现基于域名的端口共享。</p>
+</li>
+<li>
+<p>需要手动启动</p>
+<p>目前每次启动服务器都是通过在命令行中直接键入命令来实现的，但在产品环境中，特别是在服务器重启以后，全部靠手动启动是不现实的。因此，我们应该制作一个自动启动服务器的脚本，并且通过该脚本可以实现停止服务器等功能</p>
+</li>
+</ol>
+<h2 id="日志功能"> 日志功能</h2>
+<blockquote>
+<p>主要是实现访问日志和错误日志功能。访问日志就是记录用户对服务器的每个请求，包括客户端IP 地址，访问时间，访问路径，服务器响应以及客户端代理字符串。而错误日志则记录程序发生错误时的信息，由于调试中需要即时查看错误信息，将所有错误直接显示到终端即可，而在产品模式中，需要写入错误日志文件。</p>
+</blockquote>
+<p>morgan给我们提供了自定义功能，所以我们把修改下，app.js 修改如下：需要下载<code>moment</code></p>
+<div><pre><code>app<span>.</span><span>use</span><span>(</span><span>logger</span><span>(</span><span>function</span> <span>(</span><span>tokens<span>,</span> req<span>,</span> res</span><span>)</span> <span>{</span>
+  <span>return</span> <span>[</span>
+    <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>]</span><span>`</span></span><span>,</span>
+    tokens<span>[</span><span>'remote-addr'</span><span>]</span><span>(</span>req<span>)</span><span>,</span>
+    tokens<span>.</span><span>method</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>url</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>status</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>res</span><span>(</span>req<span>,</span> res<span>,</span> <span>'content-length'</span><span>)</span><span>,</span> <span>'-'</span><span>,</span>
+    tokens<span>[</span><span>'response-time'</span><span>]</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span> <span>'ms'</span>
+  <span>]</span><span>.</span><span>join</span><span>(</span><span>' '</span><span>)</span>
+<span>}</span><span>)</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>重启服务器访问浏览器，输出如下：</p>
+<div><pre><code><span>[</span><span>2021</span>-07-19 <span>11</span>:12:13<span>]</span> ::1 GET /reg <span>304</span>  - <span>28.614</span> ms
+<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /stylesheets/bootstrap.min.css <span>304</span>  - <span>10.743</span> ms
+<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /stylesheets/style.css <span>304</span>  - <span>10.250</span> ms
+<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /javascripts/jquery-3.6.0.min.js <span>304</span>  - <span>7.419</span> ms
+<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /javascripts/bootstrap.min.js <span>304</span>  - <span>4.551</span> ms
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>但是这是在我们的控制台输出的，我们需要把日志输出到文件中，修改上面代码为：</p>
+<div><pre><code><span>const</span> accessLogStream <span>=</span> fs<span>.</span><span>createWriteStream</span><span>(</span>path<span>.</span><span>join</span><span>(</span>__dirname<span>,</span> <span>'access.log'</span><span>)</span><span>,</span> <span>{</span> flags<span>:</span> <span>'a'</span> <span>}</span><span>)</span><span>;</span>
+app<span>.</span><span>use</span><span>(</span><span>logger</span><span>(</span><span>(</span><span>tokens<span>,</span> req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
+  <span>return</span> <span>[</span>
+    <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>]</span><span>`</span></span><span>,</span>
+    tokens<span>[</span><span>'remote-addr'</span><span>]</span><span>(</span>req<span>)</span><span>,</span>
+    tokens<span>.</span><span>method</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>url</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>status</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
+    tokens<span>.</span><span>res</span><span>(</span>req<span>,</span> res<span>,</span> <span>'content-length'</span><span>)</span><span>,</span> <span>'-'</span><span>,</span>
+    tokens<span>[</span><span>'response-time'</span><span>]</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span> <span>'ms'</span>
+  <span>]</span><span>.</span><span>join</span><span>(</span><span>' '</span><span>)</span>
+<span>}</span><span>,</span> <span>{</span> stream<span>:</span> accessLogStream <span>}</span><span>)</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><blockquote>
+<p>重启服务器访问浏览器可以看到，根目录已经有一个<code>access.log</code>文件，并写入了内容；</p>
+</blockquote>
+<p>实现错误响应，并写入文件，<code>app.js</code>修改如下：</p>
+<div><pre><code><span>// error handler</span>
+app<span>.</span><span>use</span><span>(</span><span>function</span> <span>(</span><span>err<span>,</span> req<span>,</span> res<span>,</span> next</span><span>)</span> <span>{</span>
+  <span>// set locals, only providing error in development</span>
+  res<span>.</span>locals<span>.</span>message <span>=</span> err<span>.</span>message<span>;</span>
+  res<span>.</span>locals<span>.</span>error <span>=</span> req<span>.</span>app<span>.</span><span>get</span><span>(</span><span>'env'</span><span>)</span> <span>===</span> <span>'development'</span> <span>?</span> err <span>:</span> <span>{</span><span>}</span><span>;</span>
+
+  <span>// 将错误写入文件</span>
+<span>+</span>  <span>const</span> meta <span>=</span> <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>] </span><span><span>${</span>req<span>.</span>url<span>}</span></span><span>\n</span><span><span>${</span>err<span>.</span>stack<span>}</span></span><span>\n</span><span>`</span></span>
+<span>+</span>  errorLogfile<span>.</span><span>write</span><span>(</span>meta<span>)</span><span>;</span>
+
+  <span>// render the error page</span>
+  res<span>.</span><span>status</span><span>(</span>err<span>.</span>status <span>||</span> <span>500</span><span>)</span><span>;</span>
+  res<span>.</span><span>render</span><span>(</span><span>'error'</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
+<p>到此为止，我们的日志系统就简单完成了；</p>
+</blockquote>
+<h2 id="使用cluster模块"> 使用cluster模块</h2>
+<blockquote>
+<p>Node.js 提供了一个核心模块： cluster。 cluster的功能是生成与当前进程相同的子进程，并且允许父进程和子进程之间共享端口。 Node.js 的另一个核心模块child_process 也提供了相似的进程生成功能，但最大的区别在于cluster 允许跨进程端口复用，给我们的网络服务器开发带来了很大的方便。</p>
+</blockquote>
+<p>为了在外部模块调用bin/www， 首先需要禁止服务器自动启动。修改www，在server.listen(port); 前后加上判断语句：</p>
+<div><pre><code><span>// 可以通过测试 require.main === module 来确定文件是被直接运行。</span>
+<span>if</span> <span>(</span>require<span>.</span>main <span>===</span> module<span>)</span> <span>{</span>
+  server<span>.</span><span>listen</span><span>(</span>port<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
+<p>这个语句的功能是判断当前模块是不是由其他模块调用的，如果不是，说明它是直接启动的，此时启动调试服务器；如果是，则不自动启动服务器。</p>
+</blockquote>
+<div><p>提示</p>
+<p>module.parent  新增于: v0.1.16 弃用于: v14.6.0, v12.19.0 。改为使用 <a href="http://nodejs.cn/api/modules.html#modules_require_main" target="_blank" rel="noopener noreferrer"><code>require.main</code></a> 和 <a href="http://nodejs.cn/api/modules.html#modules_module_children" target="_blank" rel="noopener noreferrer"><code>module.children</code></a> 。</p>
+</div>
+<p>创建cluster.js，通过cluster 调用bin/www。内容如下所示：</p>
+<div><pre><code><span>const</span> cluster <span>=</span> <span>require</span><span>(</span><span>'cluster'</span><span>)</span><span>;</span>
+<span>const</span> os <span>=</span> <span>require</span><span>(</span><span>'os'</span><span>)</span><span>;</span>
+
+<span>// 获取CPU 的数量</span>
+<span>const</span> numCPUs <span>=</span> os<span>.</span><span>cpus</span><span>(</span><span>)</span><span>.</span>length<span>;</span>
+<span>const</span> workers <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+<span>if</span> <span>(</span>cluster<span>.</span>isMaster<span>)</span> <span>{</span>
+    <span>// 主进程分支</span>
+    cluster<span>.</span><span>on</span><span>(</span><span>'death'</span><span>,</span> <span>function</span> <span>(</span><span>worker</span><span>)</span> <span>{</span>
+        <span>// 当一个工作进程结束时，重启工作进程</span>
+        <span>delete</span> workers<span>[</span>worker<span>.</span>pid<span>]</span><span>;</span>
+        worker <span>=</span> cluster<span>.</span><span>fork</span><span>(</span><span>)</span><span>;</span>
+        workers<span>[</span>worker<span>.</span>pid<span>]</span> <span>=</span> worker<span>;</span>
+    <span>}</span><span>)</span><span>;</span>
+    <span>// 初始开启与CPU 数量相同的工作进程</span>
+    <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> numCPUs<span>;</span> i<span>++</span><span>)</span> <span>{</span>
+        <span>const</span> worker <span>=</span> cluster<span>.</span><span>fork</span><span>(</span><span>)</span><span>;</span>
+        workers<span>[</span>worker<span>.</span>pid<span>]</span> <span>=</span> worker<span>;</span>
+    <span>}</span>
+<span>}</span> <span>else</span> <span>{</span>
+    <span>// 工作进程分支，启动服务器</span>
+    <span>const</span> <span>{</span> server<span>,</span> port <span>}</span> <span>=</span> <span>require</span><span>(</span><span>'./bin/www'</span><span>)</span><span>;</span>
+    server<span>.</span><span>listen</span><span>(</span>port<span>)</span><span>;</span>
+<span>}</span>
+<span>// 当主进程被终止时，关闭所有工作进程</span>
+process<span>.</span><span>on</span><span>(</span><span>'SIGTERM'</span><span>,</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
+    <span>for</span> <span>(</span><span>var</span> pid <span>in</span> workers<span>)</span> <span>{</span>
+        process<span>.</span><span>kill</span><span>(</span>pid<span>)</span><span>;</span>
+    <span>}</span>
+    process<span>.</span><span>exit</span><span>(</span><span>0</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div><blockquote>
+<p>cluster.js的功能是创建与CPU 核心个数相同的服务器进程，以确保充分利用多核CPU的资源。主进程生成若干个工作进程，并监听工作进程结束事件，当工作进程结束时，重新启动一个工作进程。分支进程产生时会自顶向下重新执行当前程序，并通过分支判断进入工作进程分支，在其中读取模块并启动服务器。通过cluster启动的工作进程可以直接实现端口复用，因此所有工作进程只需监听同一端口。当主进程终止时，还要主动关闭所有工作进程。</p>
+</blockquote>
+<p>修改bin/www，导出 server和port,修改如下：</p>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  server<span>,</span>
+  port
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>在终端中执行node cluster.js 命令， 可以看到进程列表中启动了多个 node进程（4核CPU）：</p>
+<div><pre><code><span>></span> express-example@1.0.0 start C:<span>\</span>Users<span>\</span>wangy<span>\</span>Desktop<span>\</span>express--example<span>\</span>qwer
+<span>></span> SET <span>DEBUG</span><span>=</span>express-example:* <span>&amp;&amp;</span> node ./cluster.js
+
+express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
+express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
+express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
+express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
+express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
+express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
+  express-example:server Listening on port <span>3000</span> +0ms
+  express-example:server Listening on port <span>3000</span> +0ms
+  express-example:server Listening on port <span>3000</span> +0ms
+express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
+express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
+  express-example:server Listening on port <span>3000</span> +0ms
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><blockquote>
+<p>我配置了npm 脚本：  &quot;start&quot;: &quot;SET DEBUG=express-example:* &amp;&amp; node ./cluster.js&quot;。</p>
+<p>终止工作进程，新的工作进程会立即启动，终止主进程，所有工作进程也会同时结束。</p>
+</blockquote>
+<h2 id="启动脚本"> 启动脚本</h2>
+<blockquote>
+<p>如果你维护过Linux 服务器，会对/etc/init.d/ 下面的脚本有印象。例如使用/etc/init.d/nginx start 和/etc/init.d/nginx stop 可以启动和关闭Nginx 服务器。我们通过bash 脚本也来实现一个类似的功能，创建microblog 并使用chmod +x microblog 赋予其执行权限，脚本内容为：</p>
+</blockquote>
+<div><pre><code><span>#! /bin/sh</span>
+<span>NODE_ENV</span><span>=</span>production
+<span>DAEMON</span><span>=</span><span>"node cluster.js"</span>
+<span>NAME</span><span>=</span>Microblog
+<span>DESC</span><span>=</span>Microblog
+<span>PIDFILE</span><span>=</span><span>"microblog.pid"</span>
+
+<span>case</span> <span>"<span>$1</span>"</span> <span>in</span>
+start<span>)</span>
+    <span>echo</span> <span>"Starting <span>$DESC</span>: "</span>
+        <span>nohup</span> <span>$DAEMON</span> <span>></span> /dev/null <span>&amp;</span>
+    <span>echo</span> <span>$!</span> <span>></span> <span>$PIDFILE</span>
+    <span>echo</span> <span>"<span>$NAME</span>."</span>
+        <span>;</span><span>;</span>
+stop<span>)</span>
+    <span>echo</span> <span>"Stopping <span>$DESC</span>: "</span>
+        <span>pid</span><span>=</span><span>'cat $PIDFILE'</span>
+    <span>kill</span> <span>$pid</span>
+        <span>rm</span> <span>$PIDFILE</span>
+    <span>echo</span> <span>"<span>$NAME</span>."</span>
+        <span>;</span><span>;</span>
+<span>esac</span>
+<span>exit</span> <span>0</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><blockquote>
+<p>它的功能是通过nohup 启动服务器，使进程不会因为退出终端而关闭，同时将主进程的pid 写入microblog.pid 文件。当调用结束命令时，从microblog.pid 读取pid 的值，终止主进程以关闭服务器。</p>
+</blockquote>
+<div><p>注意</p>
+<p>这段脚本只支持 POSIX操作系统，如 Linux、 Mac OS等，在 Windows下不可用。</p>
+</div>
+<h2 id="共享-80-端口"> 共享 80 端口</h2>
+<blockquote>
+<p>到目前为止，网站都是运行在3000端口下的，也就是说用户必须在网址中加入:3000才能访问网站。默认的HTTP 端口是80，因此必须监听80端口才能使网址更加简洁。如果整个服务器只有一个网站，那么只需让app.js 监听80 端口即可。但很多时候一个服务器上运行着不止一个网站，此时虚拟主机可以粉墨登场了。</p>
+</blockquote>
+<p>在Nginx 中设置反向代理和虚拟主机非常简单，下面是配置文件的一个示例：</p>
+<div><pre><code>server <span>{</span>
+    listen <span>80</span><span>;</span>
+    server_name mysite<span>.</span>com<span>;</span>
+    location <span>/</span> <span>{</span>
+        proxy_pass http<span>:</span><span>/</span><span>/</span>localhost<span>:</span><span>3000</span><span>;</span>
+    <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
+<p>这个配置文件的功能是监听访问mysite.com 80 端口的请求，并将所有的请求转发给http://localhost:3000，即我们的Node.js 服务器。现在访问http://mysite.com/，就相当于服务器访问http://localhost:3000了。</p>
 </blockquote>
 ]]></content:encoded>
     </item>
@@ -3188,226 +3400,14 @@ HelloWorld案例中，出现的标识符有类名字 HelloWorld 。</li>
 ]]></content:encoded>
     </item>
     <item>
-      <title>应用部署</title>
-      <link>https://wangyawei.top/views/backEnd/express/express-note-12/</link>
-      <guid>https://wangyawei.top/views/backEnd/express/express-note-12/</guid>
-      <source url="https://wangyawei.top/rss.xml">应用部署</source>
-      <category>EXPRESS</category>
-      <pubDate>Mon, 19 Jul 2021 10:54:10 GMT</pubDate>
+      <title>介绍</title>
+      <link>https://wangyawei.top/views/backEnd/java/basic/</link>
+      <guid>https://wangyawei.top/views/backEnd/java/basic/</guid>
+      <source url="https://wangyawei.top/rss.xml">介绍</source>
+      <category>JAVA</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>在开发的过程中，通过node app.js命令运行服务器即可。但它不适合在产品环境下使用，因为到目前为止这个服务器还有几个重大缺陷。</p>
-</blockquote>
-<ol>
-<li>
-<p>不支持故障恢复</p>
-<p>当程序有错误发生时，整个进程就会结束，需要重新在终端中启动服务器。这一点在开发中无可厚非，但在产品环境下就是严重的问题了，因为一旦用户访问时触发了程序中某个隐含的bug， 整个服务器就崩溃了，将无法继续为所有用户提供服务。所以部署应用时一定要考虑到故障恢复，提高系统的可靠性。</p>
-</li>
-<li>
-<p>没有日志</p>
-<p>对于开发者来说，日志，尤其是错误日志是及其重要的，经常查看它可以发现测试时没有注意到的程序错误。然而这个服务器运行时没有产生错误日志，只有访问日志，所以有必要实现它的日志功能。</p>
-</li>
-<li>
-<p>无法利用多核提高性能</p>
-<p>由于Node.js是单线程的，一个进程只能利用一个CPU 核心。当请求大量到来时，单线程就成为了提高吞吐量的瓶颈。随着多核乃至众核时代的到来，只能利用一个核心所带来的浪费是十分严重的，我们需要使用多进程来提高系统的性能。</p>
-</li>
-<li>
-<p>独占端口</p>
-<p>我们一般会在同一个服务器上建立多个网站，而且这些网站不能每个进程都独占80端口，所以我们有必要通过反向代理来实现基于域名的端口共享。</p>
-</li>
-<li>
-<p>需要手动启动</p>
-<p>目前每次启动服务器都是通过在命令行中直接键入命令来实现的，但在产品环境中，特别是在服务器重启以后，全部靠手动启动是不现实的。因此，我们应该制作一个自动启动服务器的脚本，并且通过该脚本可以实现停止服务器等功能</p>
-</li>
-</ol>
-<h2 id="日志功能"> 日志功能</h2>
-<blockquote>
-<p>主要是实现访问日志和错误日志功能。访问日志就是记录用户对服务器的每个请求，包括客户端IP 地址，访问时间，访问路径，服务器响应以及客户端代理字符串。而错误日志则记录程序发生错误时的信息，由于调试中需要即时查看错误信息，将所有错误直接显示到终端即可，而在产品模式中，需要写入错误日志文件。</p>
-</blockquote>
-<p>morgan给我们提供了自定义功能，所以我们把修改下，app.js 修改如下：需要下载<code>moment</code></p>
-<div><pre><code>app<span>.</span><span>use</span><span>(</span><span>logger</span><span>(</span><span>function</span> <span>(</span><span>tokens<span>,</span> req<span>,</span> res</span><span>)</span> <span>{</span>
-  <span>return</span> <span>[</span>
-    <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>]</span><span>`</span></span><span>,</span>
-    tokens<span>[</span><span>'remote-addr'</span><span>]</span><span>(</span>req<span>)</span><span>,</span>
-    tokens<span>.</span><span>method</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>url</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>status</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>res</span><span>(</span>req<span>,</span> res<span>,</span> <span>'content-length'</span><span>)</span><span>,</span> <span>'-'</span><span>,</span>
-    tokens<span>[</span><span>'response-time'</span><span>]</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span> <span>'ms'</span>
-  <span>]</span><span>.</span><span>join</span><span>(</span><span>' '</span><span>)</span>
-<span>}</span><span>)</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><p>重启服务器访问浏览器，输出如下：</p>
-<div><pre><code><span>[</span><span>2021</span>-07-19 <span>11</span>:12:13<span>]</span> ::1 GET /reg <span>304</span>  - <span>28.614</span> ms
-<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /stylesheets/bootstrap.min.css <span>304</span>  - <span>10.743</span> ms
-<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /stylesheets/style.css <span>304</span>  - <span>10.250</span> ms
-<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /javascripts/jquery-3.6.0.min.js <span>304</span>  - <span>7.419</span> ms
-<span>[</span><span>2021</span>-07-19 <span>11</span>:12:14<span>]</span> ::1 GET /javascripts/bootstrap.min.js <span>304</span>  - <span>4.551</span> ms
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>但是这是在我们的控制台输出的，我们需要把日志输出到文件中，修改上面代码为：</p>
-<div><pre><code><span>const</span> accessLogStream <span>=</span> fs<span>.</span><span>createWriteStream</span><span>(</span>path<span>.</span><span>join</span><span>(</span>__dirname<span>,</span> <span>'access.log'</span><span>)</span><span>,</span> <span>{</span> flags<span>:</span> <span>'a'</span> <span>}</span><span>)</span><span>;</span>
-app<span>.</span><span>use</span><span>(</span><span>logger</span><span>(</span><span>(</span><span>tokens<span>,</span> req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
-  <span>return</span> <span>[</span>
-    <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>]</span><span>`</span></span><span>,</span>
-    tokens<span>[</span><span>'remote-addr'</span><span>]</span><span>(</span>req<span>)</span><span>,</span>
-    tokens<span>.</span><span>method</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>url</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>status</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span>
-    tokens<span>.</span><span>res</span><span>(</span>req<span>,</span> res<span>,</span> <span>'content-length'</span><span>)</span><span>,</span> <span>'-'</span><span>,</span>
-    tokens<span>[</span><span>'response-time'</span><span>]</span><span>(</span>req<span>,</span> res<span>)</span><span>,</span> <span>'ms'</span>
-  <span>]</span><span>.</span><span>join</span><span>(</span><span>' '</span><span>)</span>
-<span>}</span><span>,</span> <span>{</span> stream<span>:</span> accessLogStream <span>}</span><span>)</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><blockquote>
-<p>重启服务器访问浏览器可以看到，根目录已经有一个<code>access.log</code>文件，并写入了内容；</p>
-</blockquote>
-<p>实现错误响应，并写入文件，<code>app.js</code>修改如下：</p>
-<div><pre><code><span>// error handler</span>
-app<span>.</span><span>use</span><span>(</span><span>function</span> <span>(</span><span>err<span>,</span> req<span>,</span> res<span>,</span> next</span><span>)</span> <span>{</span>
-  <span>// set locals, only providing error in development</span>
-  res<span>.</span>locals<span>.</span>message <span>=</span> err<span>.</span>message<span>;</span>
-  res<span>.</span>locals<span>.</span>error <span>=</span> req<span>.</span>app<span>.</span><span>get</span><span>(</span><span>'env'</span><span>)</span> <span>===</span> <span>'development'</span> <span>?</span> err <span>:</span> <span>{</span><span>}</span><span>;</span>
-
-  <span>// 将错误写入文件</span>
-<span>+</span>  <span>const</span> meta <span>=</span> <span><span>`</span><span>[</span><span><span>${</span><span>moment</span><span>(</span><span>new</span> <span>Date</span><span>(</span><span>)</span><span>)</span><span>.</span><span>format</span><span>(</span><span>'YYYY-MM-DD hh:mm:ss'</span><span>)</span><span>}</span></span><span>] </span><span><span>${</span>req<span>.</span>url<span>}</span></span><span>\n</span><span><span>${</span>err<span>.</span>stack<span>}</span></span><span>\n</span><span>`</span></span>
-<span>+</span>  errorLogfile<span>.</span><span>write</span><span>(</span>meta<span>)</span><span>;</span>
-
-  <span>// render the error page</span>
-  res<span>.</span><span>status</span><span>(</span>err<span>.</span>status <span>||</span> <span>500</span><span>)</span><span>;</span>
-  res<span>.</span><span>render</span><span>(</span><span>'error'</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
-<p>到此为止，我们的日志系统就简单完成了；</p>
-</blockquote>
-<h2 id="使用cluster模块"> 使用cluster模块</h2>
-<blockquote>
-<p>Node.js 提供了一个核心模块： cluster。 cluster的功能是生成与当前进程相同的子进程，并且允许父进程和子进程之间共享端口。 Node.js 的另一个核心模块child_process 也提供了相似的进程生成功能，但最大的区别在于cluster 允许跨进程端口复用，给我们的网络服务器开发带来了很大的方便。</p>
-</blockquote>
-<p>为了在外部模块调用bin/www， 首先需要禁止服务器自动启动。修改www，在server.listen(port); 前后加上判断语句：</p>
-<div><pre><code><span>// 可以通过测试 require.main === module 来确定文件是被直接运行。</span>
-<span>if</span> <span>(</span>require<span>.</span>main <span>===</span> module<span>)</span> <span>{</span>
-  server<span>.</span><span>listen</span><span>(</span>port<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
-<p>这个语句的功能是判断当前模块是不是由其他模块调用的，如果不是，说明它是直接启动的，此时启动调试服务器；如果是，则不自动启动服务器。</p>
-</blockquote>
-<div><p>提示</p>
-<p>module.parent  新增于: v0.1.16 弃用于: v14.6.0, v12.19.0 。改为使用 <a href="http://nodejs.cn/api/modules.html#modules_require_main" target="_blank" rel="noopener noreferrer"><code>require.main</code></a> 和 <a href="http://nodejs.cn/api/modules.html#modules_module_children" target="_blank" rel="noopener noreferrer"><code>module.children</code></a> 。</p>
-</div>
-<p>创建cluster.js，通过cluster 调用bin/www。内容如下所示：</p>
-<div><pre><code><span>const</span> cluster <span>=</span> <span>require</span><span>(</span><span>'cluster'</span><span>)</span><span>;</span>
-<span>const</span> os <span>=</span> <span>require</span><span>(</span><span>'os'</span><span>)</span><span>;</span>
-
-<span>// 获取CPU 的数量</span>
-<span>const</span> numCPUs <span>=</span> os<span>.</span><span>cpus</span><span>(</span><span>)</span><span>.</span>length<span>;</span>
-<span>const</span> workers <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-<span>if</span> <span>(</span>cluster<span>.</span>isMaster<span>)</span> <span>{</span>
-    <span>// 主进程分支</span>
-    cluster<span>.</span><span>on</span><span>(</span><span>'death'</span><span>,</span> <span>function</span> <span>(</span><span>worker</span><span>)</span> <span>{</span>
-        <span>// 当一个工作进程结束时，重启工作进程</span>
-        <span>delete</span> workers<span>[</span>worker<span>.</span>pid<span>]</span><span>;</span>
-        worker <span>=</span> cluster<span>.</span><span>fork</span><span>(</span><span>)</span><span>;</span>
-        workers<span>[</span>worker<span>.</span>pid<span>]</span> <span>=</span> worker<span>;</span>
-    <span>}</span><span>)</span><span>;</span>
-    <span>// 初始开启与CPU 数量相同的工作进程</span>
-    <span>for</span> <span>(</span><span>let</span> i <span>=</span> <span>0</span><span>;</span> i <span>&lt;</span> numCPUs<span>;</span> i<span>++</span><span>)</span> <span>{</span>
-        <span>const</span> worker <span>=</span> cluster<span>.</span><span>fork</span><span>(</span><span>)</span><span>;</span>
-        workers<span>[</span>worker<span>.</span>pid<span>]</span> <span>=</span> worker<span>;</span>
-    <span>}</span>
-<span>}</span> <span>else</span> <span>{</span>
-    <span>// 工作进程分支，启动服务器</span>
-    <span>const</span> <span>{</span> server<span>,</span> port <span>}</span> <span>=</span> <span>require</span><span>(</span><span>'./bin/www'</span><span>)</span><span>;</span>
-    server<span>.</span><span>listen</span><span>(</span>port<span>)</span><span>;</span>
-<span>}</span>
-<span>// 当主进程被终止时，关闭所有工作进程</span>
-process<span>.</span><span>on</span><span>(</span><span>'SIGTERM'</span><span>,</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
-    <span>for</span> <span>(</span><span>var</span> pid <span>in</span> workers<span>)</span> <span>{</span>
-        process<span>.</span><span>kill</span><span>(</span>pid<span>)</span><span>;</span>
-    <span>}</span>
-    process<span>.</span><span>exit</span><span>(</span><span>0</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div><blockquote>
-<p>cluster.js的功能是创建与CPU 核心个数相同的服务器进程，以确保充分利用多核CPU的资源。主进程生成若干个工作进程，并监听工作进程结束事件，当工作进程结束时，重新启动一个工作进程。分支进程产生时会自顶向下重新执行当前程序，并通过分支判断进入工作进程分支，在其中读取模块并启动服务器。通过cluster启动的工作进程可以直接实现端口复用，因此所有工作进程只需监听同一端口。当主进程终止时，还要主动关闭所有工作进程。</p>
-</blockquote>
-<p>修改bin/www，导出 server和port,修改如下：</p>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  server<span>,</span>
-  port
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>在终端中执行node cluster.js 命令， 可以看到进程列表中启动了多个 node进程（4核CPU）：</p>
-<div><pre><code><span>></span> express-example@1.0.0 start C:<span>\</span>Users<span>\</span>wangy<span>\</span>Desktop<span>\</span>express--example<span>\</span>qwer
-<span>></span> SET <span>DEBUG</span><span>=</span>express-example:* <span>&amp;&amp;</span> node ./cluster.js
-
-express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
-express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
-express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
-express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
-express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
-express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
-  express-example:server Listening on port <span>3000</span> +0ms
-  express-example:server Listening on port <span>3000</span> +0ms
-  express-example:server Listening on port <span>3000</span> +0ms
-express-session deprecated undefined resave option<span>;</span> provide resave option app.js:37:9
-express-session deprecated undefined saveUninitialized option<span>;</span> provide saveUninitialized option app.js:37:9
-  express-example:server Listening on port <span>3000</span> +0ms
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><blockquote>
-<p>我配置了npm 脚本：  &quot;start&quot;: &quot;SET DEBUG=express-example:* &amp;&amp; node ./cluster.js&quot;。</p>
-<p>终止工作进程，新的工作进程会立即启动，终止主进程，所有工作进程也会同时结束。</p>
-</blockquote>
-<h2 id="启动脚本"> 启动脚本</h2>
-<blockquote>
-<p>如果你维护过Linux 服务器，会对/etc/init.d/ 下面的脚本有印象。例如使用/etc/init.d/nginx start 和/etc/init.d/nginx stop 可以启动和关闭Nginx 服务器。我们通过bash 脚本也来实现一个类似的功能，创建microblog 并使用chmod +x microblog 赋予其执行权限，脚本内容为：</p>
-</blockquote>
-<div><pre><code><span>#! /bin/sh</span>
-<span>NODE_ENV</span><span>=</span>production
-<span>DAEMON</span><span>=</span><span>"node cluster.js"</span>
-<span>NAME</span><span>=</span>Microblog
-<span>DESC</span><span>=</span>Microblog
-<span>PIDFILE</span><span>=</span><span>"microblog.pid"</span>
-
-<span>case</span> <span>"<span>$1</span>"</span> <span>in</span>
-start<span>)</span>
-    <span>echo</span> <span>"Starting <span>$DESC</span>: "</span>
-        <span>nohup</span> <span>$DAEMON</span> <span>></span> /dev/null <span>&amp;</span>
-    <span>echo</span> <span>$!</span> <span>></span> <span>$PIDFILE</span>
-    <span>echo</span> <span>"<span>$NAME</span>."</span>
-        <span>;</span><span>;</span>
-stop<span>)</span>
-    <span>echo</span> <span>"Stopping <span>$DESC</span>: "</span>
-        <span>pid</span><span>=</span><span>'cat $PIDFILE'</span>
-    <span>kill</span> <span>$pid</span>
-        <span>rm</span> <span>$PIDFILE</span>
-    <span>echo</span> <span>"<span>$NAME</span>."</span>
-        <span>;</span><span>;</span>
-<span>esac</span>
-<span>exit</span> <span>0</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><blockquote>
-<p>它的功能是通过nohup 启动服务器，使进程不会因为退出终端而关闭，同时将主进程的pid 写入microblog.pid 文件。当调用结束命令时，从microblog.pid 读取pid 的值，终止主进程以关闭服务器。</p>
-</blockquote>
-<div><p>注意</p>
-<p>这段脚本只支持 POSIX操作系统，如 Linux、 Mac OS等，在 Windows下不可用。</p>
-</div>
-<h2 id="共享-80-端口"> 共享 80 端口</h2>
-<blockquote>
-<p>到目前为止，网站都是运行在3000端口下的，也就是说用户必须在网址中加入:3000才能访问网站。默认的HTTP 端口是80，因此必须监听80端口才能使网址更加简洁。如果整个服务器只有一个网站，那么只需让app.js 监听80 端口即可。但很多时候一个服务器上运行着不止一个网站，此时虚拟主机可以粉墨登场了。</p>
-</blockquote>
-<p>在Nginx 中设置反向代理和虚拟主机非常简单，下面是配置文件的一个示例：</p>
-<div><pre><code>server <span>{</span>
-    listen <span>80</span><span>;</span>
-    server_name mysite<span>.</span>com<span>;</span>
-    location <span>/</span> <span>{</span>
-        proxy_pass http<span>:</span><span>/</span><span>/</span>localhost<span>:</span><span>3000</span><span>;</span>
-    <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
-<p>这个配置文件的功能是监听访问mysite.com 80 端口的请求，并将所有的请求转发给http://localhost:3000，即我们的Node.js 服务器。现在访问http://mysite.com/，就相当于服务器访问http://localhost:3000了。</p>
+<p>由于本人java知识基本为零，所以这里主要记录一些java基础，供自己学习；</p>
 </blockquote>
 ]]></content:encoded>
     </item>
@@ -6335,135 +6335,6 @@ flush privileges;   --刷新MySQL的系统权限相关表
 ]]></content:encoded>
     </item>
     <item>
-      <title>winMysql忘记密码</title>
-      <link>https://wangyawei.top/views/backEnd/mysql/mysql-win-note-05/</link>
-      <guid>https://wangyawei.top/views/backEnd/mysql/mysql-win-note-05/</guid>
-      <source url="https://wangyawei.top/rss.xml">winMysql忘记密码</source>
-      <category>MYSQL</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="winmysql忘记密码"> winMysql忘记密码</h2>
-<ol>
-<li>
-<p>进入mysql的安装路径下的bin文件下；</p>
-</li>
-<li>
-<p>停止你的Mysql服务；</p>
-<div><pre><code><span># net stop mysql</span>
-
-D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ net stop mysql
-MySQL 服务正在停止.
-MySQL 服务已成功停止。
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
-<li>
-<p>输入以下命令；</p>
-<div><pre><code><span># mysqld --console --skip-grant-tables --shared-memory</span>
-
-D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ mysqld --console --skip-grant-tables --shared-memory <span># 1</span>
-<span>2021</span>-03-13T13:00:39.507312Z <span>0</span> <span>[</span>System<span>]</span> <span>[</span>MY-010116<span>]</span> <span>[</span>Server<span>]</span> D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin<span>\</span>mysqld.exe <span>(</span>mysqld <span>8.0</span>.20<span>)</span> starting as process <span>15836</span>
-<span>2021</span>-03-13T13:00:39.632181Z <span>1</span> <span>[</span>System<span>]</span> <span>[</span>MY-013576<span>]</span> <span>[</span>InnoDB<span>]</span> InnoDB initialization has started.
-<span>2021</span>-03-13T13:00:41.077270Z <span>1</span> <span>[</span>System<span>]</span> <span>[</span>MY-013577<span>]</span> <span>[</span>InnoDB<span>]</span> InnoDB initialization has ended.
-<span>2021</span>-03-13T13:00:41.422998Z <span>0</span> <span>[</span>Warning<span>]</span> <span>[</span>MY-011311<span>]</span> <span>[</span>Server<span>]</span> Plugin mysqlx reported: <span>'All I/O interfaces are disabled, X Protocol won'</span>t be accessible<span>'
-2021-03-13T13:00:41.745906Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-2021-03-13T13:00:41.839456Z 0 [System] [MY-010931] [Server] D:\mysql-8.0.20-winx64\bin\mysqld.exe: ready for connections. Version: '</span><span>8.0</span>.20<span>'  socket: '</span>'  port: <span>0</span>  MySQL Community Server - GPL.
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
-<p>注意窗口不要关闭，然后再打开一个新的窗口，</p>
-</blockquote>
-</li>
-<li>
-<p>登录；</p>
-<div><pre><code><span># 注意不要输入密码，直接回车，然后输入以下命令，</span>
-mysql -u root -p
-
-D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ mysql -u root -p  <span># 1</span>
-Enter password:
-Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
-Your MySQL connection <span>id</span> is <span>7</span>
-Server version: <span>8.0</span>.20 MySQL Community Server - GPL
-
-Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
-
-mysql<span>></span> use mysql  <span># 2</span>
-Database changed
-mysql<span>></span> update user <span>set</span> <span>authentication_string</span><span>=</span><span>''</span> where <span>user</span><span>=</span><span>'root'</span><span>;</span> Query OK, <span>1</span> row affected <span>(</span><span>0.14</span> sec<span>)</span>  <span># 3</span>
-Rows matched: <span>1</span>  Changed: <span>1</span>  Warnings: <span>0</span>
-
-mysql<span>></span> quit  <span># 4</span>
-Bye
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div></li>
-<li>
-<p>关闭1、2窗口；然后再新开一个窗口；</p>
-</li>
-<li>
-<p>执行以下命令；</p>
-<div><pre><code>D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ net start mysql  <span># 1</span>
-MySQL 服务正在启动 <span>..</span>
-MySQL 服务已经启动成功。
-
-D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ mysql -u root -p  <span># 2</span>
-Enter password:
-Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
-Your MySQL connection <span>id</span> is <span>8</span>
-Server version: <span>8.0</span>.20 MySQL Community Server - GPL
-
-Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
-
-mysql<span>></span> ALTER <span>USER</span> <span>'root'</span>@<span>'localhost'</span> IDENTIFIED BY <span>'root2020'</span><span>;</span>  <span># 3</span>
-Query OK, <span>0</span> rows affected <span>(</span><span>0.08</span> sec<span>)</span>
-
-mysql<span>></span> quit  <span># 4</span>
-Bye
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><blockquote>
-<p>此时密码修改为  <code>root2020</code></p>
-</blockquote>
-</li>
-<li>
-<p>使用密码登录；</p>
-<div><pre><code>D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
-$ mysql -u root -p
-Enter password: ********
-Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
-Your MySQL connection <span>id</span> is <span>9</span>
-Server version: <span>8.0</span>.20 MySQL Community Server - GPL
-
-Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
-
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-
-Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
-
-mysql<span>></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div></li>
-</ol>
-<p><a href="https://blog.csdn.net/qq382495414/article/details/107253577/" target="_blank" rel="noopener noreferrer">原文地址</a></p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>介绍</title>
       <link>https://wangyawei.top/views/backEnd/nginx/</link>
       <guid>https://wangyawei.top/views/backEnd/nginx/</guid>
@@ -6727,6 +6598,135 @@ server <span>{</span>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>winMysql忘记密码</title>
+      <link>https://wangyawei.top/views/backEnd/mysql/mysql-win-note-05/</link>
+      <guid>https://wangyawei.top/views/backEnd/mysql/mysql-win-note-05/</guid>
+      <source url="https://wangyawei.top/rss.xml">winMysql忘记密码</source>
+      <category>MYSQL</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="winmysql忘记密码"> winMysql忘记密码</h2>
+<ol>
+<li>
+<p>进入mysql的安装路径下的bin文件下；</p>
+</li>
+<li>
+<p>停止你的Mysql服务；</p>
+<div><pre><code><span># net stop mysql</span>
+
+D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ net stop mysql
+MySQL 服务正在停止.
+MySQL 服务已成功停止。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
+<li>
+<p>输入以下命令；</p>
+<div><pre><code><span># mysqld --console --skip-grant-tables --shared-memory</span>
+
+D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ mysqld --console --skip-grant-tables --shared-memory <span># 1</span>
+<span>2021</span>-03-13T13:00:39.507312Z <span>0</span> <span>[</span>System<span>]</span> <span>[</span>MY-010116<span>]</span> <span>[</span>Server<span>]</span> D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin<span>\</span>mysqld.exe <span>(</span>mysqld <span>8.0</span>.20<span>)</span> starting as process <span>15836</span>
+<span>2021</span>-03-13T13:00:39.632181Z <span>1</span> <span>[</span>System<span>]</span> <span>[</span>MY-013576<span>]</span> <span>[</span>InnoDB<span>]</span> InnoDB initialization has started.
+<span>2021</span>-03-13T13:00:41.077270Z <span>1</span> <span>[</span>System<span>]</span> <span>[</span>MY-013577<span>]</span> <span>[</span>InnoDB<span>]</span> InnoDB initialization has ended.
+<span>2021</span>-03-13T13:00:41.422998Z <span>0</span> <span>[</span>Warning<span>]</span> <span>[</span>MY-011311<span>]</span> <span>[</span>Server<span>]</span> Plugin mysqlx reported: <span>'All I/O interfaces are disabled, X Protocol won'</span>t be accessible<span>'
+2021-03-13T13:00:41.745906Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-03-13T13:00:41.839456Z 0 [System] [MY-010931] [Server] D:\mysql-8.0.20-winx64\bin\mysqld.exe: ready for connections. Version: '</span><span>8.0</span>.20<span>'  socket: '</span>'  port: <span>0</span>  MySQL Community Server - GPL.
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
+<p>注意窗口不要关闭，然后再打开一个新的窗口，</p>
+</blockquote>
+</li>
+<li>
+<p>登录；</p>
+<div><pre><code><span># 注意不要输入密码，直接回车，然后输入以下命令，</span>
+mysql -u root -p
+
+D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ mysql -u root -p  <span># 1</span>
+Enter password:
+Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
+Your MySQL connection <span>id</span> is <span>7</span>
+Server version: <span>8.0</span>.20 MySQL Community Server - GPL
+
+Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
+
+mysql<span>></span> use mysql  <span># 2</span>
+Database changed
+mysql<span>></span> update user <span>set</span> <span>authentication_string</span><span>=</span><span>''</span> where <span>user</span><span>=</span><span>'root'</span><span>;</span> Query OK, <span>1</span> row affected <span>(</span><span>0.14</span> sec<span>)</span>  <span># 3</span>
+Rows matched: <span>1</span>  Changed: <span>1</span>  Warnings: <span>0</span>
+
+mysql<span>></span> quit  <span># 4</span>
+Bye
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div></li>
+<li>
+<p>关闭1、2窗口；然后再新开一个窗口；</p>
+</li>
+<li>
+<p>执行以下命令；</p>
+<div><pre><code>D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ net start mysql  <span># 1</span>
+MySQL 服务正在启动 <span>..</span>
+MySQL 服务已经启动成功。
+
+D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ mysql -u root -p  <span># 2</span>
+Enter password:
+Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
+Your MySQL connection <span>id</span> is <span>8</span>
+Server version: <span>8.0</span>.20 MySQL Community Server - GPL
+
+Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
+
+mysql<span>></span> ALTER <span>USER</span> <span>'root'</span>@<span>'localhost'</span> IDENTIFIED BY <span>'root2020'</span><span>;</span>  <span># 3</span>
+Query OK, <span>0</span> rows affected <span>(</span><span>0.08</span> sec<span>)</span>
+
+mysql<span>></span> quit  <span># 4</span>
+Bye
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><blockquote>
+<p>此时密码修改为  <code>root2020</code></p>
+</blockquote>
+</li>
+<li>
+<p>使用密码登录；</p>
+<div><pre><code>D:<span>\</span>mysql-8.0.20-winx64<span>\</span>bin
+$ mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with <span>;</span> or <span>\</span>g.
+Your MySQL connection <span>id</span> is <span>9</span>
+Server version: <span>8.0</span>.20 MySQL Community Server - GPL
+
+Copyright <span>(</span>c<span>)</span> <span>2000</span>, <span>2020</span>, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span>'help;'</span> or <span>'\h'</span> <span>for</span> help. Type <span>'\c'</span> to <span>clear</span> the current input statement.
+
+mysql<span>></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div></li>
+</ol>
+<p><a href="https://blog.csdn.net/qq382495414/article/details/107253577/" target="_blank" rel="noopener noreferrer">原文地址</a></p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>nginx配置资源压缩</title>
       <link>https://wangyawei.top/views/backEnd/nginx/nginx-note-02/</link>
       <guid>https://wangyawei.top/views/backEnd/nginx/nginx-note-02/</guid>
@@ -6930,7 +6930,7 @@ Content-Length: 275
       <link>https://wangyawei.top/views/backEnd/nodejs/</link>
       <guid>https://wangyawei.top/views/backEnd/nodejs/</guid>
       <source url="https://wangyawei.top/rss.xml">介绍</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -6994,7 +6994,7 @@ Content-Length: 275
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-00/</guid>
       <source url="https://wangyawei.top/rss.xml">ES6</source>
       <category>ES6</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="es6"> ES6；</h2>
 <blockquote>
 <p>ECMAScript 的一个颠覆性版本更新  - 面向对象编程（类、对象-- 封装、继承、多态）</p>
@@ -8014,7 +8014,7 @@ app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-01/</guid>
       <source url="https://wangyawei.top/rss.xml">命令行输出目录树</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="如何使用命令行输出目录树"> 如何使用命令行输出目录树</h2>
 <blockquote>
 <p>概述：在自己写博客的时候，总会少不了要显示目录结构以更好的表达一些内容；虽然<code>window</code>自己提供了<code>tree</code>命令但是并不好用；比如我要显示项目的目录结构但是要排除<code>node_modules</code>文件夹，这个时候就有点力不从心了，在这里推荐以下<code>tree-node-cli</code>工具；</p>
@@ -8106,7 +8106,7 @@ webNode
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-02/</guid>
       <source url="https://wangyawei.top/rss.xml">node版本管理工具-nvm</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概述： nvm是一个nodejs的版本管理工具。我们可以通过它安装和切换不同版本的node.js。</p>
 </blockquote>
@@ -8199,7 +8199,7 @@ PS C:<span>\</span>Users<span>\</span>ASUS<span>\</span>Desktop<span>></span>
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-03/</guid>
       <source url="https://wangyawei.top/rss.xml">node实现自动化部署</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="node实现自动化部署"> node实现自动化部署；</h2>
 <blockquote>
 <p>说明：由于本人做的前端，Java就不太会，但是node确实一个对于前端同学写后端代码的一个非常好的技术。个人的项目前端是<code>vue</code>写的后端是<code>Nodejs</code>,同时利用<code>jenkjins</code>实现前后端自动化部署。</p>
@@ -8350,7 +8350,7 @@ Finished: SUCCESS
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-04/</guid>
       <source url="https://wangyawei.top/rss.xml">pm2的使用</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="pm2的简单使用"> pm2的简单使用</h1>
 <blockquote>
 <p>概述： PM2是具有内置负载平衡器的Node.js应用程序的生产过程管理器。它使您可以使应用程序永远保持活动状态，无需停机即可重新加载它们，并简化常见的系统管理任务。</p>
@@ -8479,7 +8479,7 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-05/</guid>
       <source url="https://wangyawei.top/rss.xml">后台持续运行node</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h4 id="_1、后台持续运行nodejs"> 1、后台持续运行<code>nodejs</code></h4>
 <div><pre><code><span># 持续运行node并把信息输出到指定的文件中</span>
 <span>nohup</span> <span>npm</span> run dev <span>></span>myout.file <span><span>2</span>></span><span>&amp;1</span> <span>&amp;</span>
@@ -8492,7 +8492,7 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-06/</guid>
       <source url="https://wangyawei.top/rss.xml">搭建本地服务</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="快速搭建本地服务"> 快速搭建本地服务</h2>
 <blockquote>
 <p>方式一、二、三单个js文件即可操作。</p>
@@ -8644,7 +8644,7 @@ server started on port <span>3000</span>
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-07/</guid>
       <source url="https://wangyawei.top/rss.xml">json-serve</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="json-server"> <code>JSON Server</code>;</h2>
 <blockquote>
 <ul>
@@ -9649,7 +9649,7 @@ req<span>.</span><span>on</span><span>(</span><span>'response'</span><span>,</sp
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-14/</guid>
       <source url="https://wangyawei.top/rss.xml">Node.js 是什么</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -9694,7 +9694,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-15/</guid>
       <source url="https://wangyawei.top/rss.xml">Node.js 能做什么</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如 JavaScript 为客户端而生， Node.js 为网络而生。 Node.js 能做的远不止开发一个网站那么简单 ，Node.js 内建了 HTTP 服务器支持，也就是说你可以轻而易举地实现一个网站和服务器的组合。</p>
 </blockquote>
@@ -9718,7 +9718,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-16/</guid>
       <source url="https://wangyawei.top/rss.xml">异步式 I/O 与事件驱动</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是采用异步式 I/O 与事件驱动的架构设计.</p>
 </blockquote>
@@ -9740,7 +9740,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-17/</guid>
       <source url="https://wangyawei.top/rss.xml">Node.js 的性能</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 用异步式 I/O 和事件驱动代替多线程，带来了可观的性能提升。 Node.js 除了使用 V8 作为JavaScript引擎以外，还使用了高效的 libev 和 libeio 库支持事件驱动和异步式 I/O。</p>
 </blockquote>
@@ -9754,7 +9754,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-18/</guid>
       <source url="https://wangyawei.top/rss.xml">CommonJS规范</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现， CommonJS 诞生了。</p>
 </blockquote>
@@ -9768,7 +9768,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-19/</guid>
       <source url="https://wangyawei.top/rss.xml">使用nodejs</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>用 Node.js 编程是一件令人愉快的事情，你会发现像这样的语言是很容易入门的，可以快速了解到它的细节，然后掌握它。</p>
 </blockquote>
@@ -9913,7 +9913,7 @@ $ nodemon app.js
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-20/</guid>
       <source url="https://wangyawei.top/rss.xml">异步式 I/O 与事件式编程</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是异步式 I/O（或者非阻塞 I/O）与事件紧密结合的编程模式。这种模式与传统的同步式 I/O 线性的编程思路有很大的不同，因为控制流很大程度上要靠事件和回调函数来组织，一个逻辑要拆分为若干个单元。</p>
 </blockquote>
@@ -10011,7 +10011,7 @@ event<span>.</span><span>on</span><span>(</span><span>'some_event'</span><span>,
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-21/</guid>
       <source url="https://wangyawei.top/rss.xml">模块和包</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>模块（Module）和包（Package）是 Node.js 最重要的支柱。开发一个具有一定规模的程序不可能只用一个文件，通常需要把各个功能拆分、封装，然后组合起来，模块正是为了实现这种方式而诞生的。在浏览器 JavaScript 中，脚本模块的拆分和组合通常使用 HTML 的script 标签来实现。 Node.js 提供了 require 函数来调用其他模块，而且模块都是基于文件的，机制十分简单。Node.js 的模块和包机制的实现参照了 CommonJS 的标准，</p>
 </blockquote>
@@ -10223,7 +10223,7 @@ C:<span>\</span>Program Files<span>\</span>nodejs<span>\</span>node_modules
       <guid>https://wangyawei.top/views/backEnd/nodejs/nodejs-note-22/</guid>
       <source url="https://wangyawei.top/rss.xml">调试</source>
       <category>nodejs</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>写程序时免不了遇到 bug，而当 bug 发生以后，除了抓耳挠腮之外，一个常用的技术是单步调试。  在浏览器中我们可以通过开发者工具进行调试。然而Node.js 的调试功能正是由 V8 提供的，保持了一贯的高效和方便的特性</p>
 </blockquote>
@@ -11330,6 +11330,43 @@ iptables -t nat -D PREROUTING -p tcp --dport <span>8080</span> -j REDIRECT --to-
 ]]></content:encoded>
     </item>
     <item>
+      <title>liunx 上用tomcat部署web项目后访问空白页问题</title>
+      <link>https://wangyawei.top/views/backEnd/tomcat/tomcat-note-04/</link>
+      <guid>https://wangyawei.top/views/backEnd/tomcat/tomcat-note-04/</guid>
+      <source url="https://wangyawei.top/rss.xml">liunx 上用tomcat部署web项目后访问空白页问题</source>
+      <category>TOMCAT</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="问题描述"> 问题描述；</h2>
+<blockquote>
+<p>本人使用的阿里云服务器，经过几天的折腾，我怀着无比激动的心情打开浏览器访问我几天的劳动成果，然而呈现我眼前的却是空白页<strong>what？</strong></p>
+</blockquote>
+<h2 id="解决方案"> 解决方案；</h2>
+<ol>
+<li>
+<p>在 <code>vue.config.js</code>中配置<code>publicPath</code>属性；</p>
+<blockquote>
+<p><strong>据<code>vue</code>官方介绍：</strong><code>Vue CLI</code> 会假设你的应用是被部署在一个域名的根路径上，例如 <code>https://www.my-app.com/</code>。<strong>如果应用被部署在一个子路径上</strong>，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在 <code>https://www.my-app.com/my-app/</code>，则设置 <code>publicPath</code> 为 <code>/my-app/</code>。</p>
+<p>这个值也可以被设置为空字符串 (<code>''</code>) 或是相对路径 (<code>'./'</code>)，这样所有的资源都会被链接为相对路径，这样打出来的包可以被部署在任意路径</p>
+</blockquote>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  <span>// 解决部署后访问空白页的问题；</span>
+  publicPath<span>:</span> <span>'./'</span><span>,</span>
+<span>}</span>
+<span>// 我的项目部署在 http://47.114.139.71:8080/heros/#heroList 上；</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>相对路径：‘./’  会把项目名默认添加到请求的资源路径中；
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="./assets/1594793990333.png" alt="1594793990333" /></p>
+<div><pre><code>如果是 绝对路径 ‘/’ 则请求的资源路径为 http://47.114.139.71:8080/css/app.93ebc27.css
+</code></pre>
+<div><span>1</span><br></div></div><blockquote>
+<p>以相对路径<code>./</code>设置的效果和<code>/heros/</code>或<code>heros</code>的效果一样；都会在请求的资源路径添加项目名或你设置的路径名(hero)；</p>
+</blockquote>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
       <title>介绍</title>
       <link>https://wangyawei.top/views/designMode/</link>
       <guid>https://wangyawei.top/views/designMode/</guid>
@@ -11346,6 +11383,7 @@ iptables -t nat -D PREROUTING -p tcp --dport <span>8080</span> -j REDIRECT --to-
 <li><a href="./designMode-note-03.html">工厂模式</a></li>
 <li><a href="./designMode-note-04.html">建造者模式</a></li>
 <li><a href="./designMode-note-05.html">单例模式</a></li>
+<li>[构造函数模式]</li>
 </ol>
 ]]></content:encoded>
     </item>
@@ -11414,43 +11452,6 @@ iptables -t nat -D PREROUTING -p tcp --dport <span>8080</span> -j REDIRECT --to-
 </ul>
 </li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>liunx 上用tomcat部署web项目后访问空白页问题</title>
-      <link>https://wangyawei.top/views/backEnd/tomcat/tomcat-note-04/</link>
-      <guid>https://wangyawei.top/views/backEnd/tomcat/tomcat-note-04/</guid>
-      <source url="https://wangyawei.top/rss.xml">liunx 上用tomcat部署web项目后访问空白页问题</source>
-      <category>TOMCAT</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="问题描述"> 问题描述；</h2>
-<blockquote>
-<p>本人使用的阿里云服务器，经过几天的折腾，我怀着无比激动的心情打开浏览器访问我几天的劳动成果，然而呈现我眼前的却是空白页<strong>what？</strong></p>
-</blockquote>
-<h2 id="解决方案"> 解决方案；</h2>
-<ol>
-<li>
-<p>在 <code>vue.config.js</code>中配置<code>publicPath</code>属性；</p>
-<blockquote>
-<p><strong>据<code>vue</code>官方介绍：</strong><code>Vue CLI</code> 会假设你的应用是被部署在一个域名的根路径上，例如 <code>https://www.my-app.com/</code>。<strong>如果应用被部署在一个子路径上</strong>，你就需要用这个选项指定这个子路径。例如，如果你的应用被部署在 <code>https://www.my-app.com/my-app/</code>，则设置 <code>publicPath</code> 为 <code>/my-app/</code>。</p>
-<p>这个值也可以被设置为空字符串 (<code>''</code>) 或是相对路径 (<code>'./'</code>)，这样所有的资源都会被链接为相对路径，这样打出来的包可以被部署在任意路径</p>
-</blockquote>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  <span>// 解决部署后访问空白页的问题；</span>
-  publicPath<span>:</span> <span>'./'</span><span>,</span>
-<span>}</span>
-<span>// 我的项目部署在 http://47.114.139.71:8080/heros/#heroList 上；</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>相对路径：‘./’  会把项目名默认添加到请求的资源路径中；
-</code></pre>
-<div><span>1</span><br></div></div><p><img src="./assets/1594793990333.png" alt="1594793990333" /></p>
-<div><pre><code>如果是 绝对路径 ‘/’ 则请求的资源路径为 http://47.114.139.71:8080/css/app.93ebc27.css
-</code></pre>
-<div><span>1</span><br></div></div><blockquote>
-<p>以相对路径<code>./</code>设置的效果和<code>/heros/</code>或<code>heros</code>的效果一样；都会在请求的资源路径添加项目名或你设置的路径名(hero)；</p>
-</blockquote>
-</li>
-</ol>
 ]]></content:encoded>
     </item>
     <item>
@@ -14591,7 +14592,7 @@ flex-wrap: wrap;   这两句话等价于下面的这句话*/</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-00/</guid>
       <source url="https://wangyawei.top/rss.xml">ES6</source>
       <category>es6</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 16:07:22 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p><code>ES6</code>代表着 JS 这门语言最新的标准。目前以<code>Chrome</code>为首的现代浏览器已经基本实现了ES6的大多数新特性，即使在不支持ES6的浏览器上，开发者也可以通过转译工具如<code>Babel</code>将ES6代码转译为ES5代码来实现兼容。</p>
 </blockquote>
@@ -15150,12 +15151,12 @@ Reflect<span>.</span><span>has</span><span>(</span>Object<span>,</span> <span>'a
 ]]></content:encoded>
     </item>
     <item>
-      <title>javascript基础</title>
+      <title>基础</title>
       <link>https://wangyawei.top/views/frontEnd/javascript/javascript-note-000/</link>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-000/</guid>
-      <source url="https://wangyawei.top/rss.xml">javascript基础</source>
+      <source url="https://wangyawei.top/rss.xml">基础</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 16:07:22 GMT</pubDate>
       <content:encoded><![CDATA[<h3 id="输入和输出"> 输入和输出：</h3>
 <ul>
 <li>prompt(&quot;请输入您的银行卡密码：&quot;);  引导信息；</li>
@@ -15952,7 +15953,7 @@ Reflect<span>.</span><span>has</span><span>(</span>Object<span>,</span> <span>'a
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-01/</guid>
       <source url="https://wangyawei.top/rss.xml">javascript高级</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="javascript-的组成"> JavaScript 的组成</h2>
 <table>
 <thead>
@@ -17820,7 +17821,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-02/</guid>
       <source url="https://wangyawei.top/rss.xml">对象拷贝</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="浅拷贝"> 浅拷贝；</h2>
 <blockquote>
 <p>拷贝就是拷贝指向对象的<a href="https://baike.baidu.com/item/%E6%8C%87%E9%92%88/2878304" target="_blank" rel="noopener noreferrer">指针</a>，意思就是说：拷贝出来的目标对象的指针和源对象的指针指向的内存空间是同一块空间，浅拷贝只是一种简单的拷贝，让几个对象公用一个内存。</p>
@@ -17980,7 +17981,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-03/</guid>
       <source url="https://wangyawei.top/rss.xml">函数防抖</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概述：一个处理函数会在延迟n秒后触发，如果在n秒内再次触发那么回重新计时；</p>
 </blockquote>
@@ -18031,7 +18032,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-04/</guid>
       <source url="https://wangyawei.top/rss.xml">函数节流</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概述：限制一个函数再一定时间内只能执行一次；</p>
 </blockquote>
@@ -18078,7 +18079,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-05/</guid>
       <source url="https://wangyawei.top/rss.xml">函数继承</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="通过原型实现继承"> 通过原型实现继承</h2>
 <div><pre><code><span>&lt;</span>script<span>></span>
     <span>// 父类构造函数；</span>
@@ -18217,7 +18218,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-06/</guid>
       <source url="https://wangyawei.top/rss.xml">Async 函数</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
 <p><code>async</code>表示函数里有异步操作，<code>await</code>表示紧跟在后面的表达式需要等待结果。</p>
@@ -18313,7 +18314,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-07/</guid>
       <source url="https://wangyawei.top/rss.xml">jsonp跨域的实现原理</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p><strong>利用javascript里边的src属性的开放原则实现跨域:</strong></p>
 </blockquote>
@@ -18358,7 +18359,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-08/</guid>
       <source url="https://wangyawei.top/rss.xml">new的实现原理</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<div><pre><code><span>&lt;</span>script<span>></span>
     <span>// 创建一个构造函数</span>
     <span>function</span> <span>Father</span><span>(</span><span>)</span> <span>{</span>
@@ -18433,7 +18434,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-09/</guid>
       <source url="https://wangyawei.top/rss.xml">什么是Promise</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概念：Promise 代表一个异步操作；</p>
 </blockquote>
@@ -18590,7 +18591,7 @@ promise<span>.</span><span>then</span><span>(</span><span>function</span><span>(
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-10/</guid>
       <source url="https://wangyawei.top/rss.xml">打包及本地预览</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="构建打包"> 构建打包</h2>
 <p>在发布上线之前，我们需要执行构建打包，将 <code>.less</code>、<code>.vue</code>、<code>.js</code> 等相关资源进行编译打包，转换成浏览器可以直接识别运行的普通 <code>css</code>、<code>js</code>、<code>html</code>。</p>
 <div><pre><code>// 打包
@@ -18671,7 +18672,7 @@ serve dist
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-11/</guid>
       <source url="https://wangyawei.top/rss.xml">javascript内存管理</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 09 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>内存管理可以简单理解为内存空间，内存空间可以分为：栈内存、堆内存</p>
 </blockquote>
@@ -18832,7 +18833,7 @@ obj2 <span>=</span> <span>null</span><span>;</span> <span>// obj2对{ a: 10 }的
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-12/</guid>
       <source url="https://wangyawei.top/rss.xml">单元测试</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 09 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>测试是一种验证我们的代码是否可以按我们的预期工作的方法；被测试的对象可以是，样式、功能、组件等；</p>
 <p>单元测试是指对软件中的最小可测试单元进行检查和验证；</p>
@@ -18957,7 +18958,7 @@ Ran all <span>test</span> suites.
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-13/</guid>
       <source url="https://wangyawei.top/rss.xml">提高代码可靠性</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 09 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>作为一名程序员，我们需要写出可靠的代码，来保障应用程序的安稳运行，所以提高自己的代码可靠性就变得有为重要；</p>
 </blockquote>
@@ -19132,7 +19133,7 @@ console<span>.</span><span>log</span><span>(</span>data<span>.</span>count<span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-14/</guid>
       <source url="https://wangyawei.top/rss.xml">compose函数和pipe函数</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 12 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="compose函数"> compose函数</h2>
 <ol>
 <li>什么是compose函数；
@@ -19235,7 +19236,7 @@ console<span>.</span><span>log</span><span>(</span><span>pipe</span><span>(</spa
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-15/</guid>
       <source url="https://wangyawei.top/rss.xml">高阶函数</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 12 May 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>1、高阶函数是对其他函数进行操作的函数，可以将它们作为参数或返回它们；</p>
 <p>2、简单来说，高阶函数是一个函数，它接收函数作为参数或将函数作为输出返回；</p>
@@ -19343,7 +19344,7 @@ console<span>.</span><span>log</span><span>(</span>arr1<span>,</span> arr2<span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-16/</guid>
       <source url="https://wangyawei.top/rss.xml">常用函数</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Thu, 01 Jul 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="缓存函数"> 缓存函数</h2>
 <blockquote>
 <p>缓存函数是指将上次的计算结果缓存起来，当下次调用时，如果遇到相同的参数，就直接返回缓存中的数据；</p>
@@ -19458,7 +19459,7 @@ console<span>.</span><span>log</span><span>(</span>age<span>)</span> <span>// [ 
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-17/</guid>
       <source url="https://wangyawei.top/rss.xml">排序算法</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sat, 15 May 2021 20:38:45 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="冒泡排序"> 冒泡排序</h2>
 <blockquote>
 <p>冒泡排序（Bubble Sort）也是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢&quot;浮&quot;到数列的顶端。</p>
@@ -19508,7 +19509,7 @@ console<span>.</span><span>log</span><span>(</span>arr<span>)</span> <span>//   
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-18/</guid>
       <source url="https://wangyawei.top/rss.xml">链表数据结构</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 19 May 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>链表存储有序的元素集合，但不同于数组，链表中的元素在内存中并不是连续放置的。每个 元素由一个存储元素本身的节点和一个指向下一个元素的引用(也称指针或链接)组成。下图展示了链表的结构:</p>
 </blockquote>
@@ -19700,7 +19701,7 @@ console<span>.</span><span>log</span><span>(</span>sum<span>)</span> <span>// 18
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-19/</guid>
       <source url="https://wangyawei.top/rss.xml">js数据类型</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 19 May 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>javascript一共有8种数据类型;</p>
 <ol>
@@ -19793,7 +19794,7 @@ console<span>.</span><span>log</span><span>(</span>o1 <span>===</span> o2<span>)
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-20/</guid>
       <source url="https://wangyawei.top/rss.xml">变量的复制</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 19 May 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>想复制某个变量的值，只要将它赋值给另外一个变量(或者是某个对象的属性)。复制原始类型和对象类型有所不同；</p>
 </blockquote>
@@ -19841,7 +19842,7 @@ console<span>.</span><span>log</span><span>(</span>clone<span>)</span><span>;</s
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-21/</guid>
       <source url="https://wangyawei.top/rss.xml">类型转换</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 19 May 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="转字符串"> 转字符串</h2>
 <blockquote>
 <p>转字符串经常出现在 + 运算中，并且其中有一个操作数不是数值类型；</p>
@@ -19923,7 +19924,7 @@ console<span>.</span><span>log</span><span>(</span><span>!</span><span>!</span>s
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-22/</guid>
       <source url="https://wangyawei.top/rss.xml">类型检测</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Wed, 19 May 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="typeof操作符"> <code>typeof</code>操作符</h2>
 <blockquote>
 <p>typeof:操作符可以检测变量的数据类型</p>
@@ -20068,7 +20069,7 @@ console<span>.</span><span>log</span><span>(</span><span>getType</span><span>(</
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-23/</guid>
       <source url="https://wangyawei.top/rss.xml">模板字符串</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>模板字符串是允许嵌入表达式的字符串字面量。可以使用多行字符串和字符串插值功能；</p>
 </blockquote>
@@ -20139,7 +20140,7 @@ console<span>.</span><span>log</span><span>(</span>message2<span>)</span><span>;
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-24/</guid>
       <source url="https://wangyawei.top/rss.xml">Symbol</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>想给他人创建的对象添加属性，不管该属性取什么名字，理论上都存在冲突的可能性。而使用Symbol作为对象的属性名就没有这个顾虑。因为它的值是唯一的。这也意味着给对象添加私有属性称为了可能。</p>
 </blockquote>
@@ -20258,7 +20259,7 @@ console<span>.</span><span>log</span><span>(</span>a<span>.</span><span>concat</
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-25/</guid>
       <source url="https://wangyawei.top/rss.xml">什么是作用域</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>简单来说作用域就是根据名称查找变量的一套规则，它决定了变量的可见范围和生命周期，正确使用作用域可以使代码更清晰、易懂。作用域可以减少命名冲突，而且是垃圾回收的基本单元。</p>
 </blockquote>
@@ -20412,7 +20413,7 @@ console<span>.</span><span>log</span><span>(</span>somevar<span>)</span><span>;<
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-26/</guid>
       <source url="https://wangyawei.top/rss.xml">声明提升</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>简单来说就是，在var声明的变量之前使用这个变量不会导致报错，而是会打印undefined</p>
 </blockquote>
@@ -20482,7 +20483,7 @@ console<span>.</span><span>log</span><span>(</span><span>typeof</span> double<sp
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-27/</guid>
       <source url="https://wangyawei.top/rss.xml">变量声明</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="const声明"> <code>const</code>声明</h2>
 <blockquote>
 <p>使用const声明的原始类型是常量，之后不能更改，不然会报类型错误。使用const声明的对象类型的变量，变量本身无法赋值为其他类型，但是它的属性可以修改。</p>
@@ -20525,7 +20526,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-28/</guid>
       <source url="https://wangyawei.top/rss.xml">作用域链</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
     </item>
     <item>
       <title>作用域链延长</title>
@@ -20533,7 +20534,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-29/</guid>
       <source url="https://wangyawei.top/rss.xml">作用域链延长</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="try-catch"> <code>try-catch</code></h2>
 <h2 id="with"> <code>with</code></h2>
 <blockquote>
@@ -20555,7 +20556,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-30/</guid>
       <source url="https://wangyawei.top/rss.xml">原型</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote></blockquote>
 <h2 id="原型和原型链"> 原型和原型链</h2>
 <h3 id="原型prototype"> 原型<code>prototype</code></h3>
@@ -20583,7 +20584,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-31/</guid>
       <source url="https://wangyawei.top/rss.xml">深拷贝与浅拷贝</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>this对象</title>
@@ -20591,7 +20592,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-32/</guid>
       <source url="https://wangyawei.top/rss.xml">this对象</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:05:12 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>不管是严格模式还是非严格模式，全局环境中的this指向全局对象；</p>
 </blockquote>
@@ -20649,7 +20650,7 @@ console<span>.</span><span>log</span><span>(</span>o<span>.</span>a<span>)</span
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-33/</guid>
       <source url="https://wangyawei.top/rss.xml">尾调用优化</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>立即执行函数(IIFE)</title>
@@ -20657,7 +20658,7 @@ console<span>.</span><span>log</span><span>(</span>o<span>.</span>a<span>)</span
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-34/</guid>
       <source url="https://wangyawei.top/rss.xml">立即执行函数(IIFE)</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Tue, 08 Jun 2021 22:10:45 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>立即执行函数会创建一个新的作用域，里面的执行的方法和变量不会影响全局作用域；</p>
 </blockquote>
@@ -20691,7 +20692,7 @@ console<span>.</span><span>log</span><span>(</span>o<span>.</span>a<span>)</span
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-35/</guid>
       <source url="https://wangyawei.top/rss.xml">闭包</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Thu, 01 Jul 2021 22:22:34 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>通俗地讲，JavaScript 中每个的函数都是一个闭包，但通常意义上嵌套的函数更能够体现出闭包的特性，</p>
 </blockquote>
@@ -20835,7 +20836,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-36/</guid>
       <source url="https://wangyawei.top/rss.xml">递归</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>回调</title>
@@ -20843,7 +20844,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-37/</guid>
       <source url="https://wangyawei.top/rss.xml">回调</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>柯里化</title>
@@ -20851,7 +20852,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-38/</guid>
       <source url="https://wangyawei.top/rss.xml">柯里化</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
     </item>
     <item>
       <title>同步与异步</title>
@@ -22684,7 +22685,7 @@ console<span>.</span><span>log</span><span>(</span>foo<span>.</span>name<span>)<
       <guid>https://wangyawei.top/views/frontEnd/javascript/javascript-note-54/</guid>
       <source url="https://wangyawei.top/rss.xml">编译原理</source>
       <category>javascript</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Sun, 20 Jun 2021 22:18:22 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>尽管开发者将 JavaScript 归类为“动态”或“解释执行”语言，但事实上它是一门编译语言。
 在传统编译语言的流程中，程序中的一段源代码在执行之前会经历三个步骤，统称为“编译”。</p>
@@ -22978,20 +22979,6 @@ text3
 <li>性能考虑，web workers主要用于更耗费 CPU 资源的任务。</li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>工厂模式</title>
-      <link>https://wangyawei.top/views/frontEnd/javascript/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-      <guid>https://wangyawei.top/views/frontEnd/javascript/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
-      <source url="https://wangyawei.top/rss.xml">工厂模式</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
-    </item>
-    <item>
-      <title>构造函数模式</title>
-      <link>https://wangyawei.top/views/frontEnd/javascript/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F/</link>
-      <guid>https://wangyawei.top/views/frontEnd/javascript/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E6%A8%A1%E5%BC%8F/</guid>
-      <source url="https://wangyawei.top/rss.xml">构造函数模式</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
     </item>
     <item>
       <title>介绍</title>
@@ -30883,45 +30870,6 @@ app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>处理favicon.icon</title>
-      <link>https://wangyawei.top/views/frontEnd/vue/vue-note-25/</link>
-      <guid>https://wangyawei.top/views/frontEnd/vue/vue-note-25/</guid>
-      <source url="https://wangyawei.top/rss.xml">处理favicon.icon</source>
-      <category>vue</category>
-      <pubDate>Thu, 09 Sep 2021 07:25:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>通过前面的代码你可以看出，每次我们刷新页面，浏览器都会额外的发送favicon请求，显然对于favicon这个请求我们不需要每次都对它做处理；</p>
-</blockquote>
-<ul>
-<li>
-<p>安装依赖</p>
-<div><pre><code><span># 可以用于请求并指定网页的favicon图标</span>
-<span>npm</span> <span>install</span> serve-favicon -S
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div></li>
-<li>
-<p>使用：<code>/bin/server.js</code>添加如下代码</p>
-<div><pre><code><span>const</span> favicon <span>=</span> <span>require</span><span>(</span><span>'serve-favicon'</span><span>)</span><span>;</span>
-<span>const</span> path <span>=</span> <span>require</span><span>(</span><span>'path'</span><span>)</span><span>;</span>
-
-<span>// 创建express实例</span>
-<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span><span>;</span>
-<span>// 处理 favicon</span>
-app<span>.</span><span>use</span><span>(</span><span>favicon</span><span>(</span>path<span>.</span><span>join</span><span>(</span>__dirname<span>,</span> <span>'../public'</span><span>,</span> <span>'favicon.ico'</span><span>)</span><span>)</span><span>)</span>
-<span>...</span>省略
-<span>// 启动node服务</span>
-app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>"启动成功"</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><blockquote>
-<p>添加上面的代码后，当请求到来时会先处理favicon,并返回给前端。</p>
-</blockquote>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>处理路由</title>
       <link>https://wangyawei.top/views/frontEnd/vue/vue-note-30/</link>
       <guid>https://wangyawei.top/views/frontEnd/vue/vue-note-30/</guid>
@@ -30967,6 +30915,45 @@ Vue<span>.</span><span>use</span><span>(</span>VueRouter<span>)</span><span>;</s
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
 <p>上面的代码中和以往不同的是。我导出的不是一个vueRouter实例，<strong>而是一个工厂函数</strong>，之所以这样处理是因为在将来访问我们的网站的用户会又很多个，而不同的用户所访问的页面和内容都不相同，所以需要每次都返回一份最新的router给前台，从而避免污染；</p>
 </blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>处理favicon.icon</title>
+      <link>https://wangyawei.top/views/frontEnd/vue/vue-note-25/</link>
+      <guid>https://wangyawei.top/views/frontEnd/vue/vue-note-25/</guid>
+      <source url="https://wangyawei.top/rss.xml">处理favicon.icon</source>
+      <category>vue</category>
+      <pubDate>Thu, 09 Sep 2021 07:25:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>通过前面的代码你可以看出，每次我们刷新页面，浏览器都会额外的发送favicon请求，显然对于favicon这个请求我们不需要每次都对它做处理；</p>
+</blockquote>
+<ul>
+<li>
+<p>安装依赖</p>
+<div><pre><code><span># 可以用于请求并指定网页的favicon图标</span>
+<span>npm</span> <span>install</span> serve-favicon -S
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>使用：<code>/bin/server.js</code>添加如下代码</p>
+<div><pre><code><span>const</span> favicon <span>=</span> <span>require</span><span>(</span><span>'serve-favicon'</span><span>)</span><span>;</span>
+<span>const</span> path <span>=</span> <span>require</span><span>(</span><span>'path'</span><span>)</span><span>;</span>
+
+<span>// 创建express实例</span>
+<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span><span>;</span>
+<span>// 处理 favicon</span>
+app<span>.</span><span>use</span><span>(</span><span>favicon</span><span>(</span>path<span>.</span><span>join</span><span>(</span>__dirname<span>,</span> <span>'../public'</span><span>,</span> <span>'favicon.ico'</span><span>)</span><span>)</span><span>)</span>
+<span>...</span>省略
+<span>// 启动node服务</span>
+app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>"启动成功"</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><blockquote>
+<p>添加上面的代码后，当请求到来时会先处理favicon,并返回给前端。</p>
+</blockquote>
+</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -31786,6 +31773,99 @@ module<span>.</span>exports <span>=</span> <span>{</span>
 ]]></content:encoded>
     </item>
     <item>
+      <title>webpack打包进度条</title>
+      <link>https://wangyawei.top/views/frontEnd/webpack/webpack-note-03/</link>
+      <guid>https://wangyawei.top/views/frontEnd/webpack/webpack-note-03/</guid>
+      <source url="https://wangyawei.top/rss.xml">webpack打包进度条</source>
+      <category>WEBPACK</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="添加webpack打包进度条"> 添加<code>webpack</code>打包进度条</h2>
+<div><pre><code><span>"webpack"</span><span>:</span> <span>"^4.46"</span><span>,</span>
+<span>"webpack-dev-middleware"</span><span>:</span> <span>"^3.7.3"</span><span>,</span>
+<span>"webpack-hot-middleware"</span><span>:</span> <span>"^2.25.0"</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="方式一"> 方式一</h3>
+<div><pre><code><span>// ...省略</span>
+<span>const</span> webpack <span>=</span> <span>require</span><span>(</span><span>"webpack"</span><span>)</span><span>;</span>
+<span>const</span> complier <span>=</span> <span>webpack</span><span>(</span>webpackConfig<span>)</span><span>;</span>
+<span>complier</span><span>.</span><span>apply</span><span>(</span><span>new</span> <span>webpack<span>.</span>ProgressPlugin</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>// 重点是这行</span>
+<span>const</span> hotMiddleware <span>=</span> <span>webpackHotMiddleware</span><span>(</span>complier<span>)</span><span>;</span>
+<span>const</span> app <span>=</span> <span>new</span> <span>express</span><span>(</span><span>)</span><span>;</span>
+
+app<span>.</span><span>use</span><span>(</span><span>webpackDevMiddleware</span><span>(</span>complier<span>,</span> <span>{</span>
+  noInfo<span>:</span> <span>true</span><span>,</span>
+  publicPath<span>:</span> webpackConfig<span>.</span>output<span>.</span>publicPath<span>,</span>
+<span>}</span><span>)</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
+<p>添加完成即可实现和<code>vue-dev-service</code>一样的打包进度条效果。</p>
+</blockquote>
+<h3 id="方式二"> 方式二</h3>
+<ul>
+<li>
+<p>安装：<code>progress-bar-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> i progress-webpack-plugin
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code>const ProgressBarPlugin = require(&#39;progress-bar-webpack-plugin&#39;);
+
+module.exports = {
+    ...
+    plugins:[
+        new ProgressPlugin(true)
+    ]
+}
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
+</ul>
+<h3 id="方式三"> 方式三</h3>
+<ul>
+<li>
+<p>安装：<code>simple-progress-webpack-plugin</code>插件，<a href="https://cnpmjs.org/package/simple-progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> <span>install</span> simple-progress-webpack-plugin --save-dev
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code><span>const</span> SimpleProgressWebpackPlugin <span>=</span> <span>require</span><span>(</span> <span>'simple-progress-webpack-plugin'</span> <span>)</span><span>;</span>
+
+module<span>.</span>exports <span>=</span> <span>{</span>
+    <span>...</span>
+    plugins<span>:</span><span>[</span>
+        <span>new</span> <span>SimpleProgressWebpackPlugin</span><span>(</span><span>)</span>
+    <span>]</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
+</ul>
+<h3 id="方式四"> 方式四</h3>
+<ul>
+<li>
+<p>安装：<code>progress-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> i progress-webpack-plugin
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code><span>var</span> ProgressPlugin <span>=</span> <span>require</span><span>(</span><span>'progress-webpack-plugin'</span><span>)</span>
+
+module<span>.</span>exports <span>=</span> <span>{</span>
+    <span>...</span>
+    plugins<span>:</span><span>[</span>
+        <span>new</span> <span>ProgressPlugin</span><span>(</span><span>true</span><span>)</span>
+    <span>]</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
+<p>注意：这个插件我在使用时出现了错误，没在其它<code>webpack</code>的版本试过。建议用上面几个，基本就可以满足需求了。</p>
+</blockquote>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>webpack、webpack-cli、webpack-dev-server的关系</title>
       <link>https://wangyawei.top/views/frontEnd/webpack/webpack-note-02/</link>
       <guid>https://wangyawei.top/views/frontEnd/webpack/webpack-note-02/</guid>
@@ -31972,99 +32052,6 @@ webpack: Compiled successfully.
 </tr>
 </tbody>
 </table>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>webpack打包进度条</title>
-      <link>https://wangyawei.top/views/frontEnd/webpack/webpack-note-03/</link>
-      <guid>https://wangyawei.top/views/frontEnd/webpack/webpack-note-03/</guid>
-      <source url="https://wangyawei.top/rss.xml">webpack打包进度条</source>
-      <category>WEBPACK</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="添加webpack打包进度条"> 添加<code>webpack</code>打包进度条</h2>
-<div><pre><code><span>"webpack"</span><span>:</span> <span>"^4.46"</span><span>,</span>
-<span>"webpack-dev-middleware"</span><span>:</span> <span>"^3.7.3"</span><span>,</span>
-<span>"webpack-hot-middleware"</span><span>:</span> <span>"^2.25.0"</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="方式一"> 方式一</h3>
-<div><pre><code><span>// ...省略</span>
-<span>const</span> webpack <span>=</span> <span>require</span><span>(</span><span>"webpack"</span><span>)</span><span>;</span>
-<span>const</span> complier <span>=</span> <span>webpack</span><span>(</span>webpackConfig<span>)</span><span>;</span>
-<span>complier</span><span>.</span><span>apply</span><span>(</span><span>new</span> <span>webpack<span>.</span>ProgressPlugin</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>// 重点是这行</span>
-<span>const</span> hotMiddleware <span>=</span> <span>webpackHotMiddleware</span><span>(</span>complier<span>)</span><span>;</span>
-<span>const</span> app <span>=</span> <span>new</span> <span>express</span><span>(</span><span>)</span><span>;</span>
-
-app<span>.</span><span>use</span><span>(</span><span>webpackDevMiddleware</span><span>(</span>complier<span>,</span> <span>{</span>
-  noInfo<span>:</span> <span>true</span><span>,</span>
-  publicPath<span>:</span> webpackConfig<span>.</span>output<span>.</span>publicPath<span>,</span>
-<span>}</span><span>)</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
-<p>添加完成即可实现和<code>vue-dev-service</code>一样的打包进度条效果。</p>
-</blockquote>
-<h3 id="方式二"> 方式二</h3>
-<ul>
-<li>
-<p>安装：<code>progress-bar-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> i progress-webpack-plugin
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code>const ProgressBarPlugin = require(&#39;progress-bar-webpack-plugin&#39;);
-
-module.exports = {
-    ...
-    plugins:[
-        new ProgressPlugin(true)
-    ]
-}
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
-</ul>
-<h3 id="方式三"> 方式三</h3>
-<ul>
-<li>
-<p>安装：<code>simple-progress-webpack-plugin</code>插件，<a href="https://cnpmjs.org/package/simple-progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> <span>install</span> simple-progress-webpack-plugin --save-dev
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code><span>const</span> SimpleProgressWebpackPlugin <span>=</span> <span>require</span><span>(</span> <span>'simple-progress-webpack-plugin'</span> <span>)</span><span>;</span>
-
-module<span>.</span>exports <span>=</span> <span>{</span>
-    <span>...</span>
-    plugins<span>:</span><span>[</span>
-        <span>new</span> <span>SimpleProgressWebpackPlugin</span><span>(</span><span>)</span>
-    <span>]</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
-</ul>
-<h3 id="方式四"> 方式四</h3>
-<ul>
-<li>
-<p>安装：<code>progress-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> i progress-webpack-plugin
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code><span>var</span> ProgressPlugin <span>=</span> <span>require</span><span>(</span><span>'progress-webpack-plugin'</span><span>)</span>
-
-module<span>.</span>exports <span>=</span> <span>{</span>
-    <span>...</span>
-    plugins<span>:</span><span>[</span>
-        <span>new</span> <span>ProgressPlugin</span><span>(</span><span>true</span><span>)</span>
-    <span>]</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
-<p>注意：这个插件我在使用时出现了错误，没在其它<code>webpack</code>的版本试过。建议用上面几个，基本就可以满足需求了。</p>
-</blockquote>
-</li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -32951,57 +32938,6 @@ https://github.com/denoland/deno/issues/4748
 ]]></content:encoded>
     </item>
     <item>
-      <title>介绍</title>
-      <link>https://wangyawei.top/views/frontEnd/javascript/</link>
-      <guid>https://wangyawei.top/views/frontEnd/javascript/</guid>
-      <source url="https://wangyawei.top/rss.xml">介绍</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>这里主要记录一些自己平时学习javascript的一些相关的知识；</p>
-</blockquote>
-<h2 id="目录"> 目录</h2>
-<ul>
-<li>基础
-<ul>
-<li><a href="./javascript-note-53.html">创建和访问对象-53</a></li>
-</ul>
-</li>
-<li><a href="./javascript-note-02.html">对象拷贝</a></li>
-<li><a href="./javascript-note-03.html">函数防抖</a></li>
-<li><a href="./javascript-note-46.html">Generator函数及其异步应用</a></li>
-<li><a href="./javascript-note-47.html">Generator函数的实现原理</a></li>
-<li><a href="./javascript-note-48.html">co模块源码分析</a></li>
-<li><a href="./javascript-note-49.html">深入理解async/await</a></li>
-<li><a href="./javascript-note-50.html">async函数实现原理</a></li>
-<li>函数应用
-<ul>
-<li><a href="./javascript-note-35.html">闭包</a></li>
-<li>递归</li>
-<li>回调</li>
-<li>柯里化</li>
-</ul>
-</li>
-<li>进阶
-<ul>
-<li><a href="./javascript-note-54.html">编译原理-54</a></li>
-<li><a href="./javascript-note-55.html">chunk函数及其应用-55</a></li>
-<li><a href="./javascript-note-51.html">promise A+规范-51</a></li>
-<li><a href="./javascript-note-56.html">RXJS-56</a></li>
-<li><a href="./javascript-note-57.html">Web Workers-57</a></li>
-<li><a href="./defineProperty-58.html">defineProperty-58</a></li>
-</ul>
-</li>
-</ul>
-<h2 id="参考资料"> 参考资料</h2>
-<ul>
-<li>CDN官方文档；</li>
-<li>javascript权威指南；</li>
-<li>你不知道的javascript系列；</li>
-<li>博客园网站；</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>watch和computed的区别以及怎么选用?</title>
       <link>https://wangyawei.top/views/interviewQuestion/question-note-100/</link>
       <guid>https://wangyawei.top/views/interviewQuestion/question-note-100/</guid>
@@ -33048,6 +32984,107 @@ https://github.com/denoland/deno/issues/4748
 <p>vue用MutationObserver是想利用它的microtask特性，而不是想做DOM监听。核心是microtask，用不用MutationObserver都行的。事实上，vue在2.5版本中已经删去了MutationObserver相关的代码，因为它是HTML5新增的特性，在iOS上尚有bug。那么最优的microtask策略就是Promise了，而令人尴尬的是，Promise是ES6新增的东西，也存在兼容问题呀。所以vue就面临一个降级策略。</p>
 <p>队列控制的最佳选择是microtask，而microtask的最佳选择是Promise.但如果当前环境不支持Promise，vue就不得不降级macrotask来做队列控制了。macrotask有哪些可选的方案呢？前面提到了setTimeout是一种，但它不是理想的方案。因为setTimeout执行的最小时间间隔是约4ms的样子，略微有点延迟。在vue2.5的源码中，macrotask降级的方案依次是：setImmediate、MessageChannel、setTimeout.setImmediate是最理想的方案了，可惜的是只有IE和nodejs支持。MessageChannel的onmessage回调也是microtask，但也是个新API，面临兼容性的尴尬。所以最后的兜底方案就是setTimeout了，尽管它有执行延迟，可能造成多次渲染，算是没有办法的办法
 了。</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>介绍</title>
+      <link>https://wangyawei.top/views/frontEnd/javascript/</link>
+      <guid>https://wangyawei.top/views/frontEnd/javascript/</guid>
+      <source url="https://wangyawei.top/rss.xml">介绍</source>
+      <category>javascript</category>
+      <pubDate>Sun, 08 Aug 2021 15:07:22 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>这里主要记录一些自己平时学习javascript的一些相关的知识；</p>
+</blockquote>
+<h2 id="目录"> 目录</h2>
+<ul>
+<li><a href="./javascript-note-000.html">基础</a></li>
+<li><a href="./javascript-note-19.html">js数据类型</a></li>
+<li><a href="./javascript-note-20.html">变量的复制</a></li>
+<li><a href="./javascript-note-21.html">类型转换</a></li>
+<li><a href="./javascript-note-22.html">类型检测</a></li>
+<li><a href="./javascript-note-26.html">声明提升</a></li>
+<li><a href="./javascript-note-53.html">创建和访问对象</a></li>
+<li>高级
+<ul>
+<li><a href="./javascript-note-01.html">javascript高级</a></li>
+<li><a href="./javascript-note-02.html">对象拷贝</a></li>
+<li><a href="./javascript-note-05.html">函数继承</a></li>
+<li><a href="./javascript-note-25.html">什么是作用域</a></li>
+<li><a href="./javascript-note-28.html">作用域链</a></li>
+<li><a href="./javascript-note-29.html">作用域链延长</a></li>
+<li><a href="./javascript-note-30.html">原型</a></li>
+<li><a href="./javascript-note-31.html">深拷贝与浅拷贝</a></li>
+<li><a href="./javascript-note-32.html">this对象</a></li>
+</ul>
+</li>
+<li>ES6相关
+<ul>
+<li><a href="./javascript-note-00.html">ES6</a></li>
+<li><a href="./javascript-note-06.html">Async 函数</a></li>
+<li><a href="./javascript-note-23.html">模板字符串</a></li>
+<li><a href="./javascript-note-24.html">Symbol</a></li>
+<li><a href="./javascript-note-27.html">变量声明</a></li>
+</ul>
+</li>
+<li>进阶
+<ul>
+<li><a href="./javascript-note-03.html">函数防抖</a></li>
+<li><a href="./javascript-note-04.html">函数节流</a></li>
+<li><a href="./javascript-note-07.html">jsonp跨域的实现原理</a></li>
+<li><a href="./javascript-note-08.html">new的实现原理</a></li>
+<li><a href="./javascript-note-09.html">什么是Promise</a></li>
+<li><a href="./javascript-note-11.html">javascript内存管理</a></li>
+<li><a href="./javascript-note-12.html">单元测试</a></li>
+<li><a href="./javascript-note-13.html">提高代码可靠性</a></li>
+<li><a href="./javascript-note-18.html">链表数据结构</a></li>
+<li><a href="./javascript-note-33.html">尾调用优化</a></li>
+<li><a href="./javascript-note-39.html">同步与异步</a></li>
+<li><a href="./javascript-note-40.html">javascript单线程</a></li>
+<li><a href="./javascript-note-41.html">定时器</a></li>
+<li><a href="./javascript-note-43.html">Event Loop机制</a></li>
+<li><a href="./javascript-note-44.html">发布订阅</a></li>
+<li><a href="./javascript-note-45.html">深入理解Promise</a></li>
+<li><a href="./javascript-note-46.html">Generator函数及其异步应用</a></li>
+<li><a href="./javascript-note-47.html">Generator函数的实现原理</a></li>
+<li><a href="./javascript-note-48.html">co模块源码分析</a></li>
+<li><a href="./javascript-note-49.html">深入理解async/await</a></li>
+<li><a href="./javascript-note-50.html">async函数实现原理</a></li>
+<li><a href="./javascript-note-51.html">promise A+规范</a></li>
+<li><a href="./javascript-note-52.html">手写promise</a></li>
+<li><a href="./javascript-note-54.html">编译原理</a></li>
+<li><a href="./javascript-note-55.html">chunk函数及其应用</a></li>
+<li><a href="./javascript-note-56.html">Rxjs</a></li>
+<li><a href="./javascript-note-57.html">Web Workers</a></li>
+<li><a href="./defineProperty-58.html">defineProperty</a></li>
+</ul>
+</li>
+<li>函数应用
+<ul>
+<li><a href="./javascript-note-34.html">立即执行函数(IIFE)</a></li>
+<li><a href="./javascript-note-35.html">闭包</a></li>
+<li><a href="./javascript-note-36.html">递归</a></li>
+<li><a href="./javascript-note-37.html">回调</a></li>
+<li><a href="./javascript-note-38.html">柯里化</a></li>
+<li><a href="./javascript-note-14.html">compose函数和pipe函数</a></li>
+<li><a href="./javascript-note-15.html">高阶函数</a></li>
+<li><a href="./javascript-note-16.html">常用函数</a></li>
+</ul>
+</li>
+<li>其他
+<ul>
+<li><a href="./javascript-note-10.html">打包及本地预览</a></li>
+<li><a href="./javascript-note-42.html">js实现复制粘贴</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="参考资料"> 参考资料</h2>
+<ul>
+<li>CDN官方文档；</li>
+<li>javascript权威指南；</li>
+<li>你不知道的javascript系列；</li>
+<li>博客园网站；</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -33411,6 +33448,30 @@ watcher或计算属性取代。注意updated不会保证所有的子组件都能
 ]]></content:encoded>
     </item>
     <item>
+      <title>谈一谈对vue组件化的理解</title>
+      <link>https://wangyawei.top/views/interviewQuestion/question-note-45/</link>
+      <guid>https://wangyawei.top/views/interviewQuestion/question-note-45/</guid>
+      <source url="https://wangyawei.top/rss.xml">谈一谈对vue组件化的理解</source>
+      <category>面试题</category>
+      <pubDate>Mon, 20 Sep 2021 20:58:34 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>答题思路：组件化定义、优点、使用场景和注意事项等方面展开陈述，同时要强调vue中组件化的一些特点</p>
+</blockquote>
+<ol>
+<li>组件是独立和可复用的代码组织单元。组件系统是 Vue 核心特性之一，它使开发者使用小型、独
+立和通常可复用的组件构建大型应用；</li>
+<li>组件化开发能大幅提高应用开发效率、测试性、复用性等；</li>
+<li>组件使用按分类有：页面组件、业务组件、通用组件；</li>
+<li>vue的组件是基于配置的，我们通常编写的组件是组件配置而非组件，框架后续会生成其构造函
+数，它们基于VueComponent，扩展于Vue；</li>
+<li>vue中常见组件化技术有：属性prop，自定义事件，插槽等，它们主要用于组件通信、扩展等；</li>
+<li>合理的划分组件，有助于提升应用性能；</li>
+<li>组件应该是高内聚、低耦合的；</li>
+<li>遵循单向数据流的原则。</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
       <title>谈一谈对vue设计原则的理解</title>
       <link>https://wangyawei.top/views/interviewQuestion/question-note-50/</link>
       <guid>https://wangyawei.top/views/interviewQuestion/question-note-50/</guid>
@@ -33519,30 +33580,6 @@ watcher或计算属性取代。注意updated不会保证所有的子组件都能
 <li>MVVM模式在前端领域有广泛应用，它不仅解决MV耦合问题，还同时解决了维护两者映射关系的
 大量繁杂代码和DOM操作代码，在提高开发效率、可读性同时还保持了优越的性能表现。</li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>谈一谈对vue组件化的理解</title>
-      <link>https://wangyawei.top/views/interviewQuestion/question-note-45/</link>
-      <guid>https://wangyawei.top/views/interviewQuestion/question-note-45/</guid>
-      <source url="https://wangyawei.top/rss.xml">谈一谈对vue组件化的理解</source>
-      <category>面试题</category>
-      <pubDate>Mon, 20 Sep 2021 20:58:34 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>答题思路：组件化定义、优点、使用场景和注意事项等方面展开陈述，同时要强调vue中组件化的一些特点</p>
-</blockquote>
-<ol>
-<li>组件是独立和可复用的代码组织单元。组件系统是 Vue 核心特性之一，它使开发者使用小型、独
-立和通常可复用的组件构建大型应用；</li>
-<li>组件化开发能大幅提高应用开发效率、测试性、复用性等；</li>
-<li>组件使用按分类有：页面组件、业务组件、通用组件；</li>
-<li>vue的组件是基于配置的，我们通常编写的组件是组件配置而非组件，框架后续会生成其构造函
-数，它们基于VueComponent，扩展于Vue；</li>
-<li>vue中常见组件化技术有：属性prop，自定义事件，插槽等，它们主要用于组件通信、扩展等；</li>
-<li>合理的划分组件，有助于提升应用性能；</li>
-<li>组件应该是高内聚、低耦合的；</li>
-<li>遵循单向数据流的原则。</li>
-</ol>
 ]]></content:encoded>
     </item>
     <item>
@@ -34566,38 +34603,6 @@ Finished: SUCCESS
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>linux-nodejs启动报错</title>
-      <link>https://wangyawei.top/views/issues/issues-04/</link>
-      <guid>https://wangyawei.top/views/issues/issues-04/</guid>
-      <source url="https://wangyawei.top/rss.xml">linux-nodejs启动报错</source>
-      <category>issues</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>在测试上执行<code>npm run serve</code>时报错；</p>
-</blockquote>
-<p><img src="./assets/1594656712548.png" alt="1594656712548" /></p>
-<div><pre><code>主要原因就是：3000端口被占用了
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="解决"> 解决；</h2>
-<ul>
-<li>
-<p>查看端口;</p>
-<div><pre><code>执行命令：`netstat -tunlp|grep 3000`查看端口被哪一个进程所占用；
-</code></pre>
-<div><span>1</span><br></div></div><p><img src="./assets/1594656900946.png" alt="1594656900946" /></p>
-</li>
-<li>
-<p>中止被占用的进程；</p>
-<div><pre><code>执行命令：`kill -s 9 17235`
-</code></pre>
-<div><span>1</span><br></div></div><p><img src="./assets/1594656974877.png" alt="1594656974877" /></p>
-</li>
-</ul>
-<h2 id="重新启动"> 重新启动；</h2>
-<p><img src="./assets/1594657233290.png" alt="1594657233290" /></p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>jenkins构建项目失败</title>
       <link>https://wangyawei.top/views/issues/issues-03/</link>
       <guid>https://wangyawei.top/views/issues/issues-03/</guid>
@@ -34656,6 +34661,38 @@ chown -R root:root /var/log/jenkins
 </ul>
 <p><img src="./assets/1596265758450.png" alt="1596265758450" /></p>
 <p>转载： https://blog.csdn.net/jeikerxiao/article/details/80768949</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>linux-nodejs启动报错</title>
+      <link>https://wangyawei.top/views/issues/issues-04/</link>
+      <guid>https://wangyawei.top/views/issues/issues-04/</guid>
+      <source url="https://wangyawei.top/rss.xml">linux-nodejs启动报错</source>
+      <category>issues</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>在测试上执行<code>npm run serve</code>时报错；</p>
+</blockquote>
+<p><img src="./assets/1594656712548.png" alt="1594656712548" /></p>
+<div><pre><code>主要原因就是：3000端口被占用了
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="解决"> 解决；</h2>
+<ul>
+<li>
+<p>查看端口;</p>
+<div><pre><code>执行命令：`netstat -tunlp|grep 3000`查看端口被哪一个进程所占用；
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="./assets/1594656900946.png" alt="1594656900946" /></p>
+</li>
+<li>
+<p>中止被占用的进程；</p>
+<div><pre><code>执行命令：`kill -s 9 17235`
+</code></pre>
+<div><span>1</span><br></div></div><p><img src="./assets/1594656974877.png" alt="1594656974877" /></p>
+</li>
+</ul>
+<h2 id="重新启动"> 重新启动；</h2>
+<p><img src="./assets/1594657233290.png" alt="1594657233290" /></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -34875,80 +34912,6 @@ npm ERR!   webpack-cli@&quot;3.3.10&quot; from the root project
 ]]></content:encoded>
     </item>
     <item>
-      <title>vue项目使用require引入图片不能不显示</title>
-      <link>https://wangyawei.top/views/issues/issues-07/</link>
-      <guid>https://wangyawei.top/views/issues/issues-07/</guid>
-      <source url="https://wangyawei.top/rss.xml">vue项目使用require引入图片不能不显示</source>
-      <category>issues</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="使用require引入图片不显示"> 使用require引入图片不显示</h2>
-<blockquote>
-<p>简述：本人在<code>vue</code>项目中使用<code>require</code>引入图片后，页面不显示加载的图片，控制台报错结果如下。</p>
-</blockquote>
-<div><pre><code>GET http://localhost:8080/[object%20Module] 404 (Not Found)
-</code></pre>
-<div><span>1</span><br></div></div><ol>
-<li>
-<p>报错场景：在vue文件中使用<code>require</code>加载图片。</p>
-<div><pre><code><span>export</span> <span>default</span> <span>{</span>
-  name<span>:</span> <span>'tag'</span><span>,</span>
-  <span>data</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>{</span>
-      login<span>:</span> <span>require</span><span>(</span><span>'@/assets/login.jpg'</span><span>)</span>
-    <span>}</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
-<li>
-<p>问题原因：在<code>url-loader</code>的<strong>4.1</strong>版本中，有一个属性<code>esModule</code></p>
-<p>根据<a href="https://www.npmjs.com/package/url-loader#esmodule" target="_blank" rel="noopener noreferrer">官方文档</a>的介绍意思是：默认情况下，文件加载器会使用ES模块语法，在某些情况下，使用ES模块是有益的，不过你也可以将`esModule的属性设置为关闭，来启用commonJS模块的语法。</p>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  module<span>:</span> <span>{</span>
-    rules<span>:</span> <span>[</span>
-      <span>{</span>
-        test<span>:</span> <span><span>/</span><span>\.css$</span><span>/</span></span><span>,</span>
-        use<span>:</span> <span>[</span>
-          <span>{</span>
-            loader<span>:</span> <span>'url-loader'</span><span>,</span>
-            options<span>:</span> <span>{</span>
-              esModule<span>:</span> <span>false</span><span>,</span>
-            <span>}</span><span>,</span>
-          <span>}</span><span>,</span>
-        <span>]</span><span>,</span>
-      <span>}</span><span>,</span>
-    <span>]</span><span>,</span>
-  <span>}</span><span>,</span>
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div></li>
-<li>
-<p>解决方法：</p>
-<ul>
-<li>
-<p><code>esModule：false</code>时使用<code>require</code>引入图片；</p>
-</li>
-<li>
-<p><code>esModule：true</code>时使用<code>import</code>引入图片；</p>
-<div><pre><code><span>&lt;</span>script<span>></span>
-<span>import</span> login <span>from</span> <span>'@/assets/login.jpg'</span>
-<span>export</span> <span>default</span> <span>{</span>
-  name<span>:</span> <span>'tag'</span><span>,</span>
-  <span>data</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>{</span>
-      login<span>:</span> login
-    <span>}</span>
-  <span>}</span>
-<span>}</span>
-<span>&lt;</span><span>/</span>script<span>></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div></li>
-</ul>
-</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
       <title>permission denied 127.0.0.1:8888</title>
       <link>https://wangyawei.top/views/issues/issues-08/</link>
       <guid>https://wangyawei.top/views/issues/issues-08/</guid>
@@ -35068,6 +35031,80 @@ Resolving deltas: <span>100</span>% <span>(</span><span>213</span>/213<span>)</s
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
 <p>如果不成功可以在尝试一次，</p>
 </blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>vue项目使用require引入图片不能不显示</title>
+      <link>https://wangyawei.top/views/issues/issues-07/</link>
+      <guid>https://wangyawei.top/views/issues/issues-07/</guid>
+      <source url="https://wangyawei.top/rss.xml">vue项目使用require引入图片不能不显示</source>
+      <category>issues</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="使用require引入图片不显示"> 使用require引入图片不显示</h2>
+<blockquote>
+<p>简述：本人在<code>vue</code>项目中使用<code>require</code>引入图片后，页面不显示加载的图片，控制台报错结果如下。</p>
+</blockquote>
+<div><pre><code>GET http://localhost:8080/[object%20Module] 404 (Not Found)
+</code></pre>
+<div><span>1</span><br></div></div><ol>
+<li>
+<p>报错场景：在vue文件中使用<code>require</code>加载图片。</p>
+<div><pre><code><span>export</span> <span>default</span> <span>{</span>
+  name<span>:</span> <span>'tag'</span><span>,</span>
+  <span>data</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>{</span>
+      login<span>:</span> <span>require</span><span>(</span><span>'@/assets/login.jpg'</span><span>)</span>
+    <span>}</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
+<li>
+<p>问题原因：在<code>url-loader</code>的<strong>4.1</strong>版本中，有一个属性<code>esModule</code></p>
+<p>根据<a href="https://www.npmjs.com/package/url-loader#esmodule" target="_blank" rel="noopener noreferrer">官方文档</a>的介绍意思是：默认情况下，文件加载器会使用ES模块语法，在某些情况下，使用ES模块是有益的，不过你也可以将`esModule的属性设置为关闭，来启用commonJS模块的语法。</p>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  module<span>:</span> <span>{</span>
+    rules<span>:</span> <span>[</span>
+      <span>{</span>
+        test<span>:</span> <span><span>/</span><span>\.css$</span><span>/</span></span><span>,</span>
+        use<span>:</span> <span>[</span>
+          <span>{</span>
+            loader<span>:</span> <span>'url-loader'</span><span>,</span>
+            options<span>:</span> <span>{</span>
+              esModule<span>:</span> <span>false</span><span>,</span>
+            <span>}</span><span>,</span>
+          <span>}</span><span>,</span>
+        <span>]</span><span>,</span>
+      <span>}</span><span>,</span>
+    <span>]</span><span>,</span>
+  <span>}</span><span>,</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div></li>
+<li>
+<p>解决方法：</p>
+<ul>
+<li>
+<p><code>esModule：false</code>时使用<code>require</code>引入图片；</p>
+</li>
+<li>
+<p><code>esModule：true</code>时使用<code>import</code>引入图片；</p>
+<div><pre><code><span>&lt;</span>script<span>></span>
+<span>import</span> login <span>from</span> <span>'@/assets/login.jpg'</span>
+<span>export</span> <span>default</span> <span>{</span>
+  name<span>:</span> <span>'tag'</span><span>,</span>
+  <span>data</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>{</span>
+      login<span>:</span> login
+    <span>}</span>
+  <span>}</span>
+<span>}</span>
+<span>&lt;</span><span>/</span>script<span>></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div></li>
+</ul>
+</li>
+</ol>
 ]]></content:encoded>
     </item>
     <item>
@@ -35285,7 +35322,7 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
       <guid>https://wangyawei.top/views/issues/issues-13/</guid>
       <source url="https://wangyawei.top/rss.xml">vue跨域解决方案</source>
       <category>issues</category>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1、问题概述"> 1、问题概述；</h2>
 <blockquote>
 <p>在项目中我们时常会遇到跨域，比如下面的这种情况；</p>
@@ -35355,7 +35392,7 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
       <link>https://wangyawei.top/views/other/blogTheme/</link>
       <guid>https://wangyawei.top/views/other/blogTheme/</guid>
       <source url="https://wangyawei.top/rss.xml">博客园主题</source>
-      <pubDate>Tue, 21 Sep 2021 06:05:33 GMT</pubDate>
+      <pubDate>Fri, 24 Sep 2021 17:25:21 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="博客主题"> 博客主题</h2>
 <blockquote>
 <p>无意中看到别人的主题是那么的好看，炸一看自己的主题好丑，所以就找了下，在这里记录下来。</p>
@@ -35698,6 +35735,37 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
 ]]></content:encoded>
     </item>
     <item>
+      <title>win终端添加gitBash</title>
+      <link>https://wangyawei.top/views/other/other-note-06/</link>
+      <guid>https://wangyawei.top/views/other/other-note-06/</guid>
+      <source url="https://wangyawei.top/rss.xml">win终端添加gitBash</source>
+      <category>other</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<ol>
+<li>
+<p>打开windows terminal;</p>
+</li>
+<li>
+<p>点击设置;</p>
+</li>
+<li>
+<p>打开JSON文件，修改配置；</p>
+<ul>
+<li>找到 <code>profiles–&gt;list</code></li>
+</ul>
+<div><pre><code><span>{</span>
+	<span>"commandline"</span> <span>:</span> <span>"C:\\Program Files\\Git\\bin\\bash.exe"</span>                <span>,</span>
+	<span>"guid"</span> <span>:</span> <span>"{f263b0f3-4e4d-d630-298c-605384d8fa48}"</span><span>,</span>
+	<span>"icon"</span> <span>:</span> <span>"C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico"</span><span>,</span>
+	<span>"name"</span> <span>:</span> <span>"Git Bash"</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
+</ol>
+<p><a href="https://blog.csdn.net/qq754772661/article/details/112829606" target="_blank" rel="noopener noreferrer">原文链接</a></p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>linux与window分隔符问题</title>
       <link>https://wangyawei.top/views/other/other-note-07/</link>
       <guid>https://wangyawei.top/views/other/other-note-07/</guid>
@@ -35746,37 +35814,6 @@ Type <span>".help"</span> <span>for</span> <span>more</span> information.
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><h3 id="参考链接"> 参考链接；</h3>
 <p>https://zhuanlan.zhihu.com/p/115746564</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>win终端添加gitBash</title>
-      <link>https://wangyawei.top/views/other/other-note-06/</link>
-      <guid>https://wangyawei.top/views/other/other-note-06/</guid>
-      <source url="https://wangyawei.top/rss.xml">win终端添加gitBash</source>
-      <category>other</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<ol>
-<li>
-<p>打开windows terminal;</p>
-</li>
-<li>
-<p>点击设置;</p>
-</li>
-<li>
-<p>打开JSON文件，修改配置；</p>
-<ul>
-<li>找到 <code>profiles–&gt;list</code></li>
-</ul>
-<div><pre><code><span>{</span>
-	<span>"commandline"</span> <span>:</span> <span>"C:\\Program Files\\Git\\bin\\bash.exe"</span>                <span>,</span>
-	<span>"guid"</span> <span>:</span> <span>"{f263b0f3-4e4d-d630-298c-605384d8fa48}"</span><span>,</span>
-	<span>"icon"</span> <span>:</span> <span>"C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico"</span><span>,</span>
-	<span>"name"</span> <span>:</span> <span>"Git Bash"</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div></li>
-</ol>
-<p><a href="https://blog.csdn.net/qq754772661/article/details/112829606" target="_blank" rel="noopener noreferrer">原文链接</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -36444,283 +36481,6 @@ yarn-error.log*
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>defineProperty</title>
-      <link>https://wangyawei.top/views/frontEnd/javascript/defineProperty-58/</link>
-      <guid>https://wangyawei.top/views/frontEnd/javascript/defineProperty-58/</guid>
-      <source url="https://wangyawei.top/rss.xml">defineProperty</source>
-      <category>javascript</category>
-      <pubDate>Tue, 31 Aug 2021 08:09:22 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。</p>
-</blockquote>
-<div><p>提示</p>
-<p>应当直接在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener noreferrer"><code>Object</code></a> 构造器对象上调用此方法，而不是在任意一个 <code>Object</code> 类型的实例上调用。</p>
-</div>
-<h2 id="语法"> 语法</h2>
-<div><pre><code>Object<span>.</span><span>defineProperty</span><span>(</span>obj<span>,</span> prop<span>,</span> descriptor<span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div><p><strong>参数：</strong></p>
-<ul>
-<li>obj：要定义属性的对象。</li>
-<li>prop：要定义或修改的属性的名称或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="noopener noreferrer"><code>Symbol</code></a> 。</li>
-<li>descriptor：要定义或修改的属性描述符。</li>
-<li>返回值：被传递给函数的对象。</li>
-</ul>
-<div><p>提示</p>
-<p>在ES6中，由于 Symbol类型的特殊性，用Symbol类型的值来做对象的key与常规的定义或修改不同，而<code>Object.defineProperty</code> 是定义key为Symbol的属性的方法之一。</p>
-</div>
-<blockquote>
-<p>该方法允许精确地添加或修改对象的属性。通过赋值操作添加的普通属性是可枚举的，在枚举对象属性时会被枚举到（<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener noreferrer"><code>for...in</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"><code>Object.keys</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"> </a>方法），可以改变这些属性的值，也可以<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete" target="_blank" rel="noopener noreferrer"><code>删除</code></a>这些属性。这个方法允许修改默认的额外选项（或配置）。默认情况下，使用 <code>Object.defineProperty()</code> 添加的属性值是不可修改（immutable）的。</p>
-</blockquote>
-<h2 id="描述符"> 描述符</h2>
-<blockquote>
-<p>对象里目前存在的属性描述符有两种主要形式：<em>数据描述符</em>和<em>存取描述符</em>。</p>
-</blockquote>
-<p><strong>数据描述符</strong>：是一个具有值的属性，该值可以是可写的，也可以是不可写的。</p>
-<p><strong>存取描述符</strong>：是由 getter 函数和 setter 函数所描述的属性。</p>
-<div><p>注意</p>
-<p>一个描述符只能是这两者其中之一；不能同时是两者。</p>
-</div>
-<p>这两种描述符都是对象。它们共享以下可选键值（默认值是指在使用 <code>Object.defineProperty()</code> 定义属性时的默认值）：</p>
-<ul>
-<li><strong>configurable</strong>
-<ul>
-<li>当且仅当该属性的 <code>configurable</code> 键值为 <code>true</code> 时，该属性的描述符才能够被改变，同时该属性也能从对应的对象上被删除。</li>
-<li><strong>默认为</strong> <strong><code>false</code></strong>。</li>
-</ul>
-</li>
-<li><strong>enumerable</strong>
-<ul>
-<li>当且仅当该属性的 <code>enumerable</code> 键值为 <code>true</code> 时，该属性才会出现在对象的枚举属性中。（<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener noreferrer"><code>for...in</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"><code>Object.keys</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"> </a>方法）</li>
-<li><strong>默认为</strong> <strong><code>false</code></strong>。</li>
-</ul>
-</li>
-<li>数据描述符具有以下可选键值：
-<ul>
-<li><strong>value</strong>
-<ul>
-<li>该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。</li>
-<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
-</ul>
-</li>
-<li><strong>writable</strong>
-<ul>
-<li>当且仅当该属性的 <code>writable</code> 键值为 <code>true</code> 时，属性的值，也就是上面的 <code>value</code>，才能被改变。</li>
-<li><strong>默认为 <code>false</code>。</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>存取描述符具有以下可选键值：
-<ul>
-<li><strong>get</strong>
-<ul>
-<li>属性的 getter 函数，如果没有 getter，则为 <code>undefined</code>。当访问该属性时，会调用此函数。执行时不传入任何参数，但是会传入 <code>this</code> 对象（由于继承关系，这里的<code>this</code>并不一定是定义该属性的对象）。该函数的返回值会被用作属性的值。</li>
-<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
-</ul>
-</li>
-<li><strong>set</strong>
-<ul>
-<li>属性的 setter 函数，如果没有 setter，则为 <code>undefined</code>。当属性值被修改时，会调用此函数。该方法接受一个参数（也就是被赋予的新值），会传入赋值时的 <code>this</code> 对象。</li>
-<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>描述符默认值汇总：
-<ul>
-<li>拥有布尔值的键 <code>configurable</code>、<code>enumerable</code> 和 <code>writable</code> 的默认值都是 <code>false</code>。</li>
-<li>属性值和函数的键 <code>value</code>、<code>get</code> 和 <code>set</code> 字段的默认值为 <code>undefined</code>。</li>
-</ul>
-</li>
-</ul>
-<p><strong>描述符可拥有的键值：</strong></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th><code>configurable</code></th>
-<th><code>enumerable</code></th>
-<th><code>value</code></th>
-<th><code>writable</code></th>
-<th><code>get</code></th>
-<th><code>set</code></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数据描述符</td>
-<td>可以</td>
-<td>可以</td>
-<td>可以</td>
-<td>可以</td>
-<td>不可以</td>
-<td>不可以</td>
-</tr>
-<tr>
-<td>存取描述符</td>
-<td>可以</td>
-<td>可以</td>
-<td>不可以</td>
-<td>不可以</td>
-<td>可以</td>
-<td>可以</td>
-</tr>
-</tbody>
-</table>
-<div><p>提示</p>
-<p>如果一个描述符不具有 <code>value</code>、<code>writable</code>、<code>get</code> 和 <code>set</code> 中的任意一个键，那么它将被认为是一个数据描述符。如果一个描述符同时拥有 <code>value</code> 或 <code>writable</code> 和 <code>get</code> 或 <code>set</code> 键，则会产生一个异常。</p>
-</div>
-<h2 id="示例"> 示例</h2>
-<h3 id="数据描述符"> 数据描述符</h3>
-<p><strong>特有</strong>的两个属性（value,writable）</p>
-<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span>
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    writable<span>:</span> <span>false</span> <span>// 是否可写 默认值：false</span>
-<span>}</span><span>)</span>
-
-Person<span>.</span>name <span>=</span> <span>'rose'</span>
-console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// jack</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span>
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    writable<span>:</span> <span>true</span> <span>// 是否可写 默认值：false</span>
-<span>}</span><span>)</span>
-
-Person<span>.</span>name <span>=</span> <span>'rose'</span>
-console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// rose</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h3 id="存取描述符"> 存取描述符</h3>
-<p>由一对 getter、setter 函数功能来描述的属性;</p>
-<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-<span>let</span> temp <span>=</span> <span>null</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    <span>get</span><span>:</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
-        <span>return</span> temp<span>;</span>
-    <span>}</span><span>,</span>
-    <span>set</span><span>:</span> <span>function</span> <span>(</span><span>val</span><span>)</span> <span>{</span>
-        temp <span>=</span> val<span>;</span>
-    <span>}</span>
-<span>}</span><span>)</span><span>;</span>
-
-<span>// Person.name = '早上好';</span>
-<span>// console.log(Person.name) // 早上好</span>
-
-console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// null</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h3 id="共有的属性"> 共有的属性</h3>
-<h4 id="configurable-属性"> Configurable 属性</h4>
-<p><code>configurable</code> 特性表示对象的属性是否可以被删除，以及可否配置。</p>
-<div><pre><code><span>'use strict'</span>
-<span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
-<span>}</span><span>)</span><span>;</span>
-
-<span>delete</span> Person<span>.</span>name <span>// Cannot delete property 'name' of #&lt;Object></span>
-
-<span>// console.log(Person.name) // jack</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><blockquote>
-<p>严格模式下删除属性会报错，非严格模式下无法删除。</p>
-</blockquote>
-<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
-<span>}</span><span>)</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span> <span>// Cannot redefine property: name</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span>
-    writable<span>:</span> <span>true</span><span>,</span> <span>// 是否可写</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    <span>get</span><span>(</span><span>)</span> <span>{</span>
-      <span>return</span> <span>'123'</span>
-    <span>}</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
-<span>}</span><span>)</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span> <span>// Cannot redefine property: name</span>
-    <span>get</span><span>(</span><span>)</span> <span>{</span>
-        <span>return</span> <span>'1'</span>
-    <span>}</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><div><p>总结</p>
-<p>configurable: false 时，不能删除当前属性，且不能重新配置当前属性的描述符(有一个小小的意外：可以把writable的状态由true改为false,但是无法由false改为true),但是在writable: true的情况下，可以改变value的值</p>
-<p>configurable: true时，可以删除当前属性，可以配置当前属性所有描述符。</p>
-</div>
-<h4 id="enumerable属性"> enumerable属性</h4>
-<p>描述属性是否会出现在for in 或者 Object.keys()的遍历中；</p>
-<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    enumerable<span>:</span> <span>true</span><span>,</span> <span>// 是否可枚举</span>
-<span>}</span><span>)</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>Person<span>)</span><span>)</span> <span>// ['name']</span>
-<span>for</span> <span>(</span><span>const</span> personKey <span>in</span> Person<span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span>personKey<span>)</span> <span>// name</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    enumerable<span>:</span> <span>false</span><span>,</span> <span>// 是否可枚举</span>
-<span>}</span><span>)</span><span>;</span>
-
-console<span>.</span><span>log</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>Person<span>)</span><span>)</span> <span>// []</span>
-<span>for</span> <span>(</span><span>const</span> personKey <span>in</span> Person<span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span>personKey<span>)</span> <span>// </span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h3 id="和普通对象的差异"> 和普通对象的差异</h3>
-<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-Person<span>.</span>name <span>=</span> <span>'jack'</span><span>;</span>
-
-<span>// 等价于</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    configurable<span>:</span> <span>true</span><span>,</span>
-    enumerable<span>:</span> <span>true</span><span>,</span>
-    writable<span>:</span> <span>true</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-
-<span>// 等价于</span>
-
-Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
-    value<span>:</span> <span>'jack'</span><span>,</span>
-    writable<span>:</span> <span>false</span><span>,</span>
-    configurable<span>:</span> <span>false</span><span>,</span>
-    enumerable<span>:</span> <span>false</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="参考博文"> 参考博文</h2>
-<p>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</p>
-<p>https://www.jianshu.com/p/8fe1382ba135</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>HTML基础总结</title>
       <link>https://wangyawei.top/views/frontEnd/html/html-note-00/</link>
       <guid>https://wangyawei.top/views/frontEnd/html/html-note-00/</guid>
@@ -37212,6 +36972,283 @@ body 元素包含文档的所有内容（比如文本、超链接、图像、表
 <p>经常查阅文档是一个非常好的学习习惯。</p>
 <p>W3C :  http://www.w3school.com.cn/</p>
 <p>MDN: https://developer.mozilla.org/zh-CN/</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>defineProperty</title>
+      <link>https://wangyawei.top/views/frontEnd/javascript/defineProperty-58/</link>
+      <guid>https://wangyawei.top/views/frontEnd/javascript/defineProperty-58/</guid>
+      <source url="https://wangyawei.top/rss.xml">defineProperty</source>
+      <category>javascript</category>
+      <pubDate>Tue, 31 Aug 2021 08:09:22 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p><code>Object.defineProperty()</code> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。</p>
+</blockquote>
+<div><p>提示</p>
+<p>应当直接在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener noreferrer"><code>Object</code></a> 构造器对象上调用此方法，而不是在任意一个 <code>Object</code> 类型的实例上调用。</p>
+</div>
+<h2 id="语法"> 语法</h2>
+<div><pre><code>Object<span>.</span><span>defineProperty</span><span>(</span>obj<span>,</span> prop<span>,</span> descriptor<span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><p><strong>参数：</strong></p>
+<ul>
+<li>obj：要定义属性的对象。</li>
+<li>prop：要定义或修改的属性的名称或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="noopener noreferrer"><code>Symbol</code></a> 。</li>
+<li>descriptor：要定义或修改的属性描述符。</li>
+<li>返回值：被传递给函数的对象。</li>
+</ul>
+<div><p>提示</p>
+<p>在ES6中，由于 Symbol类型的特殊性，用Symbol类型的值来做对象的key与常规的定义或修改不同，而<code>Object.defineProperty</code> 是定义key为Symbol的属性的方法之一。</p>
+</div>
+<blockquote>
+<p>该方法允许精确地添加或修改对象的属性。通过赋值操作添加的普通属性是可枚举的，在枚举对象属性时会被枚举到（<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener noreferrer"><code>for...in</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"><code>Object.keys</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"> </a>方法），可以改变这些属性的值，也可以<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/delete" target="_blank" rel="noopener noreferrer"><code>删除</code></a>这些属性。这个方法允许修改默认的额外选项（或配置）。默认情况下，使用 <code>Object.defineProperty()</code> 添加的属性值是不可修改（immutable）的。</p>
+</blockquote>
+<h2 id="描述符"> 描述符</h2>
+<blockquote>
+<p>对象里目前存在的属性描述符有两种主要形式：<em>数据描述符</em>和<em>存取描述符</em>。</p>
+</blockquote>
+<p><strong>数据描述符</strong>：是一个具有值的属性，该值可以是可写的，也可以是不可写的。</p>
+<p><strong>存取描述符</strong>：是由 getter 函数和 setter 函数所描述的属性。</p>
+<div><p>注意</p>
+<p>一个描述符只能是这两者其中之一；不能同时是两者。</p>
+</div>
+<p>这两种描述符都是对象。它们共享以下可选键值（默认值是指在使用 <code>Object.defineProperty()</code> 定义属性时的默认值）：</p>
+<ul>
+<li><strong>configurable</strong>
+<ul>
+<li>当且仅当该属性的 <code>configurable</code> 键值为 <code>true</code> 时，该属性的描述符才能够被改变，同时该属性也能从对应的对象上被删除。</li>
+<li><strong>默认为</strong> <strong><code>false</code></strong>。</li>
+</ul>
+</li>
+<li><strong>enumerable</strong>
+<ul>
+<li>当且仅当该属性的 <code>enumerable</code> 键值为 <code>true</code> 时，该属性才会出现在对象的枚举属性中。（<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank" rel="noopener noreferrer"><code>for...in</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"><code>Object.keys</code></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys" target="_blank" rel="noopener noreferrer"> </a>方法）</li>
+<li><strong>默认为</strong> <strong><code>false</code></strong>。</li>
+</ul>
+</li>
+<li>数据描述符具有以下可选键值：
+<ul>
+<li><strong>value</strong>
+<ul>
+<li>该属性对应的值。可以是任何有效的 JavaScript 值（数值，对象，函数等）。</li>
+<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
+</ul>
+</li>
+<li><strong>writable</strong>
+<ul>
+<li>当且仅当该属性的 <code>writable</code> 键值为 <code>true</code> 时，属性的值，也就是上面的 <code>value</code>，才能被改变。</li>
+<li><strong>默认为 <code>false</code>。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>存取描述符具有以下可选键值：
+<ul>
+<li><strong>get</strong>
+<ul>
+<li>属性的 getter 函数，如果没有 getter，则为 <code>undefined</code>。当访问该属性时，会调用此函数。执行时不传入任何参数，但是会传入 <code>this</code> 对象（由于继承关系，这里的<code>this</code>并不一定是定义该属性的对象）。该函数的返回值会被用作属性的值。</li>
+<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
+</ul>
+</li>
+<li><strong>set</strong>
+<ul>
+<li>属性的 setter 函数，如果没有 setter，则为 <code>undefined</code>。当属性值被修改时，会调用此函数。该方法接受一个参数（也就是被赋予的新值），会传入赋值时的 <code>this</code> 对象。</li>
+<li><strong>默认为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener noreferrer"><code>undefined</code></a></strong>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>描述符默认值汇总：
+<ul>
+<li>拥有布尔值的键 <code>configurable</code>、<code>enumerable</code> 和 <code>writable</code> 的默认值都是 <code>false</code>。</li>
+<li>属性值和函数的键 <code>value</code>、<code>get</code> 和 <code>set</code> 字段的默认值为 <code>undefined</code>。</li>
+</ul>
+</li>
+</ul>
+<p><strong>描述符可拥有的键值：</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>configurable</code></th>
+<th><code>enumerable</code></th>
+<th><code>value</code></th>
+<th><code>writable</code></th>
+<th><code>get</code></th>
+<th><code>set</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据描述符</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+<td>不可以</td>
+</tr>
+<tr>
+<td>存取描述符</td>
+<td>可以</td>
+<td>可以</td>
+<td>不可以</td>
+<td>不可以</td>
+<td>可以</td>
+<td>可以</td>
+</tr>
+</tbody>
+</table>
+<div><p>提示</p>
+<p>如果一个描述符不具有 <code>value</code>、<code>writable</code>、<code>get</code> 和 <code>set</code> 中的任意一个键，那么它将被认为是一个数据描述符。如果一个描述符同时拥有 <code>value</code> 或 <code>writable</code> 和 <code>get</code> 或 <code>set</code> 键，则会产生一个异常。</p>
+</div>
+<h2 id="示例"> 示例</h2>
+<h3 id="数据描述符"> 数据描述符</h3>
+<p><strong>特有</strong>的两个属性（value,writable）</p>
+<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span>
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    writable<span>:</span> <span>false</span> <span>// 是否可写 默认值：false</span>
+<span>}</span><span>)</span>
+
+Person<span>.</span>name <span>=</span> <span>'rose'</span>
+console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// jack</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span>
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    writable<span>:</span> <span>true</span> <span>// 是否可写 默认值：false</span>
+<span>}</span><span>)</span>
+
+Person<span>.</span>name <span>=</span> <span>'rose'</span>
+console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// rose</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h3 id="存取描述符"> 存取描述符</h3>
+<p>由一对 getter、setter 函数功能来描述的属性;</p>
+<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+<span>let</span> temp <span>=</span> <span>null</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    <span>get</span><span>:</span> <span>function</span> <span>(</span><span>)</span> <span>{</span>
+        <span>return</span> temp<span>;</span>
+    <span>}</span><span>,</span>
+    <span>set</span><span>:</span> <span>function</span> <span>(</span><span>val</span><span>)</span> <span>{</span>
+        temp <span>=</span> val<span>;</span>
+    <span>}</span>
+<span>}</span><span>)</span><span>;</span>
+
+<span>// Person.name = '早上好';</span>
+<span>// console.log(Person.name) // 早上好</span>
+
+console<span>.</span><span>log</span><span>(</span>Person<span>.</span>name<span>)</span> <span>// null</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h3 id="共有的属性"> 共有的属性</h3>
+<h4 id="configurable-属性"> Configurable 属性</h4>
+<p><code>configurable</code> 特性表示对象的属性是否可以被删除，以及可否配置。</p>
+<div><pre><code><span>'use strict'</span>
+<span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
+<span>}</span><span>)</span><span>;</span>
+
+<span>delete</span> Person<span>.</span>name <span>// Cannot delete property 'name' of #&lt;Object></span>
+
+<span>// console.log(Person.name) // jack</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><blockquote>
+<p>严格模式下删除属性会报错，非严格模式下无法删除。</p>
+</blockquote>
+<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
+<span>}</span><span>)</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span> <span>// Cannot redefine property: name</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span>
+    writable<span>:</span> <span>true</span><span>,</span> <span>// 是否可写</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    <span>get</span><span>(</span><span>)</span> <span>{</span>
+      <span>return</span> <span>'123'</span>
+    <span>}</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span> <span>// 是否可配置，以及是否可删除</span>
+<span>}</span><span>)</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span> <span>// Cannot redefine property: name</span>
+    <span>get</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>'1'</span>
+    <span>}</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><div><p>总结</p>
+<p>configurable: false 时，不能删除当前属性，且不能重新配置当前属性的描述符(有一个小小的意外：可以把writable的状态由true改为false,但是无法由false改为true),但是在writable: true的情况下，可以改变value的值</p>
+<p>configurable: true时，可以删除当前属性，可以配置当前属性所有描述符。</p>
+</div>
+<h4 id="enumerable属性"> enumerable属性</h4>
+<p>描述属性是否会出现在for in 或者 Object.keys()的遍历中；</p>
+<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    enumerable<span>:</span> <span>true</span><span>,</span> <span>// 是否可枚举</span>
+<span>}</span><span>)</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>Person<span>)</span><span>)</span> <span>// ['name']</span>
+<span>for</span> <span>(</span><span>const</span> personKey <span>in</span> Person<span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span>personKey<span>)</span> <span>// name</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    enumerable<span>:</span> <span>false</span><span>,</span> <span>// 是否可枚举</span>
+<span>}</span><span>)</span><span>;</span>
+
+console<span>.</span><span>log</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>Person<span>)</span><span>)</span> <span>// []</span>
+<span>for</span> <span>(</span><span>const</span> personKey <span>in</span> Person<span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span>personKey<span>)</span> <span>// </span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><h3 id="和普通对象的差异"> 和普通对象的差异</h3>
+<div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+Person<span>.</span>name <span>=</span> <span>'jack'</span><span>;</span>
+
+<span>// 等价于</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    configurable<span>:</span> <span>true</span><span>,</span>
+    enumerable<span>:</span> <span>true</span><span>,</span>
+    writable<span>:</span> <span>true</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><div><pre><code><span>let</span> Person <span>=</span> <span>{</span><span>}</span><span>;</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+
+<span>// 等价于</span>
+
+Object<span>.</span><span>defineProperty</span><span>(</span>Person<span>,</span> <span>'name'</span><span>,</span> <span>{</span>
+    value<span>:</span> <span>'jack'</span><span>,</span>
+    writable<span>:</span> <span>false</span><span>,</span>
+    configurable<span>:</span> <span>false</span><span>,</span>
+    enumerable<span>:</span> <span>false</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h2 id="参考博文"> 参考博文</h2>
+<p>https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty</p>
+<p>https://www.jianshu.com/p/8fe1382ba135</p>
 ]]></content:encoded>
     </item>
   </channel>
