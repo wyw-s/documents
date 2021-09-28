@@ -13,6 +13,8 @@ title: 介绍
   - [异步式 I/O 与事件驱动](./nodejs-note-16.md)
   - [Node.js 的性能](./nodejs-note-17.md)
   - [CommonJS规范](./nodejs-note-18.md)
+  - [dirname和filename](nodejs-note-30.md)
+  - [path.join()和path.resolve()](nodejs-note-35.md)
 - Node.js快速入门
   - [安装nodejs](./nodejs-note-26.md)
   - [使用Nodejs ](./nodejs-note-19.md)

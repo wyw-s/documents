@@ -1,6 +1,6 @@
 ---
 title: dirname和filename
-category: WEBPACK
+category: nodejs
 date: 2021-05-02
 ---
 

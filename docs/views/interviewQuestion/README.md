@@ -39,4 +39,6 @@ time: 2021-06-15 22:37:23
 29. [watch和computed的区别以及怎么选用?](./question-note-100.md)
 30. [你知道nextTick的原理吗?](./question-note-105.md)
 31. [简单说一说vue生命周期的理解?](./question-note-110.md)
+32. javascript
+    1. [写一个js函数，实现对一个数字每3位加一个逗号](115_实现数字每3位加一个逗号.md)
 

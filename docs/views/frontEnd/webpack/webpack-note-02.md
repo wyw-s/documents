@@ -6,7 +6,7 @@ date: 2021-05-02
 
 ## `webpack、webpack-cli、webpack-dev-server`的关系
 
-> 概述：webpack的核心是用于现代JavaScript应用程序的静态模块打包器。当webpack处理您的应用程序时，它会在内部构建一个[依赖关系图](https://webpack.js.org/concepts/dependency-graph/)，该图映射您项目所需的每个模块并生成一个或多个包。[官方文档](https://webpack.js.org/)
+> webpack的核心是用于现代JavaScript应用程序的静态模块打包器。当webpack处理您的应用程序时，它会在内部构建一个[依赖关系图](https://webpack.js.org/concepts/dependency-graph/)，该图映射您项目所需的每个模块并生成一个或多个包。[官方文档](https://webpack.js.org/)
 
 ![1615011412595](assets/1615011412595.png)
 
