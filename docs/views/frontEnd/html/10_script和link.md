@@ -1,7 +1,7 @@
 ---
 title: script和link
 category: HTML
-date: 2021-09-25 22:06:34
+date: 2021-09-29 00:32:34
 ---
 
 > 说实在的很惭愧，做前端这么久了，没考虑过这个问题，但是看到网上有相关的面试题，所以这里就简单的聊下。
@@ -80,15 +80,19 @@ date: 2021-09-25 22:06:34
 
 ## script标签
 
-> 标签用于定义客户端脚本，比如 JavaScript。既可包含脚本语句，也可以通过 "src" 属性指向外部脚本文件。
+> 标签用于定义客户端脚本，比如 JavaScript。既可包含脚本语句，也可以通过 "src" 属性指向外部脚本文件。直接使用`script`脚本的话，`html`会按照顺序来加载并执行脚本，在脚本加载&执行的过程中，会阻塞后续的`DOM`的解析和渲染。`script`提供了两种属性，`async`和`defer`，这两个属性使得`script`不会阻塞`DOM`的渲染。
 
-直接使用`script`脚本的话，`html`会按照顺序来加载并执行脚本，在脚本加载&执行的过程中，会阻塞后续的`DOM`的解析和渲染。现在大家习惯于在页面中引用各种的第三方脚本，如果第三方服务商出现了一些小问题，比如延迟之类的，就会使得页面白屏。好在`script`提供了两种方式来解决上述问题，`async`和`defer`，这两个属性使得`script`都不会阻塞`DOM`的渲染。
+| 属性                  | 执行顺序     | 描述                                                  |
+| --------------------- | ------------ | ----------------------------------------------------- |
+| 无 `async` 和 `defer` | 文档顺序     | 遇到script会下载脚本并执行，期间堵塞DOM解析和渲染     |
+| `async`               | 先加载完执行 | 异步下载脚本，下载完成立即执行，期间堵塞DOM解析和渲染 |
+| `defer`               | 文档顺序     | 异步下载脚本，DOM解析完成后执行脚本                   |
+
+ **defer和async的详细介绍前往**[传送门](https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
 ::: tip
 
-- 如果 async="async"：脚本相对于页面的其余部分异步地执行（当页面继续进行解析时，脚本将被执行）【仅适用于外部脚本】。
-- 如果不使用 async 且 defer="defer"：脚本将在页面完成解析时执行【仅适用于外部脚本】。
-- 如果既不使用 async 也不使用 defer：在浏览器继续解析页面之前，立即读取并执行脚本。
+- `async`和`defer`【仅适用于外部脚本】。
 - 在 HTML 4 中，"type" 属性是必需的，但在 HTML5 中是可选的。
 - "async" 属性是 HTML5 中的新属性。
 
@@ -118,17 +122,45 @@ date: 2021-09-25 22:06:34
 
 > 由上图可知，多个script标签链接的资源会同时下载，但是在下载完成和执行完前(按照书写顺序依次执行)，会堵塞DOM的解析和渲染；
 
+::: tip
+
+通过createElement创建的script标签其属性async默认为true
+
+:::
+
 ### 解释
 
-当浏览器遇到一个 < script>标签时，浏览器会停下来，运行JavaScript代码，然后再继续解析、翻译页面。同样的事情发生在使用 src 属性加载 JavaScript 的过程中。浏览器必须首先下载外部文件的代码，需要占用一些时间，然后解析并运行此JavaScript代码。此过程中，页面解析和用户交互是被完全阻塞的。
+当浏览器遇到一个 < script>标签时，浏览器会停下来，运行JavaScript代码，然后再继续解析、渲染页面。同样的事情发生在使用 src 属性加载 JavaScript 的过程中。浏览器必须首先下载外部文件的代码，需要占用一些时间，然后解析并运行此JavaScript代码。此过程中，页面解析和用户交互是被完全阻塞的。
 
 ## 原理解析
 
-> 不用浏览器使用的内核不同，所以他们的渲染过程也是不一样的。目前主要有两个：
+> 不同浏览器使用的内核不同，所以他们的渲染过程也是不一样的。目前主要有两个：
 
 **webkit渲染过程**
 
 ![](assets/v2-ddbb3012429ae454a92da09c816948de_1440w.jpg)
+
+**Gecko渲染过程**
+
+![](assets/v2-5030ffa6e418a4aab8f4bc5fce21fccd_1440w.jpg)
+
+> 浏览器渲染的流程如下：
+>
+> 1. HTML解析文件，生成DOM Tree，解析CSS文件生成CSSOM Tree
+> 2. 将Dom Tree和CSSOM Tree结合，生成Render Tree(渲染树)
+> 3. 根据Render Tree渲染绘制，将像素渲染到屏幕上。
+
+从流程我们可以看出来:
+
+1. DOM解析和CSS解析是两个并行的进程，所以这也解释了为什么CSS加载不会阻塞DOM的解析。
+2. 然而，由于Render Tree是依赖于DOM Tree和CSSOM Tree的，所以他必须等待到CSSOM Tree构建完成，也就是CSS资源加载完成(或者CSS资源加载失败)后，才能开始渲染。因此，CSS加载是会阻塞Dom的渲染的。
+3. 由于js可能会操作之前的Dom节点和css样式，因此浏览器会维持html中css和js的顺序。又因为，样式表会在后面的js执行前先加载执行完毕，所以css会阻塞后面js的执行。
+
+## DOMContentLoaded
+
+https://zhuanlan.zhihu.com/p/25876048
+
+https://zhuanlan.zhihu.com/p/43282197
 
 ## 参考博文
 
@@ -137,4 +169,6 @@ https://www.cnblogs.com/eret9616/p/13154861.html
 https://zhuanlan.zhihu.com/p/43282197
 
 https://www.cnblogs.com/jiasm/p/7683930.html
+
+https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
 
