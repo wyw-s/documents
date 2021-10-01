@@ -1,27 +1,35 @@
 ---
-blog: true
 home: true
-bgImage: '/img/hero.jpg'
-heroFullScreen: false
-project:
-- name: 前端相关
-  type: book
+title: Home
+heroImage: /img/logo.jpg
+heroText: Personal Blog
+tagline: 一个记录琐碎知识的笔记文档✨
+action:
+- text: 开始阅读 💡
+  link: /article/
+  type: primary
+
+- text: 介绍
+  link: /introduce
+
+features:
+- title: 前端相关
   link: /views/frontEnd/javascript/
 
-- name: 后端相关
-  type: book
+- title: 后端相关
   link: /views/backEnd/nodejs/
 
-- name: 工具
-  type: book
+- title: 工具 🔧
   link: /views/tools/git/
 
-- name: 问题
-  type: book
+- title: 问题
   link: /views/issues/
 
-- name: 其他
-  type: book
+- title: 其他
   link: /views/other/
+
 ---
 
+## 关于
+
+一个程序员发牢骚的地方

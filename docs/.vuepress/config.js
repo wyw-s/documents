@@ -18,12 +18,13 @@ module.exports = config({
         Github: 'https://github.com/wyw-s/documents'
       },
     },
+    themeColor: false,
     breadcrumb: false,
-    darkmode: 'auto-switch',
+    darkmode: 'disable',
     // algoliaType: "full",
     nav: [
       {text: '首页', link: '/'},
-      {text: '介绍', link: '/guide/'},
+      {text: '介绍', link: '/introduce/'},
       {
         text: '设计模式',
         link: '/views/designMode/',
@@ -80,11 +81,11 @@ module.exports = config({
       {text: '问题', link: '/views/issues/'},
       {text: '其它', link: '/views/other/'}
     ],
-    comment: {
-      type: "waline",
-      visitor: true,
-      serverURL: "https://my-document-e7l8i27lx-wyw-s.vercel.app",
-    },
+    // comment: {
+    //   type: "waline",
+    //   visitor: true,
+    //   serverURL: "https://my-document-e7l8i27lx-wyw-s.vercel.app",
+    // },
     footer: {
       display: true,
       copyrightText: 'MIT LICENSE',
@@ -99,6 +100,14 @@ module.exports = config({
       cacheHTML: false,
       cachePic: true,
       showInstall: true,
+      manifest: {
+        icons: [
+          {
+            src: "/favicon.ico",
+            sizes: "200x200"
+          }
+        ]
+      }
     },
     // algolia: {
     //   apiKey: "25626fae796133dc1e734c6bcaaeac3c",
