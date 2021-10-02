@@ -1,14 +1,14 @@
 const {config} = require('vuepress-theme-hope')
 
 module.exports = config({
-  title: 'Mr. Almost',
-  description: 'Smoking the same cigarettes, tapping the same computers, writing the same code  ',
+  title: 'Yahweh',
+  description: '一个记录琐碎知识的笔记文档✨',
   dest: './dist',
   locales: {
     "/": { lang: "zh-CN" },
   },
   themeConfig: {
-    logo: '/img/logo.jpg',
+    logo: '/img/logo-192.png',
     hostname: 'https://wangyawei.top',
     author: 'Mr. Almost',
     repo: false,
@@ -100,14 +100,7 @@ module.exports = config({
       cacheHTML: false,
       cachePic: true,
       showInstall: true,
-      manifest: {
-        icons: [
-          {
-            src: "/favicon.ico",
-            sizes: "200x200"
-          }
-        ]
-      }
+      manifest: {}
     },
     // algolia: {
     //   apiKey: "25626fae796133dc1e734c6bcaaeac3c",

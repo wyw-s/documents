@@ -1,11 +1,11 @@
 ---
 home: true
 title: Home
-heroImage: /img/logo.jpg
+heroImage: /img/logo-192.png
 heroText: Personal Blog
 tagline: 一个记录琐碎知识的笔记文档✨
 action:
-- text: 开始阅读 💡
+- text: 开始阅读
   link: /article/
   type: primary
 
