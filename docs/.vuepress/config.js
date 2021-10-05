@@ -9,7 +9,7 @@ module.exports = config({
   },
   themeConfig: {
     logo: '/img/logo-192.png',
-    hostname: 'https://wangyawei.top',
+    hostname: 'https://blog.yahweh.top',
     author: 'Mr. Almost',
     repo: false,
     blog: {
