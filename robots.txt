@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://wangyawei.top/sitemap.xml
+Sitemap: https://blog.yahweh.top/sitemap.xml
