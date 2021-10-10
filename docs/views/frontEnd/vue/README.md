@@ -46,6 +46,7 @@ date: 2021-05-01
   - [手写vue](./手写vue-16.md)
   - [el和$mount的区别](./vue-note-95.md)
   - [vue在实例化之前初始化了什么？](./vue-note-100.md)
+  - [Virtual DOM](105_Virtual%20DOM.md)
   
 - VUE SSR实战
 
