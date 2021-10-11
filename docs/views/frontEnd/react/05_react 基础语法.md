@@ -40,12 +40,12 @@ const jsx = <div className="app"><h1>Hello React! 动态变化数据：{count}</
 1. 引入`react `和`react-dom`两个 js 文件;
 
 ```html
- <script src="./node_modules/react/umd/react.development.js"></script> 
-  <script src="./node_modules/react-dom/umd/react-dom.development.js"></script> 
+<script src="./node_modules/react/umd/react.development.js"></script> 
+<script src="./node_modules/react-dom/umd/react-dom.development.js"></script> 
 ```
 
- 	 2.	创建`React`元素；
-        	 3.	渲染React元素到页面中;
+2.	创建`React`元素；
+3.	渲染React元素到页面中;
 
 ```Js
 // 指定要渲染的范围；
@@ -336,7 +336,7 @@ const jsx = <div className="app"><h1>Hello React! 动态变化数据：{count}</
    5. 调用该高阶组件，传入要增强的组件，通过返回值拿到增强后的组件,并将其渲染到页面中 。
    
    ```jsx
-   // 创建一个函参数为 ：组件
+   // 创建一个函数组件
    function withMouse(WrappedComponent) { 
      // 创建类组件并返回
      return class MouseHoc extends React.Component {
@@ -657,11 +657,7 @@ export default Index
   > 注意：不能在函数**组件上**使用 ref，因为它没有实例。不要过度使用Refs。
 
 ## 组件通讯；
-
-```
-概述：
-组件是独立且封闭的单元，默认情况下，只能使用组件自己的数据。在组件化过程中，我们将一个完整的功能 拆分成多个组件，以更好的完成整个应用的功能。而在这个过程中，多个组件之间不可避免的要共享某些数据 。为了实现这些功能，就需要打破组件的独立封闭性，让其与外界沟通。这个过程就是组件通讯。
-```
+> 组件是独立且封闭的单元，默认情况下，只能使用组件自己的数据。在组件化过程中，我们将一个完整的功能 拆分成多个组件，以更好的完成整个应用的功能。而在这个过程中，多个组件之间不可避免的要共享某些数据 。为了实现这些功能，就需要打破组件的独立封闭性，让其与外界沟通。这个过程就是组件通讯。
 
 ### 1、`props`的介绍;
 
@@ -1014,7 +1010,7 @@ export default Index;
 
 ### 1、使用步骤；
 
-1. 调用`React. createContext()`方法，创建对象，该对象中包含`Provider`（提供数据） 和`Consumer`（消费数据） 两个组件。 
+1. 调用`React.createContext()`方法创建对象，该对象中包含`Provider`（提供数据） 和`Consumer`（消费数据） 两个组件。 
 
    ```jsx
     const { Provider, Consumer } = React.createContext() 
