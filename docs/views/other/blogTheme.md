@@ -1,5 +1,7 @@
 ---
 title: 博客园主题
+category: other
+date: 2021-05-02
 ---
 
 ## 博客主题
