@@ -1,0 +1,27 @@
+{
+  "name": "vuepress-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "node ./bin/deploy.js",
+    "pushZip": "node ./utils/zip.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jszip": "^3.6.0",
+    "ora": "^5.4.1",
+    "ssh2": "^1.1.0",
+    "vuepress": "^1.8.2",
+    "vuepress-plugin-md-enhance": "^1.18.5",
+    "vuepress-theme-hope": "^1.20.3"
+  },
+  "dependencies": {
+    "vuepress-plugin-auto-sidebar": "^2.2.2"
+  }
+}
