@@ -216,3 +216,45 @@ npm uninstall --global 包名
 $ npm cache clean --force
 ```
 
+## 账户设置
+
+- 全局设置：
+
+  ```bash
+  #查看全局用户名
+  git config --global user.name
+  # 全局配置账户
+  git config --global user.name [youername]
+  # 移除全局配置账户
+  git config --global --unset user.name
+  
+  # 查看全局邮箱
+  git config --global user.email
+  # 全局配置邮箱
+  git config --global user.email [youeremail]
+  # 移除全局配置邮箱
+  git config --global --unset user.email
+  
+  # 设置全局密码
+  git config --global user.password [youerpassword]
+  # 移除全局密码
+  git config --global --unset user.password
+  # 查看全局密码
+  git config --global user.password
+  ```
+
+- 非全局设置:
+
+  ```bash
+  # 设置用户名
+  git config user.name [youername]
+  # 设置邮箱
+  git config user.email [youeremail]
+  ```
+
+::: info 
+
+配置信息存储在项目目录下``.git/config`文件中。如果有`--global`全局的配置，全局配置存储在`~/.gitconfig`
+
+:::
+
