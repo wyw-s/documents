@@ -1,6 +1,6 @@
 ---
 title: 普通用户切换到root用户
-category: LINUX
+category: UBANTU
 date: 2021-05-02
 ---
 

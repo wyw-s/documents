@@ -26,14 +26,6 @@ module.exports = config({
       {text: '首页', link: '/'},
       {text: '介绍', link: '/introduce/'},
       {
-        text: '设计模式',
-        link: '/views/designMode/',
-      },
-      {
-        text: '面试题',
-        link: '/views/interviewQuestion/',
-      },
-      {
         text: '前端',
         items: [
           {text: 'HTML', link: '/views/frontEnd/html/'},
@@ -53,13 +45,12 @@ module.exports = config({
             text: '开发指南',
             items: [
               {text: 'NODEJS', link: '/views/backEnd/nodejs/'},
-              {text: 'LINUX', link: '/views/backEnd/linux/'},
+              {text: 'JAVA', link: '/views/backEnd/java/basic/'},
               {text: 'MYSQL', link: '/views/backEnd/mysql/'},
               {text: 'JENKINS', link: '/views/backEnd/jenkins/'},
               {text: 'NGINX', link: '/views/backEnd/nginx/'},
               {text: 'TOMCAT', link: '/views/backEnd/tomcat/'},
               {text: 'DOCKER', link: '/views/backEnd/docker/'},
-              {text: 'JAVA', link: '/views/backEnd/java/basic/'}
             ]
           },
           {
@@ -72,11 +63,26 @@ module.exports = config({
         ]
       },
       {
+        text: '操作系统',
+        items: [
+          {text: 'LINUX', link: '/views/ios/linux/'},
+          {text: 'UBANTU', link: '/views/ios/ubantu/'}
+        ]
+      },
+      {
         text: '工具',
         items: [
           {text: 'GIT', link: '/views/tools/git/'},
           {text: 'NPM', link: '/views/frontEnd/npm/'}
         ]
+      },
+      {
+        text: '设计模式',
+        link: '/views/designMode/',
+      },
+      {
+        text: '面试题',
+        link: '/views/interviewQuestion/',
       },
       {text: '问题', link: '/views/issues/'},
       {text: '其它', link: '/views/other/'}

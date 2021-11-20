@@ -1,5 +1,5 @@
 ---
-title: Linux 查看磁盘空间
+title: Linux查看磁盘空间
 category: LINUX
 date: 2021-05-02
 ---
