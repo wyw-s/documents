@@ -35,7 +35,8 @@ module.exports = config({
           {text: 'JQUERY', link: '/views/frontEnd/jquery/'},
           {text: 'VUE', link: '/views/frontEnd/vue/'},
           {text: 'REACT', link: '/views/frontEnd/react/'},
-          {text: 'WEBPACK', link: '/views/frontEnd/webpack/'}
+          {text: 'WEBPACK', link: '/views/frontEnd/webpack/'},
+          {text: 'PLUGINS', link: '/views/frontEnd/plugins/'}
         ]
       },
       {
@@ -73,7 +74,7 @@ module.exports = config({
         text: '工具',
         items: [
           {text: 'GIT', link: '/views/tools/git/'},
-          {text: 'NPM', link: '/views/frontEnd/npm/'}
+          {text: 'NPM', link: '/views/tools/npm/'}
         ]
       },
       {
