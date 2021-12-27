@@ -47,6 +47,7 @@ module.exports = config({
             items: [
               {text: 'NODEJS', link: '/views/backEnd/nodejs/'},
               {text: 'JAVA', link: '/views/backEnd/java/basic/'},
+              {text: 'GO', link: '/views/backEnd/go/basic/'},
               {text: 'MYSQL', link: '/views/backEnd/mysql/'},
               {text: 'JENKINS', link: '/views/backEnd/jenkins/'},
               {text: 'NGINX', link: '/views/backEnd/nginx/'},
