@@ -720,39 +720,7 @@ export default Index;
      }
    ```
 
-## 组件的生命周期；
 
-### 1、概述；
-
-1. 生命周期：组件从被创建到挂载到页面中运行，再到组件不用时卸载的过程 
-2. 生命周期的每个阶段总是伴随着一些方法调用，这些方法就是生命周期的钩子函数。 
-3. 钩子函数的作用：为开发人员在不同阶段操作组件提供了时机。 
-4. 只有 **类组件** 才有生命周期。
-
-### 2、三个阶段；
-
-![1577714121517](assets/1577714121517.png)
-
-#### 2.1、创建时(挂载阶段)
-
-1. 执行时机:组件创建时(页面加载时)。
-- 执行顺序。
-
-![1577714241030](assets/1577714241030.png)
-
-#### 2.2、更新时(更新阶段)
-
-- 执行时机：**1. setState()  2. forceUpdate()  3. 组件接收到新的props**  
-- 说明：以上三者任意一种变化，组件就会重新渲染 
-- 执行顺序： 
-
-![1577714379334](assets/1577714379334.png)
-
-#### 2.3、卸载时；
-
-- 执行时机：组件从页面中消失 。(组件切换)  可以清除定时器，解绑事件
-
-![1577714501410](assets/1577714501410.png)
 
 ## `React`路由;
 
@@ -1044,61 +1012,6 @@ import { Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 const 新组件 = withRouter(旧组件)
 ```
-
-## `setState()`的说明；
-
-### 1、第一个参数；
-
-> 1、**对象语法**：`setState(stateChange[, callback])`；
-
-1. `setState()`是**异步**更新数据的。
-
-2. 使用该语法时，后面的`setState()`不要依赖于前面的`setState()` ；**可以在第二个参数的回调函数中获取更新后的状态。**
-
-3. 可以多次调用`setState()`，但是`react`会做批处理和覆盖，且只会触发一次重新渲染。
-
-   ```jsx
-   ...
-   state = { count: 0 } 
-   
-   this.setState({ 
-     count: this.state.count + 1 
-   }) 
-   // 第二次加一
-   this.setState({ 
-     count: this.state.count + 2 
-   }) 
-   console.log(this.state.count) // 0 
-   ```
-
-> 2、**函数语法**：`setState(updater[, callback])`；
-
-1. **推荐**：使用`setState((state, props) => {})`语法，支持异步批量更新 ；
-
-2. 参数state：表示最新的state 。
-
-3. 参数props：表示最新的props 。
-
-   ```jsx
-   this.setState((state, props) => { 
-     return { 
-       count: state.count + 1 
-     } 
-   }) 
-   ```
-
-### 2、第二个参数；
-
-1. 场景：在状态更新（页面完成重新渲染）后立即执行某个操作 。
-
-2. 语法： `setState(updater[, callback])`  。
-
-   ```jsx
-   this.setState( 
-     (state, props) => {}, 
-     () => {console.log('这个回调函数会在状态更新后立即执行')} 
-   ) 
-   ```
 
 ## 组件性能优化；
 

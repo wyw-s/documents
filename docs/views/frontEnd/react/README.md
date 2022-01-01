@@ -14,3 +14,4 @@ date: 2021-05-02
 - [JSX语法](15_JSX语法.md)
 - [react组件](20_react组件.md)
 - [state和setState](25_state和setState.md)
+- [生命周期](30_生命周期.md)
