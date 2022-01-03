@@ -662,66 +662,6 @@ export default Index;
 
 ```
 
-## `Context `
-
-> 作用：Context 提供了一个无需为每层组件手动添加 `props`，就能在组件树间进行数据传递的方法。 【跨组件通讯】
->
-> 使用场景：如果两个组件嵌套多层可以使用`Context`实现组件通讯 。
-
-![1577707671143](assets/1577707671143.png)
-
-### 1、使用步骤；
-
-1. 调用`React.createContext()`方法创建对象，该对象中包含`Provider`（提供数据） 和`Consumer`（消费数据） 两个组件。 
-
-   ```jsx
-    const { Provider, Consumer } = React.createContext() 
-   ```
-
-2. 使用`Provider`组件包裹根节点；
-
-   ```jsx
-    render() {
-       return (
-         <Provider>
-           <h1>根组件</h1>
-           <Child1 />
-         </Provider>
-       );
-     }
-   ```
-
-3. 在`Provider`设置`value`属性，表示要传递的数据；
-
-   ```jsx
-         <Provider value={this.state.name}>
-   ```
-
-4. 在需要接收数据的地方放置`Consumer`来接收数据；
-
-   ```jsx
-    // 接收根组件传递的数据并显示
-     // msg 为传递过来的数据
-     getAppData = (msg) => {
-       return (
-         <h3>{msg}</h3>
-       )
-     }
-   
-     render() {
-       return (
-         <div>
-           <h2>Child3</h2>
-           <div>
-             <Consumer>{this.getAppData}</Consumer>
-           </div>
-         </div>
-       );
-     }
-   ```
-
-
-
 ## `React`路由;
 
 > 使用`React`路由简单来说，就是配置路径和组件（配对） 
