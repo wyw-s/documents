@@ -76,3 +76,50 @@ E:\goProject\src\goCode\testProject01\main>
 5. Go编译器是一行行进行编译的，因此我们一行就写一条语句，不能把多条语句写在同一行，否则会报错。
 6. 定义的变量或者import的包如果没有使用到，代码不能编译通过。
 7. 大括号都是成对出现的，缺一不可。
+
+## 代码风格
+
+1. 注意缩进；
+
+   ```bash
+   # 通过 gofmt test.go 格式化文件
+   E:\goProject\src\goCode\testProject01\main>gofmt test.go
+   package main
+   
+   import "fmt"
+   
+   func main() {
+           fmt.Println("Hello Golang")
+   }
+   
+   # 格式化并写入文件
+   E:\goProject\src\goCode\testProject01\main>gofmt -w test.go
+   ```
+
+2. 成对编程: `{}`、`()`、`""`、`''`。
+
+3. 运算符两边加空白: `var a = 2 + 3`。
+
+4. 注释：官方推荐行注释。
+
+5. 以下代码是错误的；
+
+   ```go
+   package main
+   
+   import "fmt"
+   
+   func main()
+   {
+   	fmt.Println("Hello Golang")
+   }
+   ```
+
+   > go的设计者想要开发者保持有统一的代码风格，一个问题尽量只有一个解决方案是最好的
+
+6. 行长约定：一行最长不要超过80个字符，超过的请使用换行展示，尽量保持格式优雅。
+
+
+
+​	
+

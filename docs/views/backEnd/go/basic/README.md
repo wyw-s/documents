@@ -15,3 +15,8 @@ date: 2021-12-27
 - [常用DOS命令](25_常用DOS命令.md)
 - [HelloWorld快速入门](30_HelloWorld快速入门.md)
 - [Goland执行流程](35_Goland执行流程.md)
+- [变量](40_变量.md)
+
+## 参考资料
+
+- [golang中文网](https://studygolang.com/pkgdoc)
