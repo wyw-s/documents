@@ -93,3 +93,125 @@ const MousePosition = withMouse(Position)
 <MousePosition /> 
 ```
 
+::: warning
+
+不要在 render ⽅法中使⽤ HOC，React 的 diff 算法（称为协调）使⽤组件标识来确定它是应该更 新现有⼦树还是将其丢弃并挂载新⼦树。 如果从 render 返回 的组件与前⼀个渲染中的组件相同（===），则 React 通过将 ⼦树与新⼦树进⾏区分来递归更新⼦树。 如果它们不相等，则 完全卸载前⼀个⼦树。
+
+```jsx
+render() {
+  // 每次调⽤ render 函数都会创建⼀个新的
+  EnhancedComponent
+  // EnhancedComponent1 !== EnhancedComponent2
+  const EnhancedComponent = enhance(MyComponent);
+  // 这将导致⼦树每次渲染都会进⾏卸载，和重新挂载的操作！
+  return <EnhancedComponent />;
+}
+```
+
+:::
+
+## 装饰器
+
+> ⾼阶组件本身是对装饰器模式的应⽤，⾃然可以利⽤`ES7`中出现的 装饰器语法来更优雅的书写代码。
+
+### 安装依赖
+
+```bash
+npm install -D @babel/plugin-proposal-decorators react-app-rewired customize-cra
+```
+
+### 添加配置文件
+
+```javascript
+// config-overrides.js
+
+//配置完成后记得重启下
+const { addDecoratorsLegacy, override } = require("customize-cra");
+
+module.exports = override(
+  //配置装饰器
+  addDecoratorsLegacy()
+)
+```
+
+### 修改启动脚本
+
+```bash
+"scripts": {
+-  "start": "react-scripts start",
++  "start": "react-app-rewired start",
+-  "build": "react-scripts build",
++  "build": "react-app-rewired build",
++  "test": "react-app-rewired test",
++  "eject": "react-app-rewired eject"
+},
+```
+
+### 使用
+
+```jsx
+const Bar = (Child) => (props) => {
+  return (<div>
+    <h1>BAR</h1>
+    <Child {...props} />
+  </div>)
+}
+
+export default Bar;
+```
+
+```jsx
+import React, { Component } from 'react';
+import Bar from './bar';
+
+// 使用装饰器
+@Bar
+class Foo extends Component {
+  render() {
+    return (<div>Foo</div>)
+  }
+}
+
+export default Foo;
+```
+
+```jsx
+import React from 'react';
+import Foo from './views/foo';
+
+function App() {
+  return (
+    <div className="App">
+      <Foo />
+    </div>
+  );
+}
+
+export default App;
+```
+
+::: into
+
+- 装饰器必须`return`一个函数，不能直接返回一个`jsx`；
+
+  ```jsx
+  // 正确
+  const Bar = (Child) => (props) => {
+    return (<Child {...props} />)
+  }
+  
+  // 错误
+  const Bar = (Child) => {
+    return (<Child {...props} />)
+  }
+  
+  export default Bar;
+  ```
+
+- 被装饰的组件，要以组件的方式使用`< Child />`不能`{ Child }`；
+
+- 装饰器只能⽤在class上。
+
+-  多个装饰器，执⾏顺序从下往上。
+
+:::
