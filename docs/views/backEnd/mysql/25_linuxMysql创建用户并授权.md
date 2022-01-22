@@ -98,7 +98,7 @@ FLUSH PRIVILEGES;
   sudo service firewalld restart
   ```
 
--  查看3306端口是否开启 ；
+- 查看3306端口是否开启 ；
 
   ```
   firewall-cmd --zone=public --query-port=8080/tcp --permanent
@@ -111,8 +111,9 @@ FLUSH PRIVILEGES;
   ```
   netstat -an | grep 3306
   ```
+
   ![1594531323023](assets/1594531323023.png)
-  
+
 - 单独开放3306端口；
 
   ```
