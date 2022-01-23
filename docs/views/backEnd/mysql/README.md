@@ -14,6 +14,7 @@ date: 2021-05-02
 - [linuxMysql使用](20_linuxMysql使用.md)
 - [linuxMysql创建用户并授权](25_linuxMysql创建用户并授权.md)
 - [SQL基本概念与通用语法](30_SQL基本概念与通用语法.md)
+- [数据库的CRUD操作.md](35_数据库的CRUD操作.md)
 
 ## 参考资料
 
