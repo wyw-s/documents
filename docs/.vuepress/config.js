@@ -10,7 +10,7 @@ module.exports = config({
   themeConfig: {
     logo: '/img/logo-192.png',
     hostname: 'https://blog.yahweh.top',
-    author: 'Mr. Almost',
+    author: 'Mr. Yahweh',
     repo: false,
     blog: {
       sidebarDisplay: "mobile",
