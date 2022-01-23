@@ -6,11 +6,11 @@
     <link>https://blog.yahweh.top/</link>
     <description>一个记录琐碎知识的笔记文档✨</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 22 Jan 2022 05:46:07 GMT</pubDate>
-    <lastBuildDate>Sat, 22 Jan 2022 05:46:07 GMT</lastBuildDate>
+    <pubDate>Sun, 23 Jan 2022 09:11:10 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Jan 2022 09:11:10 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
-    <copyright>Copyright by Mr. Almost</copyright>
+    <copyright>Copyright by Mr. Yahweh</copyright>
     <category>DOCKER</category>
     <category>EXPRESS</category>
     <category>GoLang</category>
@@ -46,7 +46,7 @@
       <link>https://blog.yahweh.top/</link>
       <guid>https://blog.yahweh.top/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Home</source>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="关于"> 关于</h2>
 <p>一个程序员发牢骚的地方</p>
 ]]></content:encoded>
@@ -56,7 +56,7 @@
       <link>https://blog.yahweh.top/guide/</link>
       <guid>https://blog.yahweh.top/guide/</guid>
       <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>完成这个文档笔记，也刚好把自己以前记的笔记做一次整理，虽然也花了不少时间，不过也算是完成了吧，在写这个文档笔记之前也调研了其它的文档笔记，但是在网上得到了反馈有很多都是我们的尤大大写的这个<code>vuepress</code>专为文档设计而提供的解决方案，又由于看的说明文档可以自己以vue的方式开发自定义主题，所以最后就选择了，vuepress。</p>
 </blockquote>
@@ -91,20 +91,6 @@
 <p>自己也希望做出来的笔记可以结构化，但事与愿违通常我们的笔记都是随笔的，也就是说缺乏结构和体系，然而一个好的知识结构体系可以很好的帮助我们快速整理自己的碎片化记忆，提升自己的知识深度与广度。</p>
 ]]></content:encoded>
       <enclosure url="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200318125116.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>介绍</title>
-      <link>https://blog.yahweh.top/views/backEnd/docker/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/docker/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <category>DOCKER</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>这里主要记录一些自己平时积累的docker相关的知识；</p>
-</blockquote>
-<h2 id="参考资料"> 参考资料：</h2>
-<h4 id=""> </h4>
-]]></content:encoded>
     </item>
     <item>
       <title>docker安装</title>
@@ -173,6 +159,20 @@ PS C:<span>\</span>Users<span>\</span>ASUS<span>></span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br></div></div>]]></content:encoded>
       <enclosure url="https://www.runoob.com/wp-content/uploads/2017/12/1513582421-4552-whale-x-win.png" type="image/png"/>
+    </item>
+    <item>
+      <title>介绍</title>
+      <link>https://blog.yahweh.top/views/backEnd/docker/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/docker/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
+      <category>DOCKER</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>这里主要记录一些自己平时积累的docker相关的知识；</p>
+</blockquote>
+<h2 id="参考资料"> 参考资料：</h2>
+<h4 id=""> </h4>
+]]></content:encoded>
     </item>
     <item>
       <title>容器的使用</title>
@@ -6750,23 +6750,1099 @@ mysql&gt;
 <blockquote>
 <p>前提先使用某个数据库</p>
 </blockquote>
+<p>创建表有以下几个步骤：</p>
+<ul>
+<li>C(Create): 创建。</li>
+<li>R(Retrieve)：查询。</li>
+<li>U(Update): 修改。</li>
+<li>D(Delete): 删除。</li>
+</ul>
 <h3 id="创建表"> 创建表</h3>
-<p>语法：</p>
-<div><pre><code>CREATE TABLE 表名 (
+<div><pre><code>-- 语法
+CREATE TABLE 表名 (
     字段名 1 字段类型 1,
     字段名 2 字段类型 2
 );
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>关键字说明：</p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>关键字说明：</p>
 <ul>
 <li>CREATE：创建。</li>
 <li>TABLE：表。</li>
 </ul>
-<h3 id="mysql-数据类型"> MySQL 数据类型</h3>
-<h3 id="查看表"> 查看表</h3>
-<h3 id="快速创建一个表结构相同的表"> 快速创建一个表结构相同的表</h3>
-<h3 id="删除表"> 删除表</h3>
-<h3 id="修改表结构"> 修改表结构</h3>
+<div><pre><code>-- 使用db2数据库；
+mysql&gt; use db2;
+Database changed
+
+-- 创建一个学生的表；
+mysql&gt; create table student(
+    -&gt;     id int,
+    -&gt;     name varchar(32),
+    -&gt;     age int ,
+    -&gt;     score double(4,1),
+    -&gt;     birthday date,
+    -&gt;     insert_time timestamp
+    -&gt; );
+Query OK, 0 rows affected (0.01 sec)
+
+-- 查看创建的表
+mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+-- 复制一张student的表
+mysql&gt; create table stu like student;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| stu           |
+| student       |
++---------------+
+2 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><h3 id="查看表"> 查看表</h3>
+<ul>
+<li>
+<p>查询某个数据库中所有的表名称；</p>
+<div><pre><code>show tables;
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>查询表结构</p>
+<div><pre><code>desc 表名;
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ul>
+<div><pre><code>-- 使用 mysql 数据库
+mysql&gt; use mysql;
+Database changed
+
+-- 查看mysql中的所有表
+mysql&gt; show tables;
++---------------------------+
+| Tables_in_mysql           |
++---------------------------+
+... 省略
+| host                      |
+... 省略
+| user                      |
++---------------------------+
+24 rows in set (0.00 sec)
+
+-- 查看 host 表结构
+mysql&gt; desc host;
++-----------------------+---------------+------+-----+---------+-------+
+| Field                 | Type          | Null | Key | Default | Extra |
++-----------------------+---------------+------+-----+---------+-------+
+| Host                  | char(60)      | NO   | PRI |         |       |
+| Db                    | char(64)      | NO   | PRI |         |       |
+| Select_priv           | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Insert_priv           | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Update_priv           | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Delete_priv           | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Create_priv           | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Drop_priv             | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Grant_priv            | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| References_priv       | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Index_priv            | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Alter_priv            | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Create_tmp_table_priv | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Lock_tables_priv      | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Create_view_priv      | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Show_view_priv        | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Create_routine_priv   | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Alter_routine_priv    | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Execute_priv          | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
+| Trigger_priv          | enum(&#39;N&#39;,&#39;Y&#39;) | NO   |     | N       |       |
++-----------------------+---------------+------+-----+---------+-------+
+20 rows in set (0.01 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br></div></div><h3 id="删除表"> 删除表</h3>
+<ul>
+<li>
+<p>删除表;</p>
+<div><pre><code>drop table 表名;
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>判断表，是否存在如果存在则删除</p>
+<div><pre><code>drop table  if exists 表名 ;
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ul>
+<div><pre><code>mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| stu           |
+| student       |
++---------------+
+2 rows in set (0.00 sec)
+
+-- 删除 stu 的表
+mysql&gt; drop table stu;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+-- 判断表是否存在，如果存在则删除
+mysql&gt; drop table if exists stu;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><h3 id="修改表"> 修改表</h3>
+<h4 id="修改表名"> 修改表名</h4>
+<div><pre><code>alter table 表名 rename to 新的表名;
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>-- 修改表名
+mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| student       |
++---------------+
+1 row in set (0.00 sec)
+
+mysql&gt; alter table student rename to stu;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql&gt; show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| stu           |
++---------------+
+1 row in set (0.00 sec)
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><h4 id="修改表的字符集"> 修改表的字符集</h4>
+<div><pre><code>alter table 表名 character set 字符集名称;
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>-- 修改表的字符集
+mysql&gt; show create table stu;
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                                                                                         |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| stu   | CREATE TABLE `stu` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(32) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `score` double(4,1) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 | -- 此时的字符集是utf8
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+-- 修改字符集为gbk
+mysql&gt; alter table stu character set gbk;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; show create table stu;
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Table | Create Table                                                                                                                                                                                                                                                                                                                           |
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| stu   | CREATE TABLE `stu` (
+  `id` int(11) DEFAULT NULL,
+  `name` varchar(32) CHARACTER SET utf8 DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `score` double(4,1) DEFAULT NULL,
+  `birthday` date DEFAULT NULL,
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=gbk | -- 此时的字符集是gbk
++-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br></div></div><h4 id="添加一列"> 添加一列</h4>
+<div><pre><code>alter table 表名 add 列名 数据类型;
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>mysql&gt; alter table stu add gender varchar(10);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc stu;
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| Field       | Type        | Null | Key | Default           | Extra                       |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| id          | int(11)     | YES  |     | NULL              |                             |
+| name        | varchar(32) | YES  |     | NULL              |                             |
+| age         | int(11)     | YES  |     | NULL              |                             |
+| score       | double(4,1) | YES  |     | NULL              |                             |
+| birthday    | date        | YES  |     | NULL              |                             |
+| insert_time | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| gender      | varchar(10) | YES  |     | NULL              |                             |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+7 rows in set (0.01 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><h4 id="修改列名称类型"> 修改列名称类型</h4>
+<div><pre><code>alter table 表名 change 列名 新列别 新数据类型;
+alter table 表名 modify 列名 新数据类型;
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><div><pre><code>-- 修改表的列，将 gender 修改为 sex 并把类型改为 20；
+mysql&gt; alter table stu change gender sex varchar(20);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc stu;
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| Field       | Type        | Null | Key | Default           | Extra                       |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| id          | int(11)     | YES  |     | NULL              |                             |
+| name        | varchar(32) | YES  |     | NULL              |                             |
+| age         | int(11)     | YES  |     | NULL              |                             |
+| score       | double(4,1) | YES  |     | NULL              |                             |
+| birthday    | date        | YES  |     | NULL              |                             |
+| insert_time | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| sex         | varchar(20) | YES  |     | NULL              |                             |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+7 rows in set (0.03 sec)
+
+-- 只修改列类型；
+mysql&gt; alter table stu modify sex varchar(10);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc stu;
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| Field       | Type        | Null | Key | Default           | Extra                       |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| id          | int(11)     | YES  |     | NULL              |                             |
+| name        | varchar(32) | YES  |     | NULL              |                             |
+| age         | int(11)     | YES  |     | NULL              |                             |
+| score       | double(4,1) | YES  |     | NULL              |                             |
+| birthday    | date        | YES  |     | NULL              |                             |
+| insert_time | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
+| sex         | varchar(10) | YES  |     | NULL              |                             |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+7 rows in set (0.01 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br></div></div><h4 id="删除列"> 删除列</h4>
+<div><pre><code>alter table 表名 drop 列名;
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>mysql&gt; alter table stu drop sex;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql&gt; desc stu;
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| Field       | Type        | Null | Key | Default           | Extra                       |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+| id          | int(11)     | YES  |     | NULL              |                             |
+| name        | varchar(32) | YES  |     | NULL              |                             |
+| age         | int(11)     | YES  |     | NULL              |                             |
+| score       | double(4,1) | YES  |     | NULL              |                             |
+| birthday    | date        | YES  |     | NULL              |                             |
+| insert_time | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
++-------------+-------------+------+-----+-------------------+-----------------------------+
+6 rows in set (0.01 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="dml-操作表中的数据"> DML 操作表中的数据</h2>
+<blockquote>
+<p>用于对表中的记录进行增删改操作</p>
+</blockquote>
+<h3 id="添加数据"> 添加数据</h3>
+<p>语法：</p>
+<div><pre><code>INSERT [INTO] 表名 [字段名] VALUES (字段值)
+</code></pre>
+<div><span>1</span><br></div></div><p>参数解释：</p>
+<ul>
+<li>
+<p>INSERT INTO 表名：表示往哪张表中添加数据</p>
+</li>
+<li>
+<p>(字段名 1, 字段名 2, …)：要给哪些字段设置值</p>
+</li>
+<li>
+<p>VALUES (值 1, 值 2, …)：设置具体的值</p>
+</li>
+</ul>
+<h4 id="插入全部字段"> 插入全部字段</h4>
+<div><pre><code>-- 所有的字段名都写出来
+INSERT INTO 表名 (字段名 1, 字段名 2, 字段名 3…) VALUES (值 1, 值 2, 值 3);
+
+-- 不写字段名
+INSERT INTO 表名 VALUES (值 1, 值 2, 值 3…);
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>-- 插入所有的列，向学生表中
+mysql&gt; select * from stu;
+Empty set (0.00 sec)
+
+mysql&gt; INSERT INTO stu (id, name, age, score, birthday) VALUES (10, &#39;张三&#39;, 200, 20, null);
+ERROR 1366 (HY000): Incorrect string value: &#39;\xD5\xC5\xC8\xFD&#39; for column &#39;name&#39; at row 1
+mysql&gt; INSERT INTO stu (id, name, age, score, birthday) VALUES (10, &#39;zhangsan&#39;, 200, 20, null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from stu;
++------+----------+------+-------+----------+---------------------+
+| id   | name     | age  | score | birthday | insert_time         |
++------+----------+------+-------+----------+---------------------+
+|   10 | zhangsan |  200 |  20.0 | NULL     | 2022-01-22 19:58:01 |
++------+----------+------+-------+----------+---------------------+
+1 row in set (0.00 sec)
+
+-- 不写字段名
+mysql&gt; INSERT INTO stu VALUES (11, &#39;lisi&#39;, 200, 20, null, null);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from stu;
++------+----------+------+-------+----------+---------------------+
+| id   | name     | age  | score | birthday | insert_time         |
++------+----------+------+-------+----------+---------------------+
+|   10 | zhangsan |  200 |  20.0 | NULL     | 2022-01-22 19:58:01 |
+|   11 | lisi     |  200 |  20.0 | NULL     | 2022-01-22 20:03:18 |
++------+----------+------+-------+----------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br></div></div><div><p>相关信息</p>
+<ol>
+<li>列名和值要一一对应，类型要一致。</li>
+<li>如果表名后不定义列名，则默认给所有列添加值。不能缺少列，否则报错。</li>
+<li>除了数字类型，其他类型需要使用引号(单双都可以)引起来。</li>
+<li>没有添加数据的字段会使用 NULL。</li>
+<li>数据的大小应在列的规定范围内，例如：不能将一个长度为 80 的字符串加入到长度为 40 的列中。</li>
+<li>字符和日期型数据应包含在单引号中。MySQL 中也可以使用双引号做为分隔符。</li>
+</ol>
+</div>
+<h4 id="插入部分数据"> 插入部分数据</h4>
+<div><pre><code>INSERT INTO 表名 (字段名 1, 字段名 2, ...) VALUES (值 1, 值 2, ...);
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>-- 插入部分数据
+mysql&gt; INSERT INTO stu (id, name, age)  VALUES (12, &#39;lisi&#39;, 200);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from stu;
++------+----------+------+-------+----------+---------------------+
+| id   | name     | age  | score | birthday | insert_time         |
++------+----------+------+-------+----------+---------------------+
+|   10 | zhangsan |  200 |  20.0 | NULL     | 2022-01-22 19:58:01 |
+|   11 | lisi     |  200 |  20.0 | NULL     | 2022-01-22 20:03:18 |
+|   12 | lisi     |  200 |  NULL | NULL     | 2022-01-22 20:15:43 |
++------+----------+------+-------+----------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><h3 id="删除数据"> 删除数据</h3>
+<div><pre><code>DELETE FROM 表名 [WHERE 条件表达式]
+</code></pre>
+<div><span>1</span><br></div></div><div><p>注意</p>
+<ul>
+<li>如果没有指定 WHERE 子句，MySQL 表中的所有记录将被删除。</li>
+<li>你可以在 WHERE 子句中指定任何条件</li>
+</ul>
+</div>
+<div><pre><code>-- 删除表中id = 10的数据；
+mysql&gt; DELETE FROM stu WHERE id = 10;
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; select * from stu;
++------+------+------+-------+----------+---------------------+
+| id   | name | age  | score | birthday | insert_time         |
++------+------+------+-------+----------+---------------------+
+|   11 | lisi |  200 |  20.0 | NULL     | 2022-01-22 20:03:18 |
+|   12 | lisi |  200 |  NULL | NULL     | 2022-01-22 20:15:43 |
++------+------+------+-------+----------+---------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt;
+
+-- 如果没有指定条件，则删除所有数据
+mysql&gt; DELETE FROM stu;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select * from stu;
+Empty set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><div><p>相关信息</p>
+<ol>
+<li>如果不加条件，则删除表中所有记录。</li>
+<li>如果要删除所有记录:
+<ul>
+<li>delete from 表名; -- 不推荐使用。有多少条记录就会执行多少次删除操作。</li>
+<li>TRUNCATE TABLE 表名; -- 推荐使用，效率更高 先删除表，然后再创建一张一样的表。</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="更新数据"> 更新数据</h3>
+<div><pre><code>UPDATE 表名 SET 列名=值 [WHERE 条件表达式]
+
+-- 不带条件修改数据
+UPDATE 表名 SET 字段名=值; -- 修改所有的行
+
+-- 带条件修改数据
+UPDATE 表名 SET 字段名=值 WHERE 字段名=值;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>参数说明：</p>
+<ul>
+<li>PDATE:  需要更新的表名。</li>
+<li>SET:  修改的列值。</li>
+<li>WHERE: 符合条件的记录才更新</li>
+</ul>
+<p>你可以同时更新一个或多个字段也可以在 WHERE 子句中指定任何条件。</p>
+<div><pre><code>-- 不带条件修改数据
+mysql&gt; UPDATE stu SET age = 2;
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql&gt; select * from stu;
++------+------+------+-------+----------+---------------------+
+| id   | name | age  | score | birthday | insert_time         |
++------+------+------+-------+----------+---------------------+
+|   12 | lisi |    2 |  NULL | NULL     | 2022-01-22 20:35:44 |
+|   13 | lisi |    2 |  NULL | NULL     | 2022-01-22 20:35:44 |
++------+------+------+-------+----------+---------------------+
+2 rows in set (0.00 sec)
+
+-- 带条件修改数据
+mysql&gt; UPDATE stu SET age = 200 WHERE id = 13;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql&gt; select * from stu;
++------+------+------+-------+----------+---------------------+
+| id   | name | age  | score | birthday | insert_time         |
++------+------+------+-------+----------+---------------------+
+|   12 | lisi |    2 |  NULL | NULL     | 2022-01-22 20:35:44 |
+|   13 | lisi |  200 |  NULL | NULL     | 2022-01-22 20:37:15 |
++------+------+------+-------+----------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div><div><p>注意</p>
+<p>如果不加任何条件，则会将表中所有记录全部修改。</p>
+</div>
+<h3 id="蠕虫复制"> 蠕虫复制</h3>
+<blockquote>
+<p>将一张已经存在的表中的数据复制到另一张表中就是蠕虫复制；</p>
+</blockquote>
+<div><pre><code>-- 将表名 2 中的所有的列复制到表名 1 中
+INSERT INTO 表名 1 SELECT * FROM 表名 2;
+
+-- 只复制部分列
+INSERT INTO 表名 1(列 1, 列 2) SELECT 列 1, 列 2 FROM student;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>-- 将表名 stu 中的所有的列复制到表 stu1 中
+mysql&gt; select * from stu1;
+Empty set (0.00 sec)
+
+mysql&gt; INSERT INTO stu1 SELECT * FROM stu;
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql&gt; select * from stu1;
++------+------+------+-------+----------+---------------------+
+| id   | name | age  | score | birthday | insert_time         |
++------+------+------+-------+----------+---------------------+
+|   12 | lisi |    2 |  NULL | NULL     | 2022-01-22 20:35:44 |
+|   13 | lisi |  200 |  NULL | NULL     | 2022-01-22 20:37:15 |
++------+------+------+-------+----------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="dql-查询表数据"> DQL 查询表数据</h2>
+<blockquote>
+<p>查询不会对数据库中的数据进行修改.只是一种显示数据的方式</p>
+</blockquote>
+<p>语法：</p>
+<div><pre><code>select 字段列表 from 表名列表 where 条件列表 group by 分组字段 having 分组之后的条件 order by 排序 limit 分页限定
+</code></pre>
+<div><span>1</span><br></div></div><p>准备数据，新创建一个学生的表，包含如下列：</p>
+<div><pre><code>CREATE TABLE student
+(
+    id      int,          -- 编号
+    name    varchar(20),  -- 姓名
+    age     int,          -- 年龄
+    sex     varchar(5),   -- 性别
+    address varchar(100), -- 地址
+    math    int,          -- 数学
+    english int           -- 英语
+);
+INSERT INTO student(id, NAME, age, sex, address, math, english)
+VALUES (1, &#39;马云&#39;, 55, &#39;男&#39;, &#39;杭州&#39;, 66, 78),
+       (2, &#39;马化腾&#39;, 45, &#39;女&#39;, &#39;深圳&#39;, 98, 87),
+       (3, &#39;马景涛&#39;, 55, &#39;男&#39;, &#39;香港&#39;, 56, 77),
+       (4, &#39;柳岩&#39;, 20, &#39;女&#39;, &#39;湖南&#39;, 76, 65),
+       (5, &#39;柳青&#39;, 20, &#39;男&#39;, &#39;湖南&#39;, 86, NULL),
+       (6, &#39;刘德华&#39;, 57, &#39;男&#39;, &#39;香港&#39;, 99, 99),
+       (7, &#39;马德&#39;, 22, &#39;女&#39;, &#39;香港&#39;, 99, 99),
+       (8, &#39;德玛西亚&#39;, 18, &#39;男&#39;, &#39;南京&#39;, 56, 65);
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><h3 id="简单查询"> 简单查询</h3>
+<p>语法：</p>
+<div><pre><code>SELECT 列名 FROM 表名 [WHERE 条件表达式]
+</code></pre>
+<div><span>1</span><br></div></div><p>参数说明：</p>
+<ul>
+<li>SELECT 命令可以读取一行或者多行记录。</li>
+<li>你可以使用星号（*）来代替其他字段，SELECT 语句会返回表的所有字段数据</li>
+<li>你可以使用 WHERE 语句来包含任何条件。</li>
+</ul>
+<div><pre><code>-- 查询表所有行和列的数据
+SELECT * FROM 表名; -- *表示所有列
+
+-- 查询指定列
+SELECT 字段名 1, 字段名 2, 字段名 3, ... FROM 表名;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>-- 查询所有的学生
+mysql&gt; select * from student;
++------+----------+------+------+---------+------+---------+
+| id   | name     | age  | sex  | address | math | english |
++------+----------+------+------+---------+------+---------+
+|    1 | 马云         |   55 | 男     | 杭州        |   66 |      78 |
+|    2 | 马化腾        |   45 | 女    | 深圳        |   98 |      87 |
+|    3 | 马景涛        |   55 | 男     | 香港        |   56 |      77 |
+|    4 | 柳岩         |   20 | 女    | 湖南        |   76 |      65 |
+|    5 | 柳青         |   20 | 男     | 湖南        |   86 |    NULL |
+|    6 | 刘德华        |   57 | 男     | 香港        |   99 |      99 |
+|    7 | 马德         |   22 | 女    | 香港        |   99 |      99 |
+|    8 | 德玛西亚         |   18 | 男     | 南京       |   56 |      65 |
++------+----------+------+------+---------+------+---------+
+8 rows in set (0.01 sec)
+
+mysql&gt;
+
+-- 查询指定列
+mysql&gt; select name,age from student;
++----------+------+
+| name     | age  |
++----------+------+
+| 马云         |   55 |
+| 马化腾        |   45 |
+| 马景涛        |   55 |
+| 柳岩         |   20 |
+| 柳青         |   20 |
+| 刘德华        |   57 |
+| 马德         |   22 |
+| 德玛西亚         |   18 |
++----------+------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><h3 id="清除重复值"> 清除重复值</h3>
+<div><pre><code>-- 查询指定列并且结果不出现重复数据
+SELECT DISTINCT 字段名 FROM 表名;
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><div><pre><code>mysql&gt; SELECT DISTINCT address FROM student;
++---------+
+| address |
++---------+
+| 杭州        |
+| 深圳        |
+| 香港        |
+| 湖南        |
+| 南京       |
++---------+
+5 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="查询结果参与运算"> 查询结果参与运算</h3>
+<div><pre><code>-- 查询并计算 math + english的和
+mysql&gt; select name,math,english,math + english from student;
++----------+------+---------+----------------+
+| name     | math | english | math + english |
++----------+------+---------+----------------+
+| 马云         |   66 |      78 |            144 |
+| 马化腾        |   98 |      87 |            185 |
+| 马景涛        |   56 |      77 |            133 |
+| 柳岩         |   76 |      65 |            141 |
+| 柳青         |   86 |    NULL |           NULL |
+| 刘德华        |   99 |      99 |            198 |
+| 马德         |   99 |      99 |            198 |
+| 德玛西亚         |   56 |      65 |            121 |
++----------+------+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+
+-- 参与计算的值如果含有null，则默认为 0 
+mysql&gt; select name,math,english,math + IFNULL(english, 0) from student;
++----------+------+---------+---------------------------+
+| name     | math | english | math + IFNULL(english, 0) |
++----------+------+---------+---------------------------+
+| 马云         |   66 |      78 |                       144 |
+| 马化腾        |   98 |      87 |                       185 |
+| 马景涛        |   56 |      77 |                       133 |
+| 柳岩         |   76 |      65 |                       141 |
+| 柳青         |   86 |    NULL |                        86 |
+| 刘德华        |   99 |      99 |                       198 |
+| 马德         |   99 |      99 |                       198 |
+| 德玛西亚         |   56 |      65 |                       121 |
++----------+------+---------+---------------------------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br></div></div><blockquote>
+<p>IFNULL 可以判断是否为null，如果为null则替换为 0</p>
+</blockquote>
+<h3 id="指定列的别名进行查询"> 指定列的别名进行查询</h3>
+<blockquote>
+<p>使用别名的好处： 显示的时候使用新的名字，并不修改表的结构。</p>
+</blockquote>
+<div><pre><code>-- 对列指定别名
+SELECT 字段名 1 AS 别名, 字段名 2 AS 别名... FROM 表名;
+
+-- 对列和表同时指定别名
+SELECT 字段名 1 AS 别名, 字段名 2 AS 别名... FROM 表名 AS 表别名;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>mysql&gt; select name AS 姓名,math AS 数学,english AS 英语,math + IFNULL(english, 0) AS 总分 from student;
++----------+------+------+------+
+| 姓名         | 数学    | 英语    | 总分    |
++----------+------+------+------+
+| 马云         |   66 |   78 |  144 |
+| 马化腾        |   98 |   87 |  185 |
+| 马景涛        |   56 |   77 |  133 |
+| 柳岩         |   76 |   65 |  141 |
+| 柳青         |   86 | NULL |   86 |
+| 刘德华        |   99 |   99 |  198 |
+| 马德         |   99 |   99 |  198 |
+| 德玛西亚         |   56 |   65 |  121 |
++----------+------+------+------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><div><p>相关信息</p>
+<p>表使用别名的原因：用于多表查询操作</p>
+</div>
+<h3 id="条件查询"> 条件查询</h3>
+<ul>
+<li>
+<p>where子句后跟条件</p>
+</li>
+<li>
+<p>运算符</p>
+<table>
+<thead>
+<tr>
+<th>比较运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;、 &lt;、 &lt;=、 &gt;=、 =、 &lt;&gt;</td>
+<td>&lt;&gt;在 SQL 中表示不等于，在 mysql 中也可以使用!= 没有==</td>
+</tr>
+<tr>
+<td>BETWEEN...AND</td>
+<td>在一个范围之内，如： between 100 and 200 相当于条件在 100 到 200 之间，包头又包尾</td>
+</tr>
+<tr>
+<td>IN(集合)</td>
+<td>集合表示多个值，使用逗号分隔</td>
+</tr>
+<tr>
+<td>LIKE '张%'</td>
+<td>模糊查询。通配符：<code>_</code>  <code>%</code></td>
+</tr>
+<tr>
+<td>IS NULL</td>
+<td>查询某一列为 NULL 的值，注：不能写=NULL</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>逻辑运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and 或 &amp;&amp;</td>
+<td>与， SQL 中建议使用前者，后者并不通用。</td>
+</tr>
+<tr>
+<td>or 或 ||</td>
+<td>或</td>
+</tr>
+<tr>
+<td>not 或 !</td>
+<td>非</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%</td>
+<td>匹配任意多个字符串</td>
+</tr>
+<tr>
+<td>_</td>
+<td>匹配一个字符</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ol>
+<li>
+<p>查询年龄大于20的；</p>
+<div><pre><code>mysql&gt; SELECT * FROM student WHERE age &gt; 20;
++------+--------+------+------+---------+------+---------+
+| id   | name   | age  | sex  | address | math | english |
++------+--------+------+------+---------+------+---------+
+|    1 | 马云       |   55 | 男     | 杭州        |   66 |      78 |
+|    2 | 马化腾      |   45 | 女    | 深圳        |   98 |      87 |
+|    3 | 马景涛      |   55 | 男     | 香港        |   56 |      77 |
+|    6 | 刘德华      |   57 | 男     | 香港        |   99 |      99 |
+|    7 | 马德       |   22 | 女    | 香港        |   99 |      99 |
++------+--------+------+------+---------+------+---------+
+5 rows in set (0.00 sec)
+
+mysql&gt;
+
+-- 查询年龄大于等于20 小于等于30 以下三种方式都可以使用
+SELECT * FROM student WHERE age &gt;= 20 &amp;&amp; age &lt;= 30;
+SELECT * FROM student WHERE age &gt;= 20 AND age &lt;= 30;
+SELECT * FROM student WHERE age BETWEEN 20 AND 30;
+
+-- 查询年龄22岁，18岁，25岁的信息
+SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25;
+SELECT * FROM student WHERE age IN (22, 18, 25);
+
+-- 查询英语成绩为Null
+SELECT * FROM student WHERE english = NULL; -- 不对的，null值不能使用 = (!=) 判断
+SELECT * FROM student WHERE english IS NULL;
+
+-- 查询英语成绩不为 Null
+SELECT * FROM student WHERE english IS NOT NULL;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div></li>
+<li>
+<p>模糊查询</p>
+<div><pre><code>-- -- 查询姓马的有哪些？like
+mysql&gt; SELECT * FROM student WHERE name LIKE &#39;马%&#39;;
++------+--------+------+------+---------+------+---------+
+| id   | name   | age  | sex  | address | math | english |
++------+--------+------+------+---------+------+---------+
+|    1 | 马云       |   55 | 男     | 杭州        |   66 |      78 |
+|    2 | 马化腾      |   45 | 女    | 深圳        |   98 |      87 |
+|    3 | 马景涛      |   55 | 男     | 香港        |   56 |      77 |
+|    7 | 马德       |   22 | 女    | 香港        |   99 |      99 |
++------+--------+------+------+---------+------+---------+
+4 rows in set (0.00 sec)
+
+mysql&gt;
+
+-- 查询姓名第二个字是化的人
+SELECT * FROM student WHERE name LIKE &#39;_化%&#39;;
+
+-- 查询姓名是3个字的人
+SELECT * FROM student WHERE name LIKE &#39;___&#39;;
+
+-- 查询姓名中包含马的人;
+SELECT * FROM student WHERE name LIKE &#39;%马%&#39;;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div></li>
+</ol>
+<h3 id="排序查询"> 排序查询</h3>
+<div><pre><code>ORDER BY 子句
+
+ORDER BY 排序字段1 排序方式1
+
+-- ASC 升序 默认的排序方式
+-- DESC 降序 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><div><pre><code>-- 数学成绩升序排列
+mysql&gt; SELECT * FROM student ORDER BY math ASC;
++------+----------+------+------+---------+------+---------+
+| id   | name     | age  | sex  | address | math | english |
++------+----------+------+------+---------+------+---------+
+|    3 | 马景涛        |   55 | 男     | 香港        |   56 |      77 |
+|    8 | 德玛西亚         |   18 | 男     | 南京       |   56 |      65 |
+|    1 | 马云         |   55 | 男     | 杭州        |   66 |      78 |
+|    4 | 柳岩         |   20 | 女    | 湖南        |   76 |      65 |
+|    5 | 柳青         |   20 | 男     | 湖南        |   86 |    NULL |
+|    2 | 马化腾        |   45 | 女    | 深圳        |   98 |      87 |
+|    6 | 刘德华        |   57 | 男     | 香港        |   99 |      99 |
+|    7 | 马德         |   22 | 女    | 香港        |   99 |      99 |
++------+----------+------+------+---------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+
+-- 按照数学成绩排名，如果数学成绩一样，则按照英语成绩排名。
+SELECT * FROM student ORDER BY math ASC , english ASC ;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><blockquote>
+<p>如果有多个排序条件，则当前边的条件值一样时，才会判断第二条件。</p>
+</blockquote>
+<h3 id="聚合查询"> 聚合查询</h3>
+<blockquote>
+<p>将一列数据作为一个整体，进行纵向的计算。</p>
+</blockquote>
+<ul>
+<li>conut：计算个数。</li>
+<li>max：计算最大值。</li>
+<li>min：计算最小值。</li>
+<li>sum：计算和。</li>
+<li>avg：计算平均值。</li>
+</ul>
+<div><pre><code>mysql&gt; SELECT COUNT(english) FROM student;
++----------------+
+| COUNT(english) |
++----------------+
+|              7 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql&gt;
+
+-- 计算最大值
+SELECT MAX(math) FROM student;
+-- 计算最小值
+SELECT MIN(math) FROM student;
+-- 计算总和
+SELECT SUM(english) FROM student;
+-- 计算平均值
+SELECT AVG(math) FROM student;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><div><p>相关信息</p>
+<ul>
+<li>聚合函数的计算，排除Null值，不排除Null可以使用：<code>SELECT COUNT(IFNULL(english, 0)) FROM student;</code></li>
+<li>SELECT COUNT(*) FROM student; 只要有一列不为Null，就计算。一般不推荐使用</li>
+</ul>
+</div>
+<h3 id="分组查询"> 分组查询</h3>
+<div><pre><code>group by 分组字段
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>-- 按照性别分组，分别查询男，女同学的平均分
+mysql&gt; SELECT sex, AVG(math) FROM student GROUP BY sex;
++------+-----------+
+| sex  | AVG(math) |
++------+-----------+
+| 女    |   91.0000 |
+| 男     |   72.6000 |
++------+-----------+
+2 rows in set (0.00 sec)
+
+-- 按照性别分组，分别查询男，女同学的平均分, 人数
+mysql&gt; SELECT sex, AVG(math), COUNT(id) FROM student GROUP BY sex;
++------+-----------+-----------+
+| sex  | AVG(math) | COUNT(id) |
++------+-----------+-----------+
+| 女    |   91.0000 |         3 |
+| 男     |   72.6000 |         5 |
++------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+-- 按照性别分组，分别查询男，女同学的平均分, 人数，要求：分数低于70的人，不参数与分组
+mmysql&gt; SELECT sex, AVG(math), COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex;
++------+-----------+-----------+
+| sex  | AVG(math) | COUNT(id) |
++------+-----------+-----------+
+| 女    |   91.0000 |         3 |
+| 男     |   92.5000 |         2 |
++------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+-- 按照性别分组，分别查询男，女同学的平均分, 人数，要求：分数低于70的人，不参数与分组，分组之后人数要大于2个人
+SELECT sex, AVG(math), COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br></div></div><div><p>相关信息</p>
+<ol>
+<li>分组之后查询的字段：分组字段、聚合函数。</li>
+<li>where 和 having 的区别？
+<ul>
+<li>where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来。</li>
+<li>where 后不可以跟聚合函数，having 可以进行聚合函数的判断。</li>
+</ul>
+</li>
+</ol>
+</div>
+<h3 id="分页查询"> 分页查询</h3>
+<div><pre><code>limit 开始的索引，每页查询的条数
+</code></pre>
+<div><span>1</span><br></div></div><div><pre><code>-- 每也显示3条记录
+SELECT * FROM student LIMIT 0, 3; -- 第一页
+SELECT * FROM student LIMIT 3, 3; -- 第二页
+
+mysql&gt; SELECT * FROM student LIMIT 0, 3;
++------+--------+------+------+---------+------+---------+
+| id   | name   | age  | sex  | address | math | english |
++------+--------+------+------+---------+------+---------+
+|    1 | 马云       |   55 | 男     | 杭州        |   66 |      78 |
+|    2 | 马化腾      |   45 | 女    | 深圳        |   98 |      87 |
+|    3 | 马景涛      |   55 | 男     | 香港        |   56 |      77 |
++------+--------+------+------+---------+------+---------+
+3 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><blockquote>
+<p>开始的索引 = (当前的页码 - 1) * 每页显示的条数。limit是一个mysql的方言。</p>
+</blockquote>
+<h2 id="mysql-数据类型"> MySQL 数据类型</h2>
+<p>常使用的数据类型如下：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td>整型</td>
+</tr>
+<tr>
+<td>double</td>
+<td>浮点型</td>
+</tr>
+<tr>
+<td>varchar</td>
+<td>字符串型</td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期类型，格式为：YYYY-MM-DD，只有年月日，没有时分秒。</td>
+</tr>
+</tbody>
+</table>
+<p>详细的数据类型如下：</p>
+<p><img src="./assets/image-20220122163824185.png" alt="image-20220122163824185" />
+<img src="./assets/image-20220122164032663.png" alt="image-20220122164032663" /></p>
+<h2 id="dos-命令窗口操作数据乱码问题的解决"> DOS 命令窗口操作数据乱码问题的解决</h2>
+<blockquote>
+<p>当我们使用 DOS 命令行进行 SQL 语句操作如有有中文会出现乱码</p>
+</blockquote>
+<div><pre><code>mysql&gt; select * from student;
++------+--------------+------+------+---------+------+---------+
+| id   | name         | age  | sex  | address | math | english |
++------+--------------+------+------+---------+------+---------+
+|    1 | 椹簯         |   55 | 鐢?  | 鏉窞    |   66 |      78 |
+|    2 | 椹寲鑵?      |   45 | 濂?  | 娣卞湷    |   98 |      87 |
+|    3 | 椹櫙娑?      |   55 | 鐢?  | 棣欐腐    |   56 |      77 |
+|    4 | 鏌冲博         |   20 | 濂?  | 婀栧崡    |   76 |      65 |
+|    5 | 鏌抽潚         |   20 | 鐢?  | 婀栧崡    |   86 |    NULL |
+|    6 | 鍒樺痉鍗?      |   57 | 鐢?  | 棣欐腐    |   99 |      99 |
+|    7 | 椹痉         |   22 | 濂?  | 棣欐腐    |   99 |      99 |
+|    8 | 寰风帥瑗夸簹     |   18 | 鐢?  | 鍗椾含    |   56 |      65 |
++------+--------------+------+------+---------+------+---------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><h3 id="乱码产生的原因"> 乱码产生的原因：</h3>
+<p><img src="./assets/image-20220123112904711.png" alt="image-20220123112904711" /></p>
+<h3 id="查看-mysql-内部设置的编码"> 查看 MySQL 内部设置的编码：</h3>
+<div><pre><code>-- 查看包含 character 开头的全局变量
+mysql&gt; show variables like &#39;character%&#39;;
++--------------------------+-------------------------------------------+
+| Variable_name            | Value                                     |
++--------------------------+-------------------------------------------+
+| character_set_client     | utf8                                      |
+| character_set_connection | utf8                                      |
+| character_set_database   | utf8                                      |
+| character_set_filesystem | binary                                    |
+| character_set_results    | utf8                                      |
+| character_set_server     | utf8                                      |
+| character_set_system     | utf8                                      |
+| character_sets_dir       | D:\MySQL\MySQL Server 5.5\share\charsets\ |
++--------------------------+-------------------------------------------+
+8 rows in set (0.00 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><h3 id="解决方案"> 解决方案：</h3>
+<p>修改 client、 connection、 results 的编码为 GBK，保证和 DOS 命令行编码保持一致。</p>
+<ul>
+<li>
+<p>单独设置：</p>
+<table>
+<thead>
+<tr>
+<th>单独设置</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>character_set_client</td>
+<td>修改客户端的字符集为 GBK</td>
+</tr>
+<tr>
+<td>character_set_connection</td>
+<td>修改连接的字符集为 GBK</td>
+</tr>
+<tr>
+<td>character_set_results</td>
+<td>修改连接的字符集为 GBK</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>同时设置</p>
+<div><pre><code>set names gbk;
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ul>
+<div><pre><code>mysql&gt; select * from student;
++------+----------+------+------+---------+------+---------+
+| id   | name     | age  | sex  | address | math | english |
++------+----------+------+------+---------+------+---------+
+|    1 | 马云         |   55 | 男     | 杭州        |   66 |      78 |
+|    2 | 马化腾        |   45 | 女    | 深圳        |   98 |      87 |
+|    3 | 马景涛        |   55 | 男     | 香港        |   56 |      77 |
+|    4 | 柳岩         |   20 | 女    | 湖南        |   76 |      65 |
+|    5 | 柳青         |   20 | 男     | 湖南        |   86 |    NULL |
+|    6 | 刘德华        |   57 | 男     | 香港        |   99 |      99 |
+|    7 | 马德         |   22 | 女    | 香港        |   99 |      99 |
+|    8 | 德玛西亚         |   18 | 男     | 南京       |   56 |      65 |
++------+----------+------+------+---------+------+---------+
+8 rows in set (0.01 sec)
+
+mysql&gt;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><div><p>相关信息</p>
+<p>退出 DOS 命令行就失效了，需要每次都配置</p>
+</div>
 ]]></content:encoded>
     </item>
     <item>
@@ -6787,6 +7863,7 @@ mysql&gt;
 <li><a href="./20_linuxMysql使用.html">linuxMysql使用</a></li>
 <li><a href="./25_linuxMysql创建用户并授权.html">linuxMysql创建用户并授权</a></li>
 <li><a href="./30_SQL基本概念与通用语法.html">SQL基本概念与通用语法</a></li>
+<li><a href="./35_数据库的CRUD操作.html">数据库的CRUD操作.md</a></li>
 </ul>
 <h2 id="参考资料"> 参考资料</h2>
 ]]></content:encoded>
@@ -7258,7 +8335,7 @@ Content-Length: 275
       <link>https://blog.yahweh.top/views/backEnd/nodejs/</link>
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/</guid>
       <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -7324,7 +8401,7 @@ Content-Length: 275
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-00/</guid>
       <source url="https://blog.yahweh.top/rss.xml">ES6</source>
       <category>ES6</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="es6"> ES6；</h2>
 <blockquote>
 <p>ECMAScript 的一个颠覆性版本更新  - 面向对象编程（类、对象-- 封装、继承、多态）</p>
@@ -8344,7 +9421,7 @@ app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-01/</guid>
       <source url="https://blog.yahweh.top/rss.xml">命令行输出目录树</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="如何使用命令行输出目录树"> 如何使用命令行输出目录树</h2>
 <blockquote>
 <p>概述：在自己写博客的时候，总会少不了要显示目录结构以更好的表达一些内容；虽然<code>window</code>自己提供了<code>tree</code>命令但是并不好用；比如我要显示项目的目录结构但是要排除<code>node_modules</code>文件夹，这个时候就有点力不从心了，在这里推荐以下<code>tree-node-cli</code>工具；</p>
@@ -8436,7 +9513,7 @@ webNode
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-02/</guid>
       <source url="https://blog.yahweh.top/rss.xml">node版本管理工具-nvm</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概述： nvm是一个nodejs的版本管理工具。我们可以通过它安装和切换不同版本的node.js。</p>
 </blockquote>
@@ -8529,7 +9606,7 @@ PS C:<span>\</span>Users<span>\</span>ASUS<span>\</span>Desktop<span>></span>
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-03/</guid>
       <source url="https://blog.yahweh.top/rss.xml">node实现自动化部署</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="node实现自动化部署"> node实现自动化部署；</h2>
 <blockquote>
 <p>说明：由于本人做的前端，Java就不太会，但是node确实一个对于前端同学写后端代码的一个非常好的技术。个人的项目前端是<code>vue</code>写的后端是<code>Nodejs</code>,同时利用<code>jenkjins</code>实现前后端自动化部署。</p>
@@ -8680,7 +9757,7 @@ Finished: SUCCESS
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-04/</guid>
       <source url="https://blog.yahweh.top/rss.xml">pm2的使用</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="pm2的简单使用"> pm2的简单使用</h1>
 <blockquote>
 <p>概述： PM2是具有内置负载平衡器的Node.js应用程序的生产过程管理器。它使您可以使应用程序永远保持活动状态，无需停机即可重新加载它们，并简化常见的系统管理任务。</p>
@@ -8809,7 +9886,7 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-05/</guid>
       <source url="https://blog.yahweh.top/rss.xml">后台持续运行node</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h4 id="_1、后台持续运行nodejs"> 1、后台持续运行<code>nodejs</code></h4>
 <div><pre><code><span># 持续运行node并把信息输出到指定的文件中</span>
 <span>nohup</span> <span>npm</span> run dev <span>></span>myout.file <span><span>2</span>></span><span>&amp;1</span> <span>&amp;</span>
@@ -8822,7 +9899,7 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-06/</guid>
       <source url="https://blog.yahweh.top/rss.xml">搭建本地服务</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="快速搭建本地服务"> 快速搭建本地服务</h2>
 <blockquote>
 <p>方式一、二、三单个js文件即可操作。</p>
@@ -8974,7 +10051,7 @@ server started on port <span>3000</span>
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-07/</guid>
       <source url="https://blog.yahweh.top/rss.xml">json-serve</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="json-server"> <code>JSON Server</code>;</h2>
 <blockquote>
 <ul>
@@ -9979,7 +11056,7 @@ req<span>.</span><span>on</span><span>(</span><span>'response'</span><span>,</sp
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-14/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js 是什么</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -10024,7 +11101,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-15/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js 能做什么</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如 JavaScript 为客户端而生， Node.js 为网络而生。 Node.js 能做的远不止开发一个网站那么简单 ，Node.js 内建了 HTTP 服务器支持，也就是说你可以轻而易举地实现一个网站和服务器的组合。</p>
 </blockquote>
@@ -10048,7 +11125,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-16/</guid>
       <source url="https://blog.yahweh.top/rss.xml">异步式 I/O 与事件驱动</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是采用异步式 I/O 与事件驱动的架构设计.</p>
 </blockquote>
@@ -10070,7 +11147,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-17/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js 的性能</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 用异步式 I/O 和事件驱动代替多线程，带来了可观的性能提升。 Node.js 除了使用 V8 作为JavaScript引擎以外，还使用了高效的 libev 和 libeio 库支持事件驱动和异步式 I/O。</p>
 </blockquote>
@@ -10084,7 +11161,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-18/</guid>
       <source url="https://blog.yahweh.top/rss.xml">CommonJS规范</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现， CommonJS 诞生了。</p>
 </blockquote>
@@ -10098,7 +11175,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-19/</guid>
       <source url="https://blog.yahweh.top/rss.xml">使用nodejs</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>用 Node.js 编程是一件令人愉快的事情，你会发现像这样的语言是很容易入门的，可以快速了解到它的细节，然后掌握它。</p>
 </blockquote>
@@ -10243,7 +11320,7 @@ $ nodemon app.js
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-20/</guid>
       <source url="https://blog.yahweh.top/rss.xml">异步式 I/O 与事件式编程</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是异步式 I/O（或者非阻塞 I/O）与事件紧密结合的编程模式。这种模式与传统的同步式 I/O 线性的编程思路有很大的不同，因为控制流很大程度上要靠事件和回调函数来组织，一个逻辑要拆分为若干个单元。</p>
 </blockquote>
@@ -10341,7 +11418,7 @@ event<span>.</span><span>on</span><span>(</span><span>'some_event'</span><span>,
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-21/</guid>
       <source url="https://blog.yahweh.top/rss.xml">模块和包</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>模块（Module）和包（Package）是 Node.js 最重要的支柱。开发一个具有一定规模的程序不可能只用一个文件，通常需要把各个功能拆分、封装，然后组合起来，模块正是为了实现这种方式而诞生的。在浏览器 JavaScript 中，脚本模块的拆分和组合通常使用 HTML 的script 标签来实现。 Node.js 提供了 require 函数来调用其他模块，而且模块都是基于文件的，机制十分简单。Node.js 的模块和包机制的实现参照了 CommonJS 的标准，</p>
 </blockquote>
@@ -10553,7 +11630,7 @@ C:<span>\</span>Program Files<span>\</span>nodejs<span>\</span>node_modules
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/nodejs-note-22/</guid>
       <source url="https://blog.yahweh.top/rss.xml">调试</source>
       <category>nodejs</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>写程序时免不了遇到 bug，而当 bug 发生以后，除了抓耳挠腮之外，一个常用的技术是单步调试。  在浏览器中我们可以通过开发者工具进行调试。然而Node.js 的调试功能正是由 V8 提供的，保持了一贯的高效和方便的特性</p>
 </blockquote>
@@ -15713,22 +16790,6 @@ CSS像素是一个抽像的单位，主要使用在浏览器上，用来精确�
 ]]></content:encoded>
     </item>
     <item>
-      <title>link和@import的区别</title>
-      <link>https://blog.yahweh.top/views/frontEnd/html/15_link%E5%92%8C@inport/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/html/15_link%E5%92%8C@inport/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">link和@import的区别</source>
-      <category>HTML</category>
-      <pubDate>Wed, 29 Sep 2021 08:32:34 GMT</pubDate>
-      <content:encoded><![CDATA[<ol>
-<li>从属关系区别：@import是 CSS 提供的语法规则，只有导入样式表的作用；link是HTML提供的标签，不仅可以加载 CSS 文件，还可以定义 RSS、rel 连接属性等。</li>
-<li>加载顺序区别：加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。</li>
-<li>兼容性区别：@import是 CSS2.1 才有的语法，故只可在 IE5+ 才能识别；link标签作为 HTML 元素，不存在兼容性问题。</li>
-<li>DOM可控性区别：可以通过 JS 操作 DOM ，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。</li>
-</ol>
-<p><a href="https://zhuanlan.zhihu.com/p/136047345" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>介绍</title>
       <link>https://blog.yahweh.top/views/frontEnd/html/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/html/</guid>
@@ -15745,6 +16806,22 @@ CSS像素是一个抽像的单位，主要使用在浏览器上，用来精确�
 <li><a href="./10_script和link.html">script和link</a></li>
 <li><a href="./15_link和@inport.html">link和@import的区别</a></li>
 </ul>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>link和@import的区别</title>
+      <link>https://blog.yahweh.top/views/frontEnd/html/15_link%E5%92%8C@inport/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/html/15_link%E5%92%8C@inport/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">link和@import的区别</source>
+      <category>HTML</category>
+      <pubDate>Wed, 29 Sep 2021 08:32:34 GMT</pubDate>
+      <content:encoded><![CDATA[<ol>
+<li>从属关系区别：@import是 CSS 提供的语法规则，只有导入样式表的作用；link是HTML提供的标签，不仅可以加载 CSS 文件，还可以定义 RSS、rel 连接属性等。</li>
+<li>加载顺序区别：加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。</li>
+<li>兼容性区别：@import是 CSS2.1 才有的语法，故只可在 IE5+ 才能识别；link标签作为 HTML 元素，不存在兼容性问题。</li>
+<li>DOM可控性区别：可以通过 JS 操作 DOM ，插入link标签来改变样式；由于 DOM 方法是基于文档的，无法使用@import的方式插入样式。</li>
+</ol>
+<p><a href="https://zhuanlan.zhihu.com/p/136047345" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -19126,6 +20203,178 @@ Reflect<span>.</span><span>has</span><span>(</span>Object<span>,</span> <span>'a
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>transform</title>
+      <link>https://blog.yahweh.top/views/frontEnd/css/15_transform/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/css/15_transform/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">transform</source>
+      <category>CSS</category>
+      <pubDate>Sat, 02 Oct 2021 17:29:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>行内元素使用transform无效;</p>
+</blockquote>
+<h2 id="移动"> 移动：</h2>
+<blockquote>
+<p>移动(transform属性)不会影响其他盒子的大小；</p>
+</blockquote>
+<div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
+<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
+<span><span><span>&lt;</span>head</span><span>></span></span>
+    <span><span><span>&lt;</span>style</span><span>></span></span><span><span>
+        <span>div</span> <span>{</span>
+            <span>width</span><span>:</span> 200px<span>;</span>
+            <span>height</span><span>:</span> 200px<span>;</span>
+            <span>/*绝对定位*/</span>
+            <span>position</span><span>:</span> absolute<span>;</span>
+            <span>background-color</span><span>:</span> magenta<span>;</span>
+            <span>/*走自己的一半*/</span>
+            <span>left</span><span>:</span> 50%<span>;</span>
+            <span>top</span><span>:</span> 50%<span>;</span>
+            <span>transform</span><span>:</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span><span>;</span>
+        <span>}</span>
+    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
+<span><span><span>&lt;/</span>head</span><span>></span></span>
+<span><span><span>&lt;</span>body</span><span>></span></span>
+<span>&lt;!--利用2D实现盒子垂直水平居中--></span>
+<span><span><span>&lt;</span>div</span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
+<span><span><span>&lt;/</span>body</span><span>></span></span>
+<span><span><span>&lt;/</span>html</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="旋转"> 旋转：</h2>
+<blockquote>
+<p>在上面的例子基础上添加一个旋转，要求：垂直水平居中并旋转45度</p>
+</blockquote>
+<div><pre><code><span>div</span> <span>{</span>
+    <span>transform</span><span>:</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span> <span>rotate</span><span>(</span>45deg<span>)</span><span>;</span>
+    <span>/*这种书写方式实现不了居中*/</span>
+    <span>transform</span><span>:</span> <span>rotate</span><span>(</span>45deg<span>)</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><blockquote>
+<p>旋转不会影响其他盒子的大小</p>
+</blockquote>
+<div><p>注意</p>
+<p>移动加旋转时要特别注意，需要考虑 rotate和translte的顺序，因为会导致不一样的结果。以上面的例子如果旋转(rotate)在前(translate)在后你会发现你实现不了居中效果。这是因为，translate属性区分X轴和Y轴，然而在旋转后坐标也一起发生的变动，此时你再使用移动属性，那么参考的坐标系是移动之后的，这就造成了你的移动位置是非水平距离,所以组合使用移动加旋转时要特别注意先后顺序！！</p>
+</div>
+<h2 id="缩放"> 缩放：</h2>
+<blockquote>
+<p>不会影响其他盒子的大小</p>
+</blockquote>
+<div><pre><code><span>div</span> <span>{</span>
+    <span>/*长度、宽度方向缩放*/</span>
+    <span>transform</span><span>:</span> <span>scale</span><span>(</span>2<span>,</span> 3<span>)</span><span>;</span>
+    <span>/*长度、宽度方向缩放为同一个比例*/</span>
+    <span>transform</span><span>:</span> <span>scale</span><span>(</span>2<span>)</span><span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="动画"> 动画：</h2>
+<ul>
+<li>
+<p>动画属性：</p>
+</li>
+<li>
+<p>定义调用时间</p>
+</li>
+<li>
+<p>动画序列：以百分比进行分段，</p>
+</li>
+<li>
+<p>动画从开始执行到经过动画节点，都是基于上一个状态进行变化；</p>
+</li>
+<li>
+<div><pre><code><span>/* 1. 定义动画:*/</span>
+<span><span>@keyframes</span> dong_hua</span> <span>{</span>
+    <span>/* 开始状态:*/</span>
+    <span>from</span> <span>{</span>
+        <span>transform</span><span>:</span> <span>translateX</span><span>(</span>0px<span>)</span><span>;</span>
+        <span>background-color</span><span>:</span> red<span>;</span>
+    <span>}</span>
+    <span>/* 结束状态 */</span>
+    <span>to</span> <span>{</span>
+        <span>transform</span><span>:</span> <span>translateX</span><span>(</span>1000px<span>)</span><span>;</span>
+        <span>background-color</span><span>:</span> #222<span>;</span>
+    <span>}</span>
+<span>}</span>
+
+<span>div</span> <span>{</span>
+    <span>/* 2. 调用:*/</span>
+    <span>animation-name</span><span>:</span> move<span>;</span>
+    
+    <span>/* 3. 时间:*/</span>
+    <span>animation-duration</span><span>:</span> 3s<span>;</span>
+<span>}</span>
+
+<span>/*动画要定义然后给需要的盒子进行调用*/</span>
+		 <span>/*2. 调用*/</span>
+	    <span>/*animation-name: move;*/</span>
+	    
+	    <span>/*3. 时间:*/</span>
+	    <span>/*animation-duration: 3s;*/</span>
+
+	    <span>/*animation-delay：动画推迟多久执行；动画的等待。*/</span>
+	    <span>/*animation-iteration-count：播放循坏次数 1 2  infinite无限次*/</span> 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br></div></div></li>
+</ul>
+<h2 id="流式布局"> 流式布局：</h2>
+<ul>
+<li>又称百分比布局，通过百分比控制盒子的宽度；</li>
+<li>掌握：会用二倍图，</li>
+<li>流式布局一般宽度为100%，若不设置高度（高度由内容撑开）；</li>
+<li>一些小的图标或细线，可以采用伪元素的方式搞定；</li>
+</ul>
+<h2 id="flex布局"> flex布局：</h2>
+<ul>
+<li>flex布局主要应用于移动端，对pc端兼容较差；</li>
+<li>flex布局又称：弹性布局、伸缩布局、弹性盒布局、伸缩盒布局；</li>
+<li>flex布局的主要思想是利用行和列进行控制；</li>
+</ul>
+<h3 id="小结"> 小结：</h3>
+<ul>
+<li>
+<p>下方代码中的div和a 会被默认拉伸；</p>
+<div><pre><code><span><span>&lt;!</span><span>doctype</span> <span>html</span><span>></span></span>
+<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
+<span><span><span>&lt;</span>head</span><span>></span></span>
+    <span><span><span>&lt;</span>meta</span> <span>charset</span><span><span>=</span><span>"</span>UTF-8<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>meta</span> <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span>
+          <span>content</span><span><span>=</span><span>"</span>width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>meta</span> <span>http-equiv</span><span><span>=</span><span>"</span>X-UA-Compatible<span>"</span></span> <span>content</span><span><span>=</span><span>"</span>ie=edge<span>"</span></span><span>></span></span>
+    <span><span><span>&lt;</span>title</span><span>></span></span>Document<span><span><span>&lt;/</span>title</span><span>></span></span>
+    <span><span><span>&lt;</span>style</span><span>></span></span><span><span>
+        <span>.w</span> <span>{</span>
+            <span>display</span><span>:</span> flex<span>;</span>
+            <span>width</span><span>:</span> 800px<span>;</span>
+            <span>height</span><span>:</span> 100px<span>;</span>
+            <span>border</span><span>:</span> 1px solid red<span>;</span>
+        <span>}</span>
+        <span>a</span> <span>{</span>
+            <span>width</span><span>:</span> 100px<span>;</span>
+        <span>}</span>
+         <span>/* 子元素  */</span>
+      <span>/* align-self: auto; 默认值 */</span>
+      <span>/* auto :当父亲设置align-items，auto会继承父亲设置的align-items 的值 */</span>
+      <span>/* auto: 当父亲没有设置align-items，auto值自动变为拉伸stretch */</span>
+      <span>/* align-self: stretch; */</span>
+        <span>div</span> <span>{</span>
+          <span>/*div给1份，会把元素挤到最右边*/</span>  
+            <span>flex</span><span>:</span> 1<span>;</span>
+            <span>border</span><span>:</span> 1px solid greenyellow<span>;</span>
+        <span>}</span>
+    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
+<span><span><span>&lt;/</span>head</span><span>></span></span>
+<span><span><span>&lt;</span>body</span><span>></span></span>
+    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>'</span>w<span>'</span></span><span>></span></span>
+        <span><span><span>&lt;</span>div</span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
+        <span><span><span>&lt;</span>a</span> <span>href</span><span><span>=</span><span>"</span>#<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>a</span><span>></span></span>
+    <span><span><span>&lt;/</span>div</span><span>></span></span>
+<span><span><span>&lt;/</span>body</span><span>></span></span>
+<span><span><span>&lt;/</span>html</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br></div></div></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>javascript高级</title>
       <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-01/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-01/</guid>
@@ -20994,6 +22243,57 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
 ]]></content:encoded>
     </item>
     <item>
+      <title>函数防抖</title>
+      <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-03/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-03/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">函数防抖</source>
+      <category>javascript</category>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>概述：一个处理函数会在延迟n秒后触发，如果在n秒内再次触发那么回重新计时；</p>
+<p>简单理解：防抖可以比作等电梯，只要有一个人进来，就 需要再等一会儿。</p>
+</blockquote>
+<h2 id="影响"> 影响</h2>
+<blockquote>
+<p>前端开发过程中的resize，scroll，mousemove，mousehover等，会被频繁地出发，不做限制的话，有可能一秒之内执行几十次，几百次，如果在这些函数内部执行了其他函数，尤其是执行了操作了DOM的函数，那不仅会造成计算机资源的浪费，还会降低程序运行速度，甚至造成浏览器卡死，崩溃。</p>
+</blockquote>
+<h2 id="实现"> 实现</h2>
+<div><pre><code><span>&lt;</span>script<span>></span>
+    <span>var</span> <span>throttle</span> <span>=</span> <span>function</span><span>(</span><span>func<span>,</span> delay</span><span>)</span> <span>{</span>
+      <span>// 存储定时器id;</span>
+      <span>var</span> timer <span>=</span> <span>null</span>
+      <span>return</span> <span>function</span><span>(</span><span><span>...</span>args</span><span>)</span> <span>{</span>
+        <span>// 判断定时器是否在执行中；</span>
+        <span>if</span> <span>(</span>timer<span>)</span> <span>{</span>
+          <span>// 在每次开始之前清除以前的定时器；</span>
+          <span>clearTimeout</span><span>(</span>timer<span>)</span>
+        <span>}</span>
+        timer <span>=</span> <span>setTimeout</span><span>(</span><span>function</span><span>(</span><span>)</span> <span>{</span>
+          <span>func</span><span>(</span><span>...</span>args<span>)</span>
+        <span>}</span><span>,</span> delay<span>)</span>
+      <span>}</span>
+    <span>}</span>
+    <span>// 要进行处理的函数；</span>
+    <span>function</span> <span>handle</span><span>(</span><span>)</span> <span>{</span>
+      console<span>.</span><span>log</span><span>(</span>Math<span>.</span><span>random</span><span>(</span><span>)</span><span>)</span>
+    <span>}</span>
+    window<span>.</span><span>addEventListener</span><span>(</span><span>'mousemove'</span><span>,</span> <span>throttle</span><span>(</span>handle<span>,</span> <span>1000</span><span>)</span><span>)</span>
+<span>&lt;</span><span>/</span>script<span>></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
+<p>优点：防止用户由于过快的操作而发起的无用的请求；</p>
+</blockquote>
+<h2 id="使用场景"> 使用场景：</h2>
+<ol>
+<li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖。</li>
+<li>淘宝的导航列表;</li>
+<li>搜索框搜索输入。只需用户最后一次输入完成，在发送请求；</li>
+<li>浏览器的窗口大小改变后，只需窗口调整完成后，再执行<code>resize</code>里面是代码，防止重新渲染；</li>
+<li>文本编辑器实时保存，当无任何更改操作一秒后进行保存；</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
       <title>对象拷贝</title>
       <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-02/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-02/</guid>
@@ -21151,57 +22451,6 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
 <p>3、 <code>NaN</code>变为 null</p>
 <p>4、 date 对象变为 string</p>
 </blockquote>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>函数防抖</title>
-      <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-03/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-03/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">函数防抖</source>
-      <category>javascript</category>
-      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>概述：一个处理函数会在延迟n秒后触发，如果在n秒内再次触发那么回重新计时；</p>
-<p>简单理解：防抖可以比作等电梯，只要有一个人进来，就 需要再等一会儿。</p>
-</blockquote>
-<h2 id="影响"> 影响</h2>
-<blockquote>
-<p>前端开发过程中的resize，scroll，mousemove，mousehover等，会被频繁地出发，不做限制的话，有可能一秒之内执行几十次，几百次，如果在这些函数内部执行了其他函数，尤其是执行了操作了DOM的函数，那不仅会造成计算机资源的浪费，还会降低程序运行速度，甚至造成浏览器卡死，崩溃。</p>
-</blockquote>
-<h2 id="实现"> 实现</h2>
-<div><pre><code><span>&lt;</span>script<span>></span>
-    <span>var</span> <span>throttle</span> <span>=</span> <span>function</span><span>(</span><span>func<span>,</span> delay</span><span>)</span> <span>{</span>
-      <span>// 存储定时器id;</span>
-      <span>var</span> timer <span>=</span> <span>null</span>
-      <span>return</span> <span>function</span><span>(</span><span><span>...</span>args</span><span>)</span> <span>{</span>
-        <span>// 判断定时器是否在执行中；</span>
-        <span>if</span> <span>(</span>timer<span>)</span> <span>{</span>
-          <span>// 在每次开始之前清除以前的定时器；</span>
-          <span>clearTimeout</span><span>(</span>timer<span>)</span>
-        <span>}</span>
-        timer <span>=</span> <span>setTimeout</span><span>(</span><span>function</span><span>(</span><span>)</span> <span>{</span>
-          <span>func</span><span>(</span><span>...</span>args<span>)</span>
-        <span>}</span><span>,</span> delay<span>)</span>
-      <span>}</span>
-    <span>}</span>
-    <span>// 要进行处理的函数；</span>
-    <span>function</span> <span>handle</span><span>(</span><span>)</span> <span>{</span>
-      console<span>.</span><span>log</span><span>(</span>Math<span>.</span><span>random</span><span>(</span><span>)</span><span>)</span>
-    <span>}</span>
-    window<span>.</span><span>addEventListener</span><span>(</span><span>'mousemove'</span><span>,</span> <span>throttle</span><span>(</span>handle<span>,</span> <span>1000</span><span>)</span><span>)</span>
-<span>&lt;</span><span>/</span>script<span>></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><blockquote>
-<p>优点：防止用户由于过快的操作而发起的无用的请求；</p>
-</blockquote>
-<h2 id="使用场景"> 使用场景：</h2>
-<ol>
-<li>登录、发短信等按钮避免用户点击太快，以致于发送了多次请求，需要防抖。</li>
-<li>淘宝的导航列表;</li>
-<li>搜索框搜索输入。只需用户最后一次输入完成，在发送请求；</li>
-<li>浏览器的窗口大小改变后，只需窗口调整完成后，再执行<code>resize</code>里面是代码，防止重新渲染；</li>
-<li>文本编辑器实时保存，当无任何更改操作一秒后进行保存；</li>
-</ol>
 ]]></content:encoded>
     </item>
     <item>
@@ -22694,284 +23943,6 @@ console<span>.</span><span>log</span><span>(</span>arr<span>)</span> <span>//   
 ]]></content:encoded>
     </item>
     <item>
-      <title>transform</title>
-      <link>https://blog.yahweh.top/views/frontEnd/css/15_transform/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/css/15_transform/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">transform</source>
-      <category>CSS</category>
-      <pubDate>Sat, 02 Oct 2021 17:29:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>行内元素使用transform无效;</p>
-</blockquote>
-<h2 id="移动"> 移动：</h2>
-<blockquote>
-<p>移动(transform属性)不会影响其他盒子的大小；</p>
-</blockquote>
-<div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
-<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
-<span><span><span>&lt;</span>head</span><span>></span></span>
-    <span><span><span>&lt;</span>style</span><span>></span></span><span><span>
-        <span>div</span> <span>{</span>
-            <span>width</span><span>:</span> 200px<span>;</span>
-            <span>height</span><span>:</span> 200px<span>;</span>
-            <span>/*绝对定位*/</span>
-            <span>position</span><span>:</span> absolute<span>;</span>
-            <span>background-color</span><span>:</span> magenta<span>;</span>
-            <span>/*走自己的一半*/</span>
-            <span>left</span><span>:</span> 50%<span>;</span>
-            <span>top</span><span>:</span> 50%<span>;</span>
-            <span>transform</span><span>:</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span><span>;</span>
-        <span>}</span>
-    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
-<span><span><span>&lt;/</span>head</span><span>></span></span>
-<span><span><span>&lt;</span>body</span><span>></span></span>
-<span>&lt;!--利用2D实现盒子垂直水平居中--></span>
-<span><span><span>&lt;</span>div</span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
-<span><span><span>&lt;/</span>body</span><span>></span></span>
-<span><span><span>&lt;/</span>html</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h2 id="旋转"> 旋转：</h2>
-<blockquote>
-<p>在上面的例子基础上添加一个旋转，要求：垂直水平居中并旋转45度</p>
-</blockquote>
-<div><pre><code><span>div</span> <span>{</span>
-    <span>transform</span><span>:</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span> <span>rotate</span><span>(</span>45deg<span>)</span><span>;</span>
-    <span>/*这种书写方式实现不了居中*/</span>
-    <span>transform</span><span>:</span> <span>rotate</span><span>(</span>45deg<span>)</span> <span>translate</span><span>(</span>-50%<span>,</span> -50%<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><blockquote>
-<p>旋转不会影响其他盒子的大小</p>
-</blockquote>
-<div><p>注意</p>
-<p>移动加旋转时要特别注意，需要考虑 rotate和translte的顺序，因为会导致不一样的结果。以上面的例子如果旋转(rotate)在前(translate)在后你会发现你实现不了居中效果。这是因为，translate属性区分X轴和Y轴，然而在旋转后坐标也一起发生的变动，此时你再使用移动属性，那么参考的坐标系是移动之后的，这就造成了你的移动位置是非水平距离,所以组合使用移动加旋转时要特别注意先后顺序！！</p>
-</div>
-<h2 id="缩放"> 缩放：</h2>
-<blockquote>
-<p>不会影响其他盒子的大小</p>
-</blockquote>
-<div><pre><code><span>div</span> <span>{</span>
-    <span>/*长度、宽度方向缩放*/</span>
-    <span>transform</span><span>:</span> <span>scale</span><span>(</span>2<span>,</span> 3<span>)</span><span>;</span>
-    <span>/*长度、宽度方向缩放为同一个比例*/</span>
-    <span>transform</span><span>:</span> <span>scale</span><span>(</span>2<span>)</span><span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="动画"> 动画：</h2>
-<ul>
-<li>
-<p>动画属性：</p>
-</li>
-<li>
-<p>定义调用时间</p>
-</li>
-<li>
-<p>动画序列：以百分比进行分段，</p>
-</li>
-<li>
-<p>动画从开始执行到经过动画节点，都是基于上一个状态进行变化；</p>
-</li>
-<li>
-<div><pre><code><span>/* 1. 定义动画:*/</span>
-<span><span>@keyframes</span> dong_hua</span> <span>{</span>
-    <span>/* 开始状态:*/</span>
-    <span>from</span> <span>{</span>
-        <span>transform</span><span>:</span> <span>translateX</span><span>(</span>0px<span>)</span><span>;</span>
-        <span>background-color</span><span>:</span> red<span>;</span>
-    <span>}</span>
-    <span>/* 结束状态 */</span>
-    <span>to</span> <span>{</span>
-        <span>transform</span><span>:</span> <span>translateX</span><span>(</span>1000px<span>)</span><span>;</span>
-        <span>background-color</span><span>:</span> #222<span>;</span>
-    <span>}</span>
-<span>}</span>
-
-<span>div</span> <span>{</span>
-    <span>/* 2. 调用:*/</span>
-    <span>animation-name</span><span>:</span> move<span>;</span>
-    
-    <span>/* 3. 时间:*/</span>
-    <span>animation-duration</span><span>:</span> 3s<span>;</span>
-<span>}</span>
-
-<span>/*动画要定义然后给需要的盒子进行调用*/</span>
-		 <span>/*2. 调用*/</span>
-	    <span>/*animation-name: move;*/</span>
-	    
-	    <span>/*3. 时间:*/</span>
-	    <span>/*animation-duration: 3s;*/</span>
-
-	    <span>/*animation-delay：动画推迟多久执行；动画的等待。*/</span>
-	    <span>/*animation-iteration-count：播放循坏次数 1 2  infinite无限次*/</span> 
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br></div></div></li>
-</ul>
-<h2 id="流式布局"> 流式布局：</h2>
-<ul>
-<li>又称百分比布局，通过百分比控制盒子的宽度；</li>
-<li>掌握：会用二倍图，</li>
-<li>流式布局一般宽度为100%，若不设置高度（高度由内容撑开）；</li>
-<li>一些小的图标或细线，可以采用伪元素的方式搞定；</li>
-</ul>
-<h2 id="flex布局"> flex布局：</h2>
-<ul>
-<li>flex布局主要应用于移动端，对pc端兼容较差；</li>
-<li>flex布局又称：弹性布局、伸缩布局、弹性盒布局、伸缩盒布局；</li>
-<li>flex布局的主要思想是利用行和列进行控制；</li>
-</ul>
-<h3 id="小结"> 小结：</h3>
-<ul>
-<li>
-<p>下方代码中的div和a 会被默认拉伸；</p>
-<div><pre><code><span><span>&lt;!</span><span>doctype</span> <span>html</span><span>></span></span>
-<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
-<span><span><span>&lt;</span>head</span><span>></span></span>
-    <span><span><span>&lt;</span>meta</span> <span>charset</span><span><span>=</span><span>"</span>UTF-8<span>"</span></span><span>></span></span>
-    <span><span><span>&lt;</span>meta</span> <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span>
-          <span>content</span><span><span>=</span><span>"</span>width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0<span>"</span></span><span>></span></span>
-    <span><span><span>&lt;</span>meta</span> <span>http-equiv</span><span><span>=</span><span>"</span>X-UA-Compatible<span>"</span></span> <span>content</span><span><span>=</span><span>"</span>ie=edge<span>"</span></span><span>></span></span>
-    <span><span><span>&lt;</span>title</span><span>></span></span>Document<span><span><span>&lt;/</span>title</span><span>></span></span>
-    <span><span><span>&lt;</span>style</span><span>></span></span><span><span>
-        <span>.w</span> <span>{</span>
-            <span>display</span><span>:</span> flex<span>;</span>
-            <span>width</span><span>:</span> 800px<span>;</span>
-            <span>height</span><span>:</span> 100px<span>;</span>
-            <span>border</span><span>:</span> 1px solid red<span>;</span>
-        <span>}</span>
-        <span>a</span> <span>{</span>
-            <span>width</span><span>:</span> 100px<span>;</span>
-        <span>}</span>
-         <span>/* 子元素  */</span>
-      <span>/* align-self: auto; 默认值 */</span>
-      <span>/* auto :当父亲设置align-items，auto会继承父亲设置的align-items 的值 */</span>
-      <span>/* auto: 当父亲没有设置align-items，auto值自动变为拉伸stretch */</span>
-      <span>/* align-self: stretch; */</span>
-        <span>div</span> <span>{</span>
-          <span>/*div给1份，会把元素挤到最右边*/</span>  
-            <span>flex</span><span>:</span> 1<span>;</span>
-            <span>border</span><span>:</span> 1px solid greenyellow<span>;</span>
-        <span>}</span>
-    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
-<span><span><span>&lt;/</span>head</span><span>></span></span>
-<span><span><span>&lt;</span>body</span><span>></span></span>
-    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>'</span>w<span>'</span></span><span>></span></span>
-        <span><span><span>&lt;</span>div</span><span>></span></span><span><span><span>&lt;/</span>div</span><span>></span></span>
-        <span><span><span>&lt;</span>a</span> <span>href</span><span><span>=</span><span>"</span>#<span>"</span></span><span>></span></span><span><span><span>&lt;/</span>a</span><span>></span></span>
-    <span><span><span>&lt;/</span>div</span><span>></span></span>
-<span><span><span>&lt;/</span>body</span><span>></span></span>
-<span><span><span>&lt;/</span>html</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br></div></div></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>乱蹦的小球</title>
-      <link>https://blog.yahweh.top/views/frontEnd/css/10_%E4%B9%B1%E8%B9%A6%E7%9A%84%E5%B0%8F%E7%90%83/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/css/10_%E4%B9%B1%E8%B9%A6%E7%9A%84%E5%B0%8F%E7%90%83/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">乱蹦的小球</source>
-      <category>CSS</category>
-      <pubDate>Sun, 26 Sep 2021 22:17:23 GMT</pubDate>
-      <content:encoded><![CDATA[<div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
-<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
-  <span><span><span>&lt;</span>head</span><span>></span></span>
-    <span><span><span>&lt;</span>title</span><span>></span></span>乱蹦的小球<span><span><span>&lt;/</span>title</span><span>></span></span>
-    <span><span><span>&lt;</span>style</span> <span>type</span><span><span>=</span><span>"</span>text/css<span>"</span></span><span>></span></span><span><span>
-      <span>.box</span> <span>{</span>
-        <span>width</span><span>:</span> 300px<span>;</span>
-        <span>height</span><span>:</span> 300px<span>;</span>
-        <span>margin</span><span>:</span> 0 auto<span>;</span>
-      <span>}</span>
-      <span>#canvas</span> <span>{</span>
-        <span>background</span><span>:</span> #ccc<span>;</span>
-      <span>}</span>
-    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
-  <span><span><span>&lt;/</span>head</span><span>></span></span>
-  <span><span><span>&lt;</span>body</span><span>></span></span>
-    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>"</span>box<span>"</span></span><span>></span></span>
-      <span><span><span>&lt;</span>canvas</span> <span>width</span><span><span>=</span><span>"</span>300<span>"</span></span> <span>height</span><span><span>=</span><span>"</span>300<span>"</span></span> <span>id</span><span><span>=</span><span>"</span>canvas<span>"</span></span><span>></span></span>您的浏览器不支持canvas请更换浏览器<span><span><span>&lt;/</span>canvas</span><span>></span></span>
-    <span><span><span>&lt;/</span>div</span><span>></span></span>
-    <span><span><span>&lt;</span>script</span><span>></span></span><span><span>
-      <span>var</span> x <span>=</span> <span>0</span><span>,</span>
-        y <span>=</span> <span>0</span><span>,</span>
-        dx <span>=</span> <span>3</span><span>,</span>
-        dy <span>=</span> <span>5</span><span>,</span>
-        canvas <span>//小球从(0,0) 开始移动, 横向步长为3, 纵向步长为 5</span>
-      <span>var</span> <span>draw</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
-        <span>drawDisc</span><span>(</span>x<span>,</span> y<span>)</span> <span>// 使用自定义的画圆方法, 在当前(x,y) 坐标出画一个实心圆 // 判断边界值, 调整dx/dy 以改变x/y坐标变化方向</span>
-        <span>if</span> <span>(</span>x <span>+</span> dy <span>></span> canvas<span>.</span>width <span>||</span> x <span>+</span> dx <span>&lt;</span> <span>0</span><span>)</span> dx <span>=</span> <span>-</span>dx
-        <span>if</span> <span>(</span>y <span>+</span> dy <span>></span> canvas<span>.</span>height <span>||</span> y <span>+</span> dy <span>&lt;</span> <span>0</span><span>)</span> dy <span>=</span> <span>-</span>dy
-        x <span>+=</span> dx
-        y <span>+=</span> dy
-      <span>}</span> <span>// 画实心圆函数; 以鼠标当前位置为原点绘制一个蓝色实心圆</span>
-      <span>var</span> <span>drawDisc</span> <span>=</span> <span>function</span><span>(</span><span>x<span>,</span> y</span><span>)</span> <span>{</span>
-        <span>var</span> ctx <span>=</span> canvas<span>.</span><span>getContext</span><span>(</span><span>'2d'</span><span>)</span>
-        ctx<span>.</span><span>clearRect</span><span>(</span><span>0</span><span>,</span> <span>0</span><span>,</span> canvas<span>.</span>width<span>,</span> canvas<span>.</span>height<span>)</span> <span>// 清除整个canvas画面</span>
-        ctx<span>.</span>fillStyle <span>=</span> <span>'#00f'</span>
-        ctx<span>.</span>strokeStyle <span>=</span> <span>'f00'</span>
-        ctx<span>.</span>lineWidth <span>=</span> <span>3</span>
-        ctx<span>.</span><span>beginPath</span><span>(</span><span>)</span>
-        ctx<span>.</span><span>arc</span><span>(</span>x<span>,</span> y<span>,</span> <span>20</span><span>,</span> <span>0</span><span>,</span> Math<span>.</span><span>PI</span> <span>*</span> <span>2</span><span>,</span> <span>true</span><span>)</span> <span>//画圆弧(x坐标, y坐标, 半径, 起始角, 结束角, true[逆时针]| false[顺时针])</span>
-        ctx<span>.</span><span>stroke</span><span>(</span><span>)</span> <span>//描边</span>
-        ctx<span>.</span><span>fill</span><span>(</span><span>)</span> <span>// 填充</span>
-        ctx<span>.</span><span>closePath</span><span>(</span><span>)</span>
-      <span>}</span>
-      canvas <span>=</span> document<span>.</span><span>getElementById</span><span>(</span><span>'canvas'</span><span>)</span>
-      <span>setInterval</span><span>(</span>draw<span>,</span> <span>10</span><span>)</span> <span>// 设置绘圆周期为 10 毫秒</span>
-    </span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
-  <span><span><span>&lt;/</span>body</span><span>></span></span>
-<span><span><span>&lt;/</span>html</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>响应式开发</title>
-      <link>https://blog.yahweh.top/views/frontEnd/css/05_%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/css/05_%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">响应式开发</source>
-      <category>CSS</category>
-      <pubDate>Sat, 25 Sep 2021 22:02:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>同一个网站兼容不同的大小的设备。如PC端、移动端（平板、横 屏、竖排）的显示风格。</p>
-</blockquote>
-<p>需要用到的技术:</p>
-<ul>
-<li>Media Query（媒体查询）</li>
-<li>使用em或rem做尺寸单位</li>
-<li>禁止页面缩放</li>
-<li>屏幕尺寸响应</li>
-</ul>
-<h2 id="媒体查询"> 媒体查询</h2>
-<blockquote>
-<p>用于查询设备是否符合某一特定条件，这些特定条件包括屏幕尺寸，是否可触 摸，屏幕精度，横屏竖屏等信息。</p>
-</blockquote>
-<h2 id="使用em或rem"> 使用em或rem</h2>
-<blockquote>
-<p>用于文字大小的响应和弹性布局。</p>
-</blockquote>
-<h2 id="禁止页面缩放"> 禁止页面缩放</h2>
-<div><pre><code><span><span><span>&lt;</span>meta</span> <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span> <span>content</span><span><span>=</span><span>"</span>initial-scale=1,width=device-width, maximum-scale=1, user-scalable=no<span>"</span></span> <span>/></span></span>
-</code></pre>
-<div><span>1</span><br></div></div><h2 id="屏幕尺寸响应"> 屏幕尺寸响应</h2>
-<ul>
-<li>固定布局：页面居中，两边留白，他能适应大于某个值一定范围的宽度，但 是如果太宽就会有很多留白，太窄会出现滚动条，在PC页面上很常见。</li>
-<li>流动布局：屏幕尺寸在一定范围内变化时，不改变模块布局，只改变模块尺 寸比例。比固定布局更具响应能力，两边不留白，但是也只能适应有限的宽度变 化范围，否则模块会被挤（拉）得不成样子。</li>
-<li>自定义布局：上面几种布局方式都无法跨域大尺寸变化，所以适当时候我们需 要改变模块的位置排列或者隐藏一些次要元素。</li>
-<li>栅格布局：这种布局方式使得模块之间非常容易对齐，易于模块位置的改变 用于辅助自定义布局。</li>
-</ul>
-<h2 id="注意事项"> 注意事项</h2>
-<ul>
-<li>宽度不固定，可以使用百分比;</li>
-<li>图片处理;
-<ul>
-<li>图片的宽度和高度设置等比缩放，可以设置图片的width为百分比， height:auto。</li>
-<li>背景图片可以使用background-size 指定背景图片的大小。</li>
-</ul>
-</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>链表数据结构</title>
       <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-18/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-18/</guid>
@@ -24052,7 +25023,7 @@ console<span>.</span><span>log</span><span>(</span>x<span>)</span><span>;</span>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-31/</guid>
       <source url="https://blog.yahweh.top/rss.xml">深拷贝与浅拷贝</source>
       <category>javascript</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
     </item>
     <item>
       <title>this对象</title>
@@ -24118,7 +25089,7 @@ console<span>.</span><span>log</span><span>(</span>o<span>.</span>a<span>)</span
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-33/</guid>
       <source url="https://blog.yahweh.top/rss.xml">尾调用优化</source>
       <category>javascript</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
     </item>
     <item>
       <title>立即执行函数(IIFE)</title>
@@ -24153,6 +25124,14 @@ console<span>.</span><span>log</span><span>(</span>o<span>.</span>a<span>)</span
 <p>在es6中，由于引用了块级作用域，所以就不需要采用立即执行函数了</p>
 </div>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>递归</title>
+      <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-36/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-36/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">递归</source>
+      <category>javascript</category>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
     </item>
     <item>
       <title>闭包</title>
@@ -24299,20 +25278,12 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>递归</title>
-      <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-36/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-36/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">递归</source>
-      <category>javascript</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
-    </item>
-    <item>
       <title>回调</title>
       <link>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-37/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-37/</guid>
       <source url="https://blog.yahweh.top/rss.xml">回调</source>
       <category>javascript</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
     </item>
     <item>
       <title>柯里化</title>
@@ -24320,7 +25291,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/javascript-note-38/</guid>
       <source url="https://blog.yahweh.top/rss.xml">柯里化</source>
       <category>javascript</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
     </item>
     <item>
       <title>同步与异步</title>
@@ -27518,6 +28489,22 @@ $<span>.</span><span>add</span><span>(</span><span>5</span><span>,</span> <span>
 ]]></content:encoded>
     </item>
     <item>
+      <title>介绍</title>
+      <link>https://blog.yahweh.top/views/frontEnd/plugins/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/plugins/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
+      <category>PLUGINS</category>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>这里主要记录一些自己平时积累的<strong>PLUGINS</strong>相关的知识；</p>
+</blockquote>
+<h2 id="目录"> 目录</h2>
+<ul>
+<li><a href="./05_mockjs.html">mockjs</a></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>mockjs</title>
       <link>https://blog.yahweh.top/views/frontEnd/plugins/05_mockjs/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/plugins/05_mockjs/</guid>
@@ -27879,22 +28866,6 @@ console<span>.</span><span>log</span><span>(</span><span>JSON</span><span>.</spa
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div><h2 id="参考博文"> 参考博文</h2>
 <p><a href="https://github.com/nuysoft/Mock/wiki" target="_blank" rel="noopener noreferrer">mock官方文档</a></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>介绍</title>
-      <link>https://blog.yahweh.top/views/frontEnd/plugins/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/plugins/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <category>PLUGINS</category>
-      <pubDate>Sun, 21 Nov 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>这里主要记录一些自己平时积累的<strong>PLUGINS</strong>相关的知识；</p>
-</blockquote>
-<h2 id="目录"> 目录</h2>
-<ul>
-<li><a href="./05_mockjs.html">mockjs</a></li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -33085,211 +34056,6 @@ Vue<span>.</span><span>component</span><span>(</span><span>"组件名称"</span>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>vue-cli使用</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-08/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-08/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">vue-cli使用</source>
-      <category>vue</category>
-      <pubDate>Wed, 11 Aug 2021 23:14:30 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<ul>
-<li>
-<p>介绍: <strong><code>vue-cli</code><strong>是一个</strong><code>辅助开发工具</code></strong>=&gt; <strong><code>代码编译</code></strong> + <strong><code>样式</code></strong> + 语法校验 + 输出设置 + 其他 ...</p>
-</li>
-<li>
-<p>作用: 可以为开发者提供一个**<code>标准的项目开发结构</code>** 和配置</p>
-</li>
-<li>
-<p>vue-cli 一个**<code>命令行</code><strong>工具,最新版本也支持</strong><code>图形化</code>**操作,可快速搭建大型网页应用</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="vue-cli安装"> <code>vue-cli</code>安装</h2>
-<blockquote>
-<p>vue-cli本质上是一个npm包,也需要通过npm去安装下载</p>
-<div><pre><code><span>npm</span> i -g @vue/cli  // 全局安装脚手架  默认安装的最新版本 <span>4.0</span>+
-</code></pre>
-<div><span>1</span><br></div></div><p>查看版本</p>
-<div><pre><code>vue -V  // 查看脚手架版本号
-or 
-vue --version // 和上面等价 
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><code>注意</code>: 默认安装的4.0+ 版本,但是企业很多还在用2.0+版本 怎么破?</p>
-<p>执行以下命令就可以 2.0 和 3.0 /4.0兼得</p>
-<ul>
-<li><strong><code>2.0和3.0/4.0创建项目的命令是不一样的</code></strong></li>
-</ul>
-<div><pre><code><span>npm</span> <span>install</span> -g @vue/cli-init  // 安装桥接工具 将2.0的功能补齐到目前的脚手架上
-</code></pre>
-<div><span>1</span><br></div></div><p><strong>注意</strong>: vue生成的模板有难有易</p>
-<ul>
-<li>
-<p>简单业务 =&gt; 简易模板</p>
-</li>
-<li>
-<p>复杂业务 =&gt; 内容丰富模板</p>
-</li>
-</ul>
-</blockquote>
-<h2 id="vue-cli2-0创建项目"> <code>vue-cli2.0</code>创建项目</h2>
-<blockquote>
-<p>创建项目: 采用<code>cli 2.0</code>的特性 (生成简易模板)</p>
-<div><pre><code><span>#  heroes 创建的项目名称</span>
-$ vue  init webpack-simple heroes //  webpack-simple 为模板名称 固定写法
-
-<span># 切换到当前目录</span>
-$ <span>cd</span>  heroes 
-
-<span># 安装依赖</span>
-$ <span>npm</span> <span>install</span>  
-
-<span># 在开发模式下 启动运行项目</span>
-$ <span>npm</span> run dev
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div></blockquote>
-<h3 id="项目目录解释"> 项目目录解释</h3>
-<blockquote>
-<p>**<code>目标</code>**对<code>2.0</code>项目目录生成的模板文件进行识别认识</p>
-<p>.bablelrc=&gt;存放 babel编译的配置信息 () =&gt; es6 =&gt; es5</p>
-<p>.editorconfig =&gt; 存放编辑器的配置信息</p>
-<p>.gitignore =&gt; git忽略文件</p>
-<p>index.html =&gt; 单页应用的html</p>
-<p>package.json =&gt; 用于存放依赖信息 及 其他项目信息</p>
-<p>README.md =&gt; 项目介绍信息 github上的页面信息</p>
-<p>webpack.config.js =&gt; wepack工具的配置文件 =&gt; webpack是一个前端工程化的工具  编译代码 -压缩代码- 处理代码,其他....</p>
-<p>webpack =&gt; 代码编译,打包 压缩</p>
-<p>build.js =&gt;  不是人写的 =&gt; webpack 打包而来 =&gt; webpack中可以配置文件的**<code>入口</code>** ,可以配置文件的**<code>出口</code>**</p>
-<p>webpack 文件的出口 =&gt;buildjs =&gt;  配置信息  =&gt;  webpack.config.js</p>
-<p>entry =&gt; 整个项目的入口文件=&gt; main.js</p>
-<p>output =&gt; 整个项目的出口文件 =&gt; filename =&gt; build.js  =&gt;  build.js 启动项目时  并不是物理文件,而是内存中一个文件流</p>
-</blockquote>
-<h2 id="vuecli4-0配置项目"> <code>VueCli4.0</code>配置项目</h2>
-<div><pre><code><span># 4.0/3.0下创建项目</span>
-$ vue create heroes   <span># create(创建) 为关键字</span>
-
-<span># 切换到当前目录</span>
-$ <span>cd</span>  heroes 
-
-<span># 在开发模式下 启动运行项目</span>
-$ <span>npm</span> run serve
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
-<p><strong>注意</strong>:</p>
-<p>3.0 +创建项目时有两种模式, 一种**<code>默认模式</code>**, 一种选择模式,</p>
-<p><strong>默认模式</strong>:一种标准的模板;</p>
-<p><strong>选择模式</strong>:可以根据自己的需求选择需要的工具和模式;</p>
-</blockquote>
-<h3 id="个性化配置"> 个性化配置;</h3>
-<ol>
-<li>
-<p>初始化一个项目(4.0)</p>
-<div><pre><code>$ vue create toutiao-81 
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>选择模式：简易(默认)或个性化；
-<img src="./assets/1580819778118.png" alt="1580819778118" /></p>
-</li>
-<li>
-<p>选择个性化进入下一步；
-<img src="./assets/1580819877747.png" alt="1580819877747" /></p>
-<p>使用键盘上下箭头进行移动，使用空格切换选中与否。</p>
-<p><code>Babel</code>：将 ECMAScript  6 转 ECMAScript 5用的一个工具</p>
-<p><code>Router</code>：Vue Router 路由</p>
-<p><code>CSS Pre-processors</code>：CSS预处理器（SASS、Less、Stylus。。。。）</p>
-<p><code>Linter / Formatter</code>：代码校验和格式化</p>
-</li>
-<li>
-<p>勾选好以后，回车进入下一步。
-<img src="./assets/1580819976525.png" alt="1580819976525" /></p>
-<p>选择路由模式</p>
-<p>路由路径有两种模式：</p>
-<ul>
-<li>hash锚点模式：<code>http://协议:端口号/path路径/#/路由路径</code>
-<ul>
-<li>简单，兼容好</li>
-</ul>
-</li>
-<li>history模式：<code>http://协议:端口号/路由路径</code>
-<ul>
-<li>url简洁</li>
-<li>兼容差，需要额外的服务器配置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>输入 <code>n</code> ,使用默认的路由模式。 回车进入下一步。
-<img src="./assets/1580820088789.png" alt="1580820088789" /></p>
-<p>选择 CSS 预处理器</p>
-</li>
-<li>
-<p>使用 Less 预处理器。回车下一步；
-<img src="./assets/1580820147137.png" alt="1580820147137" /></p>
-<p>选择代码格式校验风格；</p>
-</li>
-<li>
-<p>这里我们选择 <code>ESLint + Standard config</code> 模式。进入下一步；
-<img src="./assets/1580820361235.png" alt="1580820361235" /></p>
-<p>选择代码格式校验方式</p>
-<p><code>Lint on save</code>：每当代码文件保存的时候进行格式校验。</p>
-<p><code>Lint and fix on commit</code>：当执行 git commit 代码提交的时候进行校验和尝试自动修复校验失败的语法格式，如果校验失败并且自动修复也失败，就无法完成代码提交。你需要手动解决了代码格式问题然后重新提交，这样就确保版本历史中的代码一定没有代码格式问题。</p>
-</li>
-<li>
-<p>选择完毕进入下一步；
-<img src="./assets/1580820478078.png" alt="1580820478078" /></p>
-<p>VueCLI 会在项目中生成一些工具的配置文件。配置文件可以存储在两个地方：</p>
-<p><code>In dedicated config files</code>：生成独立的配置文件，推荐，维护方便</p>
-<p><code>In package.json</code> 混到 package.json 文件中，不推荐，维护麻烦</p>
-<p>这里我们选择第1种，将这些工具的配置文件保存到独立的配置文件中，方便查看和修改。</p>
-</li>
-<li>
-<p>选择完毕进入下一步；
-<img src="./assets/1580820544731.png" alt="1580820544731" /></p>
-<p>你可以把你刚才那些选择配置项保存为一个模板，下次使用 <code>vue create</code> 创建项目的时候它会提示你是否可以使用这个选择模板直接创建你的项目。</p>
-<p>如果你需要，就输入 <code>y</code>，然后它会让你给这个模板起个名字，下次就可以直接使用；</p>
-<p>如果不需要，就输入 <code>n</code>，继续下一步。</p>
-<p>这里我们不需要，输入 <code>n</code> 继续下一步。</p>
-</li>
-<li>
-<p>进入下一步；开始安装；
-<img src="./assets/1580820614618.png" alt="1580820614618" /></p>
-</li>
-</ol>
-<h3 id="项目目录介绍"> 项目目录介绍</h3>
-<div><pre><code>│  .browserslistrc 该文件会被 Babel 和 Autoprefix 用来根据浏览器的版本确定需要转译的 JavaScript 特性和 CSS 浏览器前缀
-│  .editorconfig 编辑器配置文件，编辑器会根据该文件选择编辑格式
-│  .eslintrc.js ESLint配置文件
-│  .gitignore Git忽略配置文件
-│  babel.config.js Babel转码工具配置文件
-│  package-lock.json 包管理工具的锁定文件
-│  package.json	包说明文件
-│  postcss.config.js	postcss配置文件
-│  README.md 说明文档
-│  
-├─node_modules 第三方包
-├─public 公共资源目录
-│      favicon.ico
-│      index.html
-│      
-└─src 源码目录
-    │  App.vue 根组件
-    │  main.js 入口模块
-    │  router.js 路由模块
-    │  
-    ├─assets 静态资源目录
-    │      logo.png
-    │      
-    ├─components 非路由组件目录
-    │      HelloWorld.vue
-    │      
-    └─views 路由组件目录
-            About.vue
-            Home.vue
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>wepy-cli的使用</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-09/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-09/</guid>
@@ -36085,6 +36851,101 @@ window<span>.</span>Vue <span>=</span> Vue<span>;</span>
 ]]></content:encoded>
     </item>
     <item>
+      <title>项目初始化</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-20/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-20/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">项目初始化</source>
+      <category>vue</category>
+      <pubDate>Wed, 08 Sep 2021 20:25:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>ssr实战开发</p>
+</blockquote>
+<h2 id="项目初始化"> 项目初始化</h2>
+<ul>
+<li>
+<p>使用vue-cli创建项目</p>
+<div><pre><code>vue create ssr
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>安装依赖</p>
+<div><pre><code><span>npm</span> <span>install</span> vue vue-server-renderer express -D
+</code></pre>
+<div><span>1</span><br></div></div><blockquote>
+<p>确保vue、vue-server-renderer、vue-template-compiler版本一致  我的版本<code>2.6.11</code></p>
+</blockquote>
+</li>
+<li>
+<p>新建node脚本文件，并添加ssr；<code>./bin/server.js</code></p>
+<div><pre><code><span>// 导入express作为渲染服务器</span>
+<span>const</span> express <span>=</span> <span>require</span><span>(</span><span>"express"</span><span>)</span><span>;</span>
+
+<span>// 导入Vue用于声明待渲染实例</span>
+<span>const</span> Vue <span>=</span> <span>require</span><span>(</span><span>"vue"</span><span>)</span><span>;</span>
+
+<span>// 导入createRenderer用于获取渲染器</span>
+<span>const</span> <span>{</span> createRenderer <span>}</span> <span>=</span> <span>require</span><span>(</span><span>"vue-server-renderer"</span><span>)</span><span>;</span>
+
+<span>// 创建express实例</span>
+<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span><span>;</span>
+
+<span>// 获取渲染器</span>
+<span>const</span> renderer <span>=</span> <span>createRenderer</span><span>(</span><span>)</span><span>;</span>
+
+<span>// 待渲染vue实例</span>
+<span>const</span> vm <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
+    template<span>:</span> <span><span>`</span><span>&lt;h1>{{name}}&lt;/h1></span><span>`</span></span><span>,</span>
+    data<span>:</span> <span>{</span>
+        name<span>:</span> <span>"SSR"</span>
+    <span>}</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+
+app<span>.</span><span>get</span><span>(</span><span>"*"</span><span>,</span> <span>async</span> <span>function</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>{</span>
+    <span>try</span> <span>{</span>
+        <span>// 若未传递回调函数，则返回Promise</span>
+        <span>// renderToString可以将vue实例转换为html字符串</span>
+        <span>const</span> html <span>=</span> <span>await</span> renderer<span>.</span><span>renderToString</span><span>(</span>vm<span>)</span><span>;</span>
+        res<span>.</span><span>send</span><span>(</span>html<span>)</span><span>;</span>
+    <span>}</span> <span>catch</span> <span>(</span>error<span>)</span> <span>{</span>
+        res<span>.</span><span>status</span><span>(</span><span>500</span><span>)</span><span>.</span><span>send</span><span>(</span><span>"Internal Server Error"</span><span>)</span><span>;</span>
+    <span>}</span>
+<span>}</span><span>)</span><span>;</span>
+
+<span>// 启动node服务</span>
+app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>"启动成功"</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><blockquote>
+<p>使用Node启动服务，<code>node ./server.js</code> 浏览器访问：<code>http://localhost:3000</code>显示SSR。</p>
+</blockquote>
+</li>
+</ul>
+<div><p>提示</p>
+<p>上面的代码只是简单的完成了把vue实例转换为html的过程，但是还没有路由，没有交互，不能添加事件等；</p>
+</div>
+<p>项目目录</p>
+<div><pre><code>ssr
+├── babel.config.js
+├── bin
+│   └── server.js
+├── package.json
+├── public
+│   ├── favicon.ico
+│   └── index.html
+├── README.md
+├── src
+│   ├── App.vue
+│   ├── assets
+│   │   └── logo.png
+│   ├── components
+│   │   └── HelloWorld.vue
+│   └── main.js
+└── yarn.lock
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>vue中ssr的基本用法</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-18/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-18/</guid>
@@ -36179,101 +37040,6 @@ app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span
 <p>现在的页面内容只有死的内容(没有交互没有点击事件)，如果要使程序可以交互还需要激活；</p>
 </div>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>项目初始化</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-20/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-20/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">项目初始化</source>
-      <category>vue</category>
-      <pubDate>Wed, 08 Sep 2021 20:25:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>ssr实战开发</p>
-</blockquote>
-<h2 id="项目初始化"> 项目初始化</h2>
-<ul>
-<li>
-<p>使用vue-cli创建项目</p>
-<div><pre><code>vue create ssr
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>安装依赖</p>
-<div><pre><code><span>npm</span> <span>install</span> vue vue-server-renderer express -D
-</code></pre>
-<div><span>1</span><br></div></div><blockquote>
-<p>确保vue、vue-server-renderer、vue-template-compiler版本一致  我的版本<code>2.6.11</code></p>
-</blockquote>
-</li>
-<li>
-<p>新建node脚本文件，并添加ssr；<code>./bin/server.js</code></p>
-<div><pre><code><span>// 导入express作为渲染服务器</span>
-<span>const</span> express <span>=</span> <span>require</span><span>(</span><span>"express"</span><span>)</span><span>;</span>
-
-<span>// 导入Vue用于声明待渲染实例</span>
-<span>const</span> Vue <span>=</span> <span>require</span><span>(</span><span>"vue"</span><span>)</span><span>;</span>
-
-<span>// 导入createRenderer用于获取渲染器</span>
-<span>const</span> <span>{</span> createRenderer <span>}</span> <span>=</span> <span>require</span><span>(</span><span>"vue-server-renderer"</span><span>)</span><span>;</span>
-
-<span>// 创建express实例</span>
-<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span><span>;</span>
-
-<span>// 获取渲染器</span>
-<span>const</span> renderer <span>=</span> <span>createRenderer</span><span>(</span><span>)</span><span>;</span>
-
-<span>// 待渲染vue实例</span>
-<span>const</span> vm <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
-    template<span>:</span> <span><span>`</span><span>&lt;h1>{{name}}&lt;/h1></span><span>`</span></span><span>,</span>
-    data<span>:</span> <span>{</span>
-        name<span>:</span> <span>"SSR"</span>
-    <span>}</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-
-app<span>.</span><span>get</span><span>(</span><span>"*"</span><span>,</span> <span>async</span> <span>function</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>{</span>
-    <span>try</span> <span>{</span>
-        <span>// 若未传递回调函数，则返回Promise</span>
-        <span>// renderToString可以将vue实例转换为html字符串</span>
-        <span>const</span> html <span>=</span> <span>await</span> renderer<span>.</span><span>renderToString</span><span>(</span>vm<span>)</span><span>;</span>
-        res<span>.</span><span>send</span><span>(</span>html<span>)</span><span>;</span>
-    <span>}</span> <span>catch</span> <span>(</span>error<span>)</span> <span>{</span>
-        res<span>.</span><span>status</span><span>(</span><span>500</span><span>)</span><span>.</span><span>send</span><span>(</span><span>"Internal Server Error"</span><span>)</span><span>;</span>
-    <span>}</span>
-<span>}</span><span>)</span><span>;</span>
-
-<span>// 启动node服务</span>
-app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>"启动成功"</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br></div></div><blockquote>
-<p>使用Node启动服务，<code>node ./server.js</code> 浏览器访问：<code>http://localhost:3000</code>显示SSR。</p>
-</blockquote>
-</li>
-</ul>
-<div><p>提示</p>
-<p>上面的代码只是简单的完成了把vue实例转换为html的过程，但是还没有路由，没有交互，不能添加事件等；</p>
-</div>
-<p>项目目录</p>
-<div><pre><code>ssr
-├── babel.config.js
-├── bin
-│   └── server.js
-├── package.json
-├── public
-│   ├── favicon.ico
-│   └── index.html
-├── README.md
-├── src
-│   ├── App.vue
-│   ├── assets
-│   │   └── logo.png
-│   ├── components
-│   │   └── HelloWorld.vue
-│   └── main.js
-└── yarn.lock
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>处理favicon.icon</title>
@@ -36781,6 +37547,415 @@ Vue<span>.</span>config<span>.</span>productionTip <span>=</span> <span>false</s
 <div><pre><code><span>&lt;</span>h2 @click<span>=</span><span>"$store.commit('add')"</span><span>></span><span>{</span><span>{</span>$store<span>.</span>state<span>.</span>count<span>}</span><span>}</span><span>&lt;</span><span>/</span>h2<span>></span>
 </code></pre>
 <div><span>1</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>数据预取</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-85/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-85/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">数据预取</source>
+      <category>vue</category>
+      <pubDate>Sat, 11 Sep 2021 20:20:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>在服务器端渲染(SSR)期间，我们本质上是在渲染我们应用程序的&quot;快照&quot;，所以如果应用程序依赖于一些异步数据，<strong>那么在开始渲染过程之前，需要先预取和解析好这些数据</strong>。</p>
+</blockquote>
+<h2 id="异步数据获取"> 异步数据获取</h2>
+<p>在这里需要先提一个小问题，其实在一开始我不太明白为什么要进行服务器端异步数据预处理？异步数据在客户端请求和在服务端请求，单对请求响应时间来说都是一样的，那为什么还要在服务端预处理异步数据呢？如果在服务端请求的接口响应时间比较长的话，那么客户端不是一样会长时间的白屏吗？</p>
+<p><strong>其实答案很简单：主要是为了SEO,如果提前把异步数据加载好，那么就利于爬虫爬取我们的页面；</strong></p>
+<p>修改<code>store/index.js</code></p>
+<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span>
+<span>import</span> Vuex <span>from</span> <span>'vuex'</span>
+
+Vue<span>.</span><span>use</span><span>(</span>Vuex<span>)</span>
+
+<span>export</span> <span>function</span> <span>createStore</span> <span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>new</span> <span>Vuex<span>.</span>Store</span><span>(</span><span>{</span>
+        state<span>:</span> <span>{</span>
+            count<span>:</span><span>108</span>
+        <span>}</span><span>,</span>
+        mutations<span>:</span> <span>{</span>
+            <span>add</span><span>(</span><span>state<span>,</span> count</span><span>)</span><span>{</span>
+                state<span>.</span>count <span>=</span> count<span>;</span>
+            <span>}</span>
+        <span>}</span><span>,</span>
+        actions<span>:</span> <span>{</span>
+            <span>// 加一个异步请求count的action</span>
+            <span>getCount</span><span>(</span><span><span>{</span> commit <span>}</span></span><span>)</span> <span>{</span>
+                <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>resolve</span> <span>=></span> <span>{</span>
+                    <span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+                        <span>commit</span><span>(</span><span>"add"</span><span>,</span> Math<span>.</span><span>random</span><span>(</span><span>)</span> <span>*</span> <span>100</span><span>)</span><span>;</span>
+                        <span>resolve</span><span>(</span><span>)</span><span>;</span>
+                    <span>}</span><span>,</span> <span>1000</span><span>)</span><span>;</span>
+                <span>}</span><span>)</span><span>;</span>
+            <span>}</span><span>,</span>
+        <span>}</span><span>,</span>
+    <span>}</span><span>)</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div><blockquote>
+<p>这一步的主要操作是用于模拟异步请求；异步请求的数据保存在vuex里面；</p>
+</blockquote>
+<h2 id="组件中的数据预取"> 组件中的数据预取</h2>
+<p>修改<code>views/home.vue</code></p>
+<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
+    <span><span><span>&lt;</span>div</span><span>></span></span>
+        <span><span><span>&lt;</span>h2</span> <span>@click</span><span><span>=</span><span>"</span>$store.commit(<span>'</span>add<span>'</span>)<span>"</span></span><span>></span></span>{{$store.state.count}}<span><span><span>&lt;/</span>h2</span><span>></span></span>
+        <span><span><span>&lt;</span>h1</span><span>></span></span>HOME<span><span><span>&lt;/</span>h1</span><span>></span></span>
+    <span><span><span>&lt;/</span>div</span><span>></span></span>
+<span><span><span>&lt;/</span>template</span><span>></span></span>
+<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
+<span>export</span> <span>default</span> <span>{</span>
+    <span>// 约定预取逻辑编写在预取钩子asyncData中</span>
+    <span>asyncData</span><span>(</span><span><span>{</span> store <span>}</span></span><span>)</span> <span>{</span>
+        <span>// 触发action后，返回promise以便确定请求结果</span>
+        <span>return</span> store<span>.</span><span>dispatch</span><span>(</span><span>'getCount'</span><span>)</span><span>;</span>
+    <span>}</span><span>,</span>
+<span>}</span>
+</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><blockquote>
+<p>在当前页面中从vuex中获取数据；</p>
+</blockquote>
+<h2 id="客户端数据预取"> 客户端数据预取</h2>
+<p>在客户端，处理数据预取有两种不同方式：</p>
+<ol>
+<li>在路由导航之前解析数据</li>
+<li>匹配要渲染的视图后，再获取数据</li>
+</ol>
+<h3 id="在路由导航之前解析数据"> 在路由导航之前解析数据</h3>
+<p>修改<code>entry-server.js</code></p>
+<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
+<span>// 返回一个函数，接收请求上下文，返回创建的vue实例</span>
+<span>export</span> <span>default</span> <span>context</span> <span>=></span> <span>{</span>
+    <span>// 这里返回一个Promise，确保客户端入口准备就绪  </span>
+    <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>(</span><span>resolve<span>,</span> reject</span><span>)</span> <span>=></span> <span>{</span>
+        <span>const</span> <span>{</span> app<span>,</span> router<span>,</span> store <span>}</span> <span>=</span> <span>createApp</span><span>(</span><span>)</span><span>;</span>
+        <span>// 跳转到首屏的地址</span>
+        router<span>.</span><span>push</span><span>(</span>context<span>.</span>url<span>)</span><span>;</span>
+        <span>// 路由就绪，返回结果</span>
+        router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+            <span>// 获取匹配的路由组件数组</span>
+            <span>const</span> matchedComponents <span>=</span> router<span>.</span><span>getMatchedComponents</span><span>(</span><span>)</span><span>;</span>
+
+            <span>// 若无匹配则抛出异常；</span>
+            <span>if</span> <span>(</span><span>!</span>matchedComponents<span>.</span>length<span>)</span> <span>{</span>
+                <span>return</span> <span>reject</span><span>(</span><span>{</span> code<span>:</span> <span>404</span><span>,</span> msg<span>:</span> <span>'页面找不到！'</span> <span>}</span><span>)</span>
+            <span>}</span>
+            <span>// 对所有匹配的路由组件调用可能存在的asyncData();</span>
+            Promise<span>.</span><span>all</span><span>(</span>matchedComponents<span>.</span><span>map</span><span>(</span><span>component</span> <span>=></span> <span>{</span>
+                <span>if</span> <span>(</span>component<span>.</span>asyncData<span>)</span> <span>{</span>
+                    <span>return</span> component<span>.</span><span>asyncData</span><span>(</span><span>{</span>
+                        store<span>,</span>
+                        route<span>:</span> router<span>.</span>currentRoute<span>,</span>
+                    <span>}</span><span>)</span>
+                <span>}</span>
+            <span>}</span><span>)</span><span>)</span><span>.</span><span>then</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+                <span>// 所有预取钩子 resolve 后，</span>
+                <span>// store 已经填充完预渲染应用所需数据</span>
+                <span>// 将状态附加到上下文，且 `template` 选项用于 renderer 时，</span>
+                <span>// 状态将自动序列化为 `window.__INITIAL_STATE__`，并注入 HTML。</span>
+                context<span>.</span>state <span>=</span> store<span>.</span>state<span>;</span>
+                <span>resolve</span><span>(</span>app<span>)</span><span>;</span>
+            <span>}</span><span>)</span><span>.</span><span>catch</span><span>(</span>reject<span>)</span><span>;</span>
+        <span>}</span><span>,</span> reject<span>)</span><span>;</span>
+    <span>}</span><span>)</span><span>;</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br></div></div><blockquote>
+<p>查找当前路由所有可能匹配的页面，然后调用异步请求函数获取异步请求数据，然后异步数据获取之后自动序列化为 <code>window.__INITIAL_STATE__</code>，并注入 HTML。这一步主要特点是数据在路由导航之前就解析好了。</p>
+</blockquote>
+<h3 id="匹配要渲染的视图后"> 匹配要渲染的视图后</h3>
+<p>修改<code>main.js</code>,并添加以下代码</p>
+<div><pre><code>Vue<span>.</span><span>mixin</span><span>(</span><span>{</span>
+  <span>beforeMount</span><span>(</span><span>)</span> <span>{</span>
+    <span>const</span> <span>{</span> asyncData <span>}</span> <span>=</span> <span>this</span><span>.</span>$options<span>;</span>
+    <span>if</span> <span>(</span>asyncData<span>)</span> <span>{</span>
+      <span>// 将获取数据操作分配给 promise</span>
+      <span>// 以便在组件中，我们可以在数据准备就绪后</span>
+      <span>// 通过运行 `this.dataPromise.then(...)` 来执行其他任务</span>
+      <span>this</span><span>.</span>dataPromise <span>=</span> <span>asyncData</span><span>(</span><span>{</span>
+        store<span>:</span> <span>this</span><span>.</span>$store<span>,</span>
+        route<span>:</span> <span>this</span><span>.</span>$route<span>,</span>
+      <span>}</span><span>)</span><span>;</span>
+    <span>}</span>
+  <span>}</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
+<p>主要特点是：数据是在客户端获取的，在页面加载完后再发送异步请求填充数据；</p>
+</blockquote>
+<h2 id="客户端恢复数据"> 客户端恢复数据</h2>
+<blockquote>
+<p>当使用 <code>template</code> 时，<code>context.state</code> 将作为 <code>window.__INITIAL_STATE__</code> 状态，自动嵌入到最终的 HTML 中。而在客户端，在挂载到应用程序之前，store 就应该获取到状态：</p>
+</blockquote>
+<p>修改<code>entry-client.js</code></p>
+<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
+<span>// 创建vue、router实例</span>
+<span>const</span> <span>{</span> app<span>,</span> router<span>,</span> store <span>}</span> <span>=</span> <span>createApp</span><span>(</span><span>)</span><span>;</span>
+
+<span>if</span> <span>(</span>window<span>.</span>__INITIAL_STATE__<span>)</span> <span>{</span>
+    store<span>.</span><span>replaceState</span><span>(</span>window<span>.</span>__INITIAL_STATE__<span>)</span><span>;</span>
+<span>}</span>
+
+<span>// 路由就绪，执行挂载</span>
+router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+    app<span>.</span><span>$mount</span><span>(</span><span>"#app"</span><span>,</span> <span>true</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="url改变时重新获取数据"> url改变时重新获取数据</h2>
+<blockquote>
+<p>当页面url改变时，尤其是一些详情页，那么页面的数据就需要重新获取；</p>
+</blockquote>
+<p>修改<code>main.js</code></p>
+<div><pre><code>Vue<span>.</span><span>mixin</span><span>(</span><span>{</span>
+  <span>beforeUpdate</span><span>(</span><span>)</span> <span>{</span>
+    <span>const</span> <span>{</span> asyncData <span>}</span> <span>=</span> <span>this</span><span>.</span>$options<span>;</span>
+    <span>if</span> <span>(</span>asyncData<span>)</span> <span>{</span>
+      <span>// 将获取数据操作分配给 promise</span>
+      <span>// 以便在组件中，我们可以在数据准备就绪后</span>
+      <span>// 通过运行 `this.dataPromise.then(...)` 来执行其他任务</span>
+      <span>this</span><span>.</span>dataPromise <span>=</span> <span>asyncData</span><span>(</span><span>{</span>
+        store<span>:</span> <span>this</span><span>.</span>$store<span>,</span>
+        route<span>:</span> <span>this</span><span>.</span>$route<span>,</span>
+      <span>}</span><span>)</span><span>;</span>
+    <span>}</span>
+  <span>}</span><span>,</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
+<p>利用全局混入，在路由路径改变时重新获取最新的数据；</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>vue-cli使用</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-08/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-08/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">vue-cli使用</source>
+      <category>vue</category>
+      <pubDate>Wed, 11 Aug 2021 23:14:30 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<ul>
+<li>
+<p>介绍: <strong><code>vue-cli</code><strong>是一个</strong><code>辅助开发工具</code></strong>=&gt; <strong><code>代码编译</code></strong> + <strong><code>样式</code></strong> + 语法校验 + 输出设置 + 其他 ...</p>
+</li>
+<li>
+<p>作用: 可以为开发者提供一个**<code>标准的项目开发结构</code>** 和配置</p>
+</li>
+<li>
+<p>vue-cli 一个**<code>命令行</code><strong>工具,最新版本也支持</strong><code>图形化</code>**操作,可快速搭建大型网页应用</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="vue-cli安装"> <code>vue-cli</code>安装</h2>
+<blockquote>
+<p>vue-cli本质上是一个npm包,也需要通过npm去安装下载</p>
+<div><pre><code><span>npm</span> i -g @vue/cli  // 全局安装脚手架  默认安装的最新版本 <span>4.0</span>+
+</code></pre>
+<div><span>1</span><br></div></div><p>查看版本</p>
+<div><pre><code>vue -V  // 查看脚手架版本号
+or 
+vue --version // 和上面等价 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p><code>注意</code>: 默认安装的4.0+ 版本,但是企业很多还在用2.0+版本 怎么破?</p>
+<p>执行以下命令就可以 2.0 和 3.0 /4.0兼得</p>
+<ul>
+<li><strong><code>2.0和3.0/4.0创建项目的命令是不一样的</code></strong></li>
+</ul>
+<div><pre><code><span>npm</span> <span>install</span> -g @vue/cli-init  // 安装桥接工具 将2.0的功能补齐到目前的脚手架上
+</code></pre>
+<div><span>1</span><br></div></div><p><strong>注意</strong>: vue生成的模板有难有易</p>
+<ul>
+<li>
+<p>简单业务 =&gt; 简易模板</p>
+</li>
+<li>
+<p>复杂业务 =&gt; 内容丰富模板</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="vue-cli2-0创建项目"> <code>vue-cli2.0</code>创建项目</h2>
+<blockquote>
+<p>创建项目: 采用<code>cli 2.0</code>的特性 (生成简易模板)</p>
+<div><pre><code><span>#  heroes 创建的项目名称</span>
+$ vue  init webpack-simple heroes //  webpack-simple 为模板名称 固定写法
+
+<span># 切换到当前目录</span>
+$ <span>cd</span>  heroes 
+
+<span># 安装依赖</span>
+$ <span>npm</span> <span>install</span>  
+
+<span># 在开发模式下 启动运行项目</span>
+$ <span>npm</span> run dev
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div></blockquote>
+<h3 id="项目目录解释"> 项目目录解释</h3>
+<blockquote>
+<p>**<code>目标</code>**对<code>2.0</code>项目目录生成的模板文件进行识别认识</p>
+<p>.bablelrc=&gt;存放 babel编译的配置信息 () =&gt; es6 =&gt; es5</p>
+<p>.editorconfig =&gt; 存放编辑器的配置信息</p>
+<p>.gitignore =&gt; git忽略文件</p>
+<p>index.html =&gt; 单页应用的html</p>
+<p>package.json =&gt; 用于存放依赖信息 及 其他项目信息</p>
+<p>README.md =&gt; 项目介绍信息 github上的页面信息</p>
+<p>webpack.config.js =&gt; wepack工具的配置文件 =&gt; webpack是一个前端工程化的工具  编译代码 -压缩代码- 处理代码,其他....</p>
+<p>webpack =&gt; 代码编译,打包 压缩</p>
+<p>build.js =&gt;  不是人写的 =&gt; webpack 打包而来 =&gt; webpack中可以配置文件的**<code>入口</code>** ,可以配置文件的**<code>出口</code>**</p>
+<p>webpack 文件的出口 =&gt;buildjs =&gt;  配置信息  =&gt;  webpack.config.js</p>
+<p>entry =&gt; 整个项目的入口文件=&gt; main.js</p>
+<p>output =&gt; 整个项目的出口文件 =&gt; filename =&gt; build.js  =&gt;  build.js 启动项目时  并不是物理文件,而是内存中一个文件流</p>
+</blockquote>
+<h2 id="vuecli4-0配置项目"> <code>VueCli4.0</code>配置项目</h2>
+<div><pre><code><span># 4.0/3.0下创建项目</span>
+$ vue create heroes   <span># create(创建) 为关键字</span>
+
+<span># 切换到当前目录</span>
+$ <span>cd</span>  heroes 
+
+<span># 在开发模式下 启动运行项目</span>
+$ <span>npm</span> run serve
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
+<p><strong>注意</strong>:</p>
+<p>3.0 +创建项目时有两种模式, 一种**<code>默认模式</code>**, 一种选择模式,</p>
+<p><strong>默认模式</strong>:一种标准的模板;</p>
+<p><strong>选择模式</strong>:可以根据自己的需求选择需要的工具和模式;</p>
+</blockquote>
+<h3 id="个性化配置"> 个性化配置;</h3>
+<ol>
+<li>
+<p>初始化一个项目(4.0)</p>
+<div><pre><code>$ vue create toutiao-81 
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>选择模式：简易(默认)或个性化；
+<img src="./assets/1580819778118.png" alt="1580819778118" /></p>
+</li>
+<li>
+<p>选择个性化进入下一步；
+<img src="./assets/1580819877747.png" alt="1580819877747" /></p>
+<p>使用键盘上下箭头进行移动，使用空格切换选中与否。</p>
+<p><code>Babel</code>：将 ECMAScript  6 转 ECMAScript 5用的一个工具</p>
+<p><code>Router</code>：Vue Router 路由</p>
+<p><code>CSS Pre-processors</code>：CSS预处理器（SASS、Less、Stylus。。。。）</p>
+<p><code>Linter / Formatter</code>：代码校验和格式化</p>
+</li>
+<li>
+<p>勾选好以后，回车进入下一步。
+<img src="./assets/1580819976525.png" alt="1580819976525" /></p>
+<p>选择路由模式</p>
+<p>路由路径有两种模式：</p>
+<ul>
+<li>hash锚点模式：<code>http://协议:端口号/path路径/#/路由路径</code>
+<ul>
+<li>简单，兼容好</li>
+</ul>
+</li>
+<li>history模式：<code>http://协议:端口号/路由路径</code>
+<ul>
+<li>url简洁</li>
+<li>兼容差，需要额外的服务器配置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>输入 <code>n</code> ,使用默认的路由模式。 回车进入下一步。
+<img src="./assets/1580820088789.png" alt="1580820088789" /></p>
+<p>选择 CSS 预处理器</p>
+</li>
+<li>
+<p>使用 Less 预处理器。回车下一步；
+<img src="./assets/1580820147137.png" alt="1580820147137" /></p>
+<p>选择代码格式校验风格；</p>
+</li>
+<li>
+<p>这里我们选择 <code>ESLint + Standard config</code> 模式。进入下一步；
+<img src="./assets/1580820361235.png" alt="1580820361235" /></p>
+<p>选择代码格式校验方式</p>
+<p><code>Lint on save</code>：每当代码文件保存的时候进行格式校验。</p>
+<p><code>Lint and fix on commit</code>：当执行 git commit 代码提交的时候进行校验和尝试自动修复校验失败的语法格式，如果校验失败并且自动修复也失败，就无法完成代码提交。你需要手动解决了代码格式问题然后重新提交，这样就确保版本历史中的代码一定没有代码格式问题。</p>
+</li>
+<li>
+<p>选择完毕进入下一步；
+<img src="./assets/1580820478078.png" alt="1580820478078" /></p>
+<p>VueCLI 会在项目中生成一些工具的配置文件。配置文件可以存储在两个地方：</p>
+<p><code>In dedicated config files</code>：生成独立的配置文件，推荐，维护方便</p>
+<p><code>In package.json</code> 混到 package.json 文件中，不推荐，维护麻烦</p>
+<p>这里我们选择第1种，将这些工具的配置文件保存到独立的配置文件中，方便查看和修改。</p>
+</li>
+<li>
+<p>选择完毕进入下一步；
+<img src="./assets/1580820544731.png" alt="1580820544731" /></p>
+<p>你可以把你刚才那些选择配置项保存为一个模板，下次使用 <code>vue create</code> 创建项目的时候它会提示你是否可以使用这个选择模板直接创建你的项目。</p>
+<p>如果你需要，就输入 <code>y</code>，然后它会让你给这个模板起个名字，下次就可以直接使用；</p>
+<p>如果不需要，就输入 <code>n</code>，继续下一步。</p>
+<p>这里我们不需要，输入 <code>n</code> 继续下一步。</p>
+</li>
+<li>
+<p>进入下一步；开始安装；
+<img src="./assets/1580820614618.png" alt="1580820614618" /></p>
+</li>
+</ol>
+<h3 id="项目目录介绍"> 项目目录介绍</h3>
+<div><pre><code>│  .browserslistrc 该文件会被 Babel 和 Autoprefix 用来根据浏览器的版本确定需要转译的 JavaScript 特性和 CSS 浏览器前缀
+│  .editorconfig 编辑器配置文件，编辑器会根据该文件选择编辑格式
+│  .eslintrc.js ESLint配置文件
+│  .gitignore Git忽略配置文件
+│  babel.config.js Babel转码工具配置文件
+│  package-lock.json 包管理工具的锁定文件
+│  package.json	包说明文件
+│  postcss.config.js	postcss配置文件
+│  README.md 说明文档
+│  
+├─node_modules 第三方包
+├─public 公共资源目录
+│      favicon.ico
+│      index.html
+│      
+└─src 源码目录
+    │  App.vue 根组件
+    │  main.js 入口模块
+    │  router.js 路由模块
+    │  
+    ├─assets 静态资源目录
+    │      logo.png
+    │      
+    ├─components 非路由组件目录
+    │      HelloWorld.vue
+    │      
+    └─views 路由组件目录
+            About.vue
+            Home.vue
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>总结</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-90/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-90/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">总结</source>
+      <category>vue</category>
+      <pubDate>Sat, 11 Sep 2021 20:20:23 GMT</pubDate>
+      <content:encoded><![CDATA[<p>通过srr的一个简单demo,梳理下vue-srr使用的心得，整个流程体验完后，感觉和直接写客户端代码没太大区别，大致流程是：</p>
+<ol>
+<li>srr需要node服务，所以需要有一个启动文件写后端代码，用来托管静态资源和响应html内容；</li>
+<li>webpack需要打包出两份文件，一个用于服务端一个用于客户端；</li>
+<li>整合vueRouter和vuex；</li>
+<li>数据的预处理；</li>
+</ol>
+<p>需要注意的点：</p>
+<ol>
+<li>vue、vuex、vuerouter都需要返回一个工厂函数，因为用户会有多个，每个用户访问的页面都不相同，所以路由及数据需要独立存在；</li>
+<li>异步数据预处理；</li>
+</ol>
+<p>特点：</p>
+<ul>
+<li>vue的ssr只是在首屏渲染的时候用到，之后再切换页面就是spa了；而且是交互的页面(有点击事件等)</li>
+<li>异步数据的同步，通过预处理可以让服务端获取的数据同步到客户端，达到数据的一致性；</li>
+</ul>
+]]></content:encoded>
     </item>
     <item>
       <title>介绍</title>
@@ -37430,6 +38605,53 @@ console<span>.</span><span>log</span><span>(</span>arr<span>.</span><span>revers
 ]]></content:encoded>
     </item>
     <item>
+      <title>响应式开发</title>
+      <link>https://blog.yahweh.top/views/frontEnd/css/05_%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/css/05_%E5%93%8D%E5%BA%94%E5%BC%8F%E5%BC%80%E5%8F%91/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">响应式开发</source>
+      <category>CSS</category>
+      <pubDate>Sat, 25 Sep 2021 22:02:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>同一个网站兼容不同的大小的设备。如PC端、移动端（平板、横 屏、竖排）的显示风格。</p>
+</blockquote>
+<p>需要用到的技术:</p>
+<ul>
+<li>Media Query（媒体查询）</li>
+<li>使用em或rem做尺寸单位</li>
+<li>禁止页面缩放</li>
+<li>屏幕尺寸响应</li>
+</ul>
+<h2 id="媒体查询"> 媒体查询</h2>
+<blockquote>
+<p>用于查询设备是否符合某一特定条件，这些特定条件包括屏幕尺寸，是否可触 摸，屏幕精度，横屏竖屏等信息。</p>
+</blockquote>
+<h2 id="使用em或rem"> 使用em或rem</h2>
+<blockquote>
+<p>用于文字大小的响应和弹性布局。</p>
+</blockquote>
+<h2 id="禁止页面缩放"> 禁止页面缩放</h2>
+<div><pre><code><span><span><span>&lt;</span>meta</span> <span>name</span><span><span>=</span><span>"</span>viewport<span>"</span></span> <span>content</span><span><span>=</span><span>"</span>initial-scale=1,width=device-width, maximum-scale=1, user-scalable=no<span>"</span></span> <span>/></span></span>
+</code></pre>
+<div><span>1</span><br></div></div><h2 id="屏幕尺寸响应"> 屏幕尺寸响应</h2>
+<ul>
+<li>固定布局：页面居中，两边留白，他能适应大于某个值一定范围的宽度，但 是如果太宽就会有很多留白，太窄会出现滚动条，在PC页面上很常见。</li>
+<li>流动布局：屏幕尺寸在一定范围内变化时，不改变模块布局，只改变模块尺 寸比例。比固定布局更具响应能力，两边不留白，但是也只能适应有限的宽度变 化范围，否则模块会被挤（拉）得不成样子。</li>
+<li>自定义布局：上面几种布局方式都无法跨域大尺寸变化，所以适当时候我们需 要改变模块的位置排列或者隐藏一些次要元素。</li>
+<li>栅格布局：这种布局方式使得模块之间非常容易对齐，易于模块位置的改变 用于辅助自定义布局。</li>
+</ul>
+<h2 id="注意事项"> 注意事项</h2>
+<ul>
+<li>宽度不固定，可以使用百分比;</li>
+<li>图片处理;
+<ul>
+<li>图片的宽度和高度设置等比缩放，可以设置图片的width为百分比， height:auto。</li>
+<li>背景图片可以使用background-size 指定背景图片的大小。</li>
+</ul>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>介绍</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/</guid>
@@ -37482,6 +38704,24 @@ console<span>.</span><span>log</span><span>(</span>arr<span>.</span><span>revers
 ]]></content:encoded>
     </item>
     <item>
+      <title>为什么不建议采用定时器实现动画？requestAnimationFrame有哪些优势？</title>
+      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-02/</link>
+      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-02/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">为什么不建议采用定时器实现动画？requestAnimationFrame有哪些优势？</source>
+      <category>面试题</category>
+      <pubDate>Tue, 15 Jun 2021 22:40:23 GMT</pubDate>
+      <content:encoded><![CDATA[<p><strong>为什么不建议采用定时器实现动画？</strong></p>
+<ol>
+<li>定时器可能不会按时触发 还会有丢帧现象;</li>
+<li>通过定时器修改元素位置属性，会导致频繁的重排和重绘，从而影响到性能。</li>
+</ol>
+<p><strong>requestAnimationFrame有哪些优势？</strong></p>
+<ol>
+<li>requestAnimationFrame最大的优势是由浏览器来决定回调函数的执行时机，即紧跟浏览器的刷新步调。 不会引起动画丢帧卡顿;</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
       <title>浏览器采用多进程架构有什么优势和劣势？</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/question-note-01/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-01/</guid>
@@ -37498,24 +38738,6 @@ console<span>.</span><span>log</span><span>(</span>arr<span>.</span><span>revers
 <h2 id="缺点"> 缺点</h2>
 <ol>
 <li>系统需要为浏览器新开的进程分配内存、CPU 等资源，所以内存和 CPU 的资源消耗也会更大；</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>为什么不建议采用定时器实现动画？requestAnimationFrame有哪些优势？</title>
-      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-02/</link>
-      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-02/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">为什么不建议采用定时器实现动画？requestAnimationFrame有哪些优势？</source>
-      <category>面试题</category>
-      <pubDate>Tue, 15 Jun 2021 22:40:23 GMT</pubDate>
-      <content:encoded><![CDATA[<p><strong>为什么不建议采用定时器实现动画？</strong></p>
-<ol>
-<li>定时器可能不会按时触发 还会有丢帧现象;</li>
-<li>通过定时器修改元素位置属性，会导致频繁的重排和重绘，从而影响到性能。</li>
-</ol>
-<p><strong>requestAnimationFrame有哪些优势？</strong></p>
-<ol>
-<li>requestAnimationFrame最大的优势是由浏览器来决定回调函数的执行时机，即紧跟浏览器的刷新步调。 不会引起动画丢帧卡顿;</li>
 </ol>
 ]]></content:encoded>
     </item>
@@ -38021,30 +39243,6 @@ cors需要后台配合设置HTTP响应头，如果请求不是简单请求（1. 
 ]]></content:encoded>
     </item>
     <item>
-      <title>deno相关问题</title>
-      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-10/</link>
-      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-10/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">deno相关问题</source>
-      <category>面试题</category>
-      <pubDate>Wed, 28 Jul 2021 17:39:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>Deno发公告说要把部分ts代码重构为js。 你觉得这是什么原因？</p>
-</blockquote>
-<h2 id="官方回答"> 官方回答</h2>
-<blockquote>
-<p>在使用 TypeScript 编写内部代码时，Deno 团队遇到了以下几个现实问题：
-在变更文件时，TypeScript 往往需要几分钟的编译时间，这就导致连续编译过程变得非常缓慢；
-在创建 Deno 可执行文件以及面向用户的 API 源文件时，TypeScript 结构会引发一系列运行时性能问题；
-TypeScript 本身对于 Deno 代码的组织工作毫无帮助，反而增强了代码组织负担。Deno 团队提出的一大现实问题，是 TypeScript 会在两个位置复制相互独立的 Body 类；
-https://github.com/denoland/deno/issues/4748
-由于 TypeScript 编译器无法帮助开发者生成 d.ts 文件，内部代码与运行时 TypeScript 声明必须以手动方式保持同步；
-他们维护着两台 TS 编译器主机：一台用于内部 Deno 代码，另一台用于外部用户代码，但二者的作用其实非常相似。</p>
-</blockquote>
-<h2 id="扩展链接"> 扩展链接</h2>
-<p>https://mp.weixin.qq.com/s/h1ZNewMZZC20o80P37KqsQ</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>watch和computed的区别以及怎么选用?</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/question-note-100/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-100/</guid>
@@ -38094,6 +39292,30 @@ https://github.com/denoland/deno/issues/4748
 ]]></content:encoded>
     </item>
     <item>
+      <title>deno相关问题</title>
+      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-10/</link>
+      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-10/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">deno相关问题</source>
+      <category>面试题</category>
+      <pubDate>Wed, 28 Jul 2021 17:39:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>Deno发公告说要把部分ts代码重构为js。 你觉得这是什么原因？</p>
+</blockquote>
+<h2 id="官方回答"> 官方回答</h2>
+<blockquote>
+<p>在使用 TypeScript 编写内部代码时，Deno 团队遇到了以下几个现实问题：
+在变更文件时，TypeScript 往往需要几分钟的编译时间，这就导致连续编译过程变得非常缓慢；
+在创建 Deno 可执行文件以及面向用户的 API 源文件时，TypeScript 结构会引发一系列运行时性能问题；
+TypeScript 本身对于 Deno 代码的组织工作毫无帮助，反而增强了代码组织负担。Deno 团队提出的一大现实问题，是 TypeScript 会在两个位置复制相互独立的 Body 类；
+https://github.com/denoland/deno/issues/4748
+由于 TypeScript 编译器无法帮助开发者生成 d.ts 文件，内部代码与运行时 TypeScript 声明必须以手动方式保持同步；
+他们维护着两台 TS 编译器主机：一台用于内部 Deno 代码，另一台用于外部用户代码，但二者的作用其实非常相似。</p>
+</blockquote>
+<h2 id="扩展链接"> 扩展链接</h2>
+<p>https://mp.weixin.qq.com/s/h1ZNewMZZC20o80P37KqsQ</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>sourceMap相关</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/question-note-11/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-11/</guid>
@@ -38106,6 +39328,24 @@ https://github.com/denoland/deno/issues/4748
 <p><code>Sourcemap</code> 本质上是一个信息文件，里面储存着代码转换前后的对应位置信息。它记录了转换压缩后的代码所对应的转换前的源代码位置，是源代码和生产代码的映射。 <code>Sourcemap</code> 解决了在打包过程中，代码经过压缩，去空格以及 <code>babel</code> 编译转化后，由于代码之间差异性过大，造成无法<code>debug</code>的问题，简单说 <code>Sourcemap</code> 构建了处理前以及处理后的代码之间的一座桥梁，方便定位生产环境中出现 <code>bug</code> 的位置。因为现在的前端开发都是模块化、组件化的方式，在上线前对 js 和 css 文件进行合并压缩容易造成混淆。如果对这样的线上代码进行调试，肯定不切实际，<code>sourceMap</code> 的作用就是能够让浏览器的调试面版将生成后的代码映射到源码文件当中，开发者可以在源码文件中 debug，这样就会让程序员调试轻松、简单很多。</p>
 <p><code>Sourcemap</code> 的种类有很多， 在生产环境下可以用<code>process.env</code>判断一下。  <code>webpack</code>中可以在<code>devtool</code>中设置, 在开发环境中可以配置<code>devtool</code>为<code>cheap-module-source-map</code>，方便调试。生产环境下建议采用<code>none</code>的方式，这样做不暴露源代码。或者是<code>nosources-source-map</code> 的方式，既可以定位源代码位置，又不暴露源代码。</p>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>Vue 响应式原理</title>
+      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</link>
+      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">Vue 响应式原理</source>
+      <category>面试题</category>
+      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
+      <content:encoded><![CDATA[<p><img src="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" alt="图片" /></p>
+<blockquote>
+<p>当创建 Vue 实例时,vue 会遍历 data 选项的属性,利用 Object.defineProperty 为属性添加 getter 和 setter 对数据的读取进行劫持（getter 用来依赖收集,setter 用来派发更新）,并且在内部追踪依赖,在属性被访问和修改时通知变化。
+每个组件实例会有相应的 watcher 实例,会在组件渲染的过程中记录依赖的所有数据属性（进行依赖收集,还有 computed watcher,user watcher 实例）,之后依赖项被改动时,setter 方法会通知依赖与此 data 的 watcher 实例重新计算（派发更新）,从而使它关联的组件重新渲染。</p>
+</blockquote>
+<p>一句话总结:</p>
+<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
+<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
+]]></content:encoded>
+      <enclosure url="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" type="image/png"/>
     </item>
     <item>
       <title>简单说一说vue生命周期的理解?</title>
@@ -38172,24 +39412,6 @@ watcher或计算属性取代。注意updated不会保证所有的子组件都能
 </ol>
 ]]></content:encoded>
       <enclosure url="https://cn.vuejs.org/images/lifecycle.png" type="image/png"/>
-    </item>
-    <item>
-      <title>Vue 响应式原理</title>
-      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</link>
-      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">Vue 响应式原理</source>
-      <category>面试题</category>
-      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
-      <content:encoded><![CDATA[<p><img src="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" alt="图片" /></p>
-<blockquote>
-<p>当创建 Vue 实例时,vue 会遍历 data 选项的属性,利用 Object.defineProperty 为属性添加 getter 和 setter 对数据的读取进行劫持（getter 用来依赖收集,setter 用来派发更新）,并且在内部追踪依赖,在属性被访问和修改时通知变化。
-每个组件实例会有相应的 watcher 实例,会在组件渲染的过程中记录依赖的所有数据属性（进行依赖收集,还有 computed watcher,user watcher 实例）,之后依赖项被改动时,setter 方法会通知依赖与此 data 的 watcher 实例重新计算（派发更新）,从而使它关联的组件重新渲染。</p>
-</blockquote>
-<p>一句话总结:</p>
-<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
-<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
-]]></content:encoded>
-      <enclosure url="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" type="image/png"/>
     </item>
     <item>
       <title>computed 的实现原理</title>
@@ -40226,7 +41448,7 @@ root@yaweidediannao:/<span># cd /</span>
       <guid>https://blog.yahweh.top/views/issues/15_Client%20does%20not%20support%20authentication/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Client does not support authentication pr</source>
       <category>issues</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication pr</p>
 </blockquote>
@@ -41164,7 +42386,7 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
       <guid>https://blog.yahweh.top/views/issues/issues-13/</guid>
       <source url="https://blog.yahweh.top/rss.xml">vue跨域解决方案</source>
       <category>issues</category>
-      <pubDate>Sat, 22 Jan 2022 05:45:33 GMT</pubDate>
+      <pubDate>Sun, 23 Jan 2022 09:10:32 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1、问题概述"> 1、问题概述；</h2>
 <blockquote>
 <p>在项目中我们时常会遇到跨域，比如下面的这种情况；</p>
@@ -42826,6 +44048,108 @@ $ <span>git</span> pull <span>[</span>remote<span>]</span> <span>[</span>branch<
 ]]></content:encoded>
     </item>
     <item>
+      <title>gitignore规则简介</title>
+      <link>https://blog.yahweh.top/views/tools/git/15_gitignore%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/</link>
+      <guid>https://blog.yahweh.top/views/tools/git/15_gitignore%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">gitignore规则简介</source>
+      <category>GIT</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="介绍"> 介绍；</h2>
+<blockquote>
+<p>概述：<code>git</code>版本管理工具大家都用过，但时有时候我们不需要提交所有的文件到版本管理中，比如：<code>node_modules</code>等；</p>
+<p>​				这时我们便会用到<code>.gitignore</code>文件，来配置规则以忽略我们不需要追踪的文件；</p>
+</blockquote>
+<h2 id="规则说明"> 规则说明；</h2>
+<ol>
+<li>
+<p>空行不匹配任何文件，因此可以用作分隔符以提高可读性 ；</p>
+</li>
+<li>
+<p>以<code>＃</code>开头的行用作注释。</p>
+</li>
+<li>
+<p>斜杠<code>/</code>用作目录分隔符。分隔符可能出现在开始，中间或结尾。</p>
+</li>
+<li>
+<p>如果开头或中间（或两者都有）有分隔符，则该匹配是相对于特定<code>.gitignore</code>文件本身的<strong>目录级别</strong>的。</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><code>/bar/foo</code>和（<code>bar/foo</code>同等效果）仅匹配和``.gitignore<code>同级的根目录下的</code>/bar/foo<code>,不匹配</code>/bar/foo.text`。</p>
+</li>
+<li>
+<p><code>/foo/bar.*</code>匹配和``.gitignore<code>同级的根目录下的</code>/foo/bar<code>和</code>/foo/bar.text`。</p>
+</li>
+<li>
+<p><code>foo.*</code>仅匹配同级目录下的所有<code>foo.*</code>文件。例：<code>foo.text</code></p>
+</li>
+<li>
+<p><code>bar/</code>和<code>bar</code>同等效果：匹配同级目录下的所有<code>bar</code><strong>文件夹</strong>。</p>
+</li>
+<li>
+<p><code>/bar</code>仅匹配同级根目录下<code>bar</code>文件。</p>
+</li>
+<li>
+<p><code>foo/*</code>匹配<code>foo/test.json</code>（常规文件）和<code>foo/bar</code>（目录），但不匹配<code>foo / bar / hello.c</code>。</p>
+</li>
+</ul>
+<ol start="5">
+<li>前导 <code>**</code>后跟斜杠表示在所有目录中均匹配。</li>
+</ol>
+<ul>
+<li><code>**/foo</code>与文件 <code>foo</code>相同的任何位置都匹配文件夹 <code>foo</code>。 <code>**/foo/bar</code> <code>bar</code>会在目录 <code>foo</code> 正下方的任何位置匹配文件夹。</li>
+</ul>
+<ol start="6">
+<li>
+<p>尾部的“ <code>/**</code>”与内部的所有内容匹配。例如，“ <code>abc/**</code>”将目录“ <code>abc</code>” 内的所有文件（相对于<code>.gitignore</code>文件位置）以无限深度进行匹配。</p>
+</li>
+<li>
+<p>斜杠后跟两个连续的星号，然后斜杠匹配零个或多个目录</p>
+</li>
+</ol>
+<ul>
+<li>例如，“ <code>a/**/b</code>”匹配“ <code>a/b</code>”，“ <code>a/x/b</code>”，“ <code>a/x/y/b</code>”等。</li>
+</ul>
+<ol start="8">
+<li>
+<p><strong>例子</strong>：</p>
+<ul>
+<li><code>hello.*</code>匹配名称以<code>hello</code>开头的任何文件。如果只想将此限制于目录而不是其子目录，则可以在模式前面加上斜杠，即<code>/hello.*</code>；模式现在匹配<code>hello.txt</code>，<code>hello.c</code>但是不 匹配<code>a/hello.java</code>。</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用"> 使用；</h2>
+<ol>
+<li>新建：<code>.gitignore</code>文件；</li>
+<li>配置规则；</li>
+</ol>
+<div><pre><code>.DS_Store
+node_modules
+/dist
+
+<span># local env files</span>
+.env.local
+.env.*.local
+
+<span># Log files</span>
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+<span># Editor directories and files</span>
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>GET相关命令</title>
       <link>https://blog.yahweh.top/views/tools/git/10_GET%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
       <guid>https://blog.yahweh.top/views/tools/git/10_GET%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
@@ -43043,108 +44367,6 @@ $ <span>git</span> pull <span>[</span>remote<span>]</span> <span>[</span>branch<
 ]]></content:encoded>
     </item>
     <item>
-      <title>gitignore规则简介</title>
-      <link>https://blog.yahweh.top/views/tools/git/15_gitignore%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/</link>
-      <guid>https://blog.yahweh.top/views/tools/git/15_gitignore%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">gitignore规则简介</source>
-      <category>GIT</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="介绍"> 介绍；</h2>
-<blockquote>
-<p>概述：<code>git</code>版本管理工具大家都用过，但时有时候我们不需要提交所有的文件到版本管理中，比如：<code>node_modules</code>等；</p>
-<p>​				这时我们便会用到<code>.gitignore</code>文件，来配置规则以忽略我们不需要追踪的文件；</p>
-</blockquote>
-<h2 id="规则说明"> 规则说明；</h2>
-<ol>
-<li>
-<p>空行不匹配任何文件，因此可以用作分隔符以提高可读性 ；</p>
-</li>
-<li>
-<p>以<code>＃</code>开头的行用作注释。</p>
-</li>
-<li>
-<p>斜杠<code>/</code>用作目录分隔符。分隔符可能出现在开始，中间或结尾。</p>
-</li>
-<li>
-<p>如果开头或中间（或两者都有）有分隔符，则该匹配是相对于特定<code>.gitignore</code>文件本身的<strong>目录级别</strong>的。</p>
-</li>
-</ol>
-<ul>
-<li>
-<p><code>/bar/foo</code>和（<code>bar/foo</code>同等效果）仅匹配和``.gitignore<code>同级的根目录下的</code>/bar/foo<code>,不匹配</code>/bar/foo.text`。</p>
-</li>
-<li>
-<p><code>/foo/bar.*</code>匹配和``.gitignore<code>同级的根目录下的</code>/foo/bar<code>和</code>/foo/bar.text`。</p>
-</li>
-<li>
-<p><code>foo.*</code>仅匹配同级目录下的所有<code>foo.*</code>文件。例：<code>foo.text</code></p>
-</li>
-<li>
-<p><code>bar/</code>和<code>bar</code>同等效果：匹配同级目录下的所有<code>bar</code><strong>文件夹</strong>。</p>
-</li>
-<li>
-<p><code>/bar</code>仅匹配同级根目录下<code>bar</code>文件。</p>
-</li>
-<li>
-<p><code>foo/*</code>匹配<code>foo/test.json</code>（常规文件）和<code>foo/bar</code>（目录），但不匹配<code>foo / bar / hello.c</code>。</p>
-</li>
-</ul>
-<ol start="5">
-<li>前导 <code>**</code>后跟斜杠表示在所有目录中均匹配。</li>
-</ol>
-<ul>
-<li><code>**/foo</code>与文件 <code>foo</code>相同的任何位置都匹配文件夹 <code>foo</code>。 <code>**/foo/bar</code> <code>bar</code>会在目录 <code>foo</code> 正下方的任何位置匹配文件夹。</li>
-</ul>
-<ol start="6">
-<li>
-<p>尾部的“ <code>/**</code>”与内部的所有内容匹配。例如，“ <code>abc/**</code>”将目录“ <code>abc</code>” 内的所有文件（相对于<code>.gitignore</code>文件位置）以无限深度进行匹配。</p>
-</li>
-<li>
-<p>斜杠后跟两个连续的星号，然后斜杠匹配零个或多个目录</p>
-</li>
-</ol>
-<ul>
-<li>例如，“ <code>a/**/b</code>”匹配“ <code>a/b</code>”，“ <code>a/x/b</code>”，“ <code>a/x/y/b</code>”等。</li>
-</ul>
-<ol start="8">
-<li>
-<p><strong>例子</strong>：</p>
-<ul>
-<li><code>hello.*</code>匹配名称以<code>hello</code>开头的任何文件。如果只想将此限制于目录而不是其子目录，则可以在模式前面加上斜杠，即<code>/hello.*</code>；模式现在匹配<code>hello.txt</code>，<code>hello.c</code>但是不 匹配<code>a/hello.java</code>。</li>
-</ul>
-</li>
-</ol>
-<h2 id="使用"> 使用；</h2>
-<ol>
-<li>新建：<code>.gitignore</code>文件；</li>
-<li>配置规则；</li>
-</ol>
-<div><pre><code>.DS_Store
-node_modules
-/dist
-
-<span># local env files</span>
-.env.local
-.env.*.local
-
-<span># Log files</span>
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-<span># Editor directories and files</span>
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>介绍</title>
       <link>https://blog.yahweh.top/views/tools/git/</link>
       <guid>https://blog.yahweh.top/views/tools/git/</guid>
@@ -43352,6 +44574,65 @@ PS C:<span>\</span>Users<span>\</span>wangy<span>\</span>Desktop<span>></span> s
 ]]></content:encoded>
     </item>
     <item>
+      <title>乱蹦的小球</title>
+      <link>https://blog.yahweh.top/views/frontEnd/css/10_%E4%B9%B1%E8%B9%A6%E7%9A%84%E5%B0%8F%E7%90%83/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/css/10_%E4%B9%B1%E8%B9%A6%E7%9A%84%E5%B0%8F%E7%90%83/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">乱蹦的小球</source>
+      <category>CSS</category>
+      <pubDate>Sun, 26 Sep 2021 22:17:23 GMT</pubDate>
+      <content:encoded><![CDATA[<div><pre><code><span><span>&lt;!</span><span>DOCTYPE</span> <span>html</span><span>></span></span>
+<span><span><span>&lt;</span>html</span> <span>lang</span><span><span>=</span><span>"</span>en<span>"</span></span><span>></span></span>
+  <span><span><span>&lt;</span>head</span><span>></span></span>
+    <span><span><span>&lt;</span>title</span><span>></span></span>乱蹦的小球<span><span><span>&lt;/</span>title</span><span>></span></span>
+    <span><span><span>&lt;</span>style</span> <span>type</span><span><span>=</span><span>"</span>text/css<span>"</span></span><span>></span></span><span><span>
+      <span>.box</span> <span>{</span>
+        <span>width</span><span>:</span> 300px<span>;</span>
+        <span>height</span><span>:</span> 300px<span>;</span>
+        <span>margin</span><span>:</span> 0 auto<span>;</span>
+      <span>}</span>
+      <span>#canvas</span> <span>{</span>
+        <span>background</span><span>:</span> #ccc<span>;</span>
+      <span>}</span>
+    </span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
+  <span><span><span>&lt;/</span>head</span><span>></span></span>
+  <span><span><span>&lt;</span>body</span><span>></span></span>
+    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>"</span>box<span>"</span></span><span>></span></span>
+      <span><span><span>&lt;</span>canvas</span> <span>width</span><span><span>=</span><span>"</span>300<span>"</span></span> <span>height</span><span><span>=</span><span>"</span>300<span>"</span></span> <span>id</span><span><span>=</span><span>"</span>canvas<span>"</span></span><span>></span></span>您的浏览器不支持canvas请更换浏览器<span><span><span>&lt;/</span>canvas</span><span>></span></span>
+    <span><span><span>&lt;/</span>div</span><span>></span></span>
+    <span><span><span>&lt;</span>script</span><span>></span></span><span><span>
+      <span>var</span> x <span>=</span> <span>0</span><span>,</span>
+        y <span>=</span> <span>0</span><span>,</span>
+        dx <span>=</span> <span>3</span><span>,</span>
+        dy <span>=</span> <span>5</span><span>,</span>
+        canvas <span>//小球从(0,0) 开始移动, 横向步长为3, 纵向步长为 5</span>
+      <span>var</span> <span>draw</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+        <span>drawDisc</span><span>(</span>x<span>,</span> y<span>)</span> <span>// 使用自定义的画圆方法, 在当前(x,y) 坐标出画一个实心圆 // 判断边界值, 调整dx/dy 以改变x/y坐标变化方向</span>
+        <span>if</span> <span>(</span>x <span>+</span> dy <span>></span> canvas<span>.</span>width <span>||</span> x <span>+</span> dx <span>&lt;</span> <span>0</span><span>)</span> dx <span>=</span> <span>-</span>dx
+        <span>if</span> <span>(</span>y <span>+</span> dy <span>></span> canvas<span>.</span>height <span>||</span> y <span>+</span> dy <span>&lt;</span> <span>0</span><span>)</span> dy <span>=</span> <span>-</span>dy
+        x <span>+=</span> dx
+        y <span>+=</span> dy
+      <span>}</span> <span>// 画实心圆函数; 以鼠标当前位置为原点绘制一个蓝色实心圆</span>
+      <span>var</span> <span>drawDisc</span> <span>=</span> <span>function</span><span>(</span><span>x<span>,</span> y</span><span>)</span> <span>{</span>
+        <span>var</span> ctx <span>=</span> canvas<span>.</span><span>getContext</span><span>(</span><span>'2d'</span><span>)</span>
+        ctx<span>.</span><span>clearRect</span><span>(</span><span>0</span><span>,</span> <span>0</span><span>,</span> canvas<span>.</span>width<span>,</span> canvas<span>.</span>height<span>)</span> <span>// 清除整个canvas画面</span>
+        ctx<span>.</span>fillStyle <span>=</span> <span>'#00f'</span>
+        ctx<span>.</span>strokeStyle <span>=</span> <span>'f00'</span>
+        ctx<span>.</span>lineWidth <span>=</span> <span>3</span>
+        ctx<span>.</span><span>beginPath</span><span>(</span><span>)</span>
+        ctx<span>.</span><span>arc</span><span>(</span>x<span>,</span> y<span>,</span> <span>20</span><span>,</span> <span>0</span><span>,</span> Math<span>.</span><span>PI</span> <span>*</span> <span>2</span><span>,</span> <span>true</span><span>)</span> <span>//画圆弧(x坐标, y坐标, 半径, 起始角, 结束角, true[逆时针]| false[顺时针])</span>
+        ctx<span>.</span><span>stroke</span><span>(</span><span>)</span> <span>//描边</span>
+        ctx<span>.</span><span>fill</span><span>(</span><span>)</span> <span>// 填充</span>
+        ctx<span>.</span><span>closePath</span><span>(</span><span>)</span>
+      <span>}</span>
+      canvas <span>=</span> document<span>.</span><span>getElementById</span><span>(</span><span>'canvas'</span><span>)</span>
+      <span>setInterval</span><span>(</span>draw<span>,</span> <span>10</span><span>)</span> <span>// 设置绘圆周期为 10 毫秒</span>
+    </span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
+  <span><span><span>&lt;/</span>body</span><span>></span></span>
+<span><span><span>&lt;/</span>html</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
       <title>el和$mount的区别</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-95/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-95/</guid>
@@ -43460,210 +44741,6 @@ PS C:<span>\</span>Users<span>\</span>wangy<span>\</span>Desktop<span>></span> s
 <span>}</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>总结</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-90/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-90/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">总结</source>
-      <category>vue</category>
-      <pubDate>Sat, 11 Sep 2021 20:20:23 GMT</pubDate>
-      <content:encoded><![CDATA[<p>通过srr的一个简单demo,梳理下vue-srr使用的心得，整个流程体验完后，感觉和直接写客户端代码没太大区别，大致流程是：</p>
-<ol>
-<li>srr需要node服务，所以需要有一个启动文件写后端代码，用来托管静态资源和响应html内容；</li>
-<li>webpack需要打包出两份文件，一个用于服务端一个用于客户端；</li>
-<li>整合vueRouter和vuex；</li>
-<li>数据的预处理；</li>
-</ol>
-<p>需要注意的点：</p>
-<ol>
-<li>vue、vuex、vuerouter都需要返回一个工厂函数，因为用户会有多个，每个用户访问的页面都不相同，所以路由及数据需要独立存在；</li>
-<li>异步数据预处理；</li>
-</ol>
-<p>特点：</p>
-<ul>
-<li>vue的ssr只是在首屏渲染的时候用到，之后再切换页面就是spa了；而且是交互的页面(有点击事件等)</li>
-<li>异步数据的同步，通过预处理可以让服务端获取的数据同步到客户端，达到数据的一致性；</li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>数据预取</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/vue-note-85/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/vue-note-85/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">数据预取</source>
-      <category>vue</category>
-      <pubDate>Sat, 11 Sep 2021 20:20:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>在服务器端渲染(SSR)期间，我们本质上是在渲染我们应用程序的&quot;快照&quot;，所以如果应用程序依赖于一些异步数据，<strong>那么在开始渲染过程之前，需要先预取和解析好这些数据</strong>。</p>
-</blockquote>
-<h2 id="异步数据获取"> 异步数据获取</h2>
-<p>在这里需要先提一个小问题，其实在一开始我不太明白为什么要进行服务器端异步数据预处理？异步数据在客户端请求和在服务端请求，单对请求响应时间来说都是一样的，那为什么还要在服务端预处理异步数据呢？如果在服务端请求的接口响应时间比较长的话，那么客户端不是一样会长时间的白屏吗？</p>
-<p><strong>其实答案很简单：主要是为了SEO,如果提前把异步数据加载好，那么就利于爬虫爬取我们的页面；</strong></p>
-<p>修改<code>store/index.js</code></p>
-<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span>
-<span>import</span> Vuex <span>from</span> <span>'vuex'</span>
-
-Vue<span>.</span><span>use</span><span>(</span>Vuex<span>)</span>
-
-<span>export</span> <span>function</span> <span>createStore</span> <span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>new</span> <span>Vuex<span>.</span>Store</span><span>(</span><span>{</span>
-        state<span>:</span> <span>{</span>
-            count<span>:</span><span>108</span>
-        <span>}</span><span>,</span>
-        mutations<span>:</span> <span>{</span>
-            <span>add</span><span>(</span><span>state<span>,</span> count</span><span>)</span><span>{</span>
-                state<span>.</span>count <span>=</span> count<span>;</span>
-            <span>}</span>
-        <span>}</span><span>,</span>
-        actions<span>:</span> <span>{</span>
-            <span>// 加一个异步请求count的action</span>
-            <span>getCount</span><span>(</span><span><span>{</span> commit <span>}</span></span><span>)</span> <span>{</span>
-                <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>resolve</span> <span>=></span> <span>{</span>
-                    <span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-                        <span>commit</span><span>(</span><span>"add"</span><span>,</span> Math<span>.</span><span>random</span><span>(</span><span>)</span> <span>*</span> <span>100</span><span>)</span><span>;</span>
-                        <span>resolve</span><span>(</span><span>)</span><span>;</span>
-                    <span>}</span><span>,</span> <span>1000</span><span>)</span><span>;</span>
-                <span>}</span><span>)</span><span>;</span>
-            <span>}</span><span>,</span>
-        <span>}</span><span>,</span>
-    <span>}</span><span>)</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br></div></div><blockquote>
-<p>这一步的主要操作是用于模拟异步请求；异步请求的数据保存在vuex里面；</p>
-</blockquote>
-<h2 id="组件中的数据预取"> 组件中的数据预取</h2>
-<p>修改<code>views/home.vue</code></p>
-<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
-    <span><span><span>&lt;</span>div</span><span>></span></span>
-        <span><span><span>&lt;</span>h2</span> <span>@click</span><span><span>=</span><span>"</span>$store.commit(<span>'</span>add<span>'</span>)<span>"</span></span><span>></span></span>{{$store.state.count}}<span><span><span>&lt;/</span>h2</span><span>></span></span>
-        <span><span><span>&lt;</span>h1</span><span>></span></span>HOME<span><span><span>&lt;/</span>h1</span><span>></span></span>
-    <span><span><span>&lt;/</span>div</span><span>></span></span>
-<span><span><span>&lt;/</span>template</span><span>></span></span>
-<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
-<span>export</span> <span>default</span> <span>{</span>
-    <span>// 约定预取逻辑编写在预取钩子asyncData中</span>
-    <span>asyncData</span><span>(</span><span><span>{</span> store <span>}</span></span><span>)</span> <span>{</span>
-        <span>// 触发action后，返回promise以便确定请求结果</span>
-        <span>return</span> store<span>.</span><span>dispatch</span><span>(</span><span>'getCount'</span><span>)</span><span>;</span>
-    <span>}</span><span>,</span>
-<span>}</span>
-</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><blockquote>
-<p>在当前页面中从vuex中获取数据；</p>
-</blockquote>
-<h2 id="客户端数据预取"> 客户端数据预取</h2>
-<p>在客户端，处理数据预取有两种不同方式：</p>
-<ol>
-<li>在路由导航之前解析数据</li>
-<li>匹配要渲染的视图后，再获取数据</li>
-</ol>
-<h3 id="在路由导航之前解析数据"> 在路由导航之前解析数据</h3>
-<p>修改<code>entry-server.js</code></p>
-<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
-<span>// 返回一个函数，接收请求上下文，返回创建的vue实例</span>
-<span>export</span> <span>default</span> <span>context</span> <span>=></span> <span>{</span>
-    <span>// 这里返回一个Promise，确保客户端入口准备就绪  </span>
-    <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>(</span><span>resolve<span>,</span> reject</span><span>)</span> <span>=></span> <span>{</span>
-        <span>const</span> <span>{</span> app<span>,</span> router<span>,</span> store <span>}</span> <span>=</span> <span>createApp</span><span>(</span><span>)</span><span>;</span>
-        <span>// 跳转到首屏的地址</span>
-        router<span>.</span><span>push</span><span>(</span>context<span>.</span>url<span>)</span><span>;</span>
-        <span>// 路由就绪，返回结果</span>
-        router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-            <span>// 获取匹配的路由组件数组</span>
-            <span>const</span> matchedComponents <span>=</span> router<span>.</span><span>getMatchedComponents</span><span>(</span><span>)</span><span>;</span>
-
-            <span>// 若无匹配则抛出异常；</span>
-            <span>if</span> <span>(</span><span>!</span>matchedComponents<span>.</span>length<span>)</span> <span>{</span>
-                <span>return</span> <span>reject</span><span>(</span><span>{</span> code<span>:</span> <span>404</span><span>,</span> msg<span>:</span> <span>'页面找不到！'</span> <span>}</span><span>)</span>
-            <span>}</span>
-            <span>// 对所有匹配的路由组件调用可能存在的asyncData();</span>
-            Promise<span>.</span><span>all</span><span>(</span>matchedComponents<span>.</span><span>map</span><span>(</span><span>component</span> <span>=></span> <span>{</span>
-                <span>if</span> <span>(</span>component<span>.</span>asyncData<span>)</span> <span>{</span>
-                    <span>return</span> component<span>.</span><span>asyncData</span><span>(</span><span>{</span>
-                        store<span>,</span>
-                        route<span>:</span> router<span>.</span>currentRoute<span>,</span>
-                    <span>}</span><span>)</span>
-                <span>}</span>
-            <span>}</span><span>)</span><span>)</span><span>.</span><span>then</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-                <span>// 所有预取钩子 resolve 后，</span>
-                <span>// store 已经填充完预渲染应用所需数据</span>
-                <span>// 将状态附加到上下文，且 `template` 选项用于 renderer 时，</span>
-                <span>// 状态将自动序列化为 `window.__INITIAL_STATE__`，并注入 HTML。</span>
-                context<span>.</span>state <span>=</span> store<span>.</span>state<span>;</span>
-                <span>resolve</span><span>(</span>app<span>)</span><span>;</span>
-            <span>}</span><span>)</span><span>.</span><span>catch</span><span>(</span>reject<span>)</span><span>;</span>
-        <span>}</span><span>,</span> reject<span>)</span><span>;</span>
-    <span>}</span><span>)</span><span>;</span>
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br></div></div><blockquote>
-<p>查找当前路由所有可能匹配的页面，然后调用异步请求函数获取异步请求数据，然后异步数据获取之后自动序列化为 <code>window.__INITIAL_STATE__</code>，并注入 HTML。这一步主要特点是数据在路由导航之前就解析好了。</p>
-</blockquote>
-<h3 id="匹配要渲染的视图后"> 匹配要渲染的视图后</h3>
-<p>修改<code>main.js</code>,并添加以下代码</p>
-<div><pre><code>Vue<span>.</span><span>mixin</span><span>(</span><span>{</span>
-  <span>beforeMount</span><span>(</span><span>)</span> <span>{</span>
-    <span>const</span> <span>{</span> asyncData <span>}</span> <span>=</span> <span>this</span><span>.</span>$options<span>;</span>
-    <span>if</span> <span>(</span>asyncData<span>)</span> <span>{</span>
-      <span>// 将获取数据操作分配给 promise</span>
-      <span>// 以便在组件中，我们可以在数据准备就绪后</span>
-      <span>// 通过运行 `this.dataPromise.then(...)` 来执行其他任务</span>
-      <span>this</span><span>.</span>dataPromise <span>=</span> <span>asyncData</span><span>(</span><span>{</span>
-        store<span>:</span> <span>this</span><span>.</span>$store<span>,</span>
-        route<span>:</span> <span>this</span><span>.</span>$route<span>,</span>
-      <span>}</span><span>)</span><span>;</span>
-    <span>}</span>
-  <span>}</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
-<p>主要特点是：数据是在客户端获取的，在页面加载完后再发送异步请求填充数据；</p>
-</blockquote>
-<h2 id="客户端恢复数据"> 客户端恢复数据</h2>
-<blockquote>
-<p>当使用 <code>template</code> 时，<code>context.state</code> 将作为 <code>window.__INITIAL_STATE__</code> 状态，自动嵌入到最终的 HTML 中。而在客户端，在挂载到应用程序之前，store 就应该获取到状态：</p>
-</blockquote>
-<p>修改<code>entry-client.js</code></p>
-<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
-<span>// 创建vue、router实例</span>
-<span>const</span> <span>{</span> app<span>,</span> router<span>,</span> store <span>}</span> <span>=</span> <span>createApp</span><span>(</span><span>)</span><span>;</span>
-
-<span>if</span> <span>(</span>window<span>.</span>__INITIAL_STATE__<span>)</span> <span>{</span>
-    store<span>.</span><span>replaceState</span><span>(</span>window<span>.</span>__INITIAL_STATE__<span>)</span><span>;</span>
-<span>}</span>
-
-<span>// 路由就绪，执行挂载</span>
-router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-    app<span>.</span><span>$mount</span><span>(</span><span>"#app"</span><span>,</span> <span>true</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><h2 id="url改变时重新获取数据"> url改变时重新获取数据</h2>
-<blockquote>
-<p>当页面url改变时，尤其是一些详情页，那么页面的数据就需要重新获取；</p>
-</blockquote>
-<p>修改<code>main.js</code></p>
-<div><pre><code>Vue<span>.</span><span>mixin</span><span>(</span><span>{</span>
-  <span>beforeUpdate</span><span>(</span><span>)</span> <span>{</span>
-    <span>const</span> <span>{</span> asyncData <span>}</span> <span>=</span> <span>this</span><span>.</span>$options<span>;</span>
-    <span>if</span> <span>(</span>asyncData<span>)</span> <span>{</span>
-      <span>// 将获取数据操作分配给 promise</span>
-      <span>// 以便在组件中，我们可以在数据准备就绪后</span>
-      <span>// 通过运行 `this.dataPromise.then(...)` 来执行其他任务</span>
-      <span>this</span><span>.</span>dataPromise <span>=</span> <span>asyncData</span><span>(</span><span>{</span>
-        store<span>:</span> <span>this</span><span>.</span>$store<span>,</span>
-        route<span>:</span> <span>this</span><span>.</span>$route<span>,</span>
-      <span>}</span><span>)</span><span>;</span>
-    <span>}</span>
-  <span>}</span><span>,</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><blockquote>
-<p>利用全局混入，在路由路径改变时重新获取最新的数据；</p>
-</blockquote>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
