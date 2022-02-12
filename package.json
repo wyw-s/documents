@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "build-super": "node --max_old_space_size=6144 ./node_modules/vuepress/cli.js build docs",
     "deploy": "node ./bin/deploy.js",
     "pushZip": "node ./utils/zip.js"
   },
