@@ -1,5 +1,5 @@
 ---
-title: jenkins基础命令；
+title: jenkins基础命令
 category: JENKINS
 date: 2021-05-02
 ---

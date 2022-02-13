@@ -8,7 +8,7 @@ date: 2021-05-02
 
 ## 目录
 
-- [HTML基础总结](html-note-00.md)
+- [HTML基础总结](03_HTML基础总结.md)
 - [页面渲染原理](05_页面渲染原理.md)
 - [script和link](10_script和link.md)
 - [link和@import的区别](15_link和@inport.md)

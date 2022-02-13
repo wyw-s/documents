@@ -1,5 +1,5 @@
 ---
-title: 事件驱动 events
+title: 事件驱动events
 time: 2021-06-19 00:19:35
 autoGroup-3: nodejs核心模块
 category: nodejs

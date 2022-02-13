@@ -8,7 +8,7 @@ date: 2021-05-02
 
 ## 目录
 
-- [webpack项目初始化](webpack-note-00.md)
-- [webpack、webpack-cli、webpack-dev-server的关系](webpack-note-02.md)
-- [webpack打包进度条](webpack-note-03.md)
-- [css-loader](webpack-note-07.md)
+- [webpack项目初始化](05_webpack项目初始化.md)
+- [webpack、webpack-cli、webpack-dev-server的关系](10_webpack、webpack-cli、webpack-dev-server的关系.md)
+- [webpack打包进度条](15_webpack打包进度条.md)
+- [css-loader](16_css-loader.md)
