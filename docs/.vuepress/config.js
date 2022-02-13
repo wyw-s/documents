@@ -116,6 +116,31 @@ module.exports = config({
     // },
   },
   plugins: [
-    'vuepress-plugin-auto-sidebar',
+      [
+        require('./plugin-auto-sidebar/lib/index.js'),
+        {
+          sort: {
+            mode: 'custom',
+            readmeFirst: true,
+            fn: (a, b) => {
+              let sort = -1;
+              if (/^\d+_.*/.test(a.filename)) {
+                const lastA = a.filename.split('_')[0];
+                const lastB = b.filename.split('_')[0];
+                if (Number(lastA) > Number(lastB)) {
+                  sort = 1;
+                }
+              } else if (/.*-\d+$/.test(a.filename) && /.*-\d+$/.test(b.filename)) {
+                const lastA = a.filename.match(/\d+$/)[0];
+                const lastB = b.filename.match(/\d+$/)[0];
+                if (Number(lastA) > Number(lastB)) {
+                  sort = 1;
+                }
+              }
+              return sort;
+            }
+          },
+        }
+      ]
   ]
 })

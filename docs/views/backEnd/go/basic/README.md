@@ -8,7 +8,7 @@ date: 2021-12-27
 
 ## 目录
 
-- [Golang引入](05_Golang引入.md)
+- [Golang引入](5_Golang引入.md)
 - [Golang简史](10_Golang简史.md)
 - [开发工具介绍](15_开发工具介绍.md)
 - [开发环境搭建](20_开发环境搭建.md)
