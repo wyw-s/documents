@@ -6,8 +6,8 @@
     <link>https://blog.yahweh.top/</link>
     <description>一个记录琐碎知识的笔记文档✨</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 04 Apr 2022 15:16:55 GMT</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2022 15:16:55 GMT</lastBuildDate>
+    <pubDate>Tue, 05 Apr 2022 07:46:18 GMT</pubDate>
+    <lastBuildDate>Tue, 05 Apr 2022 07:46:18 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by Mr. Yahweh</copyright>
@@ -46,9 +46,20 @@
       <link>https://blog.yahweh.top/</link>
       <guid>https://blog.yahweh.top/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Home</source>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="关于"> 关于</h2>
 <p>一个程序员发牢骚的地方</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>介绍</title>
+      <link>https://blog.yahweh.top/guide/</link>
+      <guid>https://blog.yahweh.top/guide/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>完成这个文档笔记，也刚好把自己以前记的笔记做一次整理，虽然也花了不少时间，不过也算是完成了吧，在写这个文档笔记之前也调研了其它的文档笔记，但是在网上得到了反馈有很多都是我们的尤大大写的这个<code>vuepress</code>专为文档设计而提供的解决方案，又由于看的说明文档可以自己以vue的方式开发自定义主题，所以最后就选择了，vuepress。</p>
+</blockquote>
 ]]></content:encoded>
     </item>
     <item>
@@ -80,17 +91,6 @@
 <p>自己也希望做出来的笔记可以结构化，但事与愿违通常我们的笔记都是随笔的，也就是说缺乏结构和体系，然而一个好的知识结构体系可以很好的帮助我们快速整理自己的碎片化记忆，提升自己的知识深度与广度。</p>
 ]]></content:encoded>
       <enclosure url="https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200318125116.jpg" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>介绍</title>
-      <link>https://blog.yahweh.top/guide/</link>
-      <guid>https://blog.yahweh.top/guide/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>完成这个文档笔记，也刚好把自己以前记的笔记做一次整理，虽然也花了不少时间，不过也算是完成了吧，在写这个文档笔记之前也调研了其它的文档笔记，但是在网上得到了反馈有很多都是我们的尤大大写的这个<code>vuepress</code>专为文档设计而提供的解决方案，又由于看的说明文档可以自己以vue的方式开发自定义主题，所以最后就选择了，vuepress。</p>
-</blockquote>
-]]></content:encoded>
     </item>
     <item>
       <title>docker安装</title>
@@ -6265,6 +6265,129 @@ $ ./goreleaser.exe --rm-dist
 ]]></content:encoded>
     </item>
     <item>
+      <title>如何组织你的Go项目目录结构</title>
+      <link>https://blog.yahweh.top/views/backEnd/go/basic/505_%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E4%BD%A0%E7%9A%84Go%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/go/basic/505_%E5%A6%82%E4%BD%95%E7%BB%84%E7%BB%87%E4%BD%A0%E7%9A%84Go%E9%A1%B9%E7%9B%AE%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">如何组织你的Go项目目录结构</source>
+      <category>GoLang</category>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>不论采用何种编程语言，良好的项目组织结构都至关重要，因为这将直接影响项目内部依赖的复杂程度以及项目对外提供 API 等服务的灵活性等。最好在项目初期便制定好项目结构约定，甚至可以为其开发脚手架之类的工具来生成项目模板，让开发者尽量按照统一的规范参与项目。</p>
+</blockquote>
+<h2 id="前言"> 前言</h2>
+<p>go语言发展至今因为包依赖的问题有两种构建模式：经典的gopath mode和目前的go module标准mode。在 Go 1.11 之前，Go 项目源代码通常放置在 $GOPATH/src 下；在 Go 1.11 之后，引入了 Go modules，因此你所编写的 Go 项目可以放置在任意目录。</p>
+<h3 id="gopath-mode"> gopath mode</h3>
+<p>在经典的gopath mode下，事实证明的最佳实践是将多个proj放在单一GOPATH下。</p>
+<p><strong>请注意：</strong></p>
+<ol>
+<li>请确保你已经配置的<code>GOPATH=E:\goProject</code></li>
+<li>请设置<code>GO111MODULE=auto</code></li>
+</ol>
+<div><pre><code>goProject    
+├── bin  
+├── pkg                                                           
+└── src                                                                                
+      ├── testProject01                        
+      └── testProject02                                 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><blockquote>
+<p>这种方式是只有一个GOPATH然后在src文件下创建不同的项目，但是这样的话每个项目所需要的依赖也就都放在同一个地方。</p>
+</blockquote>
+<div><pre><code>goProject    
+├── testProject01        
+    ├── bin  
+    ├── pkg                                                           
+    └── src  
+└── testProject02           
+    ├── bin  
+    ├── pkg                                                           
+    └── src 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><blockquote>
+<p>这种方式的确是将每个项目都区分开了，但是每一个项目都需要一个单独都GOPATH。</p>
+</blockquote>
+<h3 id="go-module"> go module</h3>
+<p>在go module下，由于go module启用后彻底与GOPATH<code>解绑</code>，因此你可以在任意路径下放置你的testProject01。并且你无需将testProject01、testProject02放置在同一个目录下，放在任意目录下均可。</p>
+<div><pre><code>goProject    
+├── testProject01        
+    ├── bin  
+    ├── pkg                                                           
+    └── src  
+└── testProject02           
+    ├── bin  
+    ├── pkg                                                           
+    └── src 
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><h2 id="实例"> 实例</h2>
+<h3 id="gopath-mode-2"> gopath mode</h3>
+<p>目录结构：</p>
+<div><pre><code>PS E<span>:</span>\goProject\src\testProject01<span>></span> treee
+testProject01  
+├── main       
+│   └── test<span>.</span><span>go</span>
+└── unit2
+    └── testUtils
+        └── testUtils<span>.</span><span>go</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><div><pre><code><span>// test.go</span>
+<span>package</span> main
+
+<span>import</span> <span>(</span>
+	<span>"fmt"</span>
+    <span>// 导包</span>
+	<span>"testProject01/unit2/testUtils"</span>
+<span>)</span>
+
+<span>func</span> <span>main</span><span>(</span><span>)</span> <span>{</span>
+	fmt<span>.</span><span>Println</span><span>(</span>testUtils<span>.</span>Name<span>)</span> <span>// 小明</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></div></div><div><pre><code><span>// testUtils.go</span>
+<span>package</span> testUtils
+
+<span>import</span> <span>"fmt"</span>
+
+<span>var</span> Name <span>string</span>
+<span>var</span> Age <span>int</span>
+
+<span>func</span> <span>init</span><span>(</span><span>)</span> <span>{</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"我是testUtils中的Init函数"</span><span>)</span>
+	Name <span>=</span> <span>"小明"</span>
+	Age <span>=</span> <span>20</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="go-module-2"> go module</h3>
+<p>目录结构：</p>
+<div><pre><code>PS E:<span>\</span>goProject<span>\</span>src<span>\</span>awesomeProject<span>></span> treee
+awesomeProject
+├── demo
+│   └── World.go
+├── go.mod
+└── main.go
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><div><pre><code><span>// main.go</span>
+<span>package</span> main
+
+<span>import</span> <span>(</span>
+	<span>"awesomeProject/demo"</span>
+	<span>"fmt"</span>
+<span>)</span>
+
+<span>func</span> <span>main</span><span>(</span><span>)</span> <span>{</span>
+	fmt<span>.</span><span>Println</span><span>(</span><span>"早上好"</span><span>,</span> demo<span>.</span>Name<span>)</span> <span>// 早上好 小明</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><div><pre><code><span>// World.go</span>
+<span>package</span> demo
+
+<span>var</span> Name <span>=</span> <span>"小明"</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><div><p>相关信息</p>
+<p>对于新项目，强烈建议默认启用go module。并且彻底放弃gopath mode。</p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
       <title>整数类型</title>
       <link>https://blog.yahweh.top/views/backEnd/go/basic/50_%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B/</link>
       <guid>https://blog.yahweh.top/views/backEnd/go/basic/50_%E6%95%B4%E6%95%B0%E7%B1%BB%E5%9E%8B/</guid>
@@ -6375,6 +6498,214 @@ $ ./goreleaser.exe --rm-dist
 <li><a href="https://blog.csdn.net/ordmeng/article/details/99620804" target="_blank" rel="noopener noreferrer">什么int8的取值范围是-128 - 127</a></li>
 </ul>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>什么是GO111MODULE</title>
+      <link>https://blog.yahweh.top/views/backEnd/go/basic/510_%E4%BB%80%E4%B9%88%E6%98%AFGO111MODULE/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/go/basic/510_%E4%BB%80%E4%B9%88%E6%98%AFGO111MODULE/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">什么是GO111MODULE</source>
+      <category>GoLang</category>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>go modules 是 golang 1.11 新加的特性。GO111MODULE 是个环境变量，可以在更改 Go 导入包的方式时候设置。</p>
+</blockquote>
+<p>Modules官方定义为：模块是相关Go包的<a href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener noreferrer">集合</a>。modules是源代码交换和版本控制的单元。go命令直接支持使用modules，包括记录和解析对其他模块的依赖性。modules替换旧的基于GOPATH的方法来指定在给定构建中使用哪些源文件。</p>
+<p>要注意的是，这个变量在不同 Go 版本有不同的语义:</p>
+<h2 id="没有包管理阶段"> 没有包管理阶段</h2>
+<blockquote>
+<p>一开始go发布的时候是没有包管理的</p>
+</blockquote>
+<p>待补充...</p>
+<p>什么时候用 GOPATH, 什么时候用 GOMODULE ？ 这是个问题，需要通过 <code>GO111MODULE</code> 来解决。</p>
+<h3 id="go-1-11-和-1-12-阶段"> <strong>Go 1.11 和 1.12 阶段</strong></h3>
+<p>即使项目在您的 GOPATH 中，GO111MODULE = on 仍将强制使用 <strong>Go 模块</strong>。仍然需要 go.mod 才能正常工作。</p>
+<h3 id=""> </h3>
+<h2 id="如何使用-modules"> <strong>如何使用 Modules</strong></h2>
+<ul>
+<li>把 golang 升级到 1.11（现在1.17 已经发布了，建议使用1.17）</li>
+<li>设置 GO111MODULE</li>
+</ul>
+<h3 id="go111module"> GO111MODULE</h3>
+<p>GO111MODULE 有三个值：off, on和auto（默认值）:</p>
+<ul>
+<li>GO111MODULE=off：无模块支持，强制 Go 表现出 GOPATH 方式，即使你的项目不在 GOPATH 目录里。寻找依赖包的方式将会沿用旧版本那种通过vendor目录或者GOPATH模式来查找。</li>
+<li>GO111MODULE=on，模块支持，go命令行会使用modules，不会去GOPATH目录下查找。</li>
+<li>GO111MODULE=auto，默认值，go命令行将会根据当前目录来决定是否启用module功能。这种情况下可以分为两种情形：
+<ul>
+<li>当前目录在GOPATH/src之外且该目录包含go.mod文件，开启模块支持。</li>
+<li>当前文件在包含go.mod文件的目录下面。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在使用模块时，GOPATH是无意义的，不过它还是会把下载的依赖存储在$GOPATH/pkg/mod 中，也会把go install 的结果放在 $GOPATH/bin 中。</p>
+</blockquote>
+<h3 id="go-mod"> go mod</h3>
+<p>golang 提供了 <strong>go mod</strong>命令来管理包。</p>
+<div><pre><code>$ go mod <span>help</span>
+Go mod provides access to operations on modules.
+
+Note that support <span>for</span> modules is built into all the go commands,
+not just <span>'go mod'</span><span>.</span> For example, day-to-day adding, removing, upgrading,
+and downgrading of dependencies should be <span>done</span> using <span>'go get'</span><span>.</span>
+
+        download    download modules to <span>local</span> cache <span># 下载依赖包，下载依赖的module 到本地cache</span>
+        edit        edit go.mod from tools or scripts <span># 编辑go.mod文件</span>
+        graph       print module requirement graph <span># 打印模块依赖图</span>
+        init        initialize new module <span>in</span> current directory <span># 在当前目录初始化mod，在当前文件夹下初始化一个新的module，创建 go.mod 文件</span>
+        tidy        <span>add</span> missing and remove unused modules <span># 拉取缺少的模块，移除不用的模块</span>
+        vendor      <span>make</span> vendored copy of dependencies <span># 将依赖复制到vendor下</span>
+        verify      verify dependencies have expected content <span># 验证依赖是否正确</span>
+        why         explain why packages or modules are needed <span># 解释为什么需要依赖</span>
+
+Use <span>"go help mod &lt;command>"</span> <span>for</span> <span>more</span> information about a command.
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><blockquote>
+<p><code>go get</code> 通常它是用于提供一个安装或下载包的功能。但如果使用了 Go modules，当你在一个有着 <code>go.mod</code> 文件存在的仓库下使用这个命令会将你所<code>下载或安装</code>的包静默<code>记录于</code> <code>go.mod</code> 文件中。</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Go的依赖管理</title>
+      <link>https://blog.yahweh.top/views/backEnd/go/basic/515_Go%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/go/basic/515_Go%E7%9A%84%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">Go的依赖管理</source>
+      <category>GoLang</category>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>早期的Go语言被很多开发者所吐槽的一个问题就是没有依赖包的管理，不过随着版本的不断更迭，Go语言依赖管理方面也在不断的完善。</p>
+</blockquote>
+<p>最初的时候Go语言所依赖的所有的第三方包都放在 GOPATH 目录下面，这就导致了同一个包只能保存一个版本的代码，如果不同的项目依赖同一个第三方的包的不同版本，应该怎么解决呢？</p>
+<div><p>相关信息</p>
+<p>GOPATH的默认路径：</p>
+<ul>
+<li>unix/linux：~/go</li>
+<li>windows:：%USERPROFILE%\go</li>
+</ul>
+</div>
+<h2 id="gopath"> GOPATH</h2>
+<blockquote>
+<p>使用<code>GOPATH</code>来管理依赖</p>
+</blockquote>
+<ol>
+<li>
+<p>创建一个新项目，目录结构如下：</p>
+<div><pre><code>demo
+└── src
+    └── proj1
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>设置环境变量</p>
+<div><pre><code><span># 不要使用这种方式，它会覆盖掉全局的GOPATH。主要是因为这是我临时建立的目录，做演示的</span>
+go <span>env</span> -w <span>GOPATH</span><span>=</span>D:<span>\</span>demo
+go <span>env</span> -w <span>GO111MODULE</span><span>=</span>off
+
+<span># 建议使用</span>
+<span>export</span> <span>GOPATH</span><span>=</span>D:<span>\</span>demo
+expot <span>GO111MODULE</span><span>=</span>off
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div></li>
+<li>
+<p>在项目proj1中下载依赖：</p>
+<div><pre><code>$ go get -u go.uber.org/zap
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>目录结构：</p>
+<div><pre><code>demo
+└── src
+    ├── go.uber.org
+    └── proj1
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><blockquote>
+<p>可以看到下载的包在 src 目录中。</p>
+</blockquote>
+</li>
+<li>
+<p>使用包</p>
+<div><pre><code><span>// 创建 proj1/main.go</span>
+<span>package</span> main
+
+<span>import</span> <span>(</span>
+	<span>"go.uber.org/zap"</span>
+<span>)</span>
+
+<span>func</span> <span>main</span><span>(</span><span>)</span> <span>{</span>
+	log<span>,</span> <span>_</span> <span>:=</span> zap<span>.</span><span>NewProduction</span><span>(</span><span>)</span>
+	log<span>.</span><span>Warn</span><span>(</span><span>"我输出了"</span><span>)</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div></li>
+</ol>
+<blockquote>
+<p>当我们的src下有多个项目的时候，每个项目项目又有不同版本的zap，那么我们可以在每个项目中新建<code>vendor</code>目录，然后手动把下载的依赖移动到此目录中，那么go会优先从此目录查找依赖。</p>
+</blockquote>
+<p>由于每个项目都有自己的vendor目录，来存放第三方库，所以就有了后来的第三方依赖管理工具：glide、dep、go dep等。</p>
+<h2 id="godep"> godep</h2>
+<p>godep 是一个Go语言官方提供的通过 vender 模式来管理第三方依赖的工具，类似的还有由社区维护的准官方包管理工具 dep。</p>
+<p>Go语言从 1.5 版本开始开始引入 vendor 模式，如果项目目录下有 vendor 目录，那么Go语言编译器会优先使用 vendor 内的包进行编译、测试等。</p>
+<p>详细内容请查看原文：<a href="http://c.biancheng.net/view/4774.html" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<h2 id="go-module"> go module</h2>
+<p>go module 是Go语言从 1.11 版本之后官方推出的版本管理工具，并且从 Go1.13 版本开始，go module 成为了Go语言默认的依赖管理工具。</p>
+<p>特点：</p>
+<ul>
+<li>由go命令统一管理，用户不必关心目录结构。</li>
+<li>初始化：<code>go mod init</code></li>
+<li>增加依赖：<code>go get</code></li>
+<li>更新依赖：<code>go get [@v...]，go mod tidy</code></li>
+<li>将就项目迁移到<code>go mod</code>：<code>go mod init、go build ./...</code></li>
+</ul>
+<h3 id="使用"> 使用</h3>
+<ol>
+<li>
+<p>创建一个新项目<code>awesomeProject1</code></p>
+</li>
+<li>
+<p>设置环境变量：<code>GO111MODULE=on</code></p>
+</li>
+<li>
+<p>初始化 <code>go.mod</code></p>
+<div><pre><code>$ go mod init
+
+awesomeProject1
+└── go.mod     
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
+<li>
+<p>下载依赖</p>
+<div><pre><code><span># 下载成功后，会生成一个go.sum文件，里面保存着依赖的地址和版本。</span>
+$ go get -u go.uber.org/zap
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div></li>
+<li>
+<p>新建main.go文件</p>
+<div><pre><code><span>package</span> main
+
+<span>import</span> <span>(</span>
+	<span>"go.uber.org/zap"</span>
+<span>)</span>
+
+<span>func</span> <span>main</span><span>(</span><span>)</span> <span>{</span>
+	log<span>,</span> <span>_</span> <span>:=</span> zap<span>.</span><span>NewProduction</span><span>(</span><span>)</span>
+	log<span>.</span><span>Warn</span><span>(</span><span>"下午好"</span><span>)</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div></li>
+</ol>
+<div><p>相关信息</p>
+<p>此时下载的包依赖在 <code>GOPATH</code>/pkg/mod/go.uber.org中，也就是说go mod下载的依赖都会被管理在pkg/mod中</p>
+</div>
+<h2 id="注意事项"> 注意事项</h2>
+<p>如果你在go get时出现以下错误</p>
+<div><pre><code>$ go get -u go.uber.org/zap
+go get: module go.uber.org/zap: Get <span>"https://proxy.golang.org/go.uber.org/zap/@v/list"</span><span>:</span> dial tcp <span>142.251</span>.43.17:443: connectex: A connection attempt failed because the connected party d
+<span>id</span> not properly respond after a period of time, or established connection failed because connected <span>host</span> has failed to respond.
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>解决：设置代理，然后重新执行 go get</p>
+<div><pre><code>$ go <span>env</span> -w <span>GOPROXY</span><span>=</span>https://goproxy.cn
+</code></pre>
+<div><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>Golang引入</title>
@@ -6811,37 +7142,114 @@ v：就是需要转化的变量
 </blockquote>
 <h2 id="目录"> 目录</h2>
 <ul>
-<li><a href="./5_Golang引入.html">Golang引入</a></li>
-<li><a href="./10_Golang简史.html">Golang简史</a></li>
-<li><a href="./15_开发工具介绍.html">开发工具介绍</a></li>
-<li><a href="./20_开发环境搭建.html">开发环境搭建</a></li>
-<li><a href="./25_常用DOS命令.html">常用DOS命令</a></li>
-<li><a href="./30_HelloWorld快速入门.html">HelloWorld快速入门</a></li>
-<li><a href="./35_Goland执行流程.html">Goland执行流程</a></li>
-<li><a href="./40_变量.html">变量</a></li>
-<li><a href="./45_数据类型.html">数据类型</a></li>
-<li><a href="./50_整数类型.html">整数类型</a></li>
-<li><a href="./80_字符类型.html">字符类型</a></li>
-<li><a href="./85_布尔类型.html">布尔类型</a></li>
-<li><a href="./90_字符串类型.html">字符串类型</a></li>
-<li><a href="./95_数据类型转化.html">数据类型转化</a></li>
-<li><a href="./100_指针.html">指针</a></li>
-<li><a href="./105_标识符.html">标识符</a></li>
-<li><a href="./110_运算符.html">运算符</a></li>
-<li><a href="./115_流程控制.html">流程控制</a></li>
-<li><a href="./120_for循环.html">for循环</a></li>
-<li><a href="./125_关键字.html">关键字</a></li>
-<li><a href="./130_函数.html">函数</a></li>
-<li><a href="./135_包的引入.html">包的引入</a></li>
-<li><a href="./140_init函数.html">init函数</a></li>
-<li><a href="./150_闭包.html">闭包</a></li>
-<li><a href="./155_defer关键字.html">defer关键字</a></li>
-<li><a href="./160_系统函数.html">系统函数</a></li>
-<li><a href="./165_错误处理.html">错误处理</a></li>
-<li><a href="./170_数组.html">数组</a></li>
-<li><a href="./175_切片.html">切片</a></li>
-<li><a href="./180_map.html">map</a></li>
-<li><a href="./185_结构体.html">结构体</a></li>
+<li>
+<p><a href="./5_Golang引入.html">Golang引入</a></p>
+</li>
+<li>
+<p><a href="./10_Golang简史.html">Golang简史</a></p>
+</li>
+<li>
+<p><a href="./15_开发工具介绍.html">开发工具介绍</a></p>
+</li>
+<li>
+<p><a href="./20_开发环境搭建.html">开发环境搭建</a></p>
+</li>
+<li>
+<p><a href="./25_常用DOS命令.html">常用DOS命令</a></p>
+</li>
+<li>
+<p><a href="./30_HelloWorld快速入门.html">HelloWorld快速入门</a></p>
+</li>
+<li>
+<p><a href="./35_Goland执行流程.html">Goland执行流程</a></p>
+</li>
+<li>
+<p><a href="./40_变量.html">变量</a></p>
+</li>
+<li>
+<p><a href="./45_数据类型.html">数据类型</a></p>
+</li>
+<li>
+<p><a href="./50_整数类型.html">整数类型</a></p>
+</li>
+<li>
+<p><a href="./80_字符类型.html">字符类型</a></p>
+</li>
+<li>
+<p><a href="./85_布尔类型.html">布尔类型</a></p>
+</li>
+<li>
+<p><a href="./90_字符串类型.html">字符串类型</a></p>
+</li>
+<li>
+<p><a href="./95_数据类型转化.html">数据类型转化</a></p>
+</li>
+<li>
+<p><a href="./100_指针.html">指针</a></p>
+</li>
+<li>
+<p><a href="./105_标识符.html">标识符</a></p>
+</li>
+<li>
+<p><a href="./110_运算符.html">运算符</a></p>
+</li>
+<li>
+<p><a href="./115_流程控制.html">流程控制</a></p>
+</li>
+<li>
+<p><a href="./120_for循环.html">for循环</a></p>
+</li>
+<li>
+<p><a href="./125_关键字.html">关键字</a></p>
+</li>
+<li>
+<p><a href="./130_函数.html">函数</a></p>
+</li>
+<li>
+<p><a href="./135_包的引入.html">包的引入</a></p>
+</li>
+<li>
+<p><a href="./140_init函数.html">init函数</a></p>
+</li>
+<li>
+<p><a href="./150_闭包.html">闭包</a></p>
+</li>
+<li>
+<p><a href="./155_defer关键字.html">defer关键字</a></p>
+</li>
+<li>
+<p><a href="./160_系统函数.html">系统函数</a></p>
+</li>
+<li>
+<p><a href="./165_错误处理.html">错误处理</a></p>
+</li>
+<li>
+<p><a href="./170_数组.html">数组</a></p>
+</li>
+<li>
+<p><a href="./175_切片.html">切片</a></p>
+</li>
+<li>
+<p><a href="./180_map.html">map</a></p>
+</li>
+<li>
+<p><a href="./185_结构体.html">结构体</a></p>
+</li>
+<li>
+<p>扩展：</p>
+<ul>
+<li><a href="./500_使用GoReleaser发布你的应用.html">使用GoReleaser发布你的应用</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./505_如何组织你的Go项目目录结构.html">如何组织你的Go项目目录结构</a></p>
+<ul>
+<li><a href="./510_什么是GO111MODULE.html">什么是GO111MODULE</a></li>
+</ul>
+</li>
+<li>
+<p><a href="./515_Go的依赖管理.html">Go的依赖管理</a></p>
+</li>
 </ul>
 <h2 id="参考资料"> 参考资料</h2>
 <ul>
@@ -8512,121 +8920,6 @@ http<span>.</span><span>createServer</span><span>(</span>app<span>.</span><span>
 ]]></content:encoded>
     </item>
     <item>
-      <title>context</title>
-      <link>https://blog.yahweh.top/views/backEnd/koa/25_context/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/koa/25_context/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">context</source>
-      <category>KOA</category>
-      <pubDate>Wed, 28 Jul 2021 17:36:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>context在koa应用中又称为”上下文“，该对象包含了koa请求对象、koa响应对象和应用实例，context可以理解一个容器，该容器挂载了本次请求的请求对象和响应对象等信息，中间件通过context对象来获取请求信息，处理之后返回响应。</p>
-</blockquote>
-<p>*<em>context实例有以下常用的几个属性或方法(<em>号所标记是常用属性或方法)：</em></em></p>
-<ul>
-<li>
-<p>ctx.request：koa的请求对象，一般不直接使用，通过别名引用来访问。</p>
-</li>
-<li>
-<p>ctx.response：koa的响应对象，一般不直接使用，通过别名引用来访问。</p>
-</li>
-<li>
-<p>*ctx.state：自定义数据储存，比如中间需要往请求中挂载变量就可以存放在ctx.state中，后续中间件可以读取。</p>
-</li>
-<li>
-<p>*ctx.throw()：抛出HTTP异常。</p>
-</li>
-<li>
-<p>ctx.headers：请求报头，ctx.request.headers的别名。</p>
-</li>
-<li>
-<p>ctx.method：请求方法，ctx.request.method的别名。</p>
-</li>
-<li>
-<p>ctx.url：请求链接，ctx.request.url的别名。</p>
-</li>
-<li>
-<p>ctx.path：请求路径，ctx.request.path的别名。</p>
-</li>
-<li>
-<p>*ctx.query：解析后的GET参数对象，ctx.request.query的别名。</p>
-</li>
-<li>
-<p>ctx.host：当前域名，ctx.request.host的别名。</p>
-</li>
-<li>
-<p>*ctx.ip：客户端IP，ctx.request.ip的别名。</p>
-</li>
-<li>
-<p>ctx.ips：反向代理环境下的客户端IP列表，ctx.request.ips的别名。</p>
-</li>
-<li>
-<p>ctx.get()：读取请求报头，ctx.request.get的别名。</p>
-</li>
-<li>
-<p>*ctx.body：响应内容，支持字符串、对象、Buffer，ctx.response.body的别名。</p>
-</li>
-<li>
-<p>*ctx.status：响应状态码，ctx.response.status的别名。</p>
-</li>
-<li>
-<p>ctx.type：响应体类型，ctx.response.type的别名。</p>
-</li>
-<li>
-<p>*ctx.redirect()：重定向，ctx.response.redirect的别名。</p>
-</li>
-<li>
-<p>*ctx.set()：设置响应报头，ctx.response.set的别名。</p>
-</li>
-</ul>
-<p>以下是一个显示当前请求信息并添加自定义响应报头的示例：</p>
-<div><pre><code><span>const</span> Koa <span>=</span> <span>require</span><span>(</span><span>'koa'</span><span>)</span><span>;</span>
-<span>const</span> app <span>=</span> <span>new</span> <span>Koa</span><span>(</span><span>)</span><span>;</span>
-
-app<span>.</span><span>use</span><span>(</span><span>async</span> <span>(</span><span>ctx</span><span>)</span> <span>=></span> <span>{</span>
-    ctx<span>.</span><span>set</span><span>(</span><span>'x-version'</span><span>,</span> <span>'1.0.0'</span><span>)</span><span>;</span>
-    ctx<span>.</span>body <span>=</span> <span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>{</span>
-        method<span>:</span> ctx<span>.</span>method<span>,</span>
-        path<span>:</span> ctx<span>.</span>path<span>,</span>
-        url<span>:</span> ctx<span>.</span>url<span>,</span>
-        query<span>:</span> ctx<span>.</span>query<span>,</span>
-        Headers<span>:</span> ctx<span>.</span>headers<span>,</span>
-        ip<span>:</span> ctx<span>.</span>ip
-    <span>}</span><span>,</span> <span>null</span><span>,</span> <span>4</span><span>)</span>
-<span>}</span><span>)</span>
-
-app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><p>浏览器访问：http://localhost:3000?a=2&amp;b=3，响应如下：</p>
-<div><pre><code><span>{</span>
-    <span>"method"</span><span>:</span> <span>"GET"</span><span>,</span>
-    <span>"path"</span><span>:</span> <span>"/"</span><span>,</span>
-    <span>"url"</span><span>:</span> <span>"/?a=1&amp;b=3"</span><span>,</span>
-    <span>"query"</span><span>:</span> <span>{</span>
-        <span>"a"</span><span>:</span> <span>"1"</span><span>,</span>
-        <span>"b"</span><span>:</span> <span>"3"</span>
-    <span>}</span><span>,</span>
-    <span>"Headers"</span><span>:</span> <span>{</span>
-        <span>"host"</span><span>:</span> <span>"localhost:3000"</span><span>,</span>
-        <span>"connection"</span><span>:</span> <span>"keep-alive"</span><span>,</span>
-        <span>"cache-control"</span><span>:</span> <span>"max-age=0"</span><span>,</span>
-        <span>"sec-ch-ua"</span><span>:</span> <span>"\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\""</span><span>,</span>
-        <span>"sec-ch-ua-mobile"</span><span>:</span> <span>"?0"</span><span>,</span>
-        <span>"upgrade-insecure-requests"</span><span>:</span> <span>"1"</span><span>,</span>
-        <span>"user-agent"</span><span>:</span> <span>"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"</span><span>,</span>
-        <span>"accept"</span><span>:</span> <span>"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"</span><span>,</span>
-        <span>"sec-fetch-site"</span><span>:</span> <span>"none"</span><span>,</span>
-        <span>"sec-fetch-mode"</span><span>:</span> <span>"navigate"</span><span>,</span>
-        <span>"sec-fetch-user"</span><span>:</span> <span>"?1"</span><span>,</span>
-        <span>"sec-fetch-dest"</span><span>:</span> <span>"document"</span><span>,</span>
-        <span>"accept-encoding"</span><span>:</span> <span>"gzip, deflate, br"</span><span>,</span>
-        <span>"accept-language"</span><span>:</span> <span>"zh-CN,zh;q=0.9"</span>
-    <span>}</span><span>,</span>
-    <span>"ip"</span><span>:</span> <span>"::1"</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>Middleware</title>
       <link>https://blog.yahweh.top/views/backEnd/koa/20_Middleware/</link>
       <guid>https://blog.yahweh.top/views/backEnd/koa/20_Middleware/</guid>
@@ -8765,6 +9058,121 @@ app<span>.</span><span>use</span><span>(</span>someMiddleware<span>)</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div></div>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>context</title>
+      <link>https://blog.yahweh.top/views/backEnd/koa/25_context/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/koa/25_context/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">context</source>
+      <category>KOA</category>
+      <pubDate>Wed, 28 Jul 2021 17:36:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>context在koa应用中又称为”上下文“，该对象包含了koa请求对象、koa响应对象和应用实例，context可以理解一个容器，该容器挂载了本次请求的请求对象和响应对象等信息，中间件通过context对象来获取请求信息，处理之后返回响应。</p>
+</blockquote>
+<p>*<em>context实例有以下常用的几个属性或方法(<em>号所标记是常用属性或方法)：</em></em></p>
+<ul>
+<li>
+<p>ctx.request：koa的请求对象，一般不直接使用，通过别名引用来访问。</p>
+</li>
+<li>
+<p>ctx.response：koa的响应对象，一般不直接使用，通过别名引用来访问。</p>
+</li>
+<li>
+<p>*ctx.state：自定义数据储存，比如中间需要往请求中挂载变量就可以存放在ctx.state中，后续中间件可以读取。</p>
+</li>
+<li>
+<p>*ctx.throw()：抛出HTTP异常。</p>
+</li>
+<li>
+<p>ctx.headers：请求报头，ctx.request.headers的别名。</p>
+</li>
+<li>
+<p>ctx.method：请求方法，ctx.request.method的别名。</p>
+</li>
+<li>
+<p>ctx.url：请求链接，ctx.request.url的别名。</p>
+</li>
+<li>
+<p>ctx.path：请求路径，ctx.request.path的别名。</p>
+</li>
+<li>
+<p>*ctx.query：解析后的GET参数对象，ctx.request.query的别名。</p>
+</li>
+<li>
+<p>ctx.host：当前域名，ctx.request.host的别名。</p>
+</li>
+<li>
+<p>*ctx.ip：客户端IP，ctx.request.ip的别名。</p>
+</li>
+<li>
+<p>ctx.ips：反向代理环境下的客户端IP列表，ctx.request.ips的别名。</p>
+</li>
+<li>
+<p>ctx.get()：读取请求报头，ctx.request.get的别名。</p>
+</li>
+<li>
+<p>*ctx.body：响应内容，支持字符串、对象、Buffer，ctx.response.body的别名。</p>
+</li>
+<li>
+<p>*ctx.status：响应状态码，ctx.response.status的别名。</p>
+</li>
+<li>
+<p>ctx.type：响应体类型，ctx.response.type的别名。</p>
+</li>
+<li>
+<p>*ctx.redirect()：重定向，ctx.response.redirect的别名。</p>
+</li>
+<li>
+<p>*ctx.set()：设置响应报头，ctx.response.set的别名。</p>
+</li>
+</ul>
+<p>以下是一个显示当前请求信息并添加自定义响应报头的示例：</p>
+<div><pre><code><span>const</span> Koa <span>=</span> <span>require</span><span>(</span><span>'koa'</span><span>)</span><span>;</span>
+<span>const</span> app <span>=</span> <span>new</span> <span>Koa</span><span>(</span><span>)</span><span>;</span>
+
+app<span>.</span><span>use</span><span>(</span><span>async</span> <span>(</span><span>ctx</span><span>)</span> <span>=></span> <span>{</span>
+    ctx<span>.</span><span>set</span><span>(</span><span>'x-version'</span><span>,</span> <span>'1.0.0'</span><span>)</span><span>;</span>
+    ctx<span>.</span>body <span>=</span> <span>JSON</span><span>.</span><span>stringify</span><span>(</span><span>{</span>
+        method<span>:</span> ctx<span>.</span>method<span>,</span>
+        path<span>:</span> ctx<span>.</span>path<span>,</span>
+        url<span>:</span> ctx<span>.</span>url<span>,</span>
+        query<span>:</span> ctx<span>.</span>query<span>,</span>
+        Headers<span>:</span> ctx<span>.</span>headers<span>,</span>
+        ip<span>:</span> ctx<span>.</span>ip
+    <span>}</span><span>,</span> <span>null</span><span>,</span> <span>4</span><span>)</span>
+<span>}</span><span>)</span>
+
+app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><p>浏览器访问：http://localhost:3000?a=2&amp;b=3，响应如下：</p>
+<div><pre><code><span>{</span>
+    <span>"method"</span><span>:</span> <span>"GET"</span><span>,</span>
+    <span>"path"</span><span>:</span> <span>"/"</span><span>,</span>
+    <span>"url"</span><span>:</span> <span>"/?a=1&amp;b=3"</span><span>,</span>
+    <span>"query"</span><span>:</span> <span>{</span>
+        <span>"a"</span><span>:</span> <span>"1"</span><span>,</span>
+        <span>"b"</span><span>:</span> <span>"3"</span>
+    <span>}</span><span>,</span>
+    <span>"Headers"</span><span>:</span> <span>{</span>
+        <span>"host"</span><span>:</span> <span>"localhost:3000"</span><span>,</span>
+        <span>"connection"</span><span>:</span> <span>"keep-alive"</span><span>,</span>
+        <span>"cache-control"</span><span>:</span> <span>"max-age=0"</span><span>,</span>
+        <span>"sec-ch-ua"</span><span>:</span> <span>"\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\""</span><span>,</span>
+        <span>"sec-ch-ua-mobile"</span><span>:</span> <span>"?0"</span><span>,</span>
+        <span>"upgrade-insecure-requests"</span><span>:</span> <span>"1"</span><span>,</span>
+        <span>"user-agent"</span><span>:</span> <span>"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.164 Safari/537.36"</span><span>,</span>
+        <span>"accept"</span><span>:</span> <span>"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"</span><span>,</span>
+        <span>"sec-fetch-site"</span><span>:</span> <span>"none"</span><span>,</span>
+        <span>"sec-fetch-mode"</span><span>:</span> <span>"navigate"</span><span>,</span>
+        <span>"sec-fetch-user"</span><span>:</span> <span>"?1"</span><span>,</span>
+        <span>"sec-fetch-dest"</span><span>:</span> <span>"document"</span><span>,</span>
+        <span>"accept-encoding"</span><span>:</span> <span>"gzip, deflate, br"</span><span>,</span>
+        <span>"accept-language"</span><span>:</span> <span>"zh-CN,zh;q=0.9"</span>
+    <span>}</span><span>,</span>
+    <span>"ip"</span><span>:</span> <span>"::1"</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>cookie操作</title>
@@ -11731,7 +12139,7 @@ Content-Length: 275
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/05_ES6/</guid>
       <source url="https://blog.yahweh.top/rss.xml">ES6</source>
       <category>ES6</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="es6"> ES6；</h2>
 <blockquote>
 <p>ECMAScript 的一个颠覆性版本更新  - 面向对象编程（类、对象-- 封装、继承、多态）</p>
@@ -12751,7 +13159,7 @@ app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/100_%E4%BD%BF%E7%94%A8nodejs/</guid>
       <source url="https://blog.yahweh.top/rss.xml">使用nodejs</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>用 Node.js 编程是一件令人愉快的事情，你会发现像这样的语言是很容易入门的，可以快速了解到它的细节，然后掌握它。</p>
 </blockquote>
@@ -12896,7 +13304,7 @@ $ nodemon app.js
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/105_%E5%BC%82%E6%AD%A5%E5%BC%8F%E4%B8%8E%E4%BA%8B%E4%BB%B6%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
       <source url="https://blog.yahweh.top/rss.xml">异步式 I/O 与事件式编程</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是异步式 I/O（或者非阻塞 I/O）与事件紧密结合的编程模式。这种模式与传统的同步式 I/O 线性的编程思路有很大的不同，因为控制流很大程度上要靠事件和回调函数来组织，一个逻辑要拆分为若干个单元。</p>
 </blockquote>
@@ -12994,7 +13402,7 @@ event<span>.</span><span>on</span><span>(</span><span>'some_event'</span><span>,
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/10_%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%BE%93%E5%87%BA%E7%9B%AE%E5%BD%95%E6%A0%91/</guid>
       <source url="https://blog.yahweh.top/rss.xml">命令行输出目录树</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="如何使用命令行输出目录树"> 如何使用命令行输出目录树</h2>
 <blockquote>
 <p>概述：在自己写博客的时候，总会少不了要显示目录结构以更好的表达一些内容；虽然<code>window</code>自己提供了<code>tree</code>命令但是并不好用；比如我要显示项目的目录结构但是要排除<code>node_modules</code>文件夹，这个时候就有点力不从心了，在这里推荐以下<code>tree-node-cli</code>工具；</p>
@@ -13086,7 +13494,7 @@ webNode
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/110_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/</guid>
       <source url="https://blog.yahweh.top/rss.xml">模块和包</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>模块（Module）和包（Package）是 Node.js 最重要的支柱。开发一个具有一定规模的程序不可能只用一个文件，通常需要把各个功能拆分、封装，然后组合起来，模块正是为了实现这种方式而诞生的。在浏览器 JavaScript 中，脚本模块的拆分和组合通常使用 HTML 的script 标签来实现。 Node.js 提供了 require 函数来调用其他模块，而且模块都是基于文件的，机制十分简单。Node.js 的模块和包机制的实现参照了 CommonJS 的标准，</p>
 </blockquote>
@@ -13298,7 +13706,7 @@ C:<span>\</span>Program Files<span>\</span>nodejs<span>\</span>node_modules
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/115_%E8%B0%83%E8%AF%95/</guid>
       <source url="https://blog.yahweh.top/rss.xml">调试</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>写程序时免不了遇到 bug，而当 bug 发生以后，除了抓耳挠腮之外，一个常用的技术是单步调试。  在浏览器中我们可以通过开发者工具进行调试。然而Node.js 的调试功能正是由 V8 提供的，保持了一贯的高效和方便的特性</p>
 </blockquote>
@@ -13819,7 +14227,7 @@ console<span>.</span><span>log</span><span>(</span>path<span>.</span><span>resol
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/15_node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7-nvm/</guid>
       <source url="https://blog.yahweh.top/rss.xml">node版本管理工具-nvm</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>概述： nvm是一个nodejs的版本管理工具。我们可以通过它安装和切换不同版本的node.js。</p>
 </blockquote>
@@ -13912,7 +14320,7 @@ PS C:<span>\</span>Users<span>\</span>ASUS<span>\</span>Desktop<span>></span>
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/20_node%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</guid>
       <source url="https://blog.yahweh.top/rss.xml">node实现自动化部署</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="node实现自动化部署"> node实现自动化部署；</h2>
 <blockquote>
 <p>说明：由于本人做的前端，Java就不太会，但是node确实一个对于前端同学写后端代码的一个非常好的技术。个人的项目前端是<code>vue</code>写的后端是<code>Nodejs</code>,同时利用<code>jenkjins</code>实现前后端自动化部署。</p>
@@ -14063,7 +14471,7 @@ Finished: SUCCESS
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/25_pm2%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <source url="https://blog.yahweh.top/rss.xml">pm2的使用</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="pm2的简单使用"> pm2的简单使用</h1>
 <blockquote>
 <p>概述： PM2是具有内置负载平衡器的Node.js应用程序的生产过程管理器。它使您可以使应用程序永远保持活动状态，无需停机即可重新加载它们，并简化常见的系统管理任务。</p>
@@ -14192,7 +14600,7 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/30_%E5%90%8E%E5%8F%B0%E6%8C%81%E7%BB%AD%E8%BF%90%E8%A1%8Cnode/</guid>
       <source url="https://blog.yahweh.top/rss.xml">后台持续运行node</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h4 id="_1、后台持续运行nodejs"> 1、后台持续运行<code>nodejs</code></h4>
 <div><pre><code><span># 持续运行node并把信息输出到指定的文件中</span>
 <span>nohup</span> <span>npm</span> run dev <span>></span>myout.file <span><span>2</span>></span><span>&amp;1</span> <span>&amp;</span>
@@ -14200,319 +14608,357 @@ pm2 start <span>npm</span> --watch --name nickname -- run dev
 <div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>搭建本地服务</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/35_%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/35_%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">搭建本地服务</source>
+      <title>全局对象</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/50_%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/50_%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">全局对象</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="快速搭建本地服务"> 快速搭建本地服务</h2>
-<blockquote>
-<p>方式一、二、三单个js文件即可操作。</p>
-</blockquote>
-<h3 id="方式一"> 方式一：</h3>
-<p>安装下载<code>serve</code>npm包。<a href="https://www.npmjs.com/package/serve" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/serve</a></p>
-<div><pre><code><span>npm</span> i serve
-
-<span># 建议全局安装，</span>
-<span>npm</span> i -g serve
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>安装完成你可以<code>serve -v</code>来查看版本号，至此安装成功了，</p>
-<div><pre><code>serve -v
-WARNING: Checking <span>for</span> updates failed <span>(</span>use <span><span>`</span>--debug<span>`</span></span> to see full error<span>)</span>
-<span>11.3</span>.2
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>直接在打开你的文件目录，执行<code>serve</code>就会直接启动一个服务，默认监听 <code>5000</code> 端口</p>
-<blockquote>
-<p>服务的启动的方式，还可以在 <code>serve fileName</code> 后面跟文件夹的名称，以此来作为服务启动的文件目录。</p>
-</blockquote>
-<div><pre><code>serve
-WARNING: Checking <span>for</span> updates failed <span>(</span>use <span><span>`</span>--debug<span>`</span></span> to see full error<span>)</span>
-
-   ┌───────────────────────────────────────────────────┐
-   │                                                   │
-   │   Serving<span>!</span>                                        │
-   │                                                   │
-   │   - Local:            http://localhost:5000       │
-   │   - On Your Network:  http://192.168.137.1:5000   │
-   │                                                   │
-   │   Copied <span>local</span> address to clipboard<span>!</span>              │
-   │                                                   │
-   └───────────────────────────────────────────────────┘
-
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p>恭喜你服务搭建完成！</p>
-<h2 id="方式二"> 方式二；</h2>
-<p>使用node的<code>http</code>内置模块来快速的新建一个服务，</p>
-<blockquote>
-<p>此操作代表你已经安装了<code>nodejs</code>不然将不可用。</p>
-</blockquote>
-<div><pre><code><span>// 引入http包</span>
-<span>const</span> http <span>=</span> <span>require</span><span>(</span><span>'http'</span><span>)</span>
-<span>const</span> app <span>=</span> <span>new</span> <span>http<span>.</span>Server</span><span>(</span><span>)</span>
-<span>// 侦听请求</span>
-app<span>.</span><span>on</span><span>(</span><span>'request'</span><span>,</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
-  res<span>.</span><span>writeHead</span><span>(</span><span>200</span><span>,</span> <span>{</span>
-    <span>"Content-Type"</span><span>:</span> <span>'text/html;charset=UTF-8'</span><span>,</span>
-  <span>}</span><span>)</span>
-  <span>// 返回响应内容</span>
-  res<span>.</span><span>write</span><span>(</span><span>'&lt;h1>Node.js-监听3000端口~&lt;/h1>'</span><span>)</span>
-  <span>// 结束响应，此方法必须调用，不然客户端会一直处于等待状态。</span>
-  res<span>.</span><span>end</span><span>(</span><span>)</span>
-<span>}</span><span>)</span>
-<span>// 监听 3000端口</span>
-app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
-  <span>if</span> <span>(</span><span>!</span>err<span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>'开始监听3000端口'</span><span>)</span>
-  <span>}</span>
-<span>}</span><span>)</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><p>shell中启动这个文件，<code>node fileName</code></p>
-<div><pre><code>node <span>service</span>
-开始监听3000端口
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h2 id="方式三"> 方式三；</h2>
-<p>下载安装依赖<code>express</code>,<a href="https://www.npmjs.com/package/express" target="_blank" rel="noopener noreferrer">点击下载</a></p>
-<div><pre><code><span>npm</span> i express
-</code></pre>
-<div><span>1</span><br></div></div><p>引入并创建服务</p>
-<div><pre><code><span>// 引入包 express</span>
-<span>const</span> express <span>=</span> <span>require</span><span>(</span><span>'express'</span><span>)</span>
-<span>// 创建服务器；</span>
-<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span>
-<span>// 创建get请求</span>
-app<span>.</span><span>get</span><span>(</span><span>'/'</span><span>,</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
-  res<span>.</span><span>send</span><span>(</span><span>'请求成功'</span><span>)</span>
-<span>}</span><span>)</span>
-<span>// 启动服务；</span>
-app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
-  <span>if</span> <span>(</span><span>!</span>err<span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>'server started on port 3000'</span><span>)</span>
-  <span>}</span>
-<span>}</span><span>)</span>
-
-<span>// ============</span>
-node service<span>.</span>js
-server started on port <span>3000</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="方式四"> 方式四；</h2>
-<blockquote>
-<p>此种方式需要初始化一个项目，</p>
-<ol>
-<li>
-<p>创建一个文件夹，</p>
-</li>
-<li>
-<p>执行 npm init 会生成package.json文件，</p>
-</li>
-<li>
-<p>同级目录新建webpack.config.js文件，写入一下代码，</p>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  entry<span>:</span> <span>'./main.js'</span><span>,</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
-<li>
-<p>新建main.js文件，随便写点东西</p>
-</li>
-</ol>
-</blockquote>
-<ol>
-<li>
-<p>首先你需要安装<code>webpack</code>包，<a href="https://www.npmjs.com/package/webpack" target="_blank" rel="noopener noreferrer">下载</a></p>
-<div><pre><code><span>npm</span> <span>install</span> --save-dev webpack
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>安装<code>webpack-dev-server</code>包，<a href="https://www.npmjs.com/package/webpack-dev-server" target="_blank" rel="noopener noreferrer">下载</a></p>
-<div><pre><code><span>npm</span> <span>install</span> webpack-dev-server --save-dev
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>然后在<code>package.json</code>文件里面的script字段里面添加，</p>
-<div><pre><code><span>"scripts"</span><span>:</span> <span>{</span>
-    <span>"test"</span><span>:</span> <span>"echo <span title="\&quot;">\"</span>Error: no test specified<span title="\&quot;">\"</span> &amp;&amp; exit 1"</span>,
-    <span>"serve"</span><span>:</span> <span>"webpack-dev-server"</span>, <span># 添加此行</span>
-  <span>}</span>,
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
-<li>
-<p>执行cmd命令；</p>
-<div><pre><code><span>npm</span> run serve
-
-<span># webpack: Compiled successfully.</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
-<li>
-<p>默认会监听8080端口，浏览器打开访问<code>localhost</code>即可，</p>
-</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>json-serve</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/40_json-serve/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/40_json-serve/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">json-serve</source>
-      <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="json-server"> <code>JSON Server</code>;</h2>
-<blockquote>
-<ul>
-<li>概述：<code>JSON Server</code> 是一个提供测试环境接口的工具，它可以帮我们快速生成一套接口服务;</li>
-<li>它是免费开源的命令行工具;</li>
-</ul>
-</blockquote>
-<ol>
-<li>
-<p><strong>安装：</strong></p>
-<div><pre><code><span>npm</span> <span>install</span> -g json-server  <span># -g 安装的东西只需安装一次即可；后续无需再安装；</span>
-
-<span># 该命令用于测试是否安装成功，如果看到一个版本输出，就证明OK了</span>
-json-server --version
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
-<li>
-<p><strong>创建文件目录；</strong></p>
-<ul>
-<li>创建文件名为 <code>json-server-demo</code>的文件夹，然后在该文件夹中创建一个文件 <code>db.json</code> 并写入以下内容：</li>
-</ul>
-<div><pre><code><span>{</span>
-  <span>"posts"</span><span>:</span> <span>[</span>
-    <span>{</span> <span>"id"</span><span>:</span> <span>1</span><span>,</span> <span>"title"</span><span>:</span> <span>"json-server"</span><span>,</span> <span>"author"</span><span>:</span> <span>"typicode"</span> <span>}</span>
-  <span>]</span><span>,</span>
-  <span>"comments"</span><span>:</span> <span>[</span>
-    <span>{</span> <span>"id"</span><span>:</span> <span>1</span><span>,</span> <span>"body"</span><span>:</span> <span>"some comment"</span><span>,</span> <span>"postId"</span><span>:</span> <span>1</span> <span>}</span>
-  <span>]</span><span>,</span>
-  <span>"profile"</span><span>:</span> <span>{</span> <span>"name"</span><span>:</span> <span>"typicode"</span> <span>}</span><span>,</span>
-  <span>"users"</span><span>:</span> <span>[</span>
-    <span>{</span>
-      <span>"id"</span><span>:</span> <span>1</span><span>,</span>
-      <span>"name"</span><span>:</span> <span>"张三"</span><span>,</span>
-      <span>"age"</span><span>:</span> <span>18</span><span>,</span>
-      <span>"gender"</span><span>:</span> <span>"男"</span>
-    <span>}</span>
-  <span>]</span>
-<span>}</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div></li>
-<li>
-<p><strong>执行 <code>db.json</code>文件；</strong></p>
-<div><pre><code>json-server --watch db.json
-</code></pre>
-<div><span>1</span><br></div></div></li>
-</ol>
-<blockquote>
-<p>注：接口服务默认占用 3000 端口;</p>
-</blockquote>
-<h2 id="发送请求"> 发送请求；</h2>
-<ol>
-<li>
-<p><strong><code>GET</code>请求；</strong></p>
-<ol>
-<li>获取所有数据信息；
-<ul>
-<li>请求过程和之前一样；</li>
-</ul>
-</li>
-<li>根据条件查询数据信息；
-<ul>
-<li>请求过程和之前一样；</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>
-<p><strong><code>POST</code>请求；</strong></p>
-<ol>
-<li>添加数据；
-<ul>
-<li>响应结果为修改后的数据；</li>
-<li>注：请求参数必须是<code>JSON</code>格式的；</li>
-</ul>
-</li>
-</ol>
-<p><img src="./assets/20191107190408596.png" alt="20191107190408596" /></p>
-</li>
-<li>
-<p><strong><code>DELETE</code>请求方式；</strong></p>
-<ul>
-<li>删除<code>id</code>为 1 的数据；</li>
-</ul>
-<p><img src="./assets/20191107191542387.png" alt="20191107191542387" /></p>
-</li>
-<li>
-<p><strong><code>PATCH</code>请求方式；</strong></p>
-<ul>
-<li>修改<code>id</code>为2的数据；</li>
-<li>注：请求体为<code>JSON</code>格式；</li>
-<li>响应结果为：修改后的数据；</li>
-</ul>
-</li>
-</ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>ora的使用</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/45_ora%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/45_ora%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">ora的使用</source>
-      <category>nodejs</category>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 GMT</pubDate>
+      <pubDate>Tue, 15 Jun 2021 07:25:35 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
-<p>使用Node做开发已经是必备的一项技能，然后有时终端中的一些耗时操作的输出对我们不太友好，希望可以提供一个进度loading使用；</p>
+<p>JavaScript 中有一个特殊的对象，称为全局对象（Global Object），它及其所有属性都可以在程序的任何地方访问，即全局变量。在浏览器 JavaScript 中，通常 window 是全局对象，而 Node.js 中的全局对象是 global，所有全局变量（除了 global 本身以外）都是 global对象的属性。我们在 Node.js 中能够直接访问到对象通常都是 global 的属性，如 console、process等;</p>
 </blockquote>
-<h3 id="安装"> 安装；</h3>
-<p><a href="https://www.npmjs.com/package/ora" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> i ora -D
+<h2 id="全局对象与全局变量"> 全局对象与全局变量</h2>
+<blockquote>
+<p>global 最根本的作用是作为全局变量的宿主。按照 ECMAScript 的定义，满足以下条件的变量是全局变量：
+1：在最外层定义的变量；
+2：全局对象的属性；
+3：隐式定义的变量（未定义直接赋值的变量）。
+当你定义一个全局变量时，这个变量同时也会成为全局对象的属性，反之亦然。</p>
+</blockquote>
+<div><p>提示</p>
+<p>需要注意的是：</p>
+<p>1、在 Node.js 中你不可能在最外层定义变量，因为所有用户代码都是属于当前模块的，而模块本身不是最外层上下文。</p>
+<p>2、永远使用 var 定义变量以避免引入全局变量，因为全局变量会污染命名空间，提高代码的耦合风险。</p>
+</div>
+<h2 id="process"> process</h2>
+<blockquote>
+<p>process 是一个全局变量，即 global 对象的属性。它用于描述当前 Node.js <strong>进程状态</strong>的对象，提供了一个与操作系统的简单接口。</p>
+</blockquote>
+<h3 id="process-argv"> process.argv</h3>
+<p>process.argv是命令行参数数组，第一个元素是 node， 第二个元素是脚本文件名，从第三个元素开始每个元素是一个运行参数。</p>
+<div><pre><code><span>// argv.js</span>
+console<span>.</span><span>log</span><span>(</span>process<span>.</span>argv<span>)</span><span>;</span>
+
+<span>ASUS</span>@yaweidediannao <span>MINGW64</span> <span>~</span><span>/</span>Desktop<span>/</span>test
+$ node <span>.</span><span>/</span>argv<span>.</span>js <span>1991</span> name<span>=</span>bycoid <span>--</span>v <span>"Carbo Kuo"</span>
+<span>[</span>
+  <span>'C:\\Program Files\\nodejs\\node.exe'</span><span>,</span>
+  <span>'C:\\Users\\ASUS\\Desktop\\test\\argv.js'</span><span>,</span>
+  <span>'1991'</span><span>,</span>
+  <span>'name=bycoid'</span><span>,</span>
+  <span>'--v'</span><span>,</span>
+  <span>'Carbo Kuo'</span>
+<span>]</span>
 </code></pre>
-<div><span>1</span><br></div></div><h3 id="使用"> 使用：</h3>
-<div><pre><code><span>const</span> ora <span>=</span> <span>require</span><span>(</span><span>'ora'</span><span>)</span><span>;</span>
-
-<span>// 开启loading</span>
-<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>'Loading unicorns'</span><span>)</span><span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
- 
-<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>// 更改loading的文字与颜色；</span>
-	spinner<span>.</span>color <span>=</span> <span>'yellow'</span><span>;</span>
-	spinner<span>.</span>text <span>=</span> <span>'Loading rainbows'</span><span>;</span>
-<span>}</span><span>,</span> <span>2000</span><span>)</span><span>;</span>
-
-<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-	spinner<span>.</span><span>succeed</span><span>(</span>‘已完成’<span>)</span><span>;</span>
-<span>}</span><span>,</span> <span>6000</span><span>)</span><span>;</span>
-
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="process-stdout"> process.stdout</h3>
+<p>process.stdout是标准输出流，通常我们使用的 console.log() 向标准输出打印字符，而 process.stdout.write() 函数提供了更底层的接口</p>
+<div><pre><code>process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'我执行了'</span><span>)</span> <span>// 我执行了</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p><img src="./assets/image-20210614101405802.png" alt="image-20210614101405802" /></p>
-<h3 id="参数说明"> 参数说明：</h3>
-<div><pre><code><span>// 快捷方式；ora(string)</span>
-<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>'Loading unicorns'</span><span>)</span><span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
-
-<span>// 选项对象</span>
-<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>{</span>
-  text<span>:</span> <span>'压缩中...'</span><span>,</span>
-  color<span>:</span> <span>'red'</span><span>,</span>
-  prefixText<span>:</span> <span>'开始压缩'</span><span>,</span>
-  spinner<span>:</span> <span>'bouncingBar'</span>
-  <span>// spinner: {</span>
-  <span>//   interval: 80,</span>
-  <span>//   frames: ['-', '+', '-']</span>
-  <span>// }</span>
+<div><span>1</span><br></div></div><h3 id="process-stdin"> process.stdin</h3>
+<p>process.stdin是标准输入流，初始时它是被暂停的，要想从标准输入读取数据，你必须恢复流，并手动编写流的事件响应函数。</p>
+<div><pre><code><span>// module.js</span>
+process<span>.</span>stdin<span>.</span><span>resume</span><span>(</span><span>)</span><span>;</span>
+process<span>.</span>stdin<span>.</span><span>on</span><span>(</span><span>'data'</span><span>,</span> <span>function</span><span>(</span><span>data</span><span>)</span> <span>{</span>
+  process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'read from console: '</span> <span>+</span> data<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
 <span>}</span><span>)</span><span>;</span>
-spinner<span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
-<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-	spinner<span>.</span><span>succeed</span><span>(</span><span>'压缩文件已保存 路径：xxx'</span><span>)</span><span>;</span>
-<span>}</span><span>,</span> <span>8000</span><span>)</span><span>;</span>
-
-<span>// $ node zip.js </span>
-<span>// 开始压缩 [==  ] 压缩中...</span>
-<span>// ✔ 压缩文件已保存 路径：xxx</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h3 id="官方文档"> 官方文档；</h3>
-<p>https://github.com/sindresorhus/ora#readme</p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module.js 
+我执行了
+<span>read</span> from console: 我执行了
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><strong>例：process.stdout和process.stdin实现控制台登录</strong></p>
+<div><pre><code><span>let</span> users<span>=</span><span>{</span>
+	<span>"admin"</span><span>:</span><span>"123"</span><span>,</span>
+	<span>"user1"</span><span>:</span><span>"321"</span><span>,</span>
+	<span>"user2"</span><span>:</span><span>"213"</span>
+<span>}</span><span>;</span>
+<span>let</span> username<span>=</span><span>""</span><span>;</span>
+process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入用户名:"</span><span>)</span><span>;</span>
+process<span>.</span>stdin<span>.</span><span>on</span><span>(</span><span>'data'</span><span>,</span><span>(</span><span>input</span><span>)</span><span>=></span><span>{</span>
+	input<span>=</span>input<span>.</span><span>toString</span><span>(</span><span>)</span><span>.</span><span>trim</span><span>(</span><span>)</span><span>;</span>
+	<span>if</span><span>(</span><span>!</span>username<span>)</span><span>{</span>
+		<span>if</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>users<span>)</span><span>.</span><span>indexOf</span><span>(</span>input<span>)</span><span>===</span><span>-</span><span>1</span><span>)</span><span>{</span>
+			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'用户名不存在'</span><span>+</span><span>'\n'</span><span>)</span><span>;</span>
+			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入用户名:"</span><span>)</span><span>;</span>
+			username<span>=</span><span>""</span><span>;</span>
+		<span>}</span> <span>else</span> <span>{</span>
+			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入密码:"</span><span>)</span><span>;</span>
+			username<span>=</span>input<span>;</span>
+		<span>}</span>
+	<span>}</span> <span>else</span><span>{</span>
+    <span>// 输入密码</span>
+		<span>if</span><span>(</span>input<span>===</span>users<span>[</span>username<span>]</span><span>)</span><span>{</span>
+			console<span>.</span><span>log</span><span>(</span><span>"登陆成功"</span><span>)</span><span>;</span>
+		<span>}</span> <span>else</span><span>{</span>
+			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入密码"</span><span>+</span><span>"\n"</span><span>)</span><span>;</span>
+		<span>}</span>
+	<span>}</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node module.js
+请输入用户名:er
+用户名不存在
+请输入用户名:admin
+请输入密码:er
+请输入密码
+<span>123</span>
+登陆成功
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><p>原文链接：<a href="https://blog.csdn.net/weixin_36339245/article/details/81126960" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<h3 id="process-nexttick"> process.nextTick()</h3>
+<p>process.nextTick(callback)的功能是为事件循环设置一项任务， Node.js 会在下次事件循环调响应时调用 callback。</p>
+<p>我们知道，Node.js 适合 I/O 密集型的应用，而不是计算密集型的应用，因为一个 Node.js 进程只有一个线程，因此在任何时刻都只有一个事件在执行。如果这个事件占用大量的 CPU 时间，执行事件循环中的下一个事件就需要等待很久，因此 Node.js 的一个编程原则就是尽量缩短每个事件的执行时间。 process.nextTick() 提供了一个这样的工具，可以把复杂的工作拆散，变成一个个较小的事件。</p>
+<div><pre><code><span>function</span> <span>doSomething</span><span>(</span><span>args<span>,</span> callback</span><span>)</span> <span>{</span>
+	<span>somethingComplicated</span><span>(</span>args<span>)</span><span>;</span>
+	<span>callback</span><span>(</span><span>)</span><span>;</span>
+<span>}</span>
+
+<span>doSomething</span><span>(</span><span>function</span> <span>onEnd</span><span>(</span><span>)</span> <span>{</span>
+	<span>compute</span><span>(</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
+<p>我们假设 compute() 和 somethingComplicated() 是两个较为耗时的函数，以上的程序在调用 doSomething() 时会先执行 somethingComplicated()，然后立即调用回调函数，在 onEnd() 中又会执行 compute()。下面用 process.nextTick() 改写上面的程序：</p>
+</blockquote>
+<div><pre><code><span>function</span> <span>doSomething</span><span>(</span><span>args<span>,</span> callback</span><span>)</span> <span>{</span>
+	<span>somethingComplicated</span><span>(</span>args<span>)</span><span>;</span>
+	process<span>.</span><span>nextTick</span><span>(</span>callback<span>)</span><span>;</span>
+<span>}</span>
+<span>doSomething</span><span>(</span><span>function</span> <span>onEnd</span><span>(</span><span>)</span> <span>{</span>
+	<span>compute</span><span>(</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
+<p>改写后的程序会把上面耗时的操作拆分为两个事件，减少每个事件的执行时间，提高事件响应速度。</p>
+</blockquote>
+<div><p>注意</p>
+<p>不要使用 setTimeout(fn,0)代替 process.nextTick(callback)，前者比后者效率要低得多</p>
+</div>
+<h2 id="console"> console</h2>
+<blockquote>
+<p>console 用于提供控制台标准输出，它是由 Internet Explorer 的 JScript 引擎提供的调试工具，后来逐渐成为浏览器的事实标准。 Node.js 沿用了这个标准，提供与习惯行为一致的console 对象，用于向标准输出流（stdout）或标准错误流（stderr）输出字符</p>
+</blockquote>
+<h3 id="console-log"> console.log()</h3>
+<blockquote>
+<p>向标准输出流打印字符并以换行符结束。</p>
+</blockquote>
+<div><pre><code>console<span>.</span><span>log</span><span>(</span><span>'Hello world'</span><span>)</span><span>;</span>
+<span>// Hello world</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h3 id="console-error"> console.error()</h3>
+<blockquote>
+<p>与 console.log() 用法相同，只是向标准错误流输出。</p>
+</blockquote>
+<h3 id="console-trace"> console.trace()</h3>
+<blockquote>
+<p>向标准错误流输出当前的调用栈</p>
+</blockquote>
+<div><pre><code><span>// console.trace('Hello world');</span>
+Trace<span>:</span> Hello world
+    at Object<span>.</span><span>&lt;</span>anonymous<span>></span> <span>(</span><span>C</span><span>:</span>\Users\<span>ASUS</span>\Desktop\test\module<span>.</span>js<span>:</span><span>1</span><span>:</span><span>9</span><span>)</span>
+    at Module<span>.</span><span>_compile</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>999</span><span>:</span><span>30</span><span>)</span>
+    at Object<span>.</span>Module<span>.</span>_extensions<span>.</span><span>.</span><span>js</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>1027</span><span>:</span><span>10</span><span>)</span>
+    at Module<span>.</span><span>load</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>863</span><span>:</span><span>32</span><span>)</span>
+    at Function<span>.</span>Module<span>.</span><span>_load</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>708</span><span>:</span><span>14</span><span>)</span>
+    at Function<span>.</span>executeUserEntryPoint <span>[</span><span>as</span> runMain<span>]</span> <span>(</span>internal<span>/</span>modules<span>/</span>run_main<span>.</span>js<span>:</span><span>60</span><span>:</span><span>12</span><span>)</span>
+    at internal<span>/</span>main<span>/</span>run_main_module<span>.</span>js<span>:</span><span>17</span><span>:</span><span>47</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>常用工具util</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/55_%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7util/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/55_%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7util/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">常用工具util</source>
+      <category>nodejs</category>
+      <pubDate>Fri, 18 Jun 2021 23:19:35 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>util 是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足。</p>
+</blockquote>
+<h2 id="util-inherits"> util.inherits</h2>
+<blockquote>
+<p>是一个实现对象间原型继承的函数。 JavaScript 的面向对象特性是基于原型的，与常见的基于类的不同。 JavaScript 没有提供对象继承的语言级别特性，而是通过原型复制来实现的。</p>
+</blockquote>
+<p>语法：</p>
+<div><pre><code><span>// constructor：子类的构造函数</span>
+<span>// superConstructor：父类的构造函数</span>
+util<span>.</span><span>inherits</span><span>(</span>constructor<span>,</span> superConstructor<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><blockquote>
+<p>该方法对继承的实现，其本质上还是JavaScript原型链式继承。该方法会将父类superConstructor原型链上的方法复制到子类constructor原型链上，在其内部是调用Object.create()实现新对象的创建及原型链方法的复制。</p>
+</blockquote>
+<p>示例：</p>
+<div><pre><code><span>var</span> util <span>=</span> <span>require</span><span>(</span><span>'util'</span><span>)</span>
+<span>function</span> <span>Base</span><span>(</span><span>)</span> <span>{</span>
+  <span>this</span><span>.</span>name <span>=</span> <span>'base'</span>
+  <span>this</span><span>.</span>base <span>=</span> <span>1991</span>
+  <span>this</span><span>.</span><span>sayHello</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'Hello '</span> <span>+</span> <span>this</span><span>.</span>name<span>)</span>
+  <span>}</span>
+<span>}</span>
+<span>Base</span><span>.</span>prototype<span>.</span><span>showName</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>name<span>)</span>
+<span>}</span>
+<span>function</span> <span>Sub</span><span>(</span><span>)</span> <span>{</span>
+  <span>this</span><span>.</span>name <span>=</span> <span>'sub'</span>
+<span>}</span>
+util<span>.</span><span>inherits</span><span>(</span>Sub<span>,</span> Base<span>)</span>
+<span>var</span> objBase <span>=</span> <span>new</span> <span>Base</span><span>(</span><span>)</span>
+objBase<span>.</span><span>showName</span><span>(</span><span>)</span>
+objBase<span>.</span><span>sayHello</span><span>(</span><span>)</span>
+console<span>.</span><span>log</span><span>(</span>objBase<span>)</span>
+
+<span>var</span> objSub <span>=</span> <span>new</span> <span>Sub</span><span>(</span><span>)</span>
+objSub<span>.</span><span>showName</span><span>(</span><span>)</span>
+<span>//objSub.sayHello();</span>
+console<span>.</span><span>log</span><span>(</span>objSub<span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><div><p>注意</p>
+<p>Sub 仅仅继承了 Base 在原型中定义的函数，而构造函数内部创造的 base 属性和 sayHello 函数都没有被 Sub 继承。同时，在原型中定义的属性不会被 console.log 作为对象的属性输出。如果我们去掉 objSub.sayHello();  则会报错；</p>
+</div>
+<h2 id="util-inspect"> util.inspect</h2>
+<blockquote>
+<p>是一个将任意对象转换为字符串的方法，通常用于调试和错误输出。</p>
+</blockquote>
+<p>语法：</p>
+<div><pre><code>util<span>.</span><span>inspect</span><span>(</span>object<span>,</span><span>[</span>showHidden<span>]</span><span>,</span><span>[</span>depth<span>]</span><span>,</span><span>[</span>colors<span>]</span><span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>参数：</p>
+<ol>
+<li>object：转换的对象</li>
+<li>showHidden：可选参数，如果值为 true，将会输出更多隐藏信息</li>
+<li>depth： 表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多少。如果不指定depth，默认会递归2层，指定为 null 表示将不限递归层数完整遍历对象。</li>
+<li>color ：如果color 值为 true，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮的效果。</li>
+</ol>
+<div><p>提示</p>
+<p>特别要指出的是， util.inspect 并不会简单地直接把对象转换为字符串，即使该对象定义了 toString 方法也不会调用。</p>
+</div>
+<div><pre><code><span>var</span> util <span>=</span> <span>require</span><span>(</span><span>'util'</span><span>)</span>
+<span>function</span> <span>Person</span><span>(</span><span>)</span> <span>{</span>
+  <span>this</span><span>.</span>name <span>=</span> <span>'byvoid'</span>
+  <span>this</span><span>.</span><span>toString</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
+    <span>return</span> <span>this</span><span>.</span>name
+  <span>}</span>
+<span>}</span>
+<span>var</span> obj <span>=</span> <span>new</span> <span>Person</span><span>(</span><span>)</span>
+console<span>.</span><span>log</span><span>(</span>util<span>.</span><span>inspect</span><span>(</span>obj<span>)</span><span>)</span>
+console<span>.</span><span>log</span><span>(</span>util<span>.</span><span>inspect</span><span>(</span>obj<span>,</span> <span>true</span><span>,</span> <span>null</span><span>,</span> <span>true</span><span>)</span><span>)</span>
+
+<span>// 打印结果</span>
+Person <span>{</span> name<span>:</span> <span>'byvoid'</span><span>,</span> toString<span>:</span> <span>[</span>Function<span>]</span> <span>}</span>
+Person <span>{</span>
+  name<span>:</span> <span>'byvoid'</span><span>,</span>
+  toString<span>:</span> <span>[</span>Function<span>]</span> <span>{</span>
+    <span>[</span>length<span>]</span><span>:</span> <span>0</span><span>,</span>
+    <span>[</span>name<span>]</span><span>:</span> <span>''</span><span>,</span>
+    <span>[</span>arguments<span>]</span><span>:</span> <span>null</span><span>,</span>
+    <span>[</span>caller<span>]</span><span>:</span> <span>null</span><span>,</span>
+    <span>[</span>prototype<span>]</span><span>:</span> <span>{</span> <span>[</span>constructor<span>]</span><span>:</span> <span>[</span>Circular<span>]</span> <span>}</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><div><p>提示</p>
+<p>util还提供了util.isArray()、util.isRegExp()、util.isDate()、 util.isError() 四个类型测试工具，以及 util.format()、 util.debug() 等工具。</p>
+<p>可以访问 http://nodejs.org/api/util.html 了解详细内容</p>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>事件驱动events</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/60_%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8events/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/60_%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8events/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">事件驱动events</source>
+      <category>nodejs</category>
+      <pubDate>Sat, 19 Jun 2021 00:19:35 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>events 是 Node.js 最重要的模块，没有“之一”，原因是 Node.js 本身架构就是事件式的，而它提供了唯一的接口，所以堪称 Node.js 事件编程的基石。 events 模块不仅用于用户代码与 Node.js 下层事件循环的交互，还几乎被所有的模块依赖。</p>
+</blockquote>
+<h2 id="事件发射器"> 事件发射器</h2>
+<blockquote>
+<p>events 模块只提供了一个对象： events.EventEmitter。 EventEmitter 的核心就是事件发射与事件监听器功能的封装。EventEmitter 的每个事件由一个事件名和若干个参数组成，事件名是一个字符串，通常表达一定的语义。对于每个事件， EventEmitter 支持若干个事件监听器。当事件发射时，注册到这个事件的事件监听器被依次调用，事件参数作为回调函数参数传递。</p>
+</blockquote>
+<div><pre><code><span>const</span> events <span>=</span> <span>require</span><span>(</span><span>'events'</span><span>)</span><span>;</span>
+<span>const</span> emitter <span>=</span> <span>new</span> <span>events<span>.</span>EventEmitter</span><span>(</span><span>)</span><span>;</span>
+
+<span>// 监听事件</span>
+<span>// emitter.on('someEvent', function(arg1, arg2) {</span>
+<span>//   console.log('listener1', arg1, arg2)</span>
+<span>// })</span>
+<span>// emitter.on('someEvent', function(arg1, arg2) {</span>
+<span>//   console.log('listener2', arg1, arg2)</span>
+<span>// })</span>
+
+<span>// 触发事件</span>
+<span>// emitter.emit('someEvent', 'byvoid', 1991)</span>
+<span>// listener1 byvoid 1991</span>
+<span>// listener2 byvoid 1991</span>
+
+emitter<span>.</span><span>once</span><span>(</span><span>'someEvent'</span><span>,</span> <span>function</span><span>(</span><span>arg1<span>,</span> arg2</span><span>)</span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span><span>'listener1'</span><span>,</span> arg1<span>,</span> arg2<span>)</span>
+<span>}</span><span>)</span>
+
+emitter<span>.</span><span>emit</span><span>(</span><span>'someEvent'</span><span>,</span> <span>'byvoid'</span><span>,</span> <span>1991</span><span>)</span>
+emitter<span>.</span><span>emit</span><span>(</span><span>'someEvent'</span><span>,</span> <span>'byvoid'</span><span>,</span> <span>1991</span><span>)</span>
+<span>// listener1 byvoid 1991</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><blockquote>
+<p>以上例子中， emitter 为事件 someEvent 注册了两个事件监听器，然后发射了someEvent 事件。运行结果中可以看到两个事件监听器回调函数被先后调用</p>
+</blockquote>
+<p><strong>API说明</strong></p>
+<ul>
+<li>EventEmitter.on(event, listener) 为指定事件注册一个监听器，接受一个字符串 event 和一个回调函数 listener。</li>
+<li>EventEmitter.emit(event, [arg1], [arg2], [...]) 发射 event 事件，传递若干可选参数到事件监听器的参数表。</li>
+<li>EventEmitter.once(event, listener) 为指定事件注册一个单次监听器，即监听器最多只会触发一次，触发后立刻解除该监听器。</li>
+<li>EventEmitter.removeListener(event, listener) 移除指定事件的某个监听器， listener 必须是该事件已经注册过的监听器。</li>
+<li>EventEmitter.removeAllListeners([event]) 移除所有事件的所有监听器，如果指定 event，则移除指定事件的所有监听器。</li>
+</ul>
+<h2 id="error-事件"> error 事件</h2>
+<blockquote>
+<p>EventEmitter 定义了一个特殊的事件 error，它包含了“错误”的语义，我们在遇到异常的时候通常会发射 error 事件。当 error 被发射时， EventEmitter 规定如果没有响应的监听器， Node.js 会把它当作异常，退出程序并打印调用栈。我们一般要为会发射 error事件的对象设置监听器，避免遇到错误后整个程序崩溃。</p>
+</blockquote>
+<div><pre><code><span>var</span> events <span>=</span> <span>require</span><span>(</span><span>'events'</span><span>)</span><span>;</span>
+
+<span>var</span> emitter <span>=</span> <span>new</span> <span>events<span>.</span>EventEmitter</span><span>(</span><span>)</span><span>;</span>
+
+emitter<span>.</span><span>on</span><span>(</span><span>'error'</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
+  console<span>.</span><span>log</span><span>(</span>err<span>)</span> <span>// 错误了</span>
+<span>}</span><span>)</span>
+
+emitter<span>.</span><span>emit</span><span>(</span><span>'error'</span><span>,</span> <span>'错误了'</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><blockquote>
+<p>如果把监听的<code>error</code>事件去掉则会打印错误；</p>
+</blockquote>
+<div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
+$ node ./module.js 
+events.js:305
+    throw err<span>;</span> // Unhandled <span>'error'</span> event
+    ^
+
+Error <span>[</span>ERR_UNHANDLED_ERROR<span>]</span>: Unhandled error. <span>(</span><span>'错误了'</span><span>)</span>
+    at EventEmitter.emit <span>(</span>events.js:303:17<span>)</span>
+    at Object.<span>&lt;</span>anonymous<span>></span> <span>(</span>C:<span>\</span>Users<span>\</span>ASUS<span>\</span>Desktop<span>\</span>test<span>\</span>module.js:9:9<span>)</span>
+    at Module._compile <span>(</span>internal/modules/cjs/loader.js:999:30<span>)</span>
+    at Object.Module._extensions<span>..</span>js <span>(</span>internal/modules/cjs/loader.js:1027:10<span>)</span>
+    at Module.load <span>(</span>internal/modules/cjs/loader.js:863:32<span>)</span>
+    at Function.Module._load <span>(</span>internal/modules/cjs/loader.js:708:14<span>)</span>
+    at Function.executeUserEntryPoint <span>[</span>as runMain<span>]</span> <span>(</span>internal/modules/run_main.js:60:12<span>)</span>
+    at internal/main/run_main_module.js:17:47 <span>{</span>
+  code: <span>'ERR_UNHANDLED_ERROR'</span>,
+  context: <span>'错误了'</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="继承-eventemitter"> 继承 EventEmitter</h2>
+<blockquote>
+<p>大多数时候我们不会直接使用 EventEmitter，而是在对象中继承它。包括 fs、 net、http 在内的，只要是支持事件响应的核心模块都是 EventEmitter 的子类。</p>
+</blockquote>
+<p><strong>为什么要这样做呢？原因有两点。</strong></p>
+<ul>
+<li>具有某个实体功能的对象实现事件符合语义，事件的监听和发射应该是一个对象的方法。</li>
+<li>JavaScript 的对象机制是基于原型的，支持部分多重继承，继承 EventEmitter 不会打乱对象原有的继承关系。</li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -15008,7 +15454,7 @@ req<span>.</span><span>on</span><span>(</span><span>'response'</span><span>,</sp
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/75_Node.js%E6%98%AF%E4%BB%80%E4%B9%88/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js是什么</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -15053,7 +15499,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/80_Node.js%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js能做什么</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如 JavaScript 为客户端而生， Node.js 为网络而生。 Node.js 能做的远不止开发一个网站那么简单 ，Node.js 内建了 HTTP 服务器支持，也就是说你可以轻而易举地实现一个网站和服务器的组合。</p>
 </blockquote>
@@ -15077,7 +15523,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/85_%E5%BC%82%E6%AD%A5%E5%BC%8F%E4%B8%8E%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8/</guid>
       <source url="https://blog.yahweh.top/rss.xml">异步式 I/O与事件驱动</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 最大的特点就是采用异步式 I/O 与事件驱动的架构设计.</p>
 </blockquote>
@@ -15099,7 +15545,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/90_Node.js%20%E7%9A%84%E6%80%A7%E8%83%BD/</guid>
       <source url="https://blog.yahweh.top/rss.xml">Node.js的性能</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 用异步式 I/O 和事件驱动代替多线程，带来了可观的性能提升。 Node.js 除了使用 V8 作为JavaScript引擎以外，还使用了高效的 libev 和 libeio 库支持事件驱动和异步式 I/O。</p>
 </blockquote>
@@ -15113,7 +15559,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/95_CommonJS%E8%A7%84%E8%8C%83/</guid>
       <source url="https://blog.yahweh.top/rss.xml">CommonJS规范</source>
       <category>nodejs</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>正如当年为了统一 JavaScript 语言标准，人们制定了 ECMAScript 规范一样，如今为了统一 JavaScript 在浏览器之外的实现， CommonJS 诞生了。</p>
 </blockquote>
@@ -15126,7 +15572,7 @@ Core JavaScript 和 Client JavaScript 组成。Node.js 中所谓的 JavaScript �
       <link>https://blog.yahweh.top/views/backEnd/nodejs/</link>
       <guid>https://blog.yahweh.top/views/backEnd/nodejs/</guid>
       <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>Node.js 不是一种独立的语言， Node.js 也不是一个 JavaScript 框架，Node.js 更不是浏览器端的库，不能与 jQuery、 ExtJS 相提并论。 Node.js 是一个让 JavaScript 运行在服务端的开发平台，它让 JavaScript 成为脚本语言世界的一等公民，在服务端堪与 PHP、 Python、Perl、 Ruby 平起平坐。它跳过了 Apache、 Nginx 等 HTTP服务器，直接面向前端开发。</p>
 </blockquote>
@@ -19544,6 +19990,34 @@ flex-wrap: wrap;   这两句话等价于下面的这句话*/</span>
 ]]></content:encoded>
     </item>
     <item>
+      <title>flex布局</title>
+      <link>https://blog.yahweh.top/views/frontEnd/css/25_flex%E5%B8%83%E5%B1%80/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/css/25_flex%E5%B8%83%E5%B1%80/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">flex布局</source>
+      <category>CSS</category>
+      <pubDate>Sat, 02 Oct 2021 23:12:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>flex 属性用于设置或检索弹性盒模型对象的子元素如何分配空间。</p>
+</blockquote>
+<ul>
+<li>flex布局又称：弹性布局、伸缩布局、弹性盒布局、伸缩盒布局；</li>
+<li>flex布局主要应用于移动端，对pc端兼容较差；</li>
+<li>flex布局的主要思想是利用行和列进行控制；</li>
+</ul>
+<p>使用felx布局只需要在父元素上使用<code>display: flex</code>，子元素自动成为容器的项目。</p>
+<div><pre><code><span>div</span> <span>{</span>
+    <span>display</span><span>:</span> flex<span>;</span>  
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><p>提示</p>
+<p>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写属性。
+<code>flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;</code>
+如果元素不是弹性盒模型对象的子元素，则 flex 属性不起作用。</p>
+</div>
+<p>更详细的felx使用请移步 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener noreferrer">flex布局教程</a></p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>rem</title>
       <link>https://blog.yahweh.top/views/frontEnd/css/30_rem/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/css/30_rem/</guid>
@@ -19773,34 +20247,6 @@ CSS像素是一个抽像的单位，主要使用在浏览器上，用来精确�
 <li><a href="https://github.com/amfe/article/issues/17" target="_blank" rel="noopener noreferrer">使用Flexible实现手淘H5页面的终端适配</a></li>
 <li><a href="https://github.com/amfe/lib-flexible/issues/201" target="_blank" rel="noopener noreferrer">既然已经设置为理想视口，setBodyFontSize里为什么还要根据dpr设置字体大小</a></li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>flex布局</title>
-      <link>https://blog.yahweh.top/views/frontEnd/css/25_flex%E5%B8%83%E5%B1%80/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/css/25_flex%E5%B8%83%E5%B1%80/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">flex布局</source>
-      <category>CSS</category>
-      <pubDate>Sat, 02 Oct 2021 23:12:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>flex 属性用于设置或检索弹性盒模型对象的子元素如何分配空间。</p>
-</blockquote>
-<ul>
-<li>flex布局又称：弹性布局、伸缩布局、弹性盒布局、伸缩盒布局；</li>
-<li>flex布局主要应用于移动端，对pc端兼容较差；</li>
-<li>flex布局的主要思想是利用行和列进行控制；</li>
-</ul>
-<p>使用felx布局只需要在父元素上使用<code>display: flex</code>，子元素自动成为容器的项目。</p>
-<div><pre><code><span>div</span> <span>{</span>
-    <span>display</span><span>:</span> flex<span>;</span>  
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><div><p>提示</p>
-<p>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写属性。
-<code>flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;</code>
-如果元素不是弹性盒模型对象的子元素，则 flex 属性不起作用。</p>
-</div>
-<p>更详细的felx使用请移步 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener noreferrer">flex布局教程</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -23575,6 +24021,14 @@ console<span>.</span><span>log</span><span>(</span>somevar<span>)</span><span>;<
 ]]></content:encoded>
     </item>
     <item>
+      <title>尾调用优化</title>
+      <link>https://blog.yahweh.top/views/frontEnd/javascript/1550_%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/javascript/1550_%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">尾调用优化</source>
+      <category>javascript</category>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
+    </item>
+    <item>
       <title>同步与异步</title>
       <link>https://blog.yahweh.top/views/frontEnd/javascript/1555_%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/1555_%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%BC%82%E6%AD%A5/</guid>
@@ -23636,14 +24090,6 @@ console<span>.</span><span>log</span><span>(</span><span>'3'</span><span>)</span
 <p>https://www.cnblogs.com/Yellow-ice/p/10433423.html</p>
 <p>https://segmentfault.com/a/1190000015165424</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>尾调用优化</title>
-      <link>https://blog.yahweh.top/views/frontEnd/javascript/1550_%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/javascript/1550_%E5%B0%BE%E8%B0%83%E7%94%A8%E4%BC%98%E5%8C%96/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">尾调用优化</source>
-      <category>javascript</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
     </item>
     <item>
       <title>javascript单线程</title>
@@ -26364,7 +26810,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/2030_%E9%80%92%E5%BD%92/</guid>
       <source url="https://blog.yahweh.top/rss.xml">递归</source>
       <category>javascript</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
     </item>
     <item>
       <title>回调</title>
@@ -26372,7 +26818,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/2035_%E5%9B%9E%E8%B0%83/</guid>
       <source url="https://blog.yahweh.top/rss.xml">回调</source>
       <category>javascript</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
     </item>
     <item>
       <title>柯里化</title>
@@ -26380,7 +26826,7 @@ console<span>.</span><span>log</span><span>(</span>obj<span>.</span>name<span>)<
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/2040_%E6%9F%AF%E9%87%8C%E5%8C%96/</guid>
       <source url="https://blog.yahweh.top/rss.xml">柯里化</source>
       <category>javascript</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
     </item>
     <item>
       <title>类型转换</title>
@@ -26851,87 +27297,6 @@ console<span>.</span><span>log</span><span>(</span>arr<span>)</span> <span>//   
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></div></div><p><a href="https://www.runoob.com/w3cnote/insertion-sort.html" target="_blank" rel="noopener noreferrer">官方文档</a></p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>打包及本地预览</title>
-      <link>https://blog.yahweh.top/views/frontEnd/javascript/5005_%E6%89%93%E5%8C%85%E5%8F%8A%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/javascript/5005_%E6%89%93%E5%8C%85%E5%8F%8A%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">打包及本地预览</source>
-      <category>javascript</category>
-      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="构建打包"> 构建打包</h2>
-<p>在发布上线之前，我们需要执行构建打包，将 <code>.less</code>、<code>.vue</code>、<code>.js</code> 等相关资源进行编译打包，转换成浏览器可以直接识别运行的普通 <code>css</code>、<code>js</code>、<code>html</code>。</p>
-<div><pre><code>// 打包
-<span># yarn run build 或者 yarn build</span>
-<span>npm</span> run build
-
-每次 <span><span>`</span><span>npm</span> run build<span>`</span></span> 都会先把原来的 dist 删除，然后生成新的结果。
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><code>VueCLI</code>会把打包结果生成存储到项目的 <code>dist</code> 目录中。</p>
-<p><img src="./assets/1580038692656.png" alt="1580038692656" /></p>
-<h2 id="打包禁用hash值"> 打包禁用hash值；</h2>
-<blockquote>
-<p>在vue.config.js中   设置<code>filenameHashing</code>选项；</p>
-</blockquote>
-<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
-  <span>// webpack配置: 关闭哈希值</span>
-  filenameHashing<span>:</span> <span>false</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="预览打包结果"> 预览打包结果</h2>
-<blockquote>
-<p><strong>注意</strong>：不能直接双击打开 index.html 运行。</p>
-</blockquote>
-<p>将 dist 放到一个 Web 服务器中运行测试，常见的 Web 服务器：</p>
-<ul>
-<li>Ngxin</li>
-<li>Apache</li>
-<li>tomcat</li>
-<li>IIS</li>
-<li>Node.js</li>
-</ul>
-<p>推荐使用<code>Vue</code>官方推荐的一个命令行<code>http</code>服务工具：<a href="https://github.com/zeit/serve" target="_blank" rel="noopener noreferrer">serve</a>。</p>
-<p><code>dist</code> 目录需要启动一个 HTTP 服务器来访问，所以 <code>file://</code> 协议直接打开 <code>dist/index.html</code> 是不会工作的。在本地预览生产环境构建最简单的方式就是使用一个 Node.js 静态文件服务器，例如 <a href="https://github.com/zeit/serve" target="_blank" rel="noopener noreferrer">serve</a>：</p>
-<p><strong>安装：</strong></p>
-<div><pre><code><span># yarn global add serve</span>
-<span># 安装全局包，在任何目录执行都可以</span>
-<span>npm</span> <span>install</span> -g serve
-或
-<span>npm</span> <span>install</span> serve
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>然后在你的项目目录下执行：</p>
-<div><pre><code><span># dist 是运行 Web 服务根目录</span>
-serve -s dist
-或 注意 两者有区别
-serve dist
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>如果启动成功，你将看到如下提示：</p>
-<div><pre><code>   ┌────────────────────────────────────────────────────┐
-   │                                                    │
-   │   Serving!                                         │
-   │                                                    │
-   │   - Local:            http://localhost:5000        │
-   │   - On Your Network:  http://192.168.156.90:5000   │
-   │                                                    │
-   │   Copied local address to clipboard!               │
-   │                                                    │
-   └────────────────────────────────────────────────────┘
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><blockquote>
-<p>serve 默认占用 5000 端口并启动一个服务</p>
-</blockquote>
-<h2 id="部署"> 部署</h2>
-<ul>
-<li>公司有专门的 devops，就是运维
-<ul>
-<li>有些公司没有专门的运维人员，那就后端负责</li>
-</ul>
-</li>
-</ul>
-<div><pre><code><span># --force 强制推送，简写 -f</span>
-<span>git</span> push -u origin master -f
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>常用方法</title>
@@ -28077,6 +28442,87 @@ console<span>.</span><span>log</span><span>(</span>arrV<span>)</span> <span>// t
 </li>
 </ol>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>打包及本地预览</title>
+      <link>https://blog.yahweh.top/views/frontEnd/javascript/5005_%E6%89%93%E5%8C%85%E5%8F%8A%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/javascript/5005_%E6%89%93%E5%8C%85%E5%8F%8A%E6%9C%AC%E5%9C%B0%E9%A2%84%E8%A7%88/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">打包及本地预览</source>
+      <category>javascript</category>
+      <pubDate>Sun, 02 May 2021 22:22:34 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="构建打包"> 构建打包</h2>
+<p>在发布上线之前，我们需要执行构建打包，将 <code>.less</code>、<code>.vue</code>、<code>.js</code> 等相关资源进行编译打包，转换成浏览器可以直接识别运行的普通 <code>css</code>、<code>js</code>、<code>html</code>。</p>
+<div><pre><code>// 打包
+<span># yarn run build 或者 yarn build</span>
+<span>npm</span> run build
+
+每次 <span><span>`</span><span>npm</span> run build<span>`</span></span> 都会先把原来的 dist 删除，然后生成新的结果。
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p><code>VueCLI</code>会把打包结果生成存储到项目的 <code>dist</code> 目录中。</p>
+<p><img src="./assets/1580038692656.png" alt="1580038692656" /></p>
+<h2 id="打包禁用hash值"> 打包禁用hash值；</h2>
+<blockquote>
+<p>在vue.config.js中   设置<code>filenameHashing</code>选项；</p>
+</blockquote>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  <span>// webpack配置: 关闭哈希值</span>
+  filenameHashing<span>:</span> <span>false</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><h2 id="预览打包结果"> 预览打包结果</h2>
+<blockquote>
+<p><strong>注意</strong>：不能直接双击打开 index.html 运行。</p>
+</blockquote>
+<p>将 dist 放到一个 Web 服务器中运行测试，常见的 Web 服务器：</p>
+<ul>
+<li>Ngxin</li>
+<li>Apache</li>
+<li>tomcat</li>
+<li>IIS</li>
+<li>Node.js</li>
+</ul>
+<p>推荐使用<code>Vue</code>官方推荐的一个命令行<code>http</code>服务工具：<a href="https://github.com/zeit/serve" target="_blank" rel="noopener noreferrer">serve</a>。</p>
+<p><code>dist</code> 目录需要启动一个 HTTP 服务器来访问，所以 <code>file://</code> 协议直接打开 <code>dist/index.html</code> 是不会工作的。在本地预览生产环境构建最简单的方式就是使用一个 Node.js 静态文件服务器，例如 <a href="https://github.com/zeit/serve" target="_blank" rel="noopener noreferrer">serve</a>：</p>
+<p><strong>安装：</strong></p>
+<div><pre><code><span># yarn global add serve</span>
+<span># 安装全局包，在任何目录执行都可以</span>
+<span>npm</span> <span>install</span> -g serve
+或
+<span>npm</span> <span>install</span> serve
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>然后在你的项目目录下执行：</p>
+<div><pre><code><span># dist 是运行 Web 服务根目录</span>
+serve -s dist
+或 注意 两者有区别
+serve dist
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>如果启动成功，你将看到如下提示：</p>
+<div><pre><code>   ┌────────────────────────────────────────────────────┐
+   │                                                    │
+   │   Serving!                                         │
+   │                                                    │
+   │   - Local:            http://localhost:5000        │
+   │   - On Your Network:  http://192.168.156.90:5000   │
+   │                                                    │
+   │   Copied local address to clipboard!               │
+   │                                                    │
+   └────────────────────────────────────────────────────┘
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br></div></div><blockquote>
+<p>serve 默认占用 5000 端口并启动一个服务</p>
+</blockquote>
+<h2 id="部署"> 部署</h2>
+<ul>
+<li>公司有专门的 devops，就是运维
+<ul>
+<li>有些公司没有专门的运维人员，那就后端负责</li>
+</ul>
+</li>
+</ul>
+<div><pre><code><span># --force 强制推送，简写 -f</span>
+<span>git</span> push -u origin master -f
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>js实现复制粘贴</title>
@@ -30416,7 +30862,7 @@ console<span>.</span><span>log</span><span>(</span><span>[</span><span>]</span><
       <guid>https://blog.yahweh.top/views/frontEnd/javascript/540_%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</guid>
       <source url="https://blog.yahweh.top/rss.xml">深拷贝与浅拷贝</source>
       <category>javascript</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
     </item>
     <item>
       <title>this对象</title>
@@ -39162,166 +39608,6 @@ Vue<span>.</span><span>use</span><span>(</span>VueRouter<span>)</span><span>;</s
 ]]></content:encoded>
     </item>
     <item>
-      <title>全局对象</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/50_%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/50_%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">全局对象</source>
-      <category>nodejs</category>
-      <pubDate>Tue, 15 Jun 2021 07:25:35 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>JavaScript 中有一个特殊的对象，称为全局对象（Global Object），它及其所有属性都可以在程序的任何地方访问，即全局变量。在浏览器 JavaScript 中，通常 window 是全局对象，而 Node.js 中的全局对象是 global，所有全局变量（除了 global 本身以外）都是 global对象的属性。我们在 Node.js 中能够直接访问到对象通常都是 global 的属性，如 console、process等;</p>
-</blockquote>
-<h2 id="全局对象与全局变量"> 全局对象与全局变量</h2>
-<blockquote>
-<p>global 最根本的作用是作为全局变量的宿主。按照 ECMAScript 的定义，满足以下条件的变量是全局变量：
-1：在最外层定义的变量；
-2：全局对象的属性；
-3：隐式定义的变量（未定义直接赋值的变量）。
-当你定义一个全局变量时，这个变量同时也会成为全局对象的属性，反之亦然。</p>
-</blockquote>
-<div><p>提示</p>
-<p>需要注意的是：</p>
-<p>1、在 Node.js 中你不可能在最外层定义变量，因为所有用户代码都是属于当前模块的，而模块本身不是最外层上下文。</p>
-<p>2、永远使用 var 定义变量以避免引入全局变量，因为全局变量会污染命名空间，提高代码的耦合风险。</p>
-</div>
-<h2 id="process"> process</h2>
-<blockquote>
-<p>process 是一个全局变量，即 global 对象的属性。它用于描述当前 Node.js <strong>进程状态</strong>的对象，提供了一个与操作系统的简单接口。</p>
-</blockquote>
-<h3 id="process-argv"> process.argv</h3>
-<p>process.argv是命令行参数数组，第一个元素是 node， 第二个元素是脚本文件名，从第三个元素开始每个元素是一个运行参数。</p>
-<div><pre><code><span>// argv.js</span>
-console<span>.</span><span>log</span><span>(</span>process<span>.</span>argv<span>)</span><span>;</span>
-
-<span>ASUS</span>@yaweidediannao <span>MINGW64</span> <span>~</span><span>/</span>Desktop<span>/</span>test
-$ node <span>.</span><span>/</span>argv<span>.</span>js <span>1991</span> name<span>=</span>bycoid <span>--</span>v <span>"Carbo Kuo"</span>
-<span>[</span>
-  <span>'C:\\Program Files\\nodejs\\node.exe'</span><span>,</span>
-  <span>'C:\\Users\\ASUS\\Desktop\\test\\argv.js'</span><span>,</span>
-  <span>'1991'</span><span>,</span>
-  <span>'name=bycoid'</span><span>,</span>
-  <span>'--v'</span><span>,</span>
-  <span>'Carbo Kuo'</span>
-<span>]</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></div></div><h3 id="process-stdout"> process.stdout</h3>
-<p>process.stdout是标准输出流，通常我们使用的 console.log() 向标准输出打印字符，而 process.stdout.write() 函数提供了更底层的接口</p>
-<div><pre><code>process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'我执行了'</span><span>)</span> <span>// 我执行了</span>
-</code></pre>
-<div><span>1</span><br></div></div><h3 id="process-stdin"> process.stdin</h3>
-<p>process.stdin是标准输入流，初始时它是被暂停的，要想从标准输入读取数据，你必须恢复流，并手动编写流的事件响应函数。</p>
-<div><pre><code><span>// module.js</span>
-process<span>.</span>stdin<span>.</span><span>resume</span><span>(</span><span>)</span><span>;</span>
-process<span>.</span>stdin<span>.</span><span>on</span><span>(</span><span>'data'</span><span>,</span> <span>function</span><span>(</span><span>data</span><span>)</span> <span>{</span>
-  process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'read from console: '</span> <span>+</span> data<span>.</span><span>toString</span><span>(</span><span>)</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
-$ node module.js 
-我执行了
-<span>read</span> from console: 我执行了
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p><strong>例：process.stdout和process.stdin实现控制台登录</strong></p>
-<div><pre><code><span>let</span> users<span>=</span><span>{</span>
-	<span>"admin"</span><span>:</span><span>"123"</span><span>,</span>
-	<span>"user1"</span><span>:</span><span>"321"</span><span>,</span>
-	<span>"user2"</span><span>:</span><span>"213"</span>
-<span>}</span><span>;</span>
-<span>let</span> username<span>=</span><span>""</span><span>;</span>
-process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入用户名:"</span><span>)</span><span>;</span>
-process<span>.</span>stdin<span>.</span><span>on</span><span>(</span><span>'data'</span><span>,</span><span>(</span><span>input</span><span>)</span><span>=></span><span>{</span>
-	input<span>=</span>input<span>.</span><span>toString</span><span>(</span><span>)</span><span>.</span><span>trim</span><span>(</span><span>)</span><span>;</span>
-	<span>if</span><span>(</span><span>!</span>username<span>)</span><span>{</span>
-		<span>if</span><span>(</span>Object<span>.</span><span>keys</span><span>(</span>users<span>)</span><span>.</span><span>indexOf</span><span>(</span>input<span>)</span><span>===</span><span>-</span><span>1</span><span>)</span><span>{</span>
-			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>'用户名不存在'</span><span>+</span><span>'\n'</span><span>)</span><span>;</span>
-			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入用户名:"</span><span>)</span><span>;</span>
-			username<span>=</span><span>""</span><span>;</span>
-		<span>}</span> <span>else</span> <span>{</span>
-			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入密码:"</span><span>)</span><span>;</span>
-			username<span>=</span>input<span>;</span>
-		<span>}</span>
-	<span>}</span> <span>else</span><span>{</span>
-    <span>// 输入密码</span>
-		<span>if</span><span>(</span>input<span>===</span>users<span>[</span>username<span>]</span><span>)</span><span>{</span>
-			console<span>.</span><span>log</span><span>(</span><span>"登陆成功"</span><span>)</span><span>;</span>
-		<span>}</span> <span>else</span><span>{</span>
-			process<span>.</span>stdout<span>.</span><span>write</span><span>(</span><span>"请输入密码"</span><span>+</span><span>"\n"</span><span>)</span><span>;</span>
-		<span>}</span>
-	<span>}</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></div></div><div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
-$ node module.js
-请输入用户名:er
-用户名不存在
-请输入用户名:admin
-请输入密码:er
-请输入密码
-<span>123</span>
-登陆成功
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><p>原文链接：<a href="https://blog.csdn.net/weixin_36339245/article/details/81126960" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<h3 id="process-nexttick"> process.nextTick()</h3>
-<p>process.nextTick(callback)的功能是为事件循环设置一项任务， Node.js 会在下次事件循环调响应时调用 callback。</p>
-<p>我们知道，Node.js 适合 I/O 密集型的应用，而不是计算密集型的应用，因为一个 Node.js 进程只有一个线程，因此在任何时刻都只有一个事件在执行。如果这个事件占用大量的 CPU 时间，执行事件循环中的下一个事件就需要等待很久，因此 Node.js 的一个编程原则就是尽量缩短每个事件的执行时间。 process.nextTick() 提供了一个这样的工具，可以把复杂的工作拆散，变成一个个较小的事件。</p>
-<div><pre><code><span>function</span> <span>doSomething</span><span>(</span><span>args<span>,</span> callback</span><span>)</span> <span>{</span>
-	<span>somethingComplicated</span><span>(</span>args<span>)</span><span>;</span>
-	<span>callback</span><span>(</span><span>)</span><span>;</span>
-<span>}</span>
-
-<span>doSomething</span><span>(</span><span>function</span> <span>onEnd</span><span>(</span><span>)</span> <span>{</span>
-	<span>compute</span><span>(</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
-<p>我们假设 compute() 和 somethingComplicated() 是两个较为耗时的函数，以上的程序在调用 doSomething() 时会先执行 somethingComplicated()，然后立即调用回调函数，在 onEnd() 中又会执行 compute()。下面用 process.nextTick() 改写上面的程序：</p>
-</blockquote>
-<div><pre><code><span>function</span> <span>doSomething</span><span>(</span><span>args<span>,</span> callback</span><span>)</span> <span>{</span>
-	<span>somethingComplicated</span><span>(</span>args<span>)</span><span>;</span>
-	process<span>.</span><span>nextTick</span><span>(</span>callback<span>)</span><span>;</span>
-<span>}</span>
-<span>doSomething</span><span>(</span><span>function</span> <span>onEnd</span><span>(</span><span>)</span> <span>{</span>
-	<span>compute</span><span>(</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><blockquote>
-<p>改写后的程序会把上面耗时的操作拆分为两个事件，减少每个事件的执行时间，提高事件响应速度。</p>
-</blockquote>
-<div><p>注意</p>
-<p>不要使用 setTimeout(fn,0)代替 process.nextTick(callback)，前者比后者效率要低得多</p>
-</div>
-<h2 id="console"> console</h2>
-<blockquote>
-<p>console 用于提供控制台标准输出，它是由 Internet Explorer 的 JScript 引擎提供的调试工具，后来逐渐成为浏览器的事实标准。 Node.js 沿用了这个标准，提供与习惯行为一致的console 对象，用于向标准输出流（stdout）或标准错误流（stderr）输出字符</p>
-</blockquote>
-<h3 id="console-log"> console.log()</h3>
-<blockquote>
-<p>向标准输出流打印字符并以换行符结束。</p>
-</blockquote>
-<div><pre><code>console<span>.</span><span>log</span><span>(</span><span>'Hello world'</span><span>)</span><span>;</span>
-<span>// Hello world</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h3 id="console-error"> console.error()</h3>
-<blockquote>
-<p>与 console.log() 用法相同，只是向标准错误流输出。</p>
-</blockquote>
-<h3 id="console-trace"> console.trace()</h3>
-<blockquote>
-<p>向标准错误流输出当前的调用栈</p>
-</blockquote>
-<div><pre><code><span>// console.trace('Hello world');</span>
-Trace<span>:</span> Hello world
-    at Object<span>.</span><span>&lt;</span>anonymous<span>></span> <span>(</span><span>C</span><span>:</span>\Users\<span>ASUS</span>\Desktop\test\module<span>.</span>js<span>:</span><span>1</span><span>:</span><span>9</span><span>)</span>
-    at Module<span>.</span><span>_compile</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>999</span><span>:</span><span>30</span><span>)</span>
-    at Object<span>.</span>Module<span>.</span>_extensions<span>.</span><span>.</span><span>js</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>1027</span><span>:</span><span>10</span><span>)</span>
-    at Module<span>.</span><span>load</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>863</span><span>:</span><span>32</span><span>)</span>
-    at Function<span>.</span>Module<span>.</span><span>_load</span> <span>(</span>internal<span>/</span>modules<span>/</span>cjs<span>/</span>loader<span>.</span>js<span>:</span><span>708</span><span>:</span><span>14</span><span>)</span>
-    at Function<span>.</span>executeUserEntryPoint <span>[</span><span>as</span> runMain<span>]</span> <span>(</span>internal<span>/</span>modules<span>/</span>run_main<span>.</span>js<span>:</span><span>60</span><span>:</span><span>12</span><span>)</span>
-    at internal<span>/</span>main<span>/</span>run_main_module<span>.</span>js<span>:</span><span>17</span><span>:</span><span>47</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>构建流程</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/1520_%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/1520_%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B/</guid>
@@ -39339,31 +39625,6 @@ Trace<span>:</span> Hello world
 └── entry-server.js <span># 服务端入口，用于首屏内容渲染</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>服务端入口</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/1530_%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%85%A5%E5%8F%A3/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/1530_%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%85%A5%E5%8F%A3/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">服务端入口</source>
-      <category>vue</category>
-      <pubDate>Thu, 09 Sep 2021 08:22:23 GMT</pubDate>
-      <content:encoded><![CDATA[<p>服务端入口文件<code>src/entry-server.js</code></p>
-<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
-<span>// 返回一个函数，接收请求上下文，返回创建的vue实例</span>
-<span>export</span> <span>default</span> <span>context</span> <span>=></span> <span>{</span>
-    <span>// 这里返回一个Promise，确保客户端入口准备就绪  </span>
-    <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>(</span><span>resolve<span>,</span> reject</span><span>)</span> <span>=></span> <span>{</span>
-        <span>const</span> <span>{</span> app<span>,</span> router <span>}</span> <span>=</span> <span>createApp</span><span>(</span>context<span>)</span><span>;</span>
-        <span>// 跳转到首屏的地址</span>
-        router<span>.</span><span>push</span><span>(</span>context<span>.</span>url<span>)</span><span>;</span>
-        <span>// 路由就绪，返回结果</span>
-        router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-            <span>resolve</span><span>(</span>app<span>)</span><span>;</span>
-        <span>}</span><span>,</span> reject<span>)</span><span>;</span>
-    <span>}</span><span>)</span><span>;</span>
-<span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>创建VUE实例</title>
@@ -39393,6 +39654,31 @@ Vue<span>.</span>config<span>.</span>productionTip <span>=</span> <span>false</s
 <p>这里我们也是需要导出一个vue实例的工厂函数，因为需要每次都重新创建一个全新的vue实例给前台；</p>
 </div>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>服务端入口</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/1530_%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%85%A5%E5%8F%A3/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/1530_%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%85%A5%E5%8F%A3/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">服务端入口</source>
+      <category>vue</category>
+      <pubDate>Thu, 09 Sep 2021 08:22:23 GMT</pubDate>
+      <content:encoded><![CDATA[<p>服务端入口文件<code>src/entry-server.js</code></p>
+<div><pre><code><span>import</span> <span>{</span> createApp <span>}</span> <span>from</span> <span>"./main"</span><span>;</span>
+<span>// 返回一个函数，接收请求上下文，返回创建的vue实例</span>
+<span>export</span> <span>default</span> <span>context</span> <span>=></span> <span>{</span>
+    <span>// 这里返回一个Promise，确保客户端入口准备就绪  </span>
+    <span>return</span> <span>new</span> <span>Promise</span><span>(</span><span>(</span><span>resolve<span>,</span> reject</span><span>)</span> <span>=></span> <span>{</span>
+        <span>const</span> <span>{</span> app<span>,</span> router <span>}</span> <span>=</span> <span>createApp</span><span>(</span>context<span>)</span><span>;</span>
+        <span>// 跳转到首屏的地址</span>
+        router<span>.</span><span>push</span><span>(</span>context<span>.</span>url<span>)</span><span>;</span>
+        <span>// 路由就绪，返回结果</span>
+        router<span>.</span><span>onReady</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+            <span>resolve</span><span>(</span>app<span>)</span><span>;</span>
+        <span>}</span><span>,</span> reject<span>)</span><span>;</span>
+    <span>}</span><span>)</span><span>;</span>
+<span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>客户端入口</title>
@@ -39555,21 +39841,6 @@ module<span>.</span>exports <span>=</span> <span>{</span>
 ]]></content:encoded>
     </item>
     <item>
-      <title>托管静态资源</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/1555_%E6%89%98%E7%AE%A1%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/1555_%E6%89%98%E7%AE%A1%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">托管静态资源</source>
-      <category>vue</category>
-      <pubDate>Thu, 09 Sep 2021 21:10:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>在前面的打包输出的dist文件需要托管在Node服务中，所以需要配置静态资源托管；</p>
-</blockquote>
-<p>修改<code>/bin/server.js</code>文件添加如下代码：</p>
-<div><pre><code>app<span>.</span><span>use</span><span>(</span>express<span>.</span><span>static</span><span>(</span><span>'../dist/client'</span><span>)</span><span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
       <title>宿主文件</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/1550_%E5%AE%BF%E4%B8%BB%E6%96%87%E4%BB%B6/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/1550_%E5%AE%BF%E4%B8%BB%E6%96%87%E4%BB%B6/</guid>
@@ -39596,6 +39867,21 @@ module<span>.</span>exports <span>=</span> <span>{</span>
 <p>由于采用的服务器端渲染，所以之前的#app之类就不再需要了；</p>
 </blockquote>
 ]]></content:encoded>
+    </item>
+    <item>
+      <title>托管静态资源</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/1555_%E6%89%98%E7%AE%A1%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/1555_%E6%89%98%E7%AE%A1%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">托管静态资源</source>
+      <category>vue</category>
+      <pubDate>Thu, 09 Sep 2021 21:10:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>在前面的打包输出的dist文件需要托管在Node服务中，所以需要配置静态资源托管；</p>
+</blockquote>
+<p>修改<code>/bin/server.js</code>文件添加如下代码：</p>
+<div><pre><code>app<span>.</span><span>use</span><span>(</span>express<span>.</span><span>static</span><span>(</span><span>'../dist/client'</span><span>)</span><span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div>]]></content:encoded>
     </item>
     <item>
       <title>配置清单</title>
@@ -40154,143 +40440,6 @@ Vue<span>.</span><span>set</span><span>(</span>vm<span>.</span>arr<span>,</span>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br></div></div>]]></content:encoded>
     </item>
     <item>
-      <title>toast组件</title>
-      <link>https://blog.yahweh.top/views/frontEnd/vue/505_toast%E7%BB%84%E4%BB%B6/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/vue/505_toast%E7%BB%84%E4%BB%B6/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">toast组件</source>
-      <category>vue</category>
-      <pubDate>Sat, 21 Aug 2021 12:04:30 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>吐司组件在前端中算是最常用的组件了，这里简单实现一下；</p>
-</blockquote>
-<h2 id="封装toast组件"> 封装toast组件</h2>
-<blockquote>
-<p>ui部分，主要是显示内容；</p>
-</blockquote>
-<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
-    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>"</span>w-toast<span>"</span></span> <span>v-show</span><span><span>=</span><span>"</span>visible<span>"</span></span><span>></span></span>
-        <span><span><span>&lt;</span>span</span> <span>class</span><span><span>=</span><span>"</span>w-toast-title<span>"</span></span><span>></span></span>{{ title }}<span><span><span>&lt;/</span>span</span><span>></span></span>
-        <span><span><span>&lt;</span>slot</span><span>></span></span>
-            <span><span><span>&lt;</span>p</span> <span>class</span><span><span>=</span><span>"</span>w-toast-content<span>"</span></span><span>></span></span>{{ content }}<span><span><span>&lt;/</span>p</span><span>></span></span>
-        <span><span><span>&lt;/</span>slot</span><span>></span></span>
-    <span><span><span>&lt;/</span>div</span><span>></span></span>
-<span><span><span>&lt;/</span>template</span><span>></span></span>
-<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
-<span>export</span> <span>default</span> <span>{</span>
-    name<span>:</span> <span>'WToast'</span><span>,</span>
-    props<span>:</span> <span>{</span>
-        title<span>:</span> String<span>,</span>
-        content<span>:</span> String<span>,</span>
-        duration<span>:</span> <span>{</span>
-            <span>default</span><span>:</span> <span>3000</span>
-        <span>}</span>
-    <span>}</span><span>,</span>
-    <span>data</span><span>(</span><span>)</span> <span>{</span>
-        <span>return</span> <span>{</span>
-            visible<span>:</span> <span>false</span><span>,</span>
-        <span>}</span>
-    <span>}</span><span>,</span>
-    methods<span>:</span> <span>{</span>
-        <span>open</span><span>(</span><span>)</span> <span>{</span>
-            <span>this</span><span>.</span>visible <span>=</span> <span>true</span><span>;</span>
-            <span>setTimeout</span><span>(</span><span>this</span><span>.</span>close<span>,</span> <span>this</span><span>.</span>duration<span>)</span><span>;</span>
-        <span>}</span><span>,</span>
-        <span>close</span><span>(</span><span>)</span> <span>{</span>
-            <span>this</span><span>.</span>visible <span>=</span> <span>false</span><span>;</span>
-            <span>this</span><span>.</span><span>remove</span><span>(</span><span>)</span><span>;</span>
-        <span>}</span>
-    <span>}</span>
-<span>}</span>
-</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
-<span><span><span>&lt;</span>style</span> <span>scoped</span><span>></span></span><span><span>
-<span>.w-toast</span> <span>{</span>
-    <span>position</span><span>:</span> fixed<span>;</span>
-    <span>left</span><span>:</span> 50%<span>;</span>
-    <span>top</span><span>:</span> 20%<span>;</span>
-    <span>max-width</span><span>:</span> 300px<span>;</span>
-    <span>height</span><span>:</span> 40px<span>;</span>
-    <span>line-height</span><span>:</span> 40px<span>;</span>
-    <span>padding</span><span>:</span> 0 20px<span>;</span>
-    <span>transform</span><span>:</span> <span>translateX</span><span>(</span>-50%<span>)</span><span>;</span>
-    <span>background</span><span>:</span> #ccc<span>;</span>
-<span>}</span>
-<span>.w-toast-content</span> <span>{</span>
-    <span>margin</span><span>:</span> 0<span>;</span>
-    <span>display</span><span>:</span> inline-block<span>;</span>
-<span>}</span>
-</span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br></div></div><h2 id="创建create函数"> 创建create函数</h2>
-<blockquote>
-<p>方法用于随时创建使用 toast 提示；</p>
-</blockquote>
-<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span><span>;</span>
-
-<span>// 方式一</span>
-<span>function</span> <span>create</span><span>(</span><span>component<span>,</span> props</span><span>)</span> <span>{</span>
-    <span>// 完成vue的初始化但是没有要挂载的节点；</span>
-    <span>const</span> _vm <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
-        <span>render</span><span>(</span><span>h</span><span>)</span> <span>{</span>
-            <span>return</span> <span>h</span><span>(</span>component<span>,</span> <span>{</span> props <span>}</span><span>)</span>
-        <span>}</span>
-    <span>}</span><span>)</span><span>.</span><span>$mount</span><span>(</span><span>)</span><span>;</span>
-
-    <span>// 挂载到 body 节点上</span>
-    document<span>.</span>body<span>.</span><span>appendChild</span><span>(</span>_vm<span>.</span>$el<span>)</span><span>;</span>
-
-    <span>// 给组件示例添加销毁方法；</span>
-    <span>const</span> comp <span>=</span> _vm<span>.</span>$children<span>[</span><span>0</span><span>]</span><span>;</span>
-    comp<span>.</span><span>remove</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-        document<span>.</span>body<span>.</span><span>removeChild</span><span>(</span>_vm<span>.</span>$el<span>)</span><span>;</span>
-        _vm<span>.</span><span>$destroy</span><span>(</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>return</span> comp<span>;</span>
-<span>}</span>
-
-<span>// 方式二；</span>
-<span>function</span> <span>create</span><span>(</span><span>component<span>,</span> props</span><span>)</span> <span>{</span>
-    <span>const</span> Ctor <span>=</span> Vue<span>.</span><span>extend</span><span>(</span>component<span>)</span>
-    <span>const</span> comp <span>=</span> <span>new</span> <span>Ctor</span><span>(</span><span>{</span> propsData<span>:</span> props <span>}</span><span>)</span><span>;</span>
-    comp<span>.</span><span>$mount</span><span>(</span><span>)</span><span>;</span>
-    document<span>.</span>body<span>.</span><span>appendChild</span><span>(</span>comp<span>.</span>$el<span>)</span><span>;</span>
-
-    <span>// 给组件示例添加销毁方法；</span>
-    comp<span>.</span><span>remove</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-        document<span>.</span>body<span>.</span><span>removeChild</span><span>(</span>comp<span>.</span>$el<span>)</span><span>;</span>
-        comp<span>.</span><span>$destroy</span><span>(</span><span>)</span><span>;</span>
-    <span>}</span>
-    <span>return</span> comp<span>;</span>
-<span>}</span>
-
-<span>export</span> <span>default</span> create<span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br></div></div><h2 id="使用"> 使用</h2>
-<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
-  <span><span><span>&lt;</span>div</span><span>></span></span>
-    <span><span><span>&lt;</span>button</span> <span>@click</span><span><span>=</span><span>"</span>open<span>"</span></span><span>></span></span>弹窗<span><span><span>&lt;/</span>button</span><span>></span></span>
-  <span><span><span>&lt;/</span>div</span><span>></span></span>
-<span><span><span>&lt;/</span>template</span><span>></span></span>
-
-<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
-<span>import</span> toast <span>from</span> <span>'./toast.vue'</span><span>;</span>
-<span>import</span> create <span>from</span> <span>'../utils/toast'</span><span>;</span>
-<span>export</span> <span>default</span> <span>{</span>
-  methods<span>:</span> <span>{</span>
-    <span>open</span><span>(</span><span>)</span> <span>{</span>
-      <span>create</span><span>(</span>toast<span>,</span> <span>{</span>
-        title<span>:</span> <span>'成功'</span><span>,</span>
-        content<span>:</span> <span>'恭喜你创建成功'</span><span>,</span>
-        duration<span>:</span> <span>1000</span><span>,</span>
-      <span>}</span><span>)</span><span>.</span><span>open</span><span>(</span><span>)</span><span>;</span>
-    <span>}</span>
-  <span>}</span>
-<span>}</span>
-</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><p><img src="./assets/image-20210819223132474.png" alt="image-20210819223132474" /></p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>component</title>
       <link>https://blog.yahweh.top/views/frontEnd/vue/45_component/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/vue/45_component/</guid>
@@ -40457,6 +40606,143 @@ Vue<span>.</span><span>component</span><span>(</span><span>"组件名称"</span>
 </span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br></div></div>]]></content:encoded>
+    </item>
+    <item>
+      <title>toast组件</title>
+      <link>https://blog.yahweh.top/views/frontEnd/vue/505_toast%E7%BB%84%E4%BB%B6/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/vue/505_toast%E7%BB%84%E4%BB%B6/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">toast组件</source>
+      <category>vue</category>
+      <pubDate>Sat, 21 Aug 2021 12:04:30 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>吐司组件在前端中算是最常用的组件了，这里简单实现一下；</p>
+</blockquote>
+<h2 id="封装toast组件"> 封装toast组件</h2>
+<blockquote>
+<p>ui部分，主要是显示内容；</p>
+</blockquote>
+<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
+    <span><span><span>&lt;</span>div</span> <span>class</span><span><span>=</span><span>"</span>w-toast<span>"</span></span> <span>v-show</span><span><span>=</span><span>"</span>visible<span>"</span></span><span>></span></span>
+        <span><span><span>&lt;</span>span</span> <span>class</span><span><span>=</span><span>"</span>w-toast-title<span>"</span></span><span>></span></span>{{ title }}<span><span><span>&lt;/</span>span</span><span>></span></span>
+        <span><span><span>&lt;</span>slot</span><span>></span></span>
+            <span><span><span>&lt;</span>p</span> <span>class</span><span><span>=</span><span>"</span>w-toast-content<span>"</span></span><span>></span></span>{{ content }}<span><span><span>&lt;/</span>p</span><span>></span></span>
+        <span><span><span>&lt;/</span>slot</span><span>></span></span>
+    <span><span><span>&lt;/</span>div</span><span>></span></span>
+<span><span><span>&lt;/</span>template</span><span>></span></span>
+<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
+<span>export</span> <span>default</span> <span>{</span>
+    name<span>:</span> <span>'WToast'</span><span>,</span>
+    props<span>:</span> <span>{</span>
+        title<span>:</span> String<span>,</span>
+        content<span>:</span> String<span>,</span>
+        duration<span>:</span> <span>{</span>
+            <span>default</span><span>:</span> <span>3000</span>
+        <span>}</span>
+    <span>}</span><span>,</span>
+    <span>data</span><span>(</span><span>)</span> <span>{</span>
+        <span>return</span> <span>{</span>
+            visible<span>:</span> <span>false</span><span>,</span>
+        <span>}</span>
+    <span>}</span><span>,</span>
+    methods<span>:</span> <span>{</span>
+        <span>open</span><span>(</span><span>)</span> <span>{</span>
+            <span>this</span><span>.</span>visible <span>=</span> <span>true</span><span>;</span>
+            <span>setTimeout</span><span>(</span><span>this</span><span>.</span>close<span>,</span> <span>this</span><span>.</span>duration<span>)</span><span>;</span>
+        <span>}</span><span>,</span>
+        <span>close</span><span>(</span><span>)</span> <span>{</span>
+            <span>this</span><span>.</span>visible <span>=</span> <span>false</span><span>;</span>
+            <span>this</span><span>.</span><span>remove</span><span>(</span><span>)</span><span>;</span>
+        <span>}</span>
+    <span>}</span>
+<span>}</span>
+</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
+<span><span><span>&lt;</span>style</span> <span>scoped</span><span>></span></span><span><span>
+<span>.w-toast</span> <span>{</span>
+    <span>position</span><span>:</span> fixed<span>;</span>
+    <span>left</span><span>:</span> 50%<span>;</span>
+    <span>top</span><span>:</span> 20%<span>;</span>
+    <span>max-width</span><span>:</span> 300px<span>;</span>
+    <span>height</span><span>:</span> 40px<span>;</span>
+    <span>line-height</span><span>:</span> 40px<span>;</span>
+    <span>padding</span><span>:</span> 0 20px<span>;</span>
+    <span>transform</span><span>:</span> <span>translateX</span><span>(</span>-50%<span>)</span><span>;</span>
+    <span>background</span><span>:</span> #ccc<span>;</span>
+<span>}</span>
+<span>.w-toast-content</span> <span>{</span>
+    <span>margin</span><span>:</span> 0<span>;</span>
+    <span>display</span><span>:</span> inline-block<span>;</span>
+<span>}</span>
+</span></span><span><span><span>&lt;/</span>style</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br></div></div><h2 id="创建create函数"> 创建create函数</h2>
+<blockquote>
+<p>方法用于随时创建使用 toast 提示；</p>
+</blockquote>
+<div><pre><code><span>import</span> Vue <span>from</span> <span>'vue'</span><span>;</span>
+
+<span>// 方式一</span>
+<span>function</span> <span>create</span><span>(</span><span>component<span>,</span> props</span><span>)</span> <span>{</span>
+    <span>// 完成vue的初始化但是没有要挂载的节点；</span>
+    <span>const</span> _vm <span>=</span> <span>new</span> <span>Vue</span><span>(</span><span>{</span>
+        <span>render</span><span>(</span><span>h</span><span>)</span> <span>{</span>
+            <span>return</span> <span>h</span><span>(</span>component<span>,</span> <span>{</span> props <span>}</span><span>)</span>
+        <span>}</span>
+    <span>}</span><span>)</span><span>.</span><span>$mount</span><span>(</span><span>)</span><span>;</span>
+
+    <span>// 挂载到 body 节点上</span>
+    document<span>.</span>body<span>.</span><span>appendChild</span><span>(</span>_vm<span>.</span>$el<span>)</span><span>;</span>
+
+    <span>// 给组件示例添加销毁方法；</span>
+    <span>const</span> comp <span>=</span> _vm<span>.</span>$children<span>[</span><span>0</span><span>]</span><span>;</span>
+    comp<span>.</span><span>remove</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+        document<span>.</span>body<span>.</span><span>removeChild</span><span>(</span>_vm<span>.</span>$el<span>)</span><span>;</span>
+        _vm<span>.</span><span>$destroy</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>return</span> comp<span>;</span>
+<span>}</span>
+
+<span>// 方式二；</span>
+<span>function</span> <span>create</span><span>(</span><span>component<span>,</span> props</span><span>)</span> <span>{</span>
+    <span>const</span> Ctor <span>=</span> Vue<span>.</span><span>extend</span><span>(</span>component<span>)</span>
+    <span>const</span> comp <span>=</span> <span>new</span> <span>Ctor</span><span>(</span><span>{</span> propsData<span>:</span> props <span>}</span><span>)</span><span>;</span>
+    comp<span>.</span><span>$mount</span><span>(</span><span>)</span><span>;</span>
+    document<span>.</span>body<span>.</span><span>appendChild</span><span>(</span>comp<span>.</span>$el<span>)</span><span>;</span>
+
+    <span>// 给组件示例添加销毁方法；</span>
+    comp<span>.</span><span>remove</span> <span>=</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+        document<span>.</span>body<span>.</span><span>removeChild</span><span>(</span>comp<span>.</span>$el<span>)</span><span>;</span>
+        comp<span>.</span><span>$destroy</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+    <span>return</span> comp<span>;</span>
+<span>}</span>
+
+<span>export</span> <span>default</span> create<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br></div></div><h2 id="使用"> 使用</h2>
+<div><pre><code><span><span><span>&lt;</span>template</span><span>></span></span>
+  <span><span><span>&lt;</span>div</span><span>></span></span>
+    <span><span><span>&lt;</span>button</span> <span>@click</span><span><span>=</span><span>"</span>open<span>"</span></span><span>></span></span>弹窗<span><span><span>&lt;/</span>button</span><span>></span></span>
+  <span><span><span>&lt;/</span>div</span><span>></span></span>
+<span><span><span>&lt;/</span>template</span><span>></span></span>
+
+<span><span><span>&lt;</span>script</span><span>></span></span><span><span>
+<span>import</span> toast <span>from</span> <span>'./toast.vue'</span><span>;</span>
+<span>import</span> create <span>from</span> <span>'../utils/toast'</span><span>;</span>
+<span>export</span> <span>default</span> <span>{</span>
+  methods<span>:</span> <span>{</span>
+    <span>open</span><span>(</span><span>)</span> <span>{</span>
+      <span>create</span><span>(</span>toast<span>,</span> <span>{</span>
+        title<span>:</span> <span>'成功'</span><span>,</span>
+        content<span>:</span> <span>'恭喜你创建成功'</span><span>,</span>
+        duration<span>:</span> <span>1000</span><span>,</span>
+      <span>}</span><span>)</span><span>.</span><span>open</span><span>(</span><span>)</span><span>;</span>
+    <span>}</span>
+  <span>}</span>
+<span>}</span>
+</span></span><span><span><span>&lt;/</span>script</span><span>></span></span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></div></div><p><img src="./assets/image-20210819223132474.png" alt="image-20210819223132474" /></p>
+]]></content:encoded>
     </item>
     <item>
       <title>vue-router</title>
@@ -41652,6 +41938,99 @@ webpack: Compiled successfully.
 ]]></content:encoded>
     </item>
     <item>
+      <title>webpack打包进度条</title>
+      <link>https://blog.yahweh.top/views/frontEnd/webpack/15_webpack%E6%89%93%E5%8C%85%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
+      <guid>https://blog.yahweh.top/views/frontEnd/webpack/15_webpack%E6%89%93%E5%8C%85%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">webpack打包进度条</source>
+      <category>WEBPACK</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="添加webpack打包进度条"> 添加<code>webpack</code>打包进度条</h2>
+<div><pre><code><span>"webpack"</span><span>:</span> <span>"^4.46"</span><span>,</span>
+<span>"webpack-dev-middleware"</span><span>:</span> <span>"^3.7.3"</span><span>,</span>
+<span>"webpack-hot-middleware"</span><span>:</span> <span>"^2.25.0"</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="方式一"> 方式一</h3>
+<div><pre><code><span>// ...省略</span>
+<span>const</span> webpack <span>=</span> <span>require</span><span>(</span><span>"webpack"</span><span>)</span><span>;</span>
+<span>const</span> complier <span>=</span> <span>webpack</span><span>(</span>webpackConfig<span>)</span><span>;</span>
+<span>complier</span><span>.</span><span>apply</span><span>(</span><span>new</span> <span>webpack<span>.</span>ProgressPlugin</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>// 重点是这行</span>
+<span>const</span> hotMiddleware <span>=</span> <span>webpackHotMiddleware</span><span>(</span>complier<span>)</span><span>;</span>
+<span>const</span> app <span>=</span> <span>new</span> <span>express</span><span>(</span><span>)</span><span>;</span>
+
+app<span>.</span><span>use</span><span>(</span><span>webpackDevMiddleware</span><span>(</span>complier<span>,</span> <span>{</span>
+  noInfo<span>:</span> <span>true</span><span>,</span>
+  publicPath<span>:</span> webpackConfig<span>.</span>output<span>.</span>publicPath<span>,</span>
+<span>}</span><span>)</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
+<p>添加完成即可实现和<code>vue-dev-service</code>一样的打包进度条效果。</p>
+</blockquote>
+<h3 id="方式二"> 方式二</h3>
+<ul>
+<li>
+<p>安装：<code>progress-bar-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> i progress-webpack-plugin
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code>const ProgressBarPlugin = require(&#39;progress-bar-webpack-plugin&#39;);
+
+module.exports = {
+    ...
+    plugins:[
+        new ProgressPlugin(true)
+    ]
+}
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
+</ul>
+<h3 id="方式三"> 方式三</h3>
+<ul>
+<li>
+<p>安装：<code>simple-progress-webpack-plugin</code>插件，<a href="https://cnpmjs.org/package/simple-progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> <span>install</span> simple-progress-webpack-plugin --save-dev
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code><span>const</span> SimpleProgressWebpackPlugin <span>=</span> <span>require</span><span>(</span> <span>'simple-progress-webpack-plugin'</span> <span>)</span><span>;</span>
+
+module<span>.</span>exports <span>=</span> <span>{</span>
+    <span>...</span>
+    plugins<span>:</span><span>[</span>
+        <span>new</span> <span>SimpleProgressWebpackPlugin</span><span>(</span><span>)</span>
+    <span>]</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
+</ul>
+<h3 id="方式四"> 方式四</h3>
+<ul>
+<li>
+<p>安装：<code>progress-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> i progress-webpack-plugin
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>使用：</p>
+<div><pre><code><span>var</span> ProgressPlugin <span>=</span> <span>require</span><span>(</span><span>'progress-webpack-plugin'</span><span>)</span>
+
+module<span>.</span>exports <span>=</span> <span>{</span>
+    <span>...</span>
+    plugins<span>:</span><span>[</span>
+        <span>new</span> <span>ProgressPlugin</span><span>(</span><span>true</span><span>)</span>
+    <span>]</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
+<p>注意：这个插件我在使用时出现了错误，没在其它<code>webpack</code>的版本试过。建议用上面几个，基本就可以满足需求了。</p>
+</blockquote>
+</li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>css-loader</title>
       <link>https://blog.yahweh.top/views/frontEnd/webpack/16_css-loader/</link>
       <guid>https://blog.yahweh.top/views/frontEnd/webpack/16_css-loader/</guid>
@@ -41824,99 +42203,6 @@ module<span>.</span>exports <span>=</span> <span>{</span>
 </blockquote>
 </li>
 </ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>webpack打包进度条</title>
-      <link>https://blog.yahweh.top/views/frontEnd/webpack/15_webpack%E6%89%93%E5%8C%85%E8%BF%9B%E5%BA%A6%E6%9D%A1/</link>
-      <guid>https://blog.yahweh.top/views/frontEnd/webpack/15_webpack%E6%89%93%E5%8C%85%E8%BF%9B%E5%BA%A6%E6%9D%A1/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">webpack打包进度条</source>
-      <category>WEBPACK</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="添加webpack打包进度条"> 添加<code>webpack</code>打包进度条</h2>
-<div><pre><code><span>"webpack"</span><span>:</span> <span>"^4.46"</span><span>,</span>
-<span>"webpack-dev-middleware"</span><span>:</span> <span>"^3.7.3"</span><span>,</span>
-<span>"webpack-hot-middleware"</span><span>:</span> <span>"^2.25.0"</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><h3 id="方式一"> 方式一</h3>
-<div><pre><code><span>// ...省略</span>
-<span>const</span> webpack <span>=</span> <span>require</span><span>(</span><span>"webpack"</span><span>)</span><span>;</span>
-<span>const</span> complier <span>=</span> <span>webpack</span><span>(</span>webpackConfig<span>)</span><span>;</span>
-<span>complier</span><span>.</span><span>apply</span><span>(</span><span>new</span> <span>webpack<span>.</span>ProgressPlugin</span><span>(</span><span>)</span><span>)</span><span>;</span> <span>// 重点是这行</span>
-<span>const</span> hotMiddleware <span>=</span> <span>webpackHotMiddleware</span><span>(</span>complier<span>)</span><span>;</span>
-<span>const</span> app <span>=</span> <span>new</span> <span>express</span><span>(</span><span>)</span><span>;</span>
-
-app<span>.</span><span>use</span><span>(</span><span>webpackDevMiddleware</span><span>(</span>complier<span>,</span> <span>{</span>
-  noInfo<span>:</span> <span>true</span><span>,</span>
-  publicPath<span>:</span> webpackConfig<span>.</span>output<span>.</span>publicPath<span>,</span>
-<span>}</span><span>)</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br></div></div><blockquote>
-<p>添加完成即可实现和<code>vue-dev-service</code>一样的打包进度条效果。</p>
-</blockquote>
-<h3 id="方式二"> 方式二</h3>
-<ul>
-<li>
-<p>安装：<code>progress-bar-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> i progress-webpack-plugin
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code>const ProgressBarPlugin = require(&#39;progress-bar-webpack-plugin&#39;);
-
-module.exports = {
-    ...
-    plugins:[
-        new ProgressPlugin(true)
-    ]
-}
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
-</ul>
-<h3 id="方式三"> 方式三</h3>
-<ul>
-<li>
-<p>安装：<code>simple-progress-webpack-plugin</code>插件，<a href="https://cnpmjs.org/package/simple-progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> <span>install</span> simple-progress-webpack-plugin --save-dev
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code><span>const</span> SimpleProgressWebpackPlugin <span>=</span> <span>require</span><span>(</span> <span>'simple-progress-webpack-plugin'</span> <span>)</span><span>;</span>
-
-module<span>.</span>exports <span>=</span> <span>{</span>
-    <span>...</span>
-    plugins<span>:</span><span>[</span>
-        <span>new</span> <span>SimpleProgressWebpackPlugin</span><span>(</span><span>)</span>
-    <span>]</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div></li>
-</ul>
-<h3 id="方式四"> 方式四</h3>
-<ul>
-<li>
-<p>安装：<code>progress-webpack-plugin</code>插件，<a href="https://www.npmjs.com/package/progress-webpack-plugin" target="_blank" rel="noopener noreferrer">传送门</a></p>
-<div><pre><code><span>npm</span> i progress-webpack-plugin
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>使用：</p>
-<div><pre><code><span>var</span> ProgressPlugin <span>=</span> <span>require</span><span>(</span><span>'progress-webpack-plugin'</span><span>)</span>
-
-module<span>.</span>exports <span>=</span> <span>{</span>
-    <span>...</span>
-    plugins<span>:</span><span>[</span>
-        <span>new</span> <span>ProgressPlugin</span><span>(</span><span>true</span><span>)</span>
-    <span>]</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><blockquote>
-<p>注意：这个插件我在使用时出现了错误，没在其它<code>webpack</code>的版本试过。建议用上面几个，基本就可以满足需求了。</p>
-</blockquote>
-</li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -42718,24 +43004,6 @@ https://github.com/denoland/deno/issues/4748
 ]]></content:encoded>
     </item>
     <item>
-      <title>Vue 响应式原理</title>
-      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</link>
-      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">Vue 响应式原理</source>
-      <category>面试题</category>
-      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
-      <content:encoded><![CDATA[<p><img src="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" alt="图片" /></p>
-<blockquote>
-<p>当创建 Vue 实例时,vue 会遍历 data 选项的属性,利用 Object.defineProperty 为属性添加 getter 和 setter 对数据的读取进行劫持（getter 用来依赖收集,setter 用来派发更新）,并且在内部追踪依赖,在属性被访问和修改时通知变化。
-每个组件实例会有相应的 watcher 实例,会在组件渲染的过程中记录依赖的所有数据属性（进行依赖收集,还有 computed watcher,user watcher 实例）,之后依赖项被改动时,setter 方法会通知依赖与此 data 的 watcher 实例重新计算（派发更新）,从而使它关联的组件重新渲染。</p>
-</blockquote>
-<p>一句话总结:</p>
-<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
-<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
-]]></content:encoded>
-      <enclosure url="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" type="image/png"/>
-    </item>
-    <item>
       <title>简单说一说vue生命周期的理解?</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/question-note-110/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-110/</guid>
@@ -42802,6 +43070,39 @@ watcher或计算属性取代。注意updated不会保证所有的子组件都能
       <enclosure url="https://cn.vuejs.org/images/lifecycle.png" type="image/png"/>
     </item>
     <item>
+      <title>Vue 响应式原理</title>
+      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</link>
+      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-15/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">Vue 响应式原理</source>
+      <category>面试题</category>
+      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
+      <content:encoded><![CDATA[<p><img src="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" alt="图片" /></p>
+<blockquote>
+<p>当创建 Vue 实例时,vue 会遍历 data 选项的属性,利用 Object.defineProperty 为属性添加 getter 和 setter 对数据的读取进行劫持（getter 用来依赖收集,setter 用来派发更新）,并且在内部追踪依赖,在属性被访问和修改时通知变化。
+每个组件实例会有相应的 watcher 实例,会在组件渲染的过程中记录依赖的所有数据属性（进行依赖收集,还有 computed watcher,user watcher 实例）,之后依赖项被改动时,setter 方法会通知依赖与此 data 的 watcher 实例重新计算（派发更新）,从而使它关联的组件重新渲染。</p>
+</blockquote>
+<p>一句话总结:</p>
+<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
+<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
+]]></content:encoded>
+      <enclosure url="https://img.php.cn/upload/image/762/873/541/1594627762299440.png" type="image/png"/>
+    </item>
+    <item>
+      <title>computed 的实现原理</title>
+      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-20/</link>
+      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-20/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">computed 的实现原理</source>
+      <category>面试题</category>
+      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>computed 本质是一个惰性求值的观察者，具有缓存的功能。数据如果不发生变化则每次获取不再做计算。</p>
+</blockquote>
+<p>一句话总结:</p>
+<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
+<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>v-if和v-for哪个优先级更高？</title>
       <link>https://blog.yahweh.top/views/interviewQuestion/question-note-25/</link>
       <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-25/</guid>
@@ -42861,21 +43162,6 @@ watcher或计算属性取代。注意updated不会保证所有的子组件都能
 <li>可以把<code>v-if</code>放在<code>v-for</code>的里面，这样就可以避免每次<code>v-for</code>的时候都执行一遍<code>v-if</code>，同时又肯定了if不成立循环不执行。</li>
 <li>如果条件出现在循环内部，可通过计算属性提前过滤掉那些不需要显示的项或自己把数据先处理好，保证在渲染的时候就是自己真实要显示的数据。</li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>computed 的实现原理</title>
-      <link>https://blog.yahweh.top/views/interviewQuestion/question-note-20/</link>
-      <guid>https://blog.yahweh.top/views/interviewQuestion/question-note-20/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">computed 的实现原理</source>
-      <category>面试题</category>
-      <pubDate>Wed, 15 Sep 2021 23:39:23 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>computed 本质是一个惰性求值的观察者，具有缓存的功能。数据如果不发生变化则每次获取不再做计算。</p>
-</blockquote>
-<p>一句话总结:</p>
-<p>vue.js 采用数据劫持结合发布-订阅模式,通过 Object.defineproperty 来劫持各个属性的 setter,getter,在数据变动时发布消息给订阅者,触发响应的监听回调;</p>
-<p><a href="https://www.php.cn/js-tutorial-455048.html" target="_blank" rel="noopener noreferrer">阅读原文</a></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -44606,28 +44892,6 @@ root
 ]]></content:encoded>
     </item>
     <item>
-      <title>介绍</title>
-      <link>https://blog.yahweh.top/views/ios/linux/</link>
-      <guid>https://blog.yahweh.top/views/ios/linux/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
-      <category>LINUX</category>
-      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>这里主要记录一些自己平时积累的<strong>linux</strong>相关的知识；</p>
-</blockquote>
-<h2 id="目录"> 目录</h2>
-<ul>
-<li><a href="./05_常用命令.html">常用命令</a></li>
-<li><a href="./10_查看linux防火墙.html">查看linux防火墙</a></li>
-<li><a href="./15_linux软连接的作用.html">linux软连接的作用</a></li>
-<li><a href="./20_service与systemctl命令区别.html">service与systemctl命令区别</a></li>
-<li><a href="./25_nodejs的安装.html">nodejs的安装</a></li>
-<li><a href="./30_linux与环境变量.html">linux与环境变量</a></li>
-<li><a href="./35_Linux查看磁盘空间.html">Linux查看磁盘空间</a></li>
-</ul>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Linux查看磁盘空间</title>
       <link>https://blog.yahweh.top/views/ios/linux/35_Linux%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</link>
       <guid>https://blog.yahweh.top/views/ios/linux/35_Linux%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/</guid>
@@ -44715,6 +44979,28 @@ wangyawei@yaweidediannao:/$
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><h2 id="参考资料"> 参考资料</h2>
 <p>https://www.runoob.com/w3cnote/linux-view-disk-space.html</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>介绍</title>
+      <link>https://blog.yahweh.top/views/ios/linux/</link>
+      <guid>https://blog.yahweh.top/views/ios/linux/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">介绍</source>
+      <category>LINUX</category>
+      <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>这里主要记录一些自己平时积累的<strong>linux</strong>相关的知识；</p>
+</blockquote>
+<h2 id="目录"> 目录</h2>
+<ul>
+<li><a href="./05_常用命令.html">常用命令</a></li>
+<li><a href="./10_查看linux防火墙.html">查看linux防火墙</a></li>
+<li><a href="./15_linux软连接的作用.html">linux软连接的作用</a></li>
+<li><a href="./20_service与systemctl命令区别.html">service与systemctl命令区别</a></li>
+<li><a href="./25_nodejs的安装.html">nodejs的安装</a></li>
+<li><a href="./30_linux与环境变量.html">linux与环境变量</a></li>
+<li><a href="./35_Linux查看磁盘空间.html">Linux查看磁盘空间</a></li>
+</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -45191,7 +45477,7 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
       <guid>https://blog.yahweh.top/views/issues/140_vue%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
       <source url="https://blog.yahweh.top/rss.xml">vue跨域解决方案</source>
       <category>issues</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="_1、问题概述"> 1、问题概述；</h2>
 <blockquote>
 <p>在项目中我们时常会遇到跨域，比如下面的这种情况；</p>
@@ -45245,12 +45531,53 @@ Starting mysqld <span>(</span>via systemctl<span>)</span>:                      
 ]]></content:encoded>
     </item>
     <item>
+      <title>Client does not support authentication pr</title>
+      <link>https://blog.yahweh.top/views/issues/15_Client%20does%20not%20support%20authentication/</link>
+      <guid>https://blog.yahweh.top/views/issues/15_Client%20does%20not%20support%20authentication/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">Client does not support authentication pr</source>
+      <category>issues</category>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication pr</p>
+</blockquote>
+<ul>
+<li>
+<p>错误原因；</p>
+<ul>
+<li>原因8.0mysql引入了caching_sha2_password模块作为默认身份验证插件，nodejs还没有跟进</li>
+</ul>
+</li>
+<li>
+<p>解决；</p>
+<ul>
+<li>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '自己的密码';</li>
+</ul>
+</li>
+<li>
+<p>启动mysql;</p>
+<div><pre><code><span>service</span> mysqld start<span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>关闭mysql</p>
+<div><pre><code><span>service</span> mysqld stop 
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>查看Mysql的运行状态；</p>
+<div><pre><code><span>service</span> mysqld status<span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ul>
+]]></content:encoded>
+    </item>
+    <item>
       <title>package xxx is not in GOROOT</title>
       <link>https://blog.yahweh.top/views/issues/20_package%20xxx%20is%20not%20in%20GOROOT/</link>
       <guid>https://blog.yahweh.top/views/issues/20_package%20xxx%20is%20not%20in%20GOROOT/</guid>
       <source url="https://blog.yahweh.top/rss.xml">package xxx is not in GOROOT</source>
       <category>issues</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
       <content:encoded><![CDATA[<blockquote>
 <p>问题描述：由于刚刚接触golang，在尝试导入一个本地包时，出现了下面的错误：</p>
 </blockquote>
@@ -45287,47 +45614,6 @@ go <span>env</span>
 </blockquote>
 <p>位置：File | Settings | Go | Go Modules</p>
 <p>取消勾选：Enable Go modules integration</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Client does not support authentication pr</title>
-      <link>https://blog.yahweh.top/views/issues/15_Client%20does%20not%20support%20authentication/</link>
-      <guid>https://blog.yahweh.top/views/issues/15_Client%20does%20not%20support%20authentication/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">Client does not support authentication pr</source>
-      <category>issues</category>
-      <pubDate>Mon, 04 Apr 2022 15:12:24 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication pr</p>
-</blockquote>
-<ul>
-<li>
-<p>错误原因；</p>
-<ul>
-<li>原因8.0mysql引入了caching_sha2_password模块作为默认身份验证插件，nodejs还没有跟进</li>
-</ul>
-</li>
-<li>
-<p>解决；</p>
-<ul>
-<li>ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '自己的密码';</li>
-</ul>
-</li>
-<li>
-<p>启动mysql;</p>
-<div><pre><code><span>service</span> mysqld start<span>;</span>
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>关闭mysql</p>
-<div><pre><code><span>service</span> mysqld stop 
-</code></pre>
-<div><span>1</span><br></div></div></li>
-<li>
-<p>查看Mysql的运行状态；</p>
-<div><pre><code><span>service</span> mysqld status<span>;</span>
-</code></pre>
-<div><span>1</span><br></div></div></li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -48021,197 +48307,319 @@ PS C:<span>\</span>Users<span>\</span>wangy<span>\</span>Desktop<span>></span> s
 ]]></content:encoded>
     </item>
     <item>
-      <title>常用工具util</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/55_%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7util/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/55_%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7util/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">常用工具util</source>
+      <title>搭建本地服务</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/35_%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/35_%E6%90%AD%E5%BB%BA%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">搭建本地服务</source>
       <category>nodejs</category>
-      <pubDate>Fri, 18 Jun 2021 23:19:35 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>util 是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足。</p>
-</blockquote>
-<h2 id="util-inherits"> util.inherits</h2>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="快速搭建本地服务"> 快速搭建本地服务</h2>
 <blockquote>
-<p>是一个实现对象间原型继承的函数。 JavaScript 的面向对象特性是基于原型的，与常见的基于类的不同。 JavaScript 没有提供对象继承的语言级别特性，而是通过原型复制来实现的。</p>
+<p>方式一、二、三单个js文件即可操作。</p>
 </blockquote>
-<p>语法：</p>
-<div><pre><code><span>// constructor：子类的构造函数</span>
-<span>// superConstructor：父类的构造函数</span>
-util<span>.</span><span>inherits</span><span>(</span>constructor<span>,</span> superConstructor<span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><blockquote>
-<p>该方法对继承的实现，其本质上还是JavaScript原型链式继承。该方法会将父类superConstructor原型链上的方法复制到子类constructor原型链上，在其内部是调用Object.create()实现新对象的创建及原型链方法的复制。</p>
-</blockquote>
-<p>示例：</p>
-<div><pre><code><span>var</span> util <span>=</span> <span>require</span><span>(</span><span>'util'</span><span>)</span>
-<span>function</span> <span>Base</span><span>(</span><span>)</span> <span>{</span>
-  <span>this</span><span>.</span>name <span>=</span> <span>'base'</span>
-  <span>this</span><span>.</span>base <span>=</span> <span>1991</span>
-  <span>this</span><span>.</span><span>sayHello</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
-    console<span>.</span><span>log</span><span>(</span><span>'Hello '</span> <span>+</span> <span>this</span><span>.</span>name<span>)</span>
-  <span>}</span>
-<span>}</span>
-<span>Base</span><span>.</span>prototype<span>.</span><span>showName</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>this</span><span>.</span>name<span>)</span>
-<span>}</span>
-<span>function</span> <span>Sub</span><span>(</span><span>)</span> <span>{</span>
-  <span>this</span><span>.</span>name <span>=</span> <span>'sub'</span>
-<span>}</span>
-util<span>.</span><span>inherits</span><span>(</span>Sub<span>,</span> Base<span>)</span>
-<span>var</span> objBase <span>=</span> <span>new</span> <span>Base</span><span>(</span><span>)</span>
-objBase<span>.</span><span>showName</span><span>(</span><span>)</span>
-objBase<span>.</span><span>sayHello</span><span>(</span><span>)</span>
-console<span>.</span><span>log</span><span>(</span>objBase<span>)</span>
+<h3 id="方式一"> 方式一：</h3>
+<p>安装下载<code>serve</code>npm包。<a href="https://www.npmjs.com/package/serve" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/package/serve</a></p>
+<div><pre><code><span>npm</span> i serve
 
-<span>var</span> objSub <span>=</span> <span>new</span> <span>Sub</span><span>(</span><span>)</span>
-objSub<span>.</span><span>showName</span><span>(</span><span>)</span>
-<span>//objSub.sayHello();</span>
-console<span>.</span><span>log</span><span>(</span>objSub<span>)</span>
+<span># 建议全局安装，</span>
+<span>npm</span> i -g serve
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br></div></div><div><p>注意</p>
-<p>Sub 仅仅继承了 Base 在原型中定义的函数，而构造函数内部创造的 base 属性和 sayHello 函数都没有被 Sub 继承。同时，在原型中定义的属性不会被 console.log 作为对象的属性输出。如果我们去掉 objSub.sayHello();  则会报错；</p>
-</div>
-<h2 id="util-inspect"> util.inspect</h2>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>安装完成你可以<code>serve -v</code>来查看版本号，至此安装成功了，</p>
+<div><pre><code>serve -v
+WARNING: Checking <span>for</span> updates failed <span>(</span>use <span><span>`</span>--debug<span>`</span></span> to see full error<span>)</span>
+<span>11.3</span>.2
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>直接在打开你的文件目录，执行<code>serve</code>就会直接启动一个服务，默认监听 <code>5000</code> 端口</p>
 <blockquote>
-<p>是一个将任意对象转换为字符串的方法，通常用于调试和错误输出。</p>
+<p>服务的启动的方式，还可以在 <code>serve fileName</code> 后面跟文件夹的名称，以此来作为服务启动的文件目录。</p>
 </blockquote>
-<p>语法：</p>
-<div><pre><code>util<span>.</span><span>inspect</span><span>(</span>object<span>,</span><span>[</span>showHidden<span>]</span><span>,</span><span>[</span>depth<span>]</span><span>,</span><span>[</span>colors<span>]</span><span>)</span>
+<div><pre><code>serve
+WARNING: Checking <span>for</span> updates failed <span>(</span>use <span><span>`</span>--debug<span>`</span></span> to see full error<span>)</span>
+
+   ┌───────────────────────────────────────────────────┐
+   │                                                   │
+   │   Serving<span>!</span>                                        │
+   │                                                   │
+   │   - Local:            http://localhost:5000       │
+   │   - On Your Network:  http://192.168.137.1:5000   │
+   │                                                   │
+   │   Copied <span>local</span> address to clipboard<span>!</span>              │
+   │                                                   │
+   └───────────────────────────────────────────────────┘
+
+
 </code></pre>
-<div><span>1</span><br></div></div><p>参数：</p>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p>恭喜你服务搭建完成！</p>
+<h2 id="方式二"> 方式二；</h2>
+<p>使用node的<code>http</code>内置模块来快速的新建一个服务，</p>
+<blockquote>
+<p>此操作代表你已经安装了<code>nodejs</code>不然将不可用。</p>
+</blockquote>
+<div><pre><code><span>// 引入http包</span>
+<span>const</span> http <span>=</span> <span>require</span><span>(</span><span>'http'</span><span>)</span>
+<span>const</span> app <span>=</span> <span>new</span> <span>http<span>.</span>Server</span><span>(</span><span>)</span>
+<span>// 侦听请求</span>
+app<span>.</span><span>on</span><span>(</span><span>'request'</span><span>,</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
+  res<span>.</span><span>writeHead</span><span>(</span><span>200</span><span>,</span> <span>{</span>
+    <span>"Content-Type"</span><span>:</span> <span>'text/html;charset=UTF-8'</span><span>,</span>
+  <span>}</span><span>)</span>
+  <span>// 返回响应内容</span>
+  res<span>.</span><span>write</span><span>(</span><span>'&lt;h1>Node.js-监听3000端口~&lt;/h1>'</span><span>)</span>
+  <span>// 结束响应，此方法必须调用，不然客户端会一直处于等待状态。</span>
+  res<span>.</span><span>end</span><span>(</span><span>)</span>
+<span>}</span><span>)</span>
+<span>// 监听 3000端口</span>
+app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
+  <span>if</span> <span>(</span><span>!</span>err<span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'开始监听3000端口'</span><span>)</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></div></div><p>shell中启动这个文件，<code>node fileName</code></p>
+<div><pre><code>node <span>service</span>
+开始监听3000端口
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h2 id="方式三"> 方式三；</h2>
+<p>下载安装依赖<code>express</code>,<a href="https://www.npmjs.com/package/express" target="_blank" rel="noopener noreferrer">点击下载</a></p>
+<div><pre><code><span>npm</span> i express
+</code></pre>
+<div><span>1</span><br></div></div><p>引入并创建服务</p>
+<div><pre><code><span>// 引入包 express</span>
+<span>const</span> express <span>=</span> <span>require</span><span>(</span><span>'express'</span><span>)</span>
+<span>// 创建服务器；</span>
+<span>const</span> app <span>=</span> <span>express</span><span>(</span><span>)</span>
+<span>// 创建get请求</span>
+app<span>.</span><span>get</span><span>(</span><span>'/'</span><span>,</span> <span>(</span><span>req<span>,</span> res</span><span>)</span> <span>=></span> <span>{</span>
+  res<span>.</span><span>send</span><span>(</span><span>'请求成功'</span><span>)</span>
+<span>}</span><span>)</span>
+<span>// 启动服务；</span>
+app<span>.</span><span>listen</span><span>(</span><span>3000</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
+  <span>if</span> <span>(</span><span>!</span>err<span>)</span> <span>{</span>
+    console<span>.</span><span>log</span><span>(</span><span>'server started on port 3000'</span><span>)</span>
+  <span>}</span>
+<span>}</span><span>)</span>
+
+<span>// ============</span>
+node service<span>.</span>js
+server started on port <span>3000</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="方式四"> 方式四；</h2>
+<blockquote>
+<p>此种方式需要初始化一个项目，</p>
 <ol>
-<li>object：转换的对象</li>
-<li>showHidden：可选参数，如果值为 true，将会输出更多隐藏信息</li>
-<li>depth： 表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多少。如果不指定depth，默认会递归2层，指定为 null 表示将不限递归层数完整遍历对象。</li>
-<li>color ：如果color 值为 true，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮的效果。</li>
-</ol>
-<div><p>提示</p>
-<p>特别要指出的是， util.inspect 并不会简单地直接把对象转换为字符串，即使该对象定义了 toString 方法也不会调用。</p>
-</div>
-<div><pre><code><span>var</span> util <span>=</span> <span>require</span><span>(</span><span>'util'</span><span>)</span>
-<span>function</span> <span>Person</span><span>(</span><span>)</span> <span>{</span>
-  <span>this</span><span>.</span>name <span>=</span> <span>'byvoid'</span>
-  <span>this</span><span>.</span><span>toString</span> <span>=</span> <span>function</span><span>(</span><span>)</span> <span>{</span>
-    <span>return</span> <span>this</span><span>.</span>name
-  <span>}</span>
-<span>}</span>
-<span>var</span> obj <span>=</span> <span>new</span> <span>Person</span><span>(</span><span>)</span>
-console<span>.</span><span>log</span><span>(</span>util<span>.</span><span>inspect</span><span>(</span>obj<span>)</span><span>)</span>
-console<span>.</span><span>log</span><span>(</span>util<span>.</span><span>inspect</span><span>(</span>obj<span>,</span> <span>true</span><span>,</span> <span>null</span><span>,</span> <span>true</span><span>)</span><span>)</span>
-
-<span>// 打印结果</span>
-Person <span>{</span> name<span>:</span> <span>'byvoid'</span><span>,</span> toString<span>:</span> <span>[</span>Function<span>]</span> <span>}</span>
-Person <span>{</span>
-  name<span>:</span> <span>'byvoid'</span><span>,</span>
-  toString<span>:</span> <span>[</span>Function<span>]</span> <span>{</span>
-    <span>[</span>length<span>]</span><span>:</span> <span>0</span><span>,</span>
-    <span>[</span>name<span>]</span><span>:</span> <span>''</span><span>,</span>
-    <span>[</span>arguments<span>]</span><span>:</span> <span>null</span><span>,</span>
-    <span>[</span>caller<span>]</span><span>:</span> <span>null</span><span>,</span>
-    <span>[</span>prototype<span>]</span><span>:</span> <span>{</span> <span>[</span>constructor<span>]</span><span>:</span> <span>[</span>Circular<span>]</span> <span>}</span>
-  <span>}</span>
+<li>
+<p>创建一个文件夹，</p>
+</li>
+<li>
+<p>执行 npm init 会生成package.json文件，</p>
+</li>
+<li>
+<p>同级目录新建webpack.config.js文件，写入一下代码，</p>
+<div><pre><code>module<span>.</span>exports <span>=</span> <span>{</span>
+  entry<span>:</span> <span>'./main.js'</span><span>,</span>
 <span>}</span>
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><div><p>提示</p>
-<p>util还提供了util.isArray()、util.isRegExp()、util.isDate()、 util.isError() 四个类型测试工具，以及 util.format()、 util.debug() 等工具。</p>
-<p>可以访问 http://nodejs.org/api/util.html 了解详细内容</p>
-</div>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>新建main.js文件，随便写点东西</p>
+</li>
+</ol>
+</blockquote>
+<ol>
+<li>
+<p>首先你需要安装<code>webpack</code>包，<a href="https://www.npmjs.com/package/webpack" target="_blank" rel="noopener noreferrer">下载</a></p>
+<div><pre><code><span>npm</span> <span>install</span> --save-dev webpack
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>安装<code>webpack-dev-server</code>包，<a href="https://www.npmjs.com/package/webpack-dev-server" target="_blank" rel="noopener noreferrer">下载</a></p>
+<div><pre><code><span>npm</span> <span>install</span> webpack-dev-server --save-dev
+</code></pre>
+<div><span>1</span><br></div></div></li>
+<li>
+<p>然后在<code>package.json</code>文件里面的script字段里面添加，</p>
+<div><pre><code><span>"scripts"</span><span>:</span> <span>{</span>
+    <span>"test"</span><span>:</span> <span>"echo <span title="\&quot;">\"</span>Error: no test specified<span title="\&quot;">\"</span> &amp;&amp; exit 1"</span>,
+    <span>"serve"</span><span>:</span> <span>"webpack-dev-server"</span>, <span># 添加此行</span>
+  <span>}</span>,
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
+<li>
+<p>执行cmd命令；</p>
+<div><pre><code><span>npm</span> run serve
+
+<span># webpack: Compiled successfully.</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div></li>
+<li>
+<p>默认会监听8080端口，浏览器打开访问<code>localhost</code>即可，</p>
+</li>
+</ol>
 ]]></content:encoded>
     </item>
     <item>
-      <title>事件驱动events</title>
-      <link>https://blog.yahweh.top/views/backEnd/nodejs/60_%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8events/</link>
-      <guid>https://blog.yahweh.top/views/backEnd/nodejs/60_%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8events/</guid>
-      <source url="https://blog.yahweh.top/rss.xml">事件驱动events</source>
+      <title>json-serve</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/40_json-serve/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/40_json-serve/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">json-serve</source>
       <category>nodejs</category>
-      <pubDate>Sat, 19 Jun 2021 00:19:35 GMT</pubDate>
-      <content:encoded><![CDATA[<blockquote>
-<p>events 是 Node.js 最重要的模块，没有“之一”，原因是 Node.js 本身架构就是事件式的，而它提供了唯一的接口，所以堪称 Node.js 事件编程的基石。 events 模块不仅用于用户代码与 Node.js 下层事件循环的交互，还几乎被所有的模块依赖。</p>
-</blockquote>
-<h2 id="事件发射器"> 事件发射器</h2>
+      <pubDate>Tue, 05 Apr 2022 07:37:13 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="json-server"> <code>JSON Server</code>;</h2>
 <blockquote>
-<p>events 模块只提供了一个对象： events.EventEmitter。 EventEmitter 的核心就是事件发射与事件监听器功能的封装。EventEmitter 的每个事件由一个事件名和若干个参数组成，事件名是一个字符串，通常表达一定的语义。对于每个事件， EventEmitter 支持若干个事件监听器。当事件发射时，注册到这个事件的事件监听器被依次调用，事件参数作为回调函数参数传递。</p>
-</blockquote>
-<div><pre><code><span>const</span> events <span>=</span> <span>require</span><span>(</span><span>'events'</span><span>)</span><span>;</span>
-<span>const</span> emitter <span>=</span> <span>new</span> <span>events<span>.</span>EventEmitter</span><span>(</span><span>)</span><span>;</span>
-
-<span>// 监听事件</span>
-<span>// emitter.on('someEvent', function(arg1, arg2) {</span>
-<span>//   console.log('listener1', arg1, arg2)</span>
-<span>// })</span>
-<span>// emitter.on('someEvent', function(arg1, arg2) {</span>
-<span>//   console.log('listener2', arg1, arg2)</span>
-<span>// })</span>
-
-<span>// 触发事件</span>
-<span>// emitter.emit('someEvent', 'byvoid', 1991)</span>
-<span>// listener1 byvoid 1991</span>
-<span>// listener2 byvoid 1991</span>
-
-emitter<span>.</span><span>once</span><span>(</span><span>'someEvent'</span><span>,</span> <span>function</span><span>(</span><span>arg1<span>,</span> arg2</span><span>)</span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span><span>'listener1'</span><span>,</span> arg1<span>,</span> arg2<span>)</span>
-<span>}</span><span>)</span>
-
-emitter<span>.</span><span>emit</span><span>(</span><span>'someEvent'</span><span>,</span> <span>'byvoid'</span><span>,</span> <span>1991</span><span>)</span>
-emitter<span>.</span><span>emit</span><span>(</span><span>'someEvent'</span><span>,</span> <span>'byvoid'</span><span>,</span> <span>1991</span><span>)</span>
-<span>// listener1 byvoid 1991</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br></div></div><blockquote>
-<p>以上例子中， emitter 为事件 someEvent 注册了两个事件监听器，然后发射了someEvent 事件。运行结果中可以看到两个事件监听器回调函数被先后调用</p>
-</blockquote>
-<p><strong>API说明</strong></p>
 <ul>
-<li>EventEmitter.on(event, listener) 为指定事件注册一个监听器，接受一个字符串 event 和一个回调函数 listener。</li>
-<li>EventEmitter.emit(event, [arg1], [arg2], [...]) 发射 event 事件，传递若干可选参数到事件监听器的参数表。</li>
-<li>EventEmitter.once(event, listener) 为指定事件注册一个单次监听器，即监听器最多只会触发一次，触发后立刻解除该监听器。</li>
-<li>EventEmitter.removeListener(event, listener) 移除指定事件的某个监听器， listener 必须是该事件已经注册过的监听器。</li>
-<li>EventEmitter.removeAllListeners([event]) 移除所有事件的所有监听器，如果指定 event，则移除指定事件的所有监听器。</li>
+<li>概述：<code>JSON Server</code> 是一个提供测试环境接口的工具，它可以帮我们快速生成一套接口服务;</li>
+<li>它是免费开源的命令行工具;</li>
 </ul>
-<h2 id="error-事件"> error 事件</h2>
-<blockquote>
-<p>EventEmitter 定义了一个特殊的事件 error，它包含了“错误”的语义，我们在遇到异常的时候通常会发射 error 事件。当 error 被发射时， EventEmitter 规定如果没有响应的监听器， Node.js 会把它当作异常，退出程序并打印调用栈。我们一般要为会发射 error事件的对象设置监听器，避免遇到错误后整个程序崩溃。</p>
 </blockquote>
-<div><pre><code><span>var</span> events <span>=</span> <span>require</span><span>(</span><span>'events'</span><span>)</span><span>;</span>
+<ol>
+<li>
+<p><strong>安装：</strong></p>
+<div><pre><code><span>npm</span> <span>install</span> -g json-server  <span># -g 安装的东西只需安装一次即可；后续无需再安装；</span>
 
-<span>var</span> emitter <span>=</span> <span>new</span> <span>events<span>.</span>EventEmitter</span><span>(</span><span>)</span><span>;</span>
-
-emitter<span>.</span><span>on</span><span>(</span><span>'error'</span><span>,</span> <span>(</span><span>err</span><span>)</span> <span>=></span> <span>{</span>
-  console<span>.</span><span>log</span><span>(</span>err<span>)</span> <span>// 错误了</span>
-<span>}</span><span>)</span>
-
-emitter<span>.</span><span>emit</span><span>(</span><span>'error'</span><span>,</span> <span>'错误了'</span><span>)</span><span>;</span>
+<span># 该命令用于测试是否安装成功，如果看到一个版本输出，就证明OK了</span>
+json-server --version
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></div></div><blockquote>
-<p>如果把监听的<code>error</code>事件去掉则会打印错误；</p>
-</blockquote>
-<div><pre><code>ASUS@yaweidediannao MINGW64 ~/Desktop/test
-$ node ./module.js 
-events.js:305
-    throw err<span>;</span> // Unhandled <span>'error'</span> event
-    ^
-
-Error <span>[</span>ERR_UNHANDLED_ERROR<span>]</span>: Unhandled error. <span>(</span><span>'错误了'</span><span>)</span>
-    at EventEmitter.emit <span>(</span>events.js:303:17<span>)</span>
-    at Object.<span>&lt;</span>anonymous<span>></span> <span>(</span>C:<span>\</span>Users<span>\</span>ASUS<span>\</span>Desktop<span>\</span>test<span>\</span>module.js:9:9<span>)</span>
-    at Module._compile <span>(</span>internal/modules/cjs/loader.js:999:30<span>)</span>
-    at Object.Module._extensions<span>..</span>js <span>(</span>internal/modules/cjs/loader.js:1027:10<span>)</span>
-    at Module.load <span>(</span>internal/modules/cjs/loader.js:863:32<span>)</span>
-    at Function.Module._load <span>(</span>internal/modules/cjs/loader.js:708:14<span>)</span>
-    at Function.executeUserEntryPoint <span>[</span>as runMain<span>]</span> <span>(</span>internal/modules/run_main.js:60:12<span>)</span>
-    at internal/main/run_main_module.js:17:47 <span>{</span>
-  code: <span>'ERR_UNHANDLED_ERROR'</span>,
-  context: <span>'错误了'</span>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div></li>
+<li>
+<p><strong>创建文件目录；</strong></p>
+<ul>
+<li>创建文件名为 <code>json-server-demo</code>的文件夹，然后在该文件夹中创建一个文件 <code>db.json</code> 并写入以下内容：</li>
+</ul>
+<div><pre><code><span>{</span>
+  <span>"posts"</span><span>:</span> <span>[</span>
+    <span>{</span> <span>"id"</span><span>:</span> <span>1</span><span>,</span> <span>"title"</span><span>:</span> <span>"json-server"</span><span>,</span> <span>"author"</span><span>:</span> <span>"typicode"</span> <span>}</span>
+  <span>]</span><span>,</span>
+  <span>"comments"</span><span>:</span> <span>[</span>
+    <span>{</span> <span>"id"</span><span>:</span> <span>1</span><span>,</span> <span>"body"</span><span>:</span> <span>"some comment"</span><span>,</span> <span>"postId"</span><span>:</span> <span>1</span> <span>}</span>
+  <span>]</span><span>,</span>
+  <span>"profile"</span><span>:</span> <span>{</span> <span>"name"</span><span>:</span> <span>"typicode"</span> <span>}</span><span>,</span>
+  <span>"users"</span><span>:</span> <span>[</span>
+    <span>{</span>
+      <span>"id"</span><span>:</span> <span>1</span><span>,</span>
+      <span>"name"</span><span>:</span> <span>"张三"</span><span>,</span>
+      <span>"age"</span><span>:</span> <span>18</span><span>,</span>
+      <span>"gender"</span><span>:</span> <span>"男"</span>
+    <span>}</span>
+  <span>]</span>
 <span>}</span>
+
 </code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div><h2 id="继承-eventemitter"> 继承 EventEmitter</h2>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br></div></div></li>
+<li>
+<p><strong>执行 <code>db.json</code>文件；</strong></p>
+<div><pre><code>json-server --watch db.json
+</code></pre>
+<div><span>1</span><br></div></div></li>
+</ol>
 <blockquote>
-<p>大多数时候我们不会直接使用 EventEmitter，而是在对象中继承它。包括 fs、 net、http 在内的，只要是支持事件响应的核心模块都是 EventEmitter 的子类。</p>
+<p>注：接口服务默认占用 3000 端口;</p>
 </blockquote>
-<p><strong>为什么要这样做呢？原因有两点。</strong></p>
+<h2 id="发送请求"> 发送请求；</h2>
+<ol>
+<li>
+<p><strong><code>GET</code>请求；</strong></p>
+<ol>
+<li>获取所有数据信息；
 <ul>
-<li>具有某个实体功能的对象实现事件符合语义，事件的监听和发射应该是一个对象的方法。</li>
-<li>JavaScript 的对象机制是基于原型的，支持部分多重继承，继承 EventEmitter 不会打乱对象原有的继承关系。</li>
+<li>请求过程和之前一样；</li>
 </ul>
+</li>
+<li>根据条件查询数据信息；
+<ul>
+<li>请求过程和之前一样；</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><code>POST</code>请求；</strong></p>
+<ol>
+<li>添加数据；
+<ul>
+<li>响应结果为修改后的数据；</li>
+<li>注：请求参数必须是<code>JSON</code>格式的；</li>
+</ul>
+</li>
+</ol>
+<p><img src="./assets/20191107190408596.png" alt="20191107190408596" /></p>
+</li>
+<li>
+<p><strong><code>DELETE</code>请求方式；</strong></p>
+<ul>
+<li>删除<code>id</code>为 1 的数据；</li>
+</ul>
+<p><img src="./assets/20191107191542387.png" alt="20191107191542387" /></p>
+</li>
+<li>
+<p><strong><code>PATCH</code>请求方式；</strong></p>
+<ul>
+<li>修改<code>id</code>为2的数据；</li>
+<li>注：请求体为<code>JSON</code>格式；</li>
+<li>响应结果为：修改后的数据；</li>
+</ul>
+</li>
+</ol>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>ora的使用</title>
+      <link>https://blog.yahweh.top/views/backEnd/nodejs/45_ora%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <guid>https://blog.yahweh.top/views/backEnd/nodejs/45_ora%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <source url="https://blog.yahweh.top/rss.xml">ora的使用</source>
+      <category>nodejs</category>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<blockquote>
+<p>使用Node做开发已经是必备的一项技能，然后有时终端中的一些耗时操作的输出对我们不太友好，希望可以提供一个进度loading使用；</p>
+</blockquote>
+<h3 id="安装"> 安装；</h3>
+<p><a href="https://www.npmjs.com/package/ora" target="_blank" rel="noopener noreferrer">传送门</a></p>
+<div><pre><code><span>npm</span> i ora -D
+</code></pre>
+<div><span>1</span><br></div></div><h3 id="使用"> 使用：</h3>
+<div><pre><code><span>const</span> ora <span>=</span> <span>require</span><span>(</span><span>'ora'</span><span>)</span><span>;</span>
+
+<span>// 开启loading</span>
+<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>'Loading unicorns'</span><span>)</span><span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
+ 
+<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>// 更改loading的文字与颜色；</span>
+	spinner<span>.</span>color <span>=</span> <span>'yellow'</span><span>;</span>
+	spinner<span>.</span>text <span>=</span> <span>'Loading rainbows'</span><span>;</span>
+<span>}</span><span>,</span> <span>2000</span><span>)</span><span>;</span>
+
+<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+	spinner<span>.</span><span>succeed</span><span>(</span>‘已完成’<span>)</span><span>;</span>
+<span>}</span><span>,</span> <span>6000</span><span>)</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br></div></div><p><img src="./assets/image-20210614101405802.png" alt="image-20210614101405802" /></p>
+<h3 id="参数说明"> 参数说明：</h3>
+<div><pre><code><span>// 快捷方式；ora(string)</span>
+<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>'Loading unicorns'</span><span>)</span><span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
+
+<span>// 选项对象</span>
+<span>const</span> spinner <span>=</span> <span>ora</span><span>(</span><span>{</span>
+  text<span>:</span> <span>'压缩中...'</span><span>,</span>
+  color<span>:</span> <span>'red'</span><span>,</span>
+  prefixText<span>:</span> <span>'开始压缩'</span><span>,</span>
+  spinner<span>:</span> <span>'bouncingBar'</span>
+  <span>// spinner: {</span>
+  <span>//   interval: 80,</span>
+  <span>//   frames: ['-', '+', '-']</span>
+  <span>// }</span>
+<span>}</span><span>)</span><span>;</span>
+spinner<span>.</span><span>start</span><span>(</span><span>)</span><span>;</span>
+<span>setTimeout</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+	spinner<span>.</span><span>succeed</span><span>(</span><span>'压缩文件已保存 路径：xxx'</span><span>)</span><span>;</span>
+<span>}</span><span>,</span> <span>8000</span><span>)</span><span>;</span>
+
+<span>// $ node zip.js </span>
+<span>// 开始压缩 [==  ] 压缩中...</span>
+<span>// ✔ 压缩文件已保存 路径：xxx</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><h3 id="官方文档"> 官方文档；</h3>
+<p>https://github.com/sindresorhus/ora#readme</p>
 ]]></content:encoded>
     </item>
   </channel>
