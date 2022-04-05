@@ -2,7 +2,7 @@
 title: 使用GoReleaser发布你的应用
 category: GoLang
 date: 2022-04-04
-autoGroup-1: 扩展
+autoGroup-5: 扩展
 ---
 
 > 众所周知，go 语言是支持跨平台编译的，如果每次编译发布都手动操作的话太麻烦了。[GoReleaser](https://github.com/goreleaser/goreleaser)这个工具就可以帮助我们编译和发布，配置好后每次发布时只需一行命令就直接编译并发布了，`GoReleaser` 采用 `Golang` 开发，是一款用于 `Golang` 项目的自动发布工具。只需要几行命令就可以轻松实现跨平台的包编译、打包和发布到 `Github`、`Gitlab` 等版本仓库种，显著地提高了生产力。

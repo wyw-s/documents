@@ -40,6 +40,14 @@ date: 2021-12-27
 - [map](180_map.md)
 - [结构体](185_结构体.md)
 
+- 扩展：
+
+  - [使用GoReleaser发布你的应用](500_使用GoReleaser发布你的应用.md)
+- [如何组织你的Go项目目录结构](505_如何组织你的Go项目目录结构.md)
+  - [什么是GO111MODULE](510_什么是GO111MODULE.md)
+- [Go的依赖管理](515_Go的依赖管理.md)
+
+
 ## 参考资料
 
 - [golang中文网](https://studygolang.com/pkgdoc)
