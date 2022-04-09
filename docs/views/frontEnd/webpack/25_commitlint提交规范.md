@@ -1,5 +1,5 @@
 ---
-title: @commitlint/cli制定提交规范
+title: commitlint/cli制定提交规范
 category: WEBPACK
 autoGroup-05: 代码质量保障
 date: 2022/4/9
