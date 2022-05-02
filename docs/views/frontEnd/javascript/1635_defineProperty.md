@@ -265,6 +265,155 @@ Object.defineProperty(Person, 'name', {
 });
 ```
 
+## 操作属性描述符
+
+> 属性描述符是一个内部对象，无法直接读写，可以通过下面几个函数进行操作。
+
+### Object.getOwnPropertyDescriptor()
+
+> 返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）
+
+语法：
+
+```text
+Object.getOwnPropertyDescriptor(obj, prop)
+```
+
+参数：
+
+- obj: 需要查找的目标对象
+- prop: 目标对象内属性名称
+
+返回值：如果指定的属性存在于对象上，则返回其属性描述符对象（property descriptor），否则返回 undefined。
+
+```javascript
+const object1 = {
+  property1: 42
+};
+
+const descriptor1 = Object.getOwnPropertyDescriptor(object1, 'property1');
+
+console.log(descriptor1);
+
+// { value: 42, writable: true, enumerable: true, configurable: true }
+
+var o, d;
+
+o = { get foo() { return 17; } };
+d = Object.getOwnPropertyDescriptor(o, 'foo');
+console.log(d)
+/*
+{
+  get: [Function: get foo],
+  set: undefined,
+  enumerable: true,        
+  configurable: true       
+}
+ */
+```
+
+### Object.defineProperty()
+
+> 通过定义属性描述符来定义或修改一个属性，然后返回此对象。
+
+### Object.defineProperties()
+
+> 该方法直接在一个对象上同时定义多个新的属性或修改现有属性，并返回该对象。
+
+语法：
+
+```text
+Object.defineProperties(obj, props)
+```
+
+参数:
+
+- obj: 在其上定义或修改属性的对象。
+- props: 要定义其可枚举属性或修改的属性描述符的对象。
+
+返回值: 传递给函数的对象。
+
+```javascript
+var obj = {};
+Object.defineProperties(obj, {
+  'property1': {
+    value: true,
+    writable: true
+  },
+  'property2': {
+    value: 'Hello',
+    writable: false
+  }
+});
+```
+
+### Object.getOwnPropertyNames()
+
+> 该方法返回一个由指定对象的所有自身属性【对象的所有私有属性】的属性名（包括不可枚举属性但不包括Symbol值作为名称的属性）组成的数组。
+
+语法：
+
+```text
+Object.getOwnPropertyNames(obj)
+```
+
+参数：
+
+- obj：一个对象，其自身的可枚举和不可枚举属性的名称被返回。
+
+返回值：在给定对象上找到的自身属性对应的字符串数组。
+
+```javascript
+var arr = ["a", "b", "c"];
+console.log(Object.getOwnPropertyNames(arr).sort()); // ["0", "1", "2", "length"]
+
+// 类数组对象
+var obj = { 0: "a", 1: "b", 2: "c"};
+console.log(Object.getOwnPropertyNames(obj).sort()); // ["0", "1", "2"]
+
+// 使用Array.forEach输出属性名和属性值
+Object.getOwnPropertyNames(obj).forEach(function(val, idx, array) {
+  console.log(val + " -> " + obj[val]);
+});
+// 输出
+// 0 -> a
+// 1 -> b
+// 2 -> c
+
+//不可枚举属性
+var my_obj = Object.create({}, {
+  getFoo: {
+    value: function() { return this.foo; },
+    enumerable: false
+  }
+});
+my_obj.foo = 1;
+
+console.log(Object.getOwnPropertyNames(my_obj).sort()); // ["foo", "getFoo"]
+
+```
+
+### Object.prototype.propertyIsEnumerable()
+
+> 该方法返回一个布尔值，表示指定的属性是否可枚举。
+
+```javascript
+const object1 = {};
+const array1 = [];
+object1.property1 = 42;
+array1[0] = 42;
+
+console.log(object1.propertyIsEnumerable('property1'));
+// true
+
+console.log(array1.propertyIsEnumerable(0));
+// true
+
+console.log(array1.propertyIsEnumerable('length'));
+// false
+
+```
+
 ## 参考博文
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
