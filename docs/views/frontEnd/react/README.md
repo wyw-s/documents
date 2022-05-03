@@ -17,3 +17,5 @@ date: 2021-05-02
 - [react组件](20_react组件.md)
 - [state和setState](25_state和setState.md)
 - [生命周期](30_生命周期.md)
+- [手写Redux](35_手写Redux.md)
+- [Hooks](40_Hooks.md)
