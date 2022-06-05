@@ -28,26 +28,47 @@ module.exports = config({
       {
         text: '前端',
         items: [
-          {text: 'HTML', link: '/views/frontEnd/html/'},
-          {text: 'CSS', link: '/views/frontEnd/css/'},
-          {text: 'JAVASCRIPT', link: '/views/frontEnd/javascript/'},
-          {text: 'AJAX', link: '/views/frontEnd/ajax/'},
-          {text: 'JQUERY', link: '/views/frontEnd/jquery/'},
-          {text: 'VUE', link: '/views/frontEnd/vue/'},
-          {text: 'REACT', link: '/views/frontEnd/react/'},
-          {text: 'WEBPACK', link: '/views/frontEnd/webpack/'},
-          {text: 'PLUGINS', link: '/views/frontEnd/plugins/'}
+          {
+            text: '三剑客',
+            items: [
+              {text: 'HTML', link: '/views/frontEnd/html/'},
+              {text: 'CSS', link: '/views/frontEnd/css/'},
+              {text: 'JAVASCRIPT', link: '/views/frontEnd/javascript/'},
+            ]
+          },
+          {
+            text: '框架',
+            items: [
+              {text: 'VUE', link: '/views/frontEnd/vue/'},
+              {text: 'REACT', link: '/views/frontEnd/react/'},
+              {text: 'JQUERY', link: '/views/frontEnd/jquery/'},
+            ]
+          },
+          {
+            text: '前端工程化',
+            items: [
+              {text: '工程化', link: '/views/frontEnd/engineering/'},
+              {text: 'WEBPACK', link: '/views/frontEnd/webpack/'},
+              {text: 'PLUGINS', link: '/views/frontEnd/plugins/'},
+              {text: 'AJAX', link: '/views/frontEnd/ajax/'}
+            ]
+          },
         ]
       },
       {
         text: '后端',
         items: [
           {
-            text: '开发指南',
+            text: '编程语言',
             items: [
               {text: 'NODEJS', link: '/views/backEnd/nodejs/'},
               {text: 'JAVA', link: '/views/backEnd/java/basic/'},
               {text: 'GO', link: '/views/backEnd/go/basic/'},
+            ]
+          },
+          {
+            text: '服务相关',
+            items: [
               {text: 'MYSQL', link: '/views/backEnd/mysql/'},
               {text: 'JENKINS', link: '/views/backEnd/jenkins/'},
               {text: 'NGINX', link: '/views/backEnd/nginx/'},
@@ -79,15 +100,15 @@ module.exports = config({
         ]
       },
       {
-        text: '设计模式',
-        link: '/views/designMode/',
-      },
-      {
-        text: '面试题',
-        link: '/views/interviewQuestion/',
-      },
-      {text: '问题', link: '/views/issues/'},
-      {text: '其它', link: '/views/other/'}
+        text: '了解更多',
+        items: [
+          {text: '计算机网络', link: '/views/designMode/'},
+          {text: '设计模式', link: '/views/designMode/'},
+          {text: '面试题', link: '/views/interviewQuestion/'},
+          {text: 'issues', link: '/views/issues/'},
+          {text: 'other', link: '/views/other/'},
+        ]
+      }
     ],
     // comment: {
     //   type: "waline",
