@@ -42,9 +42,11 @@ title: 介绍
   - [ora的使用](./45_ora的使用.md)
   - [import与require的区别](150_import与require的区别.md)
 
-## 参考资料  
+## 学习资源链接
 
-nodejs 开发指南
+- [Node学习的正确姿势](https://github.com/i5ting/How-to-learn-node-correctly)
+- [Node面试集锦](https://github.com/jimuyouyou/node-interview-questions)
+- [Node最佳实践](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.chinese.md)
 
 
 
