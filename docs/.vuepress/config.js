@@ -102,7 +102,7 @@ module.exports = config({
       {
         text: '了解更多',
         items: [
-          {text: '计算机网络', link: '/views/designMode/'},
+          {text: '计算机网络', link: '/views/computerNetwork/'},
           {text: '设计模式', link: '/views/designMode/'},
           {text: '面试题', link: '/views/interviewQuestion/'},
           {text: 'issues', link: '/views/issues/'},
