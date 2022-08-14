@@ -28,14 +28,9 @@ module.exports = config({
       {
         text: '前端',
         items: [
-          {
-            text: '三剑客',
-            items: [
-              {text: 'HTML', link: '/views/frontEnd/html/'},
-              {text: 'CSS', link: '/views/frontEnd/css/'},
-              {text: 'JAVASCRIPT', link: '/views/frontEnd/javascript/'},
-            ]
-          },
+          {text: 'HTML', link: '/views/frontEnd/html/'},
+          {text: 'CSS', link: '/views/frontEnd/css/'},
+          {text: 'JAVASCRIPT', link: '/views/frontEnd/javascript/'},
           {
             text: '框架',
             items: [
