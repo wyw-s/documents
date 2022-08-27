@@ -2,6 +2,8 @@
 title: mysql启动错误
 category: issues
 date: 2021-05-02
+tag
+  - issue:mysql
 ---
 
 ## `Can't start server: can't check PID filepath: No such file or directory`
@@ -64,4 +66,3 @@ date: 2021-05-02
 
    原文地址：https://blog.csdn.net/qq_31977125/article/details/84318745
 
-   

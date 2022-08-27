@@ -2,6 +2,8 @@
 title: git clone 错误
 category: issues
 date: 2021-05-02
+tag
+  - issue:git
 ---
 
 ## `fatal: unable to access 'https://github.com/wyw-s/patient.git/': Encountered end of file`

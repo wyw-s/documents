@@ -2,6 +2,8 @@
 title: pm2 command not found
 category: issues
 date: 2021-05-02
+tag
+  - issue:nodejs
 ---
 
 ## `/tmp/jenkins5751570293012104226.sh: line 8: pm2: command not found`
