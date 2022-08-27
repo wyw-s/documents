@@ -11,7 +11,7 @@ date: 2021-05-02
 ```bash
 service jenkins start
 #  or
-systemctl start jenkins.service
+systemctl start jenkins
 ```
 
 ## 停止
@@ -19,7 +19,7 @@ systemctl start jenkins.service
 ```bash
 service jenkins stop
 # or
-systemctl stop jenkins.service
+systemctl stop jenkins
 ```
 
 ## 重启
@@ -27,7 +27,7 @@ systemctl stop jenkins.service
 ```bash
 service jenkins restart
 # or
-systemctl restart jenkins.service
+systemctl restart jenkins
 ```
 
 ## 状态
@@ -35,9 +35,9 @@ systemctl restart jenkins.service
 ```bash
 service jenkins status
 # or
-systemctl status jenkins.service
+systemctl status jenkins
 # or 展开被省略的行
-systemctl -l status jenkins.service 
+systemctl -l status jenkins 
 ```
 
 ## 重新加载
@@ -45,7 +45,7 @@ systemctl -l status jenkins.service
 ```bash
 service jenkins reload
 # or
-systemctl reload jenkins.service
+systemctl reload jenkins
 ```
 
 ## 扩展
@@ -69,7 +69,3 @@ systemctl reload jenkins.service
    ```bash
    http://localhost:8080/reload
    ```
-
-
-
-[阅读原文](https://www.cnblogs.com/faberbeta/p/jenkins004.html)

@@ -8,9 +8,9 @@ date: 2021-05-02
 
 ## 目录
 
+- [基础知识](02_基础知识.md)
 - [jenkins基础命令](05_jenkins基础命令.md)
 - [jenkins结合git实现自动化部署](10_jenkins结合git实现自动化部署.md)
-- [基础知识](15_基础知识.md)
 - [节点](20_节点.md)
 - [脚本式语法](25_脚本式语法.md)
 - [脚本式流水线拉取代码](30_脚本式流水线拉取代码.md)
@@ -23,5 +23,3 @@ date: 2021-05-02
 
 - jenkins 2权威指南；
 - jenkins 2.x 实践指南；
-- https://blog.csdn.net/weixin_40046357/article/details/104788271
-- https://www.cnblogs.com/forever521Lee/p/9593739.html
