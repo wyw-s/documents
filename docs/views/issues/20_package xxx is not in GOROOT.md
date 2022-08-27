@@ -1,8 +1,9 @@
 ---
 title:  package xxx is not in GOROOT
 category: issues
+date: 2021-05-02
 tag:
-  - Golang
+  - issue:Golang
 ---
 
 > 问题描述：由于刚刚接触golang，在尝试导入一个本地包时，出现了下面的错误：

@@ -2,13 +2,15 @@
 title: jenkins构建项目失败
 category: issues
 date: 2021-05-02
+tag
+  - issue:jenkins
 ---
 
 > 目的很简单，就是想自己实现一个`web`项目的全自动化部署；
 >
 > 但是现实总是残酷的，在搭建到用`jenkins`的过程中遇到了很多的坑；
 >
-> 本人的系统： aliyun liunx 
+> 本人的系统： aliyun liunx jenkins@1.7
 
 从网上看了很多的教程顺利完成了安装，登录和创建项目，但是在构建时，总是不成功；
 

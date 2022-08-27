@@ -2,6 +2,8 @@
 title: axios发delete请求，后台收不到参数
 category: issues
 date: 2021-05-02
+tag
+  - issue:vue
 ---
 
 ## 1、问题；
@@ -100,4 +102,3 @@ date: 2021-05-02
    })
    ```
 
-   

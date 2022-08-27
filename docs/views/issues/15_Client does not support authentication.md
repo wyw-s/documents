@@ -1,8 +1,9 @@
 ---
 title: Client does not support authentication pr
 category: issues
+date: 2021-05-02
 tag:
-  - mysql
+  - issue:mysql
 ---
 
 > Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication pr
@@ -33,4 +34,3 @@ tag:
   service mysqld status;
   ```
 
-  

@@ -2,6 +2,8 @@
 title: vite启动报错：Cannot call write after a stream was destroyed
 category: issues
 date: 2021-05-02
+tag
+  - issue:vue
 ---
 
 ## vite启动报错：Cannot call write after a stream was destroyed
