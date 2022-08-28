@@ -2,7 +2,7 @@
 title: failed to run command ‘java’ No such file or directory
 category: issues
 date: 2021-05-02
-tag
+tags:
   - issue:java
 ---
 

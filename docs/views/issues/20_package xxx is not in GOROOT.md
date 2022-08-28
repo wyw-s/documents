@@ -2,7 +2,7 @@
 title:  package xxx is not in GOROOT
 category: issues
 date: 2021-05-02
-tag:
+tags:
   - issue:Golang
 ---
 

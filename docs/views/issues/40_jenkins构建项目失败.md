@@ -2,7 +2,7 @@
 title: jenkins构建项目失败
 category: issues
 date: 2021-05-02
-tag
+tags:
   - issue:jenkins
 ---
 

@@ -2,7 +2,7 @@
 title: vue项目使用require引入图片不能不显示
 category: issues
 date: 2021-05-02
-tag
+tags:
   - issue:vue
 ---
 

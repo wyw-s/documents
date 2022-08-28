@@ -2,7 +2,7 @@
 title: mysql启动错误
 category: issues
 date: 2021-05-02
-tag
+tags:
   - issue:mysql
 ---
 

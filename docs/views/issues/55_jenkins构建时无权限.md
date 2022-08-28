@@ -2,7 +2,7 @@
 title: jenkins构建时无权限
 category: issues
 date: 2021-08-27
-tag
+tags:
   - issue:jenkins
 ---
 
