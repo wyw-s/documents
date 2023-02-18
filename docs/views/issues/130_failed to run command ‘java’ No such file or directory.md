@@ -27,7 +27,7 @@ tags:
 3. 后台持续运行 java服务；
 
    ```shell
-   nohup java -jar customer.jar 1>>/etc/null 2> /etc/null $
+   nohup java -jar customer.jar > myout.log 2>&1 &;
    ```
 
    

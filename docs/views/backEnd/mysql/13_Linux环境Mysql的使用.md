@@ -1,5 +1,5 @@
 ---
-title: MYSQL使用
+title: Linux环境Mysql的使用
 category: MYSQL
 date: 2021-05-02
 ---

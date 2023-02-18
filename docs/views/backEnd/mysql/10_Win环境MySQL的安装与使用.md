@@ -1,5 +1,5 @@
 ---
-title: MySQL安装与使用
+title: Win环境MySQL的安装与使用
 category: MYSQL
 date: 2022-01-21
 ---
@@ -146,6 +146,14 @@ mysqld --initialize-insecure --user=mysql
 
 ![1594451454429](assets/1594451454429.png)
 
+## MySQL目录结构
+
+| MySQL目录结构 | 描述                                 |
+| ------------- | ------------------------------------ |
+| bin           | 所有Mysql的可执行文件，如：mysql.exe |
+| data          | 系统必须的数据库所在目录             |
+| my.ini        | mysql的配置文件，一般不建议去修改    |
+
 ## 启动与登录
 
 MySQL 服务器启动方式有两种：
@@ -153,12 +161,12 @@ MySQL 服务器启动方式有两种：
 1. 通过服务的方式自动启动 。
 2. 手动启动的方式。
 
-### Windows 服务方式启动
+### 服务方式启动
 
 1. 【此电脑】-【管理】。
 2. 【服务和应用程序】-【服务】找到mysql服务-【启动/停止】
 
-### DOS 命令方式启动
+### 手动启动
 
 1. 【win】+ r，输入cmd
 
@@ -174,7 +182,7 @@ MySQL 服务器启动方式有两种：
    C:\WINDOWS\system32>
    ```
 
-### 控制台连接数据库
+### 登录
 
 MySQL 是一个需要账户名密码登录的数据库。它提供了一个默认的 root 账号，使用安装时设置的密码即可登录。
 
@@ -260,16 +268,6 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql>
 ```
 
-### 修改用户密码
-
-```mysql
-ALTER USER '用户名'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';
-
-flush privileges;   --刷新MySQL的系统权限相关表
-```
-
-![1594451786455](assets/1594451786455.png)
-
 ## 退出 MySQL
 
 ```bash
@@ -286,19 +284,157 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+# exit 或 quit 用退出mysql
 mysql> exit
 Bye
-
-C:\WINDOWS\system32>
 ```
 
-## MySQL目录结构
+## 忘记密码
 
-| MySQL目录结构 | 描述                                 |
-| ------------- | ------------------------------------ |
-| bin           | 所有Mysql的可执行文件，如：mysql.exe |
-| data          | 系统必须的数据库所在目录             |
-| my.ini        | mysql的配置文件，一般不建议去修改    |
+### 步骤一
+
+进入mysql的安装路径下的bin文件下；
+
+### 步骤二
+
+停止你的Mysql服务；
+
+```bash
+# net stop mysql
+
+D:\mysql-8.0.20-winx64\bin
+$ net stop mysql
+MySQL 服务正在停止.
+MySQL 服务已成功停止。
+```
+
+### 步骤三
+
+输入以下命令；
+
+```bash
+# mysqld --console --skip-grant-tables --shared-memory
+
+D:\mysql-8.0.20-winx64\bin
+$ mysqld --console --skip-grant-tables --shared-memory # 1
+2021-03-13T13:00:39.507312Z 0 [System] [MY-010116] [Server] D:\mysql-8.0.20-winx64\bin\mysqld.exe (mysqld 8.0.20) starting as process 15836
+2021-03-13T13:00:39.632181Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2021-03-13T13:00:41.077270Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2021-03-13T13:00:41.422998Z 0 [Warning] [MY-011311] [Server] Plugin mysqlx reported: 'All I/O interfaces are disabled, X Protocol won't be accessible'
+2021-03-13T13:00:41.745906Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2021-03-13T13:00:41.839456Z 0 [System] [MY-010931] [Server] D:\mysql-8.0.20-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.20'  socket: ''  port: 0  MySQL Community Server - GPL.
+
+```
+
+> 注意窗口不要关闭，然后再打开一个新的窗口，
+
+### 步骤四
+
+登录；
+
+```bash
+# 注意不要输入密码，直接回车，然后输入以下命令，
+mysql -u root -p
+
+D:\mysql-8.0.20-winx64\bin
+$ mysql -u root -p  # 1
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 7
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use mysql  # 2
+Database changed
+mysql> update user set authentication_string='' where user='root'; Query OK, 1 row affected (0.14 sec)  # 3
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> quit  # 4
+Bye
+```
+
+### 步骤五
+
+关闭1、2窗口；然后再新开一个窗口；
+
+### 步骤六
+
+执行以下命令；
+
+```bash
+D:\mysql-8.0.20-winx64\bin
+$ net start mysql  # 1
+MySQL 服务正在启动 ..
+MySQL 服务已经启动成功。
+
+D:\mysql-8.0.20-winx64\bin
+$ mysql -u root -p  # 2
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'root2020';  # 3
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> quit  # 4
+Bye
+
+
+```
+
+> 此时密码修改为  `root2020`
+
+### 步骤七
+
+使用密码登录；
+
+```bash
+D:\mysql-8.0.20-winx64\bin
+$ mysql -u root -p
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.20 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2020, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql>
+
+```
+
+[原文地址](https://blog.csdn.net/qq382495414/article/details/107253577/)
+
+## 修改用户密码
+
+```mysql
+ALTER USER '用户名'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';
+
+flush privileges;   --刷新MySQL的系统权限相关表
+```
+
+![1594451786455](assets/1594451786455.png)
 
 ## 注意事项
 
