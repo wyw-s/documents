@@ -40,9 +40,16 @@ mysql> select user from mysql.user;
 mysql> 
 ```
 
+> 除了默认root，mysql.session 和 mysql.sys两个用户是MySQL 5.7 新增默认账号。
+> - mysql.sys：用于 sys schema中对象的定义。使用 mysql.sys 用户可避免DBA重命名或者删除root用户时发生的问题。该用户已被锁定，客户端无法连接。
+> - mysql.sessio：插件内部使用来访问服务器。该用户已被锁定，客户端无法连接。
+
+
 ## 修改用户
 
 ```bash
+# 修改用户
+mysql> update user set user="xxx" where user = "root";
 
 # 修改密码
 mysql> update user set password=password('xxx') where user = 'xxx';
