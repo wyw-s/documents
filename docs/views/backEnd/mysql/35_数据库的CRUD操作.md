@@ -109,7 +109,20 @@ mysql>
 
 ### 查看数据库
 
+> 使用 **SHOW DATABASES** 语句来查看或显示当前用户权限范围以内的数据库。
+>
 > 按 `tab` 键可以自动补全关键字
+
+语法格式：
+
+```mysql
+SHOW DATABASES [LIKE '数据库名'];
+```
+
+语法说明：
+
+- LIKE 从句是可选项，用于匹配指定的数据库名称。LIKE 从句可以部分匹配，也可以完全匹配。
+- 数据库名由单引号`''`包围。
 
 ```mysql
 -- 查看所有的数据库
@@ -124,7 +137,26 @@ mysql> show databases;
 +--------------------+
 4 rows in set (0.00 sec)
 
--- 查询某个数据库的字符集:查询某个数据库的创建语句
+-- 查看某一个数据库
+mysql> show databases like 'db1';
++----------------+
+| Database (db1) |
++----------------+
+| db1            |
++----------------+
+1 row in set (0.00 sec)
+
+-- 
+mysql> show databases like 'db%';
++----------------+
+| Database (db%) |
++----------------+
+| db1            |
+| db2            |
++----------------+
+2 rows in set (0.00 sec)
+
+-- 查询某个数据库的字符集:查询某个数据库的定义信息
 mysql> show create database test;
 +----------+---------------------------------------------------------------+
 | Database | Create Database                                               |
@@ -135,6 +167,12 @@ mysql> show create database test;
 
 mysql>
 ```
+
+在上面的列表中有 4 个数据库，其中information_schema 、performance_schema、mysql是安装 MySQL 时系统自动创建的，其功能如下：
+
+- information_schema：主要存储了系统中的一些数据库对象信息，比如用户表信息、列信息、权限信息、字符集信息和分区信息等。
+- mysql：MySQL 的核心数据库，类似于 SQL Server 中的 master 表，主要负责存储数据库用户、用户访问权限等 MySQL 自己需要使用的控制和管理信息。常用的比如在 mysql 数据库的 user 表中修改 root 用户密码。
+- performance_schema：主要用于收集数据库服务器性能参数。
 
 ### 修改数据库
 
@@ -323,6 +361,8 @@ mysql>
 
 ### 查看表
 
+> 在查看数据表之前需要先切换到表所对应的数据库；
+
 - 查询某个数据库中所有的表名称；
 
   ```mysql
@@ -352,7 +392,7 @@ mysql> show tables;
 +---------------------------+
 24 rows in set (0.00 sec)
 
--- 查看 host 表结构
+-- 查看 host 表结构  DESCRIBE <表名>; 或 DESC <表名>;
 mysql> desc host;
 +-----------------------+---------------+------+-----+---------+-------+
 | Field                 | Type          | Null | Key | Default | Extra |
@@ -382,6 +422,13 @@ mysql> desc host;
 
 mysql>
 ```
+
+其中，各个字段的含义如下：
+
+- Null：表示该列是否可以存储 NULL 值。
+- Key：表示该列是否已编制索引。PRI 表示该列是表主键的一部分，UNI 表示该列是 UNIQUE 索引的一部分，MUL 表示在列中某个给定值允许出现多次。
+- Default：表示该列是否有默认值，如果有，值是多少。
+- Extra：表示可以获取的与给定列有关的附加信息，如 AUTO_INCREMENT 等
 
 ### 删除表
 
