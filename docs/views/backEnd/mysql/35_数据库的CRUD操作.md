@@ -662,7 +662,7 @@ mysql>
 语法：
 
 ```mysql
-INSERT [INTO] 表名 [字段名] VALUES (字段值)
+INSERT INTO 表名 [字段名] VALUES (字段值)
 ```
 
 参数解释：

@@ -4,9 +4,7 @@ category: MYSQL
 date: 2021-05-02
 ---
 
-## 基础命令
-
-### 启动mysql
+## 启动mysql
 
 ```bash
 service mysqld start;
@@ -16,7 +14,7 @@ systemctl start mysqld;
 
 ![1594485624023](assets/1594485624023.png)
 
-### 关闭mysql
+## 关闭mysql
 
 ```bash
 service mysqld stop;
@@ -26,7 +24,7 @@ systemctl stop mysqld;
 
 ![1594485694723](assets/1594485694723.png)
 
-### 查看Mysql的运行状态；
+## 查看Mysql的运行状态；
 
 ```bash
 service mysqld status;
@@ -38,13 +36,13 @@ systemctl -l status mysqld;
 
 ![1594485553438](assets/1594485553438.png)
 
-### 查看错误日志位置 
+## 查看错误日志位置 
 
 ```bash
 cat /etc/my.cnf | grep log-error
 ```
 
-### 查看错误日志 
+## 查看错误日志 
 
 ```bash
 more /var/log/mysqld.log
