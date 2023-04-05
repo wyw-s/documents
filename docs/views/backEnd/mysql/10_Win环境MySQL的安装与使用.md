@@ -13,7 +13,10 @@ date: 2022-01-21
 
 ## 数据库的安装（msi）
 
-下载安装包：[传送门](https://downloads.mysql.com/archives/community/)
+下载安装包：
+
+- [传送门1](https://downloads.mysql.com/archives/community/) **推荐**
+- [传送门2](https://downloads.mysql.com/archives/installer/)
 
 ### 步骤一
 
@@ -124,9 +127,9 @@ date: 2022-01-21
 
 4. 删除 c 盘 ProgramDate 目录中关于 MySQL 的目录。路径为：C:\ProgramData\MySQL(是隐藏文件,需要显示 出来)
 
-## 数据库的安装（zip）
+## 数据库的安装（zip）【推荐】
 
-直接解压不需要安装；[mysql-8.0.20-winx64.zip]( https://dev.mysql.com/downloads/mysql/ )
+**直接解压**不需要安装；[mysql-8.0.20-winx64.zip]( https://dev.mysql.com/downloads/mysql/ ) 此种安装的好处是不需要繁琐的配置；
 
 ### 添加环境变量
 
@@ -134,9 +137,10 @@ date: 2022-01-21
 
 ### 初始化`data`目录
 
-> 在 管理员身份下打开 cmd
+> 管理员身份下打开 cmd; cd 到你的mysql安装包的bin目录下，比如我的目录：`D:\mysql\mysql-8.0.12-winx64\bin` ；
 
 ```
+# 执行此命令
 mysqld --initialize-insecure --user=mysql  
 ```
 
@@ -185,6 +189,8 @@ MySQL 服务器启动方式有两种：
 ### 登录
 
 MySQL 是一个需要账户名密码登录的数据库。它提供了一个默认的 root 账号，使用安装时设置的密码即可登录。
+
+> 直接解压的方式安装后，是可以不输入密码直接使用 `root` 账户登录的；
 
 ```bash
 mysql -u 用户名 -p 密码
