@@ -334,6 +334,19 @@ mysql> create table student(
     -> );
 Query OK, 0 rows affected (0.01 sec)
 
+-- or 
+
+--  判断表是否存在，不存在则创建一张表
+mysql> create table if not exists student(
+    ->     id int,
+    ->     name varchar(32),
+    ->     age int ,
+    ->     score double(4,1),
+    ->     birthday date,
+    ->     insert_time timestamp
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
 -- 查看创建的表
 mysql> show tables;
 +---------------+
@@ -372,7 +385,11 @@ mysql>
 - 查询表结构
 
   ```mysql
+  -- desc 是 DESCRIBE 的简写
   desc 表名;
+
+  -- or
+  show create table 表名;
   ```
 
 ```mysql
@@ -441,7 +458,7 @@ mysql>
 - 判断表，是否存在如果存在则删除
 
   ```mysql
-  drop table  if exists 表名 ;
+  drop table if exists 表名 ;
   ```
 
 ```mysql
