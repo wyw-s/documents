@@ -195,6 +195,26 @@ MySQL 是一个需要账户名密码登录的数据库。它提供了一个默�
 ```bash
 mysql -u 用户名 -p 密码
 ```
+
+#### 初始密码
+
+```bash
+# 查看初始密码-我的初始密码为：fUyVBrWv40p
+less /var/log/mysqld.log
+
+2023-06-10T07:52:29.545860Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.33) initializing of server in progress as process 26293
+2023-06-10T07:52:29.565876Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-06-10T07:52:30.560654Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-06-10T07:52:33.531074Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: fUyVBrWv40p
+2023-06-10T07:52:39.225188Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.33) starting as process 26346
+2023-06-10T07:52:39.239867Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2023-06-10T07:52:39.382042Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2023-06-10T07:52:39.708080Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2023-06-10T07:52:39.708236Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2023-06-10T07:52:39.754660Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2023-06-10T07:52:39.754698Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.33'  socket: '/var/lib/mysql/mysql.sock'  port: 3306  MySQL Community Server - GPL.
+```
+
 #### 方式一
 
 ```bash
@@ -434,7 +454,11 @@ mysql>
 
 ## 修改用户密码
 
-```mysql
+```bash
+mysqladmin -u root -p password
+
+# or
+
 ALTER USER '用户名'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';
 
 flush privileges;   --刷新MySQL的系统权限相关表

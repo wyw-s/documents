@@ -47,7 +47,10 @@ mysql>
 
 ## 修改用户
 
-```bash
+```mysql
+# 选择数据库
+mysql> use mysql;
+
 # 修改用户
 mysql> update user set user="xxx" where user = "root";
 
@@ -55,6 +58,9 @@ mysql> update user set user="xxx" where user = "root";
 mysql> update user set password=password('xxx') where user = 'xxx';
 # 错误原因：mysql数据库下已经没有password这个字段了，password字段改成了authentication_string。
 ERROR 1054 (42S22): Unknown error 1054
+
+# 错误原因：MySQL对设置密码进行了默认的限制； 这是因为密码过于简单导致的
+ERROR 1819 (HY000): Unknown error 1819
 mysql> update user set authentication_string=password('xxx') where user = 'xxx';
 Query OK, 1 row affected, 1 warning (0.00 sec)
 
