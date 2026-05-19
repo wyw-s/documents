@@ -95,9 +95,9 @@ node {
                 cd ${backupDir}/${VERSION};
                 ls -a;
                 
-                # 保留最近20个版本，删除旧版本
+                # 保留最近10个版本，删除v开头的旧版本
                 cd ${backupDir};
-                ls -t *.tar.gz | tail -n +21 | xargs -r rm;
+                ls -t1d -- v* | tail -n +11 | xargs -r rm -rf;
                 
                 echo "备份完成 END：${backupDir}/${VERSION}";
             """)
@@ -238,9 +238,9 @@ node {
                     cd ${backupDir}/${VERSION};
                     ls -a;
                     
-                    # 保留最近20个版本，删除旧版本
+                    # 保留最近10个版本，删除v开头的旧版本
                     cd ${backupDir};
-                    ls -t *.tar.gz | tail -n +21 | xargs -r rm;
+                    ls -t1d -- v* | tail -n +11 | xargs -r rm -rf;
                     
                     echo "备份完成 END：${backupDir}/${VERSION}";
                 """)
