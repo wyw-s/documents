@@ -26,6 +26,13 @@ module.exports = config({
       {text: '首页', link: '/'},
       {text: '介绍', link: '/introduce/'},
       {
+        text: '电气工程',
+        items: [
+          { text: '电工基础', link: '/views/electrical/basic/' },
+          { text: '西门子', link: '/views/electrical/siemens/' }
+        ]
+      },
+      {
         text: '前端',
         items: [
           {text: 'HTML', link: '/views/frontEnd/html/'},
